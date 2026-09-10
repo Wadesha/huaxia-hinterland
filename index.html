@@ -3,281 +3,394 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>华夏腹地 · Hinterland of Huaxia — LP 文风双语系列</title>
+<title>华夏腹地 · Hinterland of Huaxia</title>
 <style>
   :root{
-    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
-    --paper:#fbf8f1; --line:#e7ddc9; --card:#fff;
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --card-hover:#3d3831;
+    --ink:#f5f0e6; --muted:#a39a8a; --dim:#736b5d;
+    --lp:#f2b01e; --lp-dk:#c98a07; --lp-glow:rgba(242,176,30,.15);
+    --line:#3d3831; --line-bright:#4a443b;
   }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
-    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
-    line-height:1.7;font-size:16px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;font-size:14px;line-height:1.55}
+  a{color:inherit;text-decoration:none}
 
-  /* Header */
-  header.hero{background:var(--lp);color:var(--ink);padding:48px 22px 40px;text-align:center}
-  header.hero .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:11px;
-    letter-spacing:2px;padding:3px 10px;border-radius:20px;margin-bottom:10px}
-  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(26px,5vw,40px);
-    margin:0;letter-spacing:2px}
-  header.hero .en{font-style:italic;font-weight:400;opacity:.8;font-size:clamp(14px,2.5vw,18px);margin-top:4px}
-  header.hero p{margin:14px auto 0;max-width:560px;font-size:14.5px;opacity:.9}
+  /* ===== Top Bar ===== */
+  .topbar{position:sticky;top:0;z-index:100;background:rgba(28,26,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:14px}
+  .logo{font-family:"Noto Serif SC",Georgia,serif;font-size:16px;font-weight:700;letter-spacing:1px;color:var(--lp);white-space:nowrap}
+  .logo .sub{color:var(--dim);font-size:11px;font-style:italic;font-weight:400;margin-left:8px}
+  .search{flex:1;max-width:360px;position:relative}
+  .search input{width:100%;padding:7px 12px 7px 34px;background:var(--surface);border:1px solid var(--line-bright);border-radius:6px;color:var(--ink);font-size:13px;font-family:inherit}
+  .search input:focus{outline:none;border-color:var(--lp);box-shadow:0 0 0 2px var(--lp-glow)}
+  .search::before{content:"🔍";position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.6}
+  .dice{background:var(--lp);color:var(--bg);border:0;padding:7px 16px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:transform .08s,background .15s}
+  .dice:hover{background:#ffc233}
+  .dice:active{transform:scale(.96)}
+  .stat{color:var(--muted);font-size:12px;white-space:nowrap}
+  .stat b{color:var(--lp);font-weight:700}
 
-  /* Random CTA */
-  .cta-wrap{background:var(--ink);padding:18px 22px;text-align:center}
-  .cta-btn{display:inline-block;background:var(--lp);color:var(--ink);text-decoration:none;
-    padding:12px 32px;border-radius:26px;font-weight:700;font-size:16px;letter-spacing:1px;
-    transition:background .15s,transform .1s;cursor:pointer;border:0;font-family:inherit}
-  .cta-btn:hover{background:#ffc233}
-  .cta-btn:active{transform:scale(.97)}
-  .cta-info{color:#aaa;font-size:13px;margin-left:14px;letter-spacing:.5px}
-  .cta-info b{color:var(--lp)}
+  /* ===== Quick Nav (province anchor links) ===== */
+  .quicknav{background:var(--surface);border-bottom:1px solid var(--line);padding:8px 18px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+  .quicknav .lbl{color:var(--dim);font-size:11px;margin-right:6px;text-transform:uppercase;letter-spacing:1px}
+  .quicknav a{padding:3px 10px;border-radius:4px;font-size:12px;color:var(--muted);border:1px solid transparent;transition:all .1s}
+  .quicknav a:hover{color:var(--lp);border-color:var(--lp);background:var(--lp-glow)}
+  .quicknav a b{color:var(--lp-dk);font-weight:400;font-size:10px;margin-left:3px}
 
-  /* Stats row */
-  .stats-bar{background:#2a2723;color:var(--muted);padding:14px 22px;display:flex;
-    justify-content:center;gap:32px;flex-wrap:wrap;font-size:13px;letter-spacing:1px}
-  .stats-bar b{display:block;color:#ddd;font-size:22px;font-family:Georgia,serif;letter-spacing:0}
+  /* ===== Layout: sidebar + content ===== */
+  .layout{display:flex;gap:0;min-height:calc(100vh - 98px)}
+  .sidebar{width:200px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--line);padding:16px 0;position:sticky;top:98px;height:calc(100vh - 98px);overflow-y:auto}
+  .sidebar .sec{color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;padding:0 16px;margin:14px 0 6px}
+  .sidebar .sec:first-child{margin-top:0}
+  .sidebar a{display:flex;justify-content:space-between;align-items:center;padding:6px 16px;font-size:13px;color:var(--muted);border-left:2px solid transparent;transition:all .12s}
+  .sidebar a:hover{color:var(--ink);background:var(--card-hover);border-left-color:var(--lp)}
+  .sidebar a b{font-size:11px;color:var(--dim);font-weight:400;font-variant-numeric:tabular-nums}
+  .sidebar a.active{color:var(--lp);border-left-color:var(--lp);background:var(--lp-glow)}
 
-  /* Container */
-  .wrap{max-width:1000px;margin:0 auto;padding:32px 22px 80px}
+  .main{flex:1;padding:20px 24px 60px;min-width:0}
 
-  /* Group */
-  .grp{margin:24px 0 10px;padding-left:12px;border-left:4px solid var(--lp)}
-  .grp h2{font-family:"Noto Serif SC",Georgia,serif;font-size:20px;margin:0;color:var(--lp-dk)}
-  .grp h2 .en{font-size:13px;color:var(--muted);font-weight:400;font-style:italic;margin-left:8px}
+  /* ===== Section ===== */
+  .section{margin-bottom:28px}
+  .section-header{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .section-header h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;color:var(--ink);letter-spacing:.5px}
+  .section-header .en{color:var(--dim);font-size:12px;font-style:italic;font-weight:400}
+  .section-header .count{margin-left:auto;color:var(--lp);font-size:12px;font-weight:700}
 
-  /* Grid of cards */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:14px}
-  .card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:16px 18px;text-decoration:none;color:var(--ink);
-    transition:transform .12s,box-shadow .12s,border-color .12s}
-  .card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(28,26,23,.12);border-color:var(--lp)}
-  .card h3{margin:0 0 4px;font-family:"Noto Serif SC",Georgia,serif;font-size:18px}
-  .card h3 .en{display:block;font-size:12px;color:var(--muted);font-weight:400;
-    font-style:italic;margin-top:2px}
-  .card .tag{font-size:13px;color:#5a4e3c;margin:6px 0 0}
-  .card .meta{display:block;margin-top:10px;font-size:11.5px;letter-spacing:1px;color:var(--lp-dk)}
+  /* ===== Dense Card Grid ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
+  .card{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:10px 12px;transition:all .12s;cursor:pointer}
+  .card:hover{background:var(--card-hover);border-color:var(--lp);box-shadow:0 0 0 1px var(--lp),0 4px 12px rgba(242,176,30,.08);transform:translateY(-1px)}
+  .card .row1{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+  .card .cn{font-family:"Noto Serif SC",Georgia,serif;font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .card .en{font-size:10.5px;color:var(--dim);font-style:italic;white-space:nowrap;flex-shrink:0}
+  .card .tag{font-size:11.5px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+  .card .prov-tag{font-size:10px;color:var(--lp-dk);letter-spacing:.5px}
+  .card .arrow{font-size:11px;color:var(--dim);transition:transform .1s}
+  .card:hover .arrow{color:var(--lp);transform:translateX(2px)}
 
-  /* Search bar */
-  .search-bar{position:sticky;top:0;z-index:5;background:var(--ink);padding:12px 22px;display:flex;justify-content:center}
-  .search-bar input{width:min(460px,92%);padding:9px 14px;border:0;border-radius:20px;
-    font-size:14px;font-family:inherit;background:#fff;color:var(--ink)}
-  .search-bar input:focus{outline:2px solid var(--lp)}
+  /* ===== List view toggle ===== */
+  .viewtoggle{display:flex;gap:4px;background:var(--surface);border-radius:6px;padding:3px;border:1px solid var(--line);margin-left:auto}
+  .viewtoggle button{padding:3px 10px;border:0;background:transparent;color:var(--muted);font-size:12px;cursor:pointer;border-radius:4px;font-family:inherit}
+  .viewtoggle button.active{background:var(--card);color:var(--lp)}
 
-  /* Empty */
-  .empty{display:none;text-align:center;color:var(--muted);padding:36px 0}
+  /* ===== List view ===== */
+  .list{display:none;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+  .list.active{display:flex}
+  .grid.active{display:grid}
+  .grid:not(.active){display:none}
+  .list-row{display:grid;grid-template-columns:100px 1fr 100px 24px;gap:10px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);font-size:13px;transition:background .1s;cursor:pointer}
+  .list-row:last-child{border-bottom:0}
+  .list-row:hover{background:var(--card-hover)}
+  .list-row .cn{font-weight:700;color:var(--ink)}
+  .list-row .en{color:var(--dim);font-style:italic;font-size:11px}
+  .list-row .tag{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .list-row .prov-tag{color:var(--lp-dk);font-size:11px}
+  .list-row .arrow{color:var(--dim);font-size:12px;text-align:center}
+  .list-row:hover .arrow{color:var(--lp)}
+  .list-row.hide{display:none}
 
-  /* Footer */
-  footer{padding:24px 22px 60px;text-align:center;color:var(--muted);font-size:12.5px;
-    border-top:1px solid var(--line);background:var(--paper)}
+  /* ===== Empty ===== */
+  .empty{text-align:center;color:var(--dim);padding:40px 0;font-size:13px}
+  .empty.hide{display:none}
 
-  .hide{display:none!important}
+  /* ===== Footer ===== */
+  footer{padding:20px 24px;border-top:1px solid var(--line);text-align:center;color:var(--dim);font-size:11.5px;letter-spacing:.3px}
+  footer a{color:var(--lp-dk)}
+  footer a:hover{color:var(--lp)}
+
+  /* ===== Responsive ===== */
+  @media(max-width:900px){
+    .sidebar{display:none}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  }
+  @media(max-width:600px){
+    .topbar{flex-wrap:wrap;gap:8px}
+    .search{order:5;max-width:none;width:100%}
+    .main{padding:14px}
+    .grid{grid-template-columns:repeat(2,1fr);gap:4px}
+    .card{padding:8px}
+    .list-row{grid-template-columns:70px 1fr 60px 20px;font-size:12px}
+    .quicknav a{font-size:11px;padding:2px 6px}
+  }
+
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--line-bright);border-radius:4px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--lp-dk)}
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
-  <h1>华夏腹地</h1>
-  <div class="en">Hinterland of Huaxia — a bilingual series</div>
-  <p>点「掷骰子」随机开启一篇目的地写作。中英对照，篇篇原创，只借 LP 的笔法，不复制任何原文。</p>
+<!-- ===== Top Bar ===== -->
+<header class="topbar">
+  <div class="logo">华夏腹地<span class="sub">Hinterland of Huaxia</span></div>
+  <div class="search"><input id="q" type="search" placeholder="搜索城市 / 省份 / 关键词…"></div>
+  <button class="dice" onclick="goRandom()" title="随机打开一篇">🎲 骰子</button>
+  <div class="stat"><b id="total">-</b> / 85</div>
 </header>
 
-<div class="cta-wrap">
-  <button class="cta-btn" onclick="goRandom()" title="随机打开一篇">🎲 掷骰子 · 随机一篇</button>
-  <span class="cta-info">共 <b id="total">85</b> 篇 · <b>纯静态</b> · GitHub Pages 部署</span>
+<!-- ===== Quick Province Nav ===== -->
+<nav class="quicknav" id="quicknav"><!-- JS 填充 --></nav>
+
+<!-- ===== Layout ===== -->
+<div class="layout">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar"><!-- JS 填充 --></aside>
+
+  <!-- Main -->
+  <main class="main">
+    <!-- View Toggle -->
+    <div style="display:flex;align-items:center;margin-bottom:14px">
+      <span style="color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:1.5px">视图</span>
+      <div class="viewtoggle" style="margin-left:10px">
+        <button onclick="setView('grid')" id="btn-grid" class="active">▦ 网格</button>
+        <button onclick="setView('list')" id="btn-list">☰ 列表</button>
+      </div>
+      <span style="margin-left:auto;color:var(--dim);font-size:11px">仿 Lonely Planet 文风 · STYLE STUDY · 只借笔法不抄原文</span>
+    </div>
+
+    <!-- Sections -->
+    <div id="sections"><!-- JS 填充 --></div>
+
+    <p class="empty" id="none">没有匹配的结果，试试别的关键词。</p>
+  </main>
 </div>
-
-<div class="search-bar">
-  <input id="q" type="search" placeholder="搜索城市名、省份…">
-</div>
-
-<div class="wrap" id="wrap"><!-- JS 填充卡片 --></div>
-
-<p class="empty" id="none">没有匹配的城市，试试别的关键词。</p>
 
 <footer>
-  本文为 Lonely Planet 文风仿写练习：内容原创，仅借其笔法，不复制任何 LP 原文。<br>
-  地名与史实为公开常识，欢迎实地核对。
+  仿 Lonely Planet 文风仿写系列 · 内容原创，仅借其笔法，不复制任何 LP 原文 · 地名与史实为公开常识<br>
+  <a href="https://github.com/Wadesha/huaxia-hinterland" target="_blank" rel="noopener">GitHub</a> · 按 Space / R 随机下一篇
 </footer>
 
 <script>
 /* =============================================================
- * 内容页池 — publish.ps1 会自动更新此数组
+ * 内容页池 — 纯静态，GitHub Pages 兼容
  * ============================================================= */
 const PAGES = [
-  { file: "淮海区域_LP文风_双语.html", cn: "淮海区域", en: "The Huaihai Region", tag: "一种被低估的华夏腹地", prov: "区域总览" },
+  { f: "淮海区域_LP文风_双语.html", c: "淮海区域", e: "Huaihai Region", t: "被低估的华夏腹地", p: "区域总览" },
 
-  { file: "济宁_LP文风_双语.html", cn: "济宁", en: "Jining", tag: "孔孟之乡，也是江湖", prov: "山东" },
-  { file: "菏泽_LP文风_双语.html", cn: "菏泽", en: "Heze", tag: "为花低头的城，好汉的故乡", prov: "山东" },
-  { file: "枣庄_LP文风_双语.html", cn: "枣庄", en: "Zaozhuang", tag: "台儿庄的灯，微山湖的浪", prov: "山东" },
-  { file: "临沂_LP文风_双语.html", cn: "临沂", en: "Linyi", tag: "沂蒙的山，书圣的笔", prov: "山东" },
-  { file: "聊城_LP文风_双语.html", cn: "聊城", en: "Liaocheng", tag: "江北水城，运河的另一次心跳", prov: "山东" },
-  { file: "淄博_LP文风_双语.html", cn: "淄博", en: "Zibo", tag: "齐都故地，陶与火的城", prov: "山东" },
-  { file: "泰安_LP文风_双语.html", cn: "泰安", en: "Tai'an", tag: "泰山脚下的城，登岱的门户", prov: "山东" },
-  { file: "曲阜_LP文风_双语.html", cn: "曲阜", en: "Qufu", tag: "孔子的城，三孔与礼", prov: "山东" },
+  { f: "济宁_LP文风_双语.html", c: "济宁", e: "Jining", t: "孔孟之乡，也是江湖", p: "山东" },
+  { f: "菏泽_LP文风_双语.html", c: "菏泽", e: "Heze", t: "为花低头的城，好汉的故乡", p: "山东" },
+  { f: "枣庄_LP文风_双语.html", c: "枣庄", e: "Zaozhuang", t: "台儿庄的灯，微山湖的浪", p: "山东" },
+  { f: "临沂_LP文风_双语.html", c: "临沂", e: "Linyi", t: "沂蒙的山，书圣的笔", p: "山东" },
+  { f: "聊城_LP文风_双语.html", c: "聊城", e: "Liaocheng", t: "江北水城，运河的另一次心跳", p: "山东" },
+  { f: "淄博_LP文风_双语.html", c: "淄博", e: "Zibo", t: "齐都故地，陶与火的城", p: "山东" },
+  { f: "泰安_LP文风_双语.html", c: "泰安", e: "Tai'an", t: "泰山脚下的城，登岱的门户", p: "山东" },
+  { f: "曲阜_LP文风_双语.html", c: "曲阜", e: "Qufu", t: "孔子的城，三孔与礼", p: "山东" },
 
-  { file: "开封_LP文风_双语.html", cn: "开封", en: "Kaifeng", tag: "八朝古都，汴京的魂", prov: "河南" },
-  { file: "安阳_LP文风_双语.html", cn: "安阳", en: "Anyang", tag: "甲骨的故乡，太行的骨", prov: "河南" },
-  { file: "商丘_LP文风_双语.html", cn: "商丘", en: "Shangqiu", tag: "三商之源，黄河故道上的圆城", prov: "河南" },
-  { file: "周口_LP文风_双语.html", cn: "周口", en: "Zhoukou", tag: "老子故里，伏羲的淮阳", prov: "河南" },
-  { file: "洛阳_LP文风_双语.html", cn: "洛阳", en: "Luoyang", tag: "十三朝古都，龙门石窟与牡丹", prov: "河南" },
-  { file: "南阳_LP文风_双语.html", cn: "南阳", en: "Nanyang", tag: "卧龙岗上的城，诸葛与汉", prov: "河南" },
+  { f: "开封_LP文风_双语.html", c: "开封", e: "Kaifeng", t: "八朝古都，汴京的魂", p: "河南" },
+  { f: "安阳_LP文风_双语.html", c: "安阳", e: "Anyang", t: "甲骨的故乡，太行的骨", p: "河南" },
+  { f: "商丘_LP文风_双语.html", c: "商丘", e: "Shangqiu", t: "三商之源，黄河故道上的圆城", p: "河南" },
+  { f: "周口_LP文风_双语.html", c: "周口", e: "Zhoukou", t: "老子故里，伏羲的淮阳", p: "河南" },
+  { f: "洛阳_LP文风_双语.html", c: "洛阳", e: "Luoyang", t: "十三朝古都，龙门石窟与牡丹", p: "河南" },
+  { f: "南阳_LP文风_双语.html", c: "南阳", e: "Nanyang", t: "卧龙岗上的城，诸葛与汉", p: "河南" },
 
-  { file: "邯郸_LP文风_双语.html", cn: "邯郸", en: "Handan", tag: "三千年没改过名的城，成语典故之乡", prov: "河北" },
-  { file: "正定_LP文风_双语.html", cn: "正定", en: "Zhengding", tag: "四塔一寺的古城，古建筑博物馆", prov: "河北" },
-  { file: "保定_LP文风_双语.html", cn: "保定", en: "Baoding", tag: "直隶的署，白洋淀的苇", prov: "河北" },
+  { f: "邯郸_LP文风_双语.html", c: "邯郸", e: "Handan", t: "三千年没改过名的城，成语典故之乡", p: "河北" },
+  { f: "正定_LP文风_双语.html", c: "正定", e: "Zhengding", t: "四塔一寺的古城，古建筑博物馆", p: "河北" },
+  { f: "保定_LP文风_双语.html", c: "保定", e: "Baoding", t: "直隶的署，白洋淀的苇", p: "河北" },
 
-  { file: "大同_LP文风_双语.html", cn: "大同", en: "Datong", tag: "云冈的佛，恒山的风", prov: "山西" },
-  { file: "运城_LP文风_双语.html", cn: "运城", en: "Yuncheng", tag: "关公故里，盐湖的盐", prov: "山西" },
-  { file: "临汾_LP文风_双语.html", cn: "临汾", en: "Linfen", tag: "壶口的水，大槐树的根", prov: "山西" },
-  { file: "平遥_LP文风_双语.html", cn: "平遥", en: "Pingyao", tag: "活着的明清金融城", prov: "山西" },
+  { f: "大同_LP文风_双语.html", c: "大同", e: "Datong", t: "云冈的佛，恒山的风", p: "山西" },
+  { f: "运城_LP文风_双语.html", c: "运城", e: "Yuncheng", t: "关公故里，盐湖的盐", p: "山西" },
+  { f: "临汾_LP文风_双语.html", c: "临汾", e: "Linfen", t: "壶口的水，大槐树的根", p: "山西" },
+  { f: "平遥_LP文风_双语.html", c: "平遥", e: "Pingyao", t: "活着的明清金融城", p: "山西" },
 
-  { file: "汉中_LP文风_双语.html", cn: "汉中", en: "Hanzhong", tag: "汉江源头，两汉三国起笔处", prov: "陕西" },
-  { file: "宝鸡_LP文风_双语.html", cn: "宝鸡", en: "Baoji", tag: "周秦发祥，青铜与法门", prov: "陕西" },
+  { f: "汉中_LP文风_双语.html", c: "汉中", e: "Hanzhong", t: "汉江源头，两汉三国起笔处", p: "陕西" },
+  { f: "宝鸡_LP文风_双语.html", c: "宝鸡", e: "Baoji", t: "周秦发祥，青铜与法门", p: "陕西" },
 
-  { file: "天水_LP文风_双语.html", cn: "天水", en: "Tianshui", tag: "麦积山的佛，陇上江南", prov: "甘肃" },
+  { f: "天水_LP文风_双语.html", c: "天水", e: "Tianshui", t: "麦积山的佛，陇上江南", p: "甘肃" },
 
-  { file: "襄阳_LP文风_双语.html", cn: "襄阳", en: "Xiangyang", tag: "三国之城，汉江抱着的古城", prov: "湖北" },
-  { file: "荆州_LP文风_双语.html", cn: "荆州", en: "Jingzhou", tag: "楚都故地，长江拐弯处的城", prov: "湖北" },
+  { f: "襄阳_LP文风_双语.html", c: "襄阳", e: "Xiangyang", t: "三国之城，汉江抱着的古城", p: "湖北" },
+  { f: "荆州_LP文风_双语.html", c: "荆州", e: "Jingzhou", t: "楚都故地，长江拐弯处的城", p: "湖北" },
 
-  { file: "徽州_LP文风_双语.html", cn: "徽州", en: "Huizhou", tag: "粉墙黛瓦的徽派老家", prov: "安徽" },
-  { file: "亳州_LP文风_双语.html", cn: "亳州", en: "Bozhou", tag: "药都与三朝古都", prov: "安徽" },
+  { f: "徽州_LP文风_双语.html", c: "徽州", e: "Huizhou", t: "粉墙黛瓦的徽派老家", p: "安徽" },
+  { f: "亳州_LP文风_双语.html", c: "亳州", e: "Bozhou", t: "药都与三朝古都", p: "安徽" },
 
-  /* 淮海县级地志 */
-  { file: "鄄城.html", cn: "鄄城", en: "Juancheng", tag: "黄河岸边的老县", prov: "山东·县级" },
-  { file: "郓城.html", cn: "郓城", en: "Yuncheng", tag: "水浒故里", prov: "山东·县级" },
-  { file: "曹县.html", cn: "曹县", en: "Caoxian", tag: "汤王之都，牡丹之乡", prov: "山东·县级" },
-  { file: "成武.html", cn: "成武", en: "Chengwu", tag: "伯乐故里", prov: "山东·县级" },
-  { file: "单县.html", cn: "单县", en: "Shanxian", tag: "古单父邑，羊肉汤之城", prov: "山东·县级" },
-  { file: "巨野.html", cn: "巨野", en: "Juye", tag: "麒麟出没处", prov: "山东·县级" },
-  { file: "梁山.html", cn: "梁山", en: "Liangshan", tag: "水泊梁山", prov: "山东·县级" },
-  { file: "嘉祥.html", cn: "嘉祥", en: "Jiaxiang", tag: "曾子故里，汉画像石之乡", prov: "山东·县级" },
-  { file: "金乡.html", cn: "金乡", en: "Jinxiang", tag: "大蒜之乡", prov: "山东·县级" },
-  { file: "鱼台.html", cn: "鱼台", en: "Yutai", tag: "孝贤故里", prov: "山东·县级" },
-  { file: "泗水.html", cn: "泗水", en: "Sishui", tag: "泗水滨，孔子观川处", prov: "山东·县级" },
-  { file: "平邑.html", cn: "平邑", en: "Pingyi", tag: "蒙山主峰所在地", prov: "山东·县级" },
-  { file: "蒙阴.html", cn: "蒙阴", en: "Mengyin", tag: "蒙山之阴，孟良崮", prov: "山东·县级" },
-  { file: "沂南.html", cn: "沂南", en: "Yinan", tag: "诸葛亮故里", prov: "山东·县级" },
-  { file: "沂水.html", cn: "沂水", en: "Yishui", tag: "沂河之源", prov: "山东·县级" },
-  { file: "兰陵.html", cn: "兰陵", en: "Lanling", tag: "荀子故里，兰陵酒", prov: "山东·县级" },
-  { file: "临沭.html", cn: "临沭", en: "Linshu", tag: "沭河岸边", prov: "山东·县级" },
-  { file: "郯城.html", cn: "郯城", en: "Tancheng", tag: "银杏之乡", prov: "山东·县级" },
-  { file: "滕州.html", cn: "滕州", en: "Tengzhou", tag: "微山湖东岸，墨子故里", prov: "山东·县级" },
-  { file: "微山.html", cn: "微山", en: "Weishan", tag: "微山湖主体", prov: "山东·县级" },
-  { file: "邹城.html", cn: "邹城", en: "Zoucheng", tag: "孟子故里，邹鲁圣地", prov: "山东·县级" },
-  { file: "费县.html", cn: "费县", en: "Feixian", tag: "沂蒙山小调诞生地", prov: "山东·县级" },
-  { file: "蒙阴.html", cn: "蒙阴", en: "Mengyin", tag: "", prov: "山东·县级" },
+  { f: "鄄城.html", c: "鄄城", e: "Juancheng", t: "黄河岸边的老县", p: "山东·县" },
+  { f: "郓城.html", c: "郓城", e: "Yuncheng", t: "水浒故里", p: "山东·县" },
+  { f: "曹县.html", c: "曹县", e: "Caoxian", t: "汤王之都，牡丹之乡", p: "山东·县" },
+  { f: "成武.html", c: "成武", e: "Chengwu", t: "伯乐故里", p: "山东·县" },
+  { f: "单县.html", c: "单县", e: "Shanxian", t: "古单父邑，羊肉汤之城", p: "山东·县" },
+  { f: "巨野.html", c: "巨野", e: "Juye", t: "麒麟出没处", p: "山东·县" },
+  { f: "梁山.html", c: "梁山", e: "Liangshan", t: "水泊梁山", p: "山东·县" },
+  { f: "嘉祥.html", c: "嘉祥", e: "Jiaxiang", t: "曾子故里，汉画像石之乡", p: "山东·县" },
+  { f: "金乡.html", c: "金乡", e: "Jinxiang", t: "大蒜之乡", p: "山东·县" },
+  { f: "鱼台.html", c: "鱼台", e: "Yutai", t: "孝贤故里", p: "山东·县" },
+  { f: "泗水.html", c: "泗水", e: "Sishui", t: "泗水滨，孔子观川处", p: "山东·县" },
+  { f: "平邑.html", c: "平邑", e: "Pingyi", t: "蒙山主峰所在地", p: "山东·县" },
+  { f: "蒙阴.html", c: "蒙阴", e: "Mengyin", t: "蒙山之阴，孟良崮", p: "山东·县" },
+  { f: "沂南.html", c: "沂南", e: "Yinan", t: "诸葛亮故里", p: "山东·县" },
+  { f: "沂水.html", c: "沂水", e: "Yishui", t: "沂河之源", p: "山东·县" },
+  { f: "兰陵.html", c: "兰陵", e: "Lanling", t: "荀子故里，兰陵酒", p: "山东·县" },
+  { f: "临沭.html", c: "临沭", e: "Linshu", t: "沭河岸边", p: "山东·县" },
+  { f: "郯城.html", c: "郯城", e: "Tancheng", t: "银杏之乡", p: "山东·县" },
+  { f: "滕州.html", c: "滕州", e: "Tengzhou", t: "微山湖东岸，墨子故里", p: "山东·县" },
+  { f: "微山.html", c: "微山", e: "Weishan", t: "微山湖主体", p: "山东·县" },
+  { f: "邹城.html", c: "邹城", e: "Zoucheng", t: "孟子故里，邹鲁圣地", p: "山东·县" },
+  { f: "费县.html", c: "费县", e: "Feixian", t: "沂蒙山小调诞生地", p: "山东·县" },
+  { f: "东明.html", c: "东明", e: "Dongming", t: "黄河入鲁第一县", p: "山东·县" },
+  { f: "汶上.html", c: "汶上", e: "Wenshang", t: "北朝佛教造像中心", p: "山东·县" },
 
-  { file: "民权.html", cn: "民权", en: "Minquan", tag: "庄子故里", prov: "河南·县级" },
-  { file: "宁陵.html", cn: "宁陵", en: "Ningling", tag: "中国酥梨之乡", prov: "河南·县级" },
-  { file: "睢县.html", cn: "睢县", en: "Suixian", tag: "中原水城", prov: "河南·县级" },
-  { file: "柘城.html", cn: "柘城", en: "Zhecheng", tag: "朱襄氏故里", prov: "河南·县级" },
-  { file: "夏邑.html", cn: "夏邑", en: "Xiayi", tag: "孔子祖籍地", prov: "河南·县级" },
-  { file: "虞城.html", cn: "虞城", en: "Yucheng", tag: "木兰故里", prov: "河南·县级" },
-  { file: "永城.html", cn: "永城", en: "Yongcheng", tag: "芒砀山，汉兴之地", prov: "河南·县级" },
-  { file: "睢县.html", cn: "睢县", en: "Suixian", tag: "", prov: "河南·县级" },
+  { f: "民权.html", c: "民权", e: "Minquan", t: "庄子故里", p: "河南·县" },
+  { f: "宁陵.html", c: "宁陵", e: "Ningling", t: "中国酥梨之乡", p: "河南·县" },
+  { f: "睢县.html", c: "睢县", e: "Suixian", t: "中原水城", p: "河南·县" },
+  { f: "柘城.html", c: "柘城", e: "Zhecheng", t: "朱襄氏故里", p: "河南·县" },
+  { f: "夏邑.html", c: "夏邑", e: "Xiayi", t: "孔子祖籍地", p: "河南·县" },
+  { f: "虞城.html", c: "虞城", e: "Yucheng", t: "木兰故里", p: "河南·县" },
+  { f: "永城.html", c: "永城", e: "Yongcheng", t: "芒砀山，汉兴之地", p: "河南·县" },
 
-  { file: "砀山.html", cn: "砀山", en: "Dangshan", tag: "梨都之乡", prov: "安徽·县级" },
-  { file: "灵璧.html", cn: "灵璧", en: "Lingbi", tag: "奇石之乡", prov: "安徽·县级" },
-  { file: "泗县.html", cn: "泗县", en: "Sixian", tag: "泗州古城", prov: "安徽·县级" },
-  { file: "萧县.html", cn: "萧县", en: "Xiaoxian", tag: "中国书画艺术之乡", prov: "安徽·县级" },
-  { file: "蒙城.html", cn: "蒙城", en: "Mengcheng", tag: "庄子故里", prov: "安徽·县级" },
-  { file: "利辛.html", cn: "利辛", en: "Lixin", tag: "西淝河岸边", prov: "安徽·县级" },
-  { file: "涡阳.html", cn: "涡阳", en: "Guoyang", tag: "老子故里", prov: "安徽·县级" },
-  { file: "濉溪临涣.html", cn: "濉溪临涣", en: "Linhuan, Suixi", tag: "临涣古镇，铚城旧址", prov: "安徽·县级" },
-  { file: "埇桥符离集.html", cn: "埇桥符离集", en: "Fuliji, Yongqiao", tag: "符离集烧鸡之乡", prov: "安徽·县级" },
+  { f: "砀山.html", c: "砀山", e: "Dangshan", t: "梨都之乡", p: "安徽·县" },
+  { f: "灵璧.html", c: "灵璧", e: "Lingbi", t: "奇石之乡", p: "安徽·县" },
+  { f: "泗县.html", c: "泗县", e: "Sixian", t: "泗州古城", p: "安徽·县" },
+  { f: "萧县.html", c: "萧县", e: "Xiaoxian", t: "中国书画艺术之乡", p: "安徽·县" },
+  { f: "蒙城.html", c: "蒙城", e: "Mengcheng", t: "庄子故里", p: "安徽·县" },
+  { f: "利辛.html", c: "利辛", e: "Lixin", t: "西淝河岸边", p: "安徽·县" },
+  { f: "涡阳.html", c: "涡阳", e: "Guoyang", t: "老子故里", p: "安徽·县" },
+  { f: "濉溪临涣.html", c: "濉溪临涣", e: "Linhuan, Suixi", t: "临涣古镇，铚城旧址", p: "安徽·县" },
+  { f: "埇桥符离集.html", c: "埇桥符离集", e: "Fuliji, Yongqiao", t: "符离集烧鸡之乡", p: "安徽·县" },
 
-  { file: "赣榆.html", cn: "赣榆", en: "Ganyu", tag: "连云港北大门，徐福故里", prov: "江苏·县级" },
-  { file: "东海.html", cn: "东海", en: "Donghai", tag: "水晶之乡", prov: "江苏·县级" },
-  { file: "灌南.html", cn: "灌南", en: "Guannan", tag: "灌河入海口", prov: "江苏·县级" },
-  { file: "灌云.html", cn: "灌云", en: "Guanyun", tag: "大伊山，灌云豆丹", prov: "江苏·县级" },
-  { file: "沛县.html", cn: "沛县", en: "Peixian", tag: "汉高祖刘邦故里", prov: "江苏·县级" },
-  { file: "邳州.html", cn: "邳州", en: "Pizhou", tag: "下邳古城，银杏之乡", prov: "江苏·县级" },
-  { file: "沭阳.html", cn: "沭阳", en: "Shuyang", tag: "花木之乡", prov: "江苏·县级" },
-  { file: "泗洪.html", cn: "泗洪", en: "Sihong", tag: "洪泽湖西岸，双沟酒", prov: "江苏·县级" },
-  { file: "泗阳.html", cn: "泗阳", en: "Siyang", tag: "杨树之乡，运河要冲", prov: "江苏·县级" },
-  { file: "睢宁.html", cn: "睢宁", en: "Suining", tag: "下邳国，汉墓群", prov: "江苏·县级" },
-  { file: "丰县.html", cn: "丰县", en: "Fengxian", tag: "汉高故里，天师故里", prov: "江苏·县级" },
-  { file: "新沂窑湾.html", cn: "新沂窑湾", en: "Yaowan, Xinyi", tag: "京杭大运河古镇", prov: "江苏·县级" },
-  { file: "东明.html", cn: "东明", en: "Dongming", tag: "黄河入鲁第一县", prov: "山东·县级" },
-  { file: "汶上.html", cn: "汶上", en: "Wenshang", tag: "北朝佛教造像中心", prov: "山东·县级" },
+  { f: "赣榆.html", c: "赣榆", e: "Ganyu", t: "连云港北大门，徐福故里", p: "江苏·县" },
+  { f: "东海.html", c: "东海", e: "Donghai", t: "水晶之乡", p: "江苏·县" },
+  { f: "灌南.html", c: "灌南", e: "Guannan", t: "灌河入海口", p: "江苏·县" },
+  { f: "灌云.html", c: "灌云", e: "Guanyun", t: "大伊山，灌云豆丹", p: "江苏·县" },
+  { f: "沛县.html", c: "沛县", e: "Peixian", t: "汉高祖刘邦故里", p: "江苏·县" },
+  { f: "邳州.html", c: "邳州", e: "Pizhou", t: "下邳古城，银杏之乡", p: "江苏·县" },
+  { f: "沭阳.html", c: "沭阳", e: "Shuyang", t: "花木之乡", p: "江苏·县" },
+  { f: "泗洪.html", c: "泗洪", e: "Sihong", t: "洪泽湖西岸，双沟酒", p: "江苏·县" },
+  { f: "泗阳.html", c: "泗阳", e: "Siyang", t: "杨树之乡，运河要冲", p: "江苏·县" },
+  { f: "睢宁.html", c: "睢宁", e: "Suining", t: "下邳国，汉墓群", p: "江苏·县" },
+  { f: "丰县.html", c: "丰县", e: "Fengxian", t: "汉高故里，天师故里", p: "江苏·县" },
+  { f: "新沂窑湾.html", c: "新沂窑湾", e: "Yaowan, Xinyi", t: "京杭大运河古镇", p: "江苏·县" },
 
-  /* 实验与其他 */
-  { file: "京都_游记与攻略_LP风格.html", cn: "京都游记", en: "Kyoto Travelogue", tag: "LP 风格单篇，日本", prov: "其他" }
+  { f: "京都_游记与攻略_LP风格.html", c: "京都游记", e: "Kyoto", t: "LP 风格单篇，日本", p: "其他" }
 ];
 
-/* ===== 去重（publish.ps1 更新 PAGES 时可能产生重复）===== */
+/* ===== 去重 ===== */
 const seen = new Set();
-const PAGES_UNIQ = PAGES.filter(p => {
-  if (seen.has(p.file)) return false;
-  seen.add(p.file);
-  return true;
-});
-document.getElementById('total').textContent = PAGES_UNIQ.length;
+const P = PAGES.filter(x => { if (seen.has(x.f)) return false; seen.add(x.f); return true; });
+document.getElementById('total').textContent = P.length;
 
-/* ===== 按省份分组 ===== */
+/* ===== 省份分组 + 排序 ===== */
+const GROUP_ORDER = ["区域总览","山东","河南","河北","山西","陕西","甘肃","湖北","安徽","江苏","其他"];
 const GROUPS = {};
-PAGES_UNIQ.forEach(p => {
-  const key = p.prov || "其他";
-  if (!GROUPS[key]) GROUPS[key] = [];
-  GROUPS[key].push(p);
+const GROUPS_COUNTY = {};
+P.forEach(x => {
+  const base = x.p.replace(/·县$/, '');
+  const isCounty = x.p.endsWith('·县');
+  if (!GROUPS[base]) GROUPS[base] = [];
+  if (!GROUPS_COUNTY[base]) GROUPS_COUNTY[base] = [];
+  if (isCounty) GROUPS_COUNTY[base].push(x); else GROUPS[base].push(x);
 });
-/* 排序：区域总览在最前，然后按省名 */
-const ORDER = ["区域总览","山东","河南","河北","山西","陕西","甘肃","湖北","安徽","江苏","其他"];
-const groupKeys = Object.keys(GROUPS).sort((a,b) => {
-  const ia = ORDER.indexOf(a), ib = ORDER.indexOf(b);
+const allGroupKeys = [...new Set([...Object.keys(GROUPS), ...Object.keys(GROUPS_COUNTY)])];
+const sortedKeys = allGroupKeys.sort((a,b) => {
+  const ia = GROUP_ORDER.indexOf(a), ib = GROUP_ORDER.indexOf(b);
   if (ia >= 0 && ib >= 0) return ia - ib;
   if (ia >= 0) return -1; if (ib >= 0) return 1;
   return a.localeCompare(b, "zh-CN");
 });
 
-/* ===== 渲染卡片 ===== */
-const wrap = document.getElementById('wrap');
-let html = '';
-groupKeys.forEach(k => {
-  const pages = GROUPS[k];
-  html += `<div class="grp" data-group="${k}"><h2>${k} <span class="en">${k} · ${pages.length}</span></h2><div class="grid">`;
-  pages.forEach(p => {
-    html += `<a class="card" href="${p.file}">
-      <h3>${p.cn}<span class="en">${p.en}</span></h3>
-      ${p.tag ? `<div class="tag">${p.tag}</div>` : ''}
-      <span class="meta">打开阅读 →</span>
-    </a>`;
-  });
-  html += '</div></div>';
-});
-wrap.innerHTML = html;
+/* ===== 渲染侧栏 ===== */
+const sidebar = document.getElementById('sidebar');
+sidebar.innerHTML = `<div class="sec">省份导航</div>` + sortedKeys.map(k => {
+  const c = (GROUPS[k]||[]).length + (GROUPS_COUNTY[k]||[]).length;
+  return `<a href="#g-${k}" data-prov="${k}"><span>${k}</span><b>${c}</b></a>`;
+}).join('');
 
-/* ===== 搜索 ===== */
+/* ===== 渲染快速导航 ===== */
+const qn = document.getElementById('quicknav');
+qn.innerHTML = `<span class="lbl">快速跳转</span>` + sortedKeys.map(k => {
+  const c = (GROUPS[k]||[]).length + (GROUPS_COUNTY[k]||[]).length;
+  return `<a href="#g-${k}">${k}<b>${c}</b></a>`;
+}).join('');
+
+/* ===== 渲染内容区 ===== */
+const sections = document.getElementById('sections');
+sections.innerHTML = sortedKeys.map(k => {
+  const cities = GROUPS[k] || [];
+  const counties = GROUPS_COUNTY[k] || [];
+  const total = cities.length + counties.length;
+  let html = `<div class="section" id="g-${k}" data-prov="${k}">
+    <div class="section-header">
+      <h2>${k}</h2><span class="en">${k}</span><span class="count">${total}</span>
+    </div>`;
+
+  if (cities.length) {
+    html += renderBlock(cities, `${k} · 城市`);
+  }
+  if (counties.length) {
+    html += renderBlock(counties, `${k} · 县级地志`);
+  }
+  html += `</div>`;
+  return html;
+}).join('');
+
+function renderBlock(items, label) {
+  return `<div style="margin-bottom:14px">
+    <div style="font-size:11px;color:var(--dim);margin-bottom:6px;letter-spacing:1px">${label}</div>
+    <div class="grid active" data-block="${label}">
+      ${items.map(x => `
+        <a class="card" href="${x.f}" data-f="${x.f}" data-c="${x.c}" data-e="${x.e}" data-t="${x.t}" data-p="${x.p}">
+          <div class="row1"><span class="cn">${x.c}</span><span class="en">${x.e}</span></div>
+          <div class="tag">${x.t}</div>
+          <div class="meta"><span class="prov-tag">${x.p}</span><span class="arrow">→</span></div>
+        </a>
+      `).join('')}
+    </div>
+    <div class="list" data-block="${label}">
+      ${items.map(x => `
+        <a class="list-row" href="${x.f}" data-f="${x.f}" data-c="${x.c}" data-e="${x.e}" data-t="${x.t}" data-p="${x.p}">
+          <span class="cn">${x.c}</span><span class="tag">${x.t}</span><span class="prov-tag">${x.p}</span><span class="arrow">→</span>
+        </a>
+      `).join('')}
+    </div>
+  </div>`;
+}
+
+/* ===== 视图切换 ===== */
+function setView(v) {
+  document.querySelectorAll('.grid, .list').forEach(el => {
+    el.classList.toggle('active', v === 'grid' ? el.classList.contains('grid') : el.classList.contains('list'));
+  });
+  document.getElementById('btn-grid').classList.toggle('active', v === 'grid');
+  document.getElementById('btn-list').classList.toggle('active', v === 'list');
+}
+
+/* ===== 搜索过滤 ===== */
 const q = document.getElementById('q');
 const none = document.getElementById('none');
-q.addEventListener('input', () => {
+function doSearch() {
   const s = q.value.trim().toLowerCase();
   let hit = 0;
-  PAGES_UNIQ.forEach(p => {
-    const el = document.querySelector(`a.card[href="${p.file}"]`);
-    if (!el) return;
-    const ok = !s || p.cn.toLowerCase().includes(s) || p.en.toLowerCase().includes(s) || p.prov.toLowerCase().includes(s) || (p.tag||'').toLowerCase().includes(s);
+  document.querySelectorAll('.card, .list-row').forEach(el => {
+    const ok = !s ||
+      (el.dataset.c||'').toLowerCase().includes(s) ||
+      (el.dataset.e||'').toLowerCase().includes(s) ||
+      (el.dataset.t||'').toLowerCase().includes(s) ||
+      (el.dataset.p||'').toLowerCase().includes(s);
     el.style.display = ok ? '' : 'none';
     if (ok) hit++;
   });
-  groupKeys.forEach(k => {
-    const g = document.querySelector(`.grp[data-group="${k}"]`);
-    if (!g) return;
-    const shown = Array.from(g.querySelectorAll('.card')).some(c => c.style.display !== 'none');
-    g.style.display = shown ? '' : 'none';
+  document.querySelectorAll('.section').forEach(sec => {
+    const shown = Array.from(sec.querySelectorAll('[data-f]')).some(el => el.style.display !== 'none');
+    sec.style.display = shown ? '' : 'none';
   });
-  none.style.display = hit ? 'none' : 'block';
-});
+  none.classList.toggle('hide', hit > 0);
+}
+q.addEventListener('input', doSearch);
+
+/* ===== 侧栏滚动高亮 ===== */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const k = e.target.dataset.prov;
+      document.querySelectorAll('.sidebar a').forEach(a => a.classList.toggle('active', a.dataset.prov === k));
+    }
+  });
+}, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+document.querySelectorAll('.section').forEach(s => observer.observe(s));
 
 /* ===== 随机跳转 ===== */
 function goRandom() {
-  const el = document.getElementById('total');
-  if (confirm(`🎲 在 ${PAGES_UNIQ.length} 篇里随机一篇，确认跳转？`)) {
-    const p = PAGES_UNIQ[Math.floor(Math.random() * PAGES_UNIQ.length)];
-    location.href = p.file;
-  }
+  const x = P[Math.floor(Math.random() * P.length)];
+  location.href = x.f;
 }
 
 /* ===== 键盘快捷键 ===== */

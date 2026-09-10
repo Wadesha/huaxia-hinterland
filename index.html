@@ -1,402 +1,135 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>华夏腹地 · Hinterland of Huaxia</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>淮海腹地 · 目的地总索引</title>
 <style>
-  :root{
-    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --card-hover:#3d3831;
-    --ink:#f5f0e6; --muted:#a39a8a; --dim:#736b5d;
-    --lp:#f2b01e; --lp-dk:#c98a07; --lp-glow:rgba(242,176,30,.15);
-    --line:#3d3831; --line-bright:#4a443b;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;font-size:14px;line-height:1.55}
-  a{color:inherit;text-decoration:none}
-
-  /* ===== Top Bar ===== */
-  .topbar{position:sticky;top:0;z-index:100;background:rgba(28,26,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 18px;display:flex;align-items:center;gap:14px}
-  .logo{font-family:"Noto Serif SC",Georgia,serif;font-size:16px;font-weight:700;letter-spacing:1px;color:var(--lp);white-space:nowrap}
-  .logo .sub{color:var(--dim);font-size:11px;font-style:italic;font-weight:400;margin-left:8px}
-  .search{flex:1;max-width:360px;position:relative}
-  .search input{width:100%;padding:7px 12px 7px 34px;background:var(--surface);border:1px solid var(--line-bright);border-radius:6px;color:var(--ink);font-size:13px;font-family:inherit}
-  .search input:focus{outline:none;border-color:var(--lp);box-shadow:0 0 0 2px var(--lp-glow)}
-  .search::before{content:"🔍";position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;opacity:.6}
-  .dice{background:var(--lp);color:var(--bg);border:0;padding:7px 16px;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:transform .08s,background .15s}
-  .dice:hover{background:#ffc233}
-  .dice:active{transform:scale(.96)}
-  .stat{color:var(--muted);font-size:12px;white-space:nowrap}
-  .stat b{color:var(--lp);font-weight:700}
-
-  /* ===== Quick Nav (province anchor links) ===== */
-  .quicknav{background:var(--surface);border-bottom:1px solid var(--line);padding:8px 18px;display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-  .quicknav .lbl{color:var(--dim);font-size:11px;margin-right:6px;text-transform:uppercase;letter-spacing:1px}
-  .quicknav a{padding:3px 10px;border-radius:4px;font-size:12px;color:var(--muted);border:1px solid transparent;transition:all .1s}
-  .quicknav a:hover{color:var(--lp);border-color:var(--lp);background:var(--lp-glow)}
-  .quicknav a b{color:var(--lp-dk);font-weight:400;font-size:10px;margin-left:3px}
-
-  /* ===== Layout: sidebar + content ===== */
-  .layout{display:flex;gap:0;min-height:calc(100vh - 98px)}
-  .sidebar{width:200px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--line);padding:16px 0;position:sticky;top:98px;height:calc(100vh - 98px);overflow-y:auto}
-  .sidebar .sec{color:var(--dim);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;padding:0 16px;margin:14px 0 6px}
-  .sidebar .sec:first-child{margin-top:0}
-  .sidebar a{display:flex;justify-content:space-between;align-items:center;padding:6px 16px;font-size:13px;color:var(--muted);border-left:2px solid transparent;transition:all .12s}
-  .sidebar a:hover{color:var(--ink);background:var(--card-hover);border-left-color:var(--lp)}
-  .sidebar a b{font-size:11px;color:var(--dim);font-weight:400;font-variant-numeric:tabular-nums}
-  .sidebar a.active{color:var(--lp);border-left-color:var(--lp);background:var(--lp-glow)}
-
-  .main{flex:1;padding:20px 24px 60px;min-width:0}
-
-  /* ===== Section ===== */
-  .section{margin-bottom:28px}
-  .section-header{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
-  .section-header h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;color:var(--ink);letter-spacing:.5px}
-  .section-header .en{color:var(--dim);font-size:12px;font-style:italic;font-weight:400}
-  .section-header .count{margin-left:auto;color:var(--lp);font-size:12px;font-weight:700}
-
-  /* ===== Dense Card Grid ===== */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px}
-  .card{display:flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:5px;padding:10px 12px;transition:all .12s;cursor:pointer}
-  .card:hover{background:var(--card-hover);border-color:var(--lp);box-shadow:0 0 0 1px var(--lp),0 4px 12px rgba(242,176,30,.08);transform:translateY(-1px)}
-  .card .row1{display:flex;justify-content:space-between;align-items:baseline;gap:6px}
-  .card .cn{font-family:"Noto Serif SC",Georgia,serif;font-size:15px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .card .en{font-size:10.5px;color:var(--dim);font-style:italic;white-space:nowrap;flex-shrink:0}
-  .card .tag{font-size:11.5px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-  .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
-  .card .prov-tag{font-size:10px;color:var(--lp-dk);letter-spacing:.5px}
-  .card .arrow{font-size:11px;color:var(--dim);transition:transform .1s}
-  .card:hover .arrow{color:var(--lp);transform:translateX(2px)}
-
-  /* ===== List view toggle ===== */
-  .viewtoggle{display:flex;gap:4px;background:var(--surface);border-radius:6px;padding:3px;border:1px solid var(--line);margin-left:auto}
-  .viewtoggle button{padding:3px 10px;border:0;background:transparent;color:var(--muted);font-size:12px;cursor:pointer;border-radius:4px;font-family:inherit}
-  .viewtoggle button.active{background:var(--card);color:var(--lp)}
-
-  /* ===== List view ===== */
-  .list{display:none;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:5px;overflow:hidden}
-  .list.active{display:flex}
-  .grid.active{display:grid}
-  .grid:not(.active){display:none}
-  .list-row{display:grid;grid-template-columns:100px 1fr 100px 24px;gap:10px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);font-size:13px;transition:background .1s;cursor:pointer}
-  .list-row:last-child{border-bottom:0}
-  .list-row:hover{background:var(--card-hover)}
-  .list-row .cn{font-weight:700;color:var(--ink)}
-  .list-row .en{color:var(--dim);font-style:italic;font-size:11px}
-  .list-row .tag{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .list-row .prov-tag{color:var(--lp-dk);font-size:11px}
-  .list-row .arrow{color:var(--dim);font-size:12px;text-align:center}
-  .list-row:hover .arrow{color:var(--lp)}
-  .list-row.hide{display:none}
-
-  /* ===== Empty ===== */
-  .empty{text-align:center;color:var(--dim);padding:40px 0;font-size:13px}
-  .empty.hide{display:none}
-
-  /* ===== Footer ===== */
-  footer{padding:20px 24px;border-top:1px solid var(--line);text-align:center;color:var(--dim);font-size:11.5px;letter-spacing:.3px}
-  footer a{color:var(--lp-dk)}
-  footer a:hover{color:var(--lp)}
-
-  /* ===== Responsive ===== */
-  @media(max-width:900px){
-    .sidebar{display:none}
-    .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
-  }
-  @media(max-width:600px){
-    .topbar{flex-wrap:wrap;gap:8px}
-    .search{order:5;max-width:none;width:100%}
-    .main{padding:14px}
-    .grid{grid-template-columns:repeat(2,1fr);gap:4px}
-    .card{padding:8px}
-    .list-row{grid-template-columns:70px 1fr 60px 20px;font-size:12px}
-    .quicknav a{font-size:11px;padding:2px 6px}
-  }
-
-  ::-webkit-scrollbar{width:8px;height:8px}
-  ::-webkit-scrollbar-track{background:var(--bg)}
-  ::-webkit-scrollbar-thumb{background:var(--line-bright);border-radius:4px}
-  ::-webkit-scrollbar-thumb:hover{background:var(--lp-dk)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;line-height:1.7;font-size:16px;color:#1c1a17;background:#faf8f3;padding:0 20px 80px}
+.wrap{max-width:920px;margin:0 auto}
+h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,5vw,42px);margin:54px 0 6px}
+.sub{color:#6b645a;font-size:14px;margin-bottom:28px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.stat{background:#fff6e0;border:1px solid #ecd9a8;color:#8b6914;padding:8px 14px;border-radius:8px;font-size:14px}
+.filter{position:sticky;top:0;background:#faf8f3;padding:12px 0;z-index:5;border-bottom:1px solid #e7ddc9;margin-bottom:8px}
+.filter input{width:100%;max-width:380px;padding:9px 12px;font-size:15px;border:1px solid #d8cdb4;border-radius:8px;background:#fff}
+section{margin-top:40px}
+h2.sec{font-family:"Noto Serif SC",Georgia,serif;font-size:24px;color:#8b6914;border-left:4px solid #f2b01e;padding-left:12px;margin-bottom:14px}
+.grp{font-family:"Noto Serif SC",Georgia,serif;font-size:18px;margin:24px 0 10px;color:#3a352b}
+.cnt{color:#a08a4a;font-size:13px;font-weight:normal;margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.card{display:flex;justify-content:space-between;align-items:center;text-decoration:none;background:#fff;border:1px solid #e7ddc9;border-radius:8px;padding:11px 13px;color:#1c1a17;transition:.15s}
+.card:hover{border-color:#8b6914;background:#fffaf0;transform:translateY(-1px)}
+.cname{font-size:15px}
+.csize{color:#a08a4a;font-size:12px}
+.empty{color:#a08a4a;font-size:14px;padding:8px 0}
+footer{margin-top:50px;padding-top:18px;border-top:1px solid #e7ddc9;color:#6b645a;font-size:13px}
 </style>
 </head>
 <body>
-
-<!-- ===== Top Bar ===== -->
-<header class="topbar">
-  <div class="logo">华夏腹地<span class="sub">Hinterland of Huaxia</span></div>
-  <div class="search"><input id="q" type="search" placeholder="搜索城市 / 省份 / 关键词…"></div>
-  <button class="dice" onclick="goRandom()" title="随机打开一篇">🎲 骰子</button>
-  <div class="stat"><b id="total">-</b> / 85</div>
-</header>
-
-<!-- ===== Quick Province Nav ===== -->
-<nav class="quicknav" id="quicknav"><!-- JS 填充 --></nav>
-
-<!-- ===== Layout ===== -->
-<div class="layout">
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar"><!-- JS 填充 --></aside>
-
-  <!-- Main -->
-  <main class="main">
-    <!-- View Toggle -->
-    <div style="display:flex;align-items:center;margin-bottom:14px">
-      <span style="color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:1.5px">视图</span>
-      <div class="viewtoggle" style="margin-left:10px">
-        <button onclick="setView('grid')" id="btn-grid" class="active">▦ 网格</button>
-        <button onclick="setView('list')" id="btn-list">☰ 列表</button>
-      </div>
-      <span style="margin-left:auto;color:var(--dim);font-size:11px">仿 Lonely Planet 文风 · STYLE STUDY · 只借笔法不抄原文</span>
-    </div>
-
-    <!-- Sections -->
-    <div id="sections"><!-- JS 填充 --></div>
-
-    <p class="empty" id="none">没有匹配的结果，试试别的关键词。</p>
-  </main>
+<div class="wrap">
+<h1>淮海腹地 · 目的地总索引</h1>
+<div class="sub">Travel 工作区全部目的地页 · 县区游记 / LP文风双语 / 双线实验 / 导航页</div>
+<div class="stats">
+  <span class="stat">页面总计 103</span>
+  <span class="stat">县区游记 53</span>
+  <span class="stat">LP文风双语 30</span>
+  <span class="stat">双线实验 18</span>
+  <span class="stat">禁词命中 5</span>
+  <span class="stat">失效链接 0</span>
 </div>
+<div class="filter"><input id="q" placeholder="输入地名实时筛选…"></div>
 
-<footer>
-  仿 Lonely Planet 文风仿写系列 · 内容原创，仅借其笔法，不复制任何 LP 原文 · 地名与史实为公开常识<br>
-  <a href="https://github.com/Wadesha/huaxia-hinterland" target="_blank" rel="noopener">GitHub</a> · 按 Space / R 随机下一篇
-</footer>
+<section>
+<h2 class="sec">县区游记（53）</h2>
+<h3 class="grp">徐州 <span class="cnt">5</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%B0%E5%8E%BF.html" data-name="丰县"><span class="cname">丰县</span><span class="csize">5K</span></a><a class="card" href="%E6%96%B0%E6%B2%82%E7%AA%91%E6%B9%BE.html" data-name="新沂 · 窑湾"><span class="cname">新沂 · 窑湾</span><span class="csize">5K</span></a><a class="card" href="%E6%B2%9B%E5%8E%BF.html" data-name="沛县"><span class="cname">沛县</span><span class="csize">5K</span></a><a class="card" href="%E7%9D%A2%E5%AE%81.html" data-name="睢宁"><span class="cname">睢宁</span><span class="csize">5K</span></a><a class="card" href="%E9%82%B3%E5%B7%9E.html" data-name="邳州"><span class="cname">邳州</span><span class="csize">5K</span></a></div>
+<h3 class="grp">连云港 <span class="cnt">4</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%9C%E6%B5%B7.html" data-name="东海"><span class="cname">东海</span><span class="csize">5K</span></a><a class="card" href="%E7%81%8C%E4%BA%91.html" data-name="灌云"><span class="cname">灌云</span><span class="csize">5K</span></a><a class="card" href="%E7%81%8C%E5%8D%97.html" data-name="灌南"><span class="cname">灌南</span><span class="csize">5K</span></a><a class="card" href="%E8%B5%A3%E6%A6%86.html" data-name="赣榆"><span class="cname">赣榆</span><span class="csize">5K</span></a></div>
+<h3 class="grp">宿迁 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E6%B2%AD%E9%98%B3.html" data-name="沭阳"><span class="cname">沭阳</span><span class="csize">4K</span></a><a class="card" href="%E6%B3%97%E6%B4%AA.html" data-name="泗洪"><span class="cname">泗洪</span><span class="csize">4K</span></a><a class="card" href="%E6%B3%97%E9%98%B3.html" data-name="泗阳"><span class="cname">泗阳</span><span class="csize">3K</span></a></div>
+<h3 class="grp">淮北 <span class="cnt">1</span></h3>
+<div class="grid"><a class="card" href="%E6%BF%89%E6%BA%AA%E4%B8%B4%E6%B6%A3.html" data-name="濉溪 · 临涣"><span class="cname">濉溪 · 临涣</span><span class="csize">6K</span></a></div>
+<h3 class="grp">宿州 <span class="cnt">5</span></h3>
+<div class="grid"><a class="card" href="%E5%9F%87%E6%A1%A5%E7%AC%A6%E7%A6%BB%E9%9B%86.html" data-name="埇桥 · 符离集"><span class="cname">埇桥 · 符离集</span><span class="csize">4K</span></a><a class="card" href="%E6%B3%97%E5%8E%BF.html" data-name="泗县"><span class="cname">泗县</span><span class="csize">4K</span></a><a class="card" href="%E7%81%B5%E7%92%A7.html" data-name="灵璧"><span class="cname">灵璧</span><span class="csize">6K</span></a><a class="card" href="%E7%A0%80%E5%B1%B1.html" data-name="砀山"><span class="cname">砀山</span><span class="csize">9K</span></a><a class="card" href="%E8%90%A7%E5%8E%BF.html" data-name="萧县"><span class="cname">萧县</span><span class="csize">6K</span></a></div>
+<h3 class="grp">亳州 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E5%88%A9%E8%BE%9B.html" data-name="利辛"><span class="cname">利辛</span><span class="csize">5K</span></a><a class="card" href="%E6%B6%A1%E9%98%B3.html" data-name="涡阳"><span class="cname">涡阳</span><span class="csize">4K</span></a><a class="card" href="%E8%92%99%E5%9F%8E.html" data-name="蒙城"><span class="cname">蒙城</span><span class="csize">4K</span></a></div>
+<h3 class="grp">商丘 <span class="cnt">7</span></h3>
+<div class="grid"><a class="card" href="%E5%A4%8F%E9%82%91.html" data-name="夏邑"><span class="cname">夏邑</span><span class="csize">4K</span></a><a class="card" href="%E5%AE%81%E9%99%B5.html" data-name="宁陵"><span class="cname">宁陵</span><span class="csize">4K</span></a><a class="card" href="%E6%9F%98%E5%9F%8E.html" data-name="柘城"><span class="cname">柘城</span><span class="csize">4K</span></a><a class="card" href="%E6%B0%91%E6%9D%83.html" data-name="民权"><span class="cname">民权</span><span class="csize">4K</span></a><a class="card" href="%E6%B0%B8%E5%9F%8E.html" data-name="永城"><span class="cname">永城</span><span class="csize">4K</span></a><a class="card" href="%E7%9D%A2%E5%8E%BF.html" data-name="睢县"><span class="cname">睢县</span><span class="csize">4K</span></a><a class="card" href="%E8%99%9E%E5%9F%8E.html" data-name="虞城"><span class="cname">虞城</span><span class="csize">4K</span></a></div>
+<h3 class="grp">菏泽 <span class="cnt">7</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%9C%E6%98%8E.html" data-name="东明"><span class="cname">东明</span><span class="csize">5K</span></a><a class="card" href="%E5%8D%95%E5%8E%BF.html" data-name="单县"><span class="cname">单县</span><span class="csize">5K</span></a><a class="card" href="%E5%B7%A8%E9%87%8E.html" data-name="巨野"><span class="cname">巨野</span><span class="csize">5K</span></a><a class="card" href="%E6%88%90%E6%AD%A6.html" data-name="成武"><span class="cname">成武</span><span class="csize">5K</span></a><a class="card" href="%E6%9B%B9%E5%8E%BF.html" data-name="曹县"><span class="cname">曹县</span><span class="csize">4K</span></a><a class="card" href="%E9%83%93%E5%9F%8E.html" data-name="郓城"><span class="cname">郓城</span><span class="csize">5K</span></a><a class="card" href="%E9%84%84%E5%9F%8E.html" data-name="鄄城"><span class="cname">鄄城</span><span class="csize">5K</span></a></div>
+<h3 class="grp">济宁 <span class="cnt">8</span></h3>
+<div class="grid"><a class="card" href="%E5%98%89%E7%A5%A5.html" data-name="嘉祥"><span class="cname">嘉祥</span><span class="csize">5K</span></a><a class="card" href="%E5%BE%AE%E5%B1%B1.html" data-name="微山"><span class="cname">微山</span><span class="csize">5K</span></a><a class="card" href="%E6%A2%81%E5%B1%B1.html" data-name="梁山"><span class="cname">梁山</span><span class="csize">5K</span></a><a class="card" href="%E6%B1%B6%E4%B8%8A.html" data-name="汶上"><span class="cname">汶上</span><span class="csize">5K</span></a><a class="card" href="%E6%B3%97%E6%B0%B4.html" data-name="泗水"><span class="cname">泗水</span><span class="csize">5K</span></a><a class="card" href="%E9%82%B9%E5%9F%8E.html" data-name="邹城"><span class="cname">邹城</span><span class="csize">5K</span></a><a class="card" href="%E9%87%91%E4%B9%A1.html" data-name="金乡"><span class="cname">金乡</span><span class="csize">5K</span></a><a class="card" href="%E9%B1%BC%E5%8F%B0.html" data-name="鱼台"><span class="cname">鱼台</span><span class="csize">5K</span></a></div>
+<h3 class="grp">临沂 <span class="cnt">9</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%B4%E6%B2%AD.html" data-name="临沭"><span class="cname">临沭</span><span class="csize">5K</span></a><a class="card" href="%E5%85%B0%E9%99%B5.html" data-name="兰陵"><span class="cname">兰陵</span><span class="csize">5K</span></a><a class="card" href="%E5%B9%B3%E9%82%91.html" data-name="平邑"><span class="cname">平邑</span><span class="csize">5K</span></a><a class="card" href="%E6%B2%82%E5%8D%97.html" data-name="沂南"><span class="cname">沂南</span><span class="csize">5K</span></a><a class="card" href="%E6%B2%82%E6%B0%B4.html" data-name="沂水"><span class="cname">沂水</span><span class="csize">5K</span></a><a class="card" href="%E8%8E%92%E5%8D%97.html" data-name="莒南"><span class="cname">莒南</span><span class="csize">5K</span></a><a class="card" href="%E8%92%99%E9%98%B4.html" data-name="蒙阴"><span class="cname">蒙阴</span><span class="csize">5K</span></a><a class="card" href="%E8%B4%B9%E5%8E%BF.html" data-name="费县"><span class="cname">费县</span><span class="csize">5K</span></a><a class="card" href="%E9%83%AF%E5%9F%8E.html" data-name="郯城"><span class="cname">郯城</span><span class="csize">5K</span></a></div>
+<h3 class="grp">枣庄 <span class="cnt">1</span></h3>
+<div class="grid"><a class="card" href="%E6%BB%95%E5%B7%9E.html" data-name="滕州"><span class="cname">滕州</span><span class="csize">3K</span></a></div>
 
+</section>
+
+<section>
+<h2 class="sec">LP文风双语系列（30）</h2>
+<h3 class="grp">山东 <span class="cnt">8</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%B4%E6%B2%82_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="临沂 · Linyi — 沂蒙的山，书圣的笔"><span class="cname">临沂 · Linyi — 沂蒙的山，书圣的笔</span><span class="csize">17K</span></a><a class="card" href="%E6%9B%B2%E9%98%9C_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="曲阜 · Qufu — 孔子的城，三孔与礼"><span class="cname">曲阜 · Qufu — 孔子的城，三孔与礼</span><span class="csize">16K</span></a><a class="card" href="%E6%9E%A3%E5%BA%84_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="枣庄 · Zaozhuang — 台儿庄的灯，微山湖的浪"><span class="cname">枣庄 · Zaozhuang — 台儿庄的灯，微山湖的浪</span><span class="csize">17K</span></a><a class="card" href="%E6%B3%B0%E5%AE%89_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="泰安 · Tai&#x27;an — 泰山脚下的城，登岱的门户"><span class="cname">泰安 · Tai&#x27;an — 泰山脚下的城，登岱的门户</span><span class="csize">16K</span></a><a class="card" href="%E6%B5%8E%E5%AE%81_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="济宁 · Jining — 孔孟之乡，也是江湖"><span class="cname">济宁 · Jining — 孔孟之乡，也是江湖</span><span class="csize">37K</span></a><a class="card" href="%E6%B7%84%E5%8D%9A_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="淄博 · Zibo — 齐都故地，陶与火的城"><span class="cname">淄博 · Zibo — 齐都故地，陶与火的城</span><span class="csize">25K</span></a><a class="card" href="%E8%81%8A%E5%9F%8E_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="聊城 · Liaocheng — 江北水城，运河的另一次心跳"><span class="cname">聊城 · Liaocheng — 江北水城，运河的另一次心跳</span><span class="csize">17K</span></a><a class="card" href="%E8%8F%8F%E6%B3%BD_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="菏泽 · Heze — 一座为花低头的城，也是好汉的故乡"><span class="cname">菏泽 · Heze — 一座为花低头的城，也是好汉的故乡</span><span class="csize">25K</span></a></div>
+<h3 class="grp">安徽 <span class="cnt">2</span></h3>
+<div class="grid"><a class="card" href="%E4%BA%B3%E5%B7%9E_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="亳州 · Bozhou — 药都与三朝古都"><span class="cname">亳州 · Bozhou — 药都与三朝古都</span><span class="csize">16K</span></a><a class="card" href="%E5%BE%BD%E5%B7%9E_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="徽州 · Huizhou — 粉墙黛瓦的徽派老家"><span class="cname">徽州 · Huizhou — 粉墙黛瓦的徽派老家</span><span class="csize">16K</span></a></div>
+<h3 class="grp">河南 <span class="cnt">6</span></h3>
+<div class="grid"><a class="card" href="%E5%8D%97%E9%98%B3_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="南阳 · Nanyang — 卧龙岗上的城，诸葛与汉"><span class="cname">南阳 · Nanyang — 卧龙岗上的城，诸葛与汉</span><span class="csize">16K</span></a><a class="card" href="%E5%91%A8%E5%8F%A3_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="周口 · Zhoukou — 老子故里，伏羲的淮阳"><span class="cname">周口 · Zhoukou — 老子故里，伏羲的淮阳</span><span class="csize">17K</span></a><a class="card" href="%E5%95%86%E4%B8%98_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="商丘 · Shangqiu — 三商之源，黄河故道上的圆城"><span class="cname">商丘 · Shangqiu — 三商之源，黄河故道上的圆城</span><span class="csize">17K</span></a><a class="card" href="%E5%AE%89%E9%98%B3_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="安阳 · Anyang — 甲骨的故乡，太行的骨"><span class="cname">安阳 · Anyang — 甲骨的故乡，太行的骨</span><span class="csize">17K</span></a><a class="card" href="%E5%BC%80%E5%B0%81_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="开封 · Kaifeng — 八朝古都，汴京的魂"><span class="cname">开封 · Kaifeng — 八朝古都，汴京的魂</span><span class="csize">18K</span></a><a class="card" href="%E6%B4%9B%E9%98%B3_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="洛阳 · Luoyang — 十三朝古都，龙门石窟与牡丹"><span class="cname">洛阳 · Luoyang — 十三朝古都，龙门石窟与牡丹</span><span class="csize">16K</span></a></div>
+<h3 class="grp">河北 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E4%BF%9D%E5%AE%9A_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="保定 · Baoding — 直隶的署，白洋淀的苇"><span class="cname">保定 · Baoding — 直隶的署，白洋淀的苇</span><span class="csize">16K</span></a><a class="card" href="%E6%AD%A3%E5%AE%9A_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="正定 · Zhengding — 四塔一寺的古城，梁思成称&quot;古建筑博物馆&quot;"><span class="cname">正定 · Zhengding — 四塔一寺的古城，梁思成称&quot;古建筑博物馆&quot;</span><span class="csize">17K</span></a><a class="card" href="%E9%82%AF%E9%83%B8_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="邯郸 · Handan — 三千年没改过名的城，成语典故的故乡"><span class="cname">邯郸 · Handan — 三千年没改过名的城，成语典故的故乡</span><span class="csize">16K</span></a></div>
+<h3 class="grp">山西 <span class="cnt">4</span></h3>
+<div class="grid"><a class="card" href="%E4%B8%B4%E6%B1%BE_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="临汾 · Linfen — 壶口的水，大槐树的根"><span class="cname">临汾 · Linfen — 壶口的水，大槐树的根</span><span class="csize">16K</span></a><a class="card" href="%E5%A4%A7%E5%90%8C_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="大同 · Datong — 云冈的佛，恒山的风"><span class="cname">大同 · Datong — 云冈的佛，恒山的风</span><span class="csize">17K</span></a><a class="card" href="%E5%B9%B3%E9%81%A5_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="平遥 · Pingyao — 一座活着的明清金融城"><span class="cname">平遥 · Pingyao — 一座活着的明清金融城</span><span class="csize">16K</span></a><a class="card" href="%E8%BF%90%E5%9F%8E_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="运城 · Yuncheng — 关公故里，盐湖的盐"><span class="cname">运城 · Yuncheng — 关公故里，盐湖的盐</span><span class="csize">17K</span></a></div>
+<h3 class="grp">陕西 <span class="cnt">2</span></h3>
+<div class="grid"><a class="card" href="%E5%AE%9D%E9%B8%A1_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="宝鸡 · Baoji — 周秦发祥的城，青铜与法门"><span class="cname">宝鸡 · Baoji — 周秦发祥的城，青铜与法门</span><span class="csize">16K</span></a><a class="card" href="%E6%B1%89%E4%B8%AD_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="汉中 · Hanzhong — 汉江源头的城，两汉三国起笔处"><span class="cname">汉中 · Hanzhong — 汉江源头的城，两汉三国起笔处</span><span class="csize">16K</span></a></div>
+<h3 class="grp">甘肃 <span class="cnt">1</span></h3>
+<div class="grid"><a class="card" href="%E5%A4%A9%E6%B0%B4_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="天水 · Tianshui — 麦积山的佛，陇上的江南"><span class="cname">天水 · Tianshui — 麦积山的佛，陇上的江南</span><span class="csize">16K</span></a></div>
+<h3 class="grp">湖北 <span class="cnt">2</span></h3>
+<div class="grid"><a class="card" href="%E8%8D%86%E5%B7%9E_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="荆州 · Jingzhou — 楚都故地，长江拐弯处的城"><span class="cname">荆州 · Jingzhou — 楚都故地，长江拐弯处的城</span><span class="csize">17K</span></a><a class="card" href="%E8%A5%84%E9%98%B3_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="襄阳 · Xiangyang — 三国之城，汉江抱着的古城"><span class="cname">襄阳 · Xiangyang — 三国之城，汉江抱着的古城</span><span class="csize">17K</span></a></div>
+<h3 class="grp">其他 <span class="cnt">2</span></h3>
+<div class="grid"><a class="card" href="%E4%BA%AC%E9%83%BD_%E6%B8%B8%E8%AE%B0%E4%B8%8E%E6%94%BB%E7%95%A5_LP%E9%A3%8E%E6%A0%BC.html" data-name="京都 · 游记与出行攻略（Lonely Planet 风格仿写）"><span class="cname">京都 · 游记与出行攻略（Lonely Planet 风格仿写）</span><span class="csize">7K</span></a><a class="card" href="%E6%B7%AE%E6%B5%B7%E5%8C%BA%E5%9F%9F_LP%E6%96%87%E9%A3%8E_%E5%8F%8C%E8%AF%AD.html" data-name="淮海区域 · The Huaihai Region — 一种被低估的华夏腹地"><span class="cname">淮海区域 · The Huaihai Region — 一种被低估的华夏腹地</span><span class="csize">40K</span></a></div>
+
+</section>
+
+<section>
+<h2 class="sec">双线实验 · V1/V2/对比（18）</h2>
+<h3 class="grp">徐州 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E5%BE%90%E5%B7%9E_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="徐州 · Xuzhou — V1 v1"><span class="cname">徐州 · Xuzhou — V1 v1</span><span class="csize">16K</span></a><a class="card" href="%E5%BE%90%E5%B7%9E_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="徐州 · Xuzhou — V2 v2"><span class="cname">徐州 · Xuzhou — V2 v2</span><span class="csize">20K</span></a><a class="card" href="%E5%BE%90%E5%B7%9E_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="徐州 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">徐州 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">30K</span></a></div>
+<h3 class="grp">连云港 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="连云港 · Lianyungang — V1 v1"><span class="cname">连云港 · Lianyungang — V1 v1</span><span class="csize">16K</span></a><a class="card" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="连云港 · Lianyungang — V2 v2"><span class="cname">连云港 · Lianyungang — V2 v2</span><span class="csize">20K</span></a><a class="card" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="连云港 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">连云港 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">31K</span></a></div>
+<h3 class="grp">宿迁 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E5%AE%BF%E8%BF%81_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="宿迁 · Suqian — V1 v1"><span class="cname">宿迁 · Suqian — V1 v1</span><span class="csize">16K</span></a><a class="card" href="%E5%AE%BF%E8%BF%81_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="宿迁 · Suqian — V2 v2"><span class="cname">宿迁 · Suqian — V2 v2</span><span class="csize">20K</span></a><a class="card" href="%E5%AE%BF%E8%BF%81_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="宿迁 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">宿迁 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">30K</span></a></div>
+<h3 class="grp">淮北 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E6%B7%AE%E5%8C%97_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="淮北 · Huaibei — V1 v1"><span class="cname">淮北 · Huaibei — V1 v1</span><span class="csize">15K</span></a><a class="card" href="%E6%B7%AE%E5%8C%97_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="淮北 · Huaibei — V2 v2"><span class="cname">淮北 · Huaibei — V2 v2</span><span class="csize">20K</span></a><a class="card" href="%E6%B7%AE%E5%8C%97_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="淮北 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">淮北 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">29K</span></a></div>
+<h3 class="grp">宿州 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E5%AE%BF%E5%B7%9E_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="宿州 · Suzhou, Anhui — V1 v1"><span class="cname">宿州 · Suzhou, Anhui — V1 v1</span><span class="csize">15K</span></a><a class="card" href="%E5%AE%BF%E5%B7%9E_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="宿州 · Suzhou, Anhui — V2 v2"><span class="cname">宿州 · Suzhou, Anhui — V2 v2</span><span class="csize">21K</span></a><a class="card" href="%E5%AE%BF%E5%B7%9E_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="宿州 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">宿州 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">46K</span></a></div>
+<h3 class="grp">成都 <span class="cnt">3</span></h3>
+<div class="grid"><a class="card" href="%E6%88%90%E9%83%BD_V1%E7%8E%B0%E8%A1%8C%E7%89%88.html" data-name="成都 · Chengdu — V1 v1"><span class="cname">成都 · Chengdu — V1 v1</span><span class="csize">25K</span></a><a class="card" href="%E6%88%90%E9%83%BD_V2%E6%A0%A1%E5%87%86%E7%89%88.html" data-name="成都 · Chengdu — V2 v2"><span class="cname">成都 · Chengdu — V2 v2</span><span class="csize">23K</span></a><a class="card" href="%E6%88%90%E9%83%BD_%E5%8F%8C%E7%89%88%E6%9C%AC%E5%AF%B9%E6%AF%94.html" data-name="成都 · 双版本文风对比（V1 现行 / V2 校准）"><span class="cname">成都 · 双版本文风对比（V1 现行 / V2 校准）</span><span class="csize">31K</span></a></div>
+
+</section>
+
+<section>
+<h2 class="sec">导航 / 总目录页</h2>
+<div class="grid"><a class="card" href="LP%E6%96%87%E9%A3%8E%E7%B3%BB%E5%88%97.html" data-name="华夏腹地 · Hinterland of Huaxia"><span class="cname">华夏腹地 · Hinterland of Huaxia</span><span class="csize">23K</span></a><a class="card" href="%E5%8F%8C%E7%BA%BF%E5%AE%9E%E9%AA%8C.html" data-name="双线文风实验 · 总目录"><span class="cname">双线文风实验 · 总目录</span><span class="csize">6K</span></a></div>
+</section>
+
+<footer><p>本索引由 gen_master_index.py 扫描 Travel 目录自动生成，新增页面重跑即纳入。县区游记按零禁词约束写成，只写见闻与史实，欢迎实地核对。</p></footer>
+</div>
 <script>
-/* =============================================================
- * 内容页池 — 纯静态，GitHub Pages 兼容
- * ============================================================= */
-const PAGES = [
-  { f: "淮海区域_LP文风_双语.html", c: "淮海区域", e: "Huaihai Region", t: "被低估的华夏腹地", p: "区域总览" },
-
-  { f: "济宁_LP文风_双语.html", c: "济宁", e: "Jining", t: "孔孟之乡，也是江湖", p: "山东" },
-  { f: "菏泽_LP文风_双语.html", c: "菏泽", e: "Heze", t: "为花低头的城，好汉的故乡", p: "山东" },
-  { f: "枣庄_LP文风_双语.html", c: "枣庄", e: "Zaozhuang", t: "台儿庄的灯，微山湖的浪", p: "山东" },
-  { f: "临沂_LP文风_双语.html", c: "临沂", e: "Linyi", t: "沂蒙的山，书圣的笔", p: "山东" },
-  { f: "聊城_LP文风_双语.html", c: "聊城", e: "Liaocheng", t: "江北水城，运河的另一次心跳", p: "山东" },
-  { f: "淄博_LP文风_双语.html", c: "淄博", e: "Zibo", t: "齐都故地，陶与火的城", p: "山东" },
-  { f: "泰安_LP文风_双语.html", c: "泰安", e: "Tai'an", t: "泰山脚下的城，登岱的门户", p: "山东" },
-  { f: "曲阜_LP文风_双语.html", c: "曲阜", e: "Qufu", t: "孔子的城，三孔与礼", p: "山东" },
-
-  { f: "开封_LP文风_双语.html", c: "开封", e: "Kaifeng", t: "八朝古都，汴京的魂", p: "河南" },
-  { f: "安阳_LP文风_双语.html", c: "安阳", e: "Anyang", t: "甲骨的故乡，太行的骨", p: "河南" },
-  { f: "商丘_LP文风_双语.html", c: "商丘", e: "Shangqiu", t: "三商之源，黄河故道上的圆城", p: "河南" },
-  { f: "周口_LP文风_双语.html", c: "周口", e: "Zhoukou", t: "老子故里，伏羲的淮阳", p: "河南" },
-  { f: "洛阳_LP文风_双语.html", c: "洛阳", e: "Luoyang", t: "十三朝古都，龙门石窟与牡丹", p: "河南" },
-  { f: "南阳_LP文风_双语.html", c: "南阳", e: "Nanyang", t: "卧龙岗上的城，诸葛与汉", p: "河南" },
-
-  { f: "邯郸_LP文风_双语.html", c: "邯郸", e: "Handan", t: "三千年没改过名的城，成语典故之乡", p: "河北" },
-  { f: "正定_LP文风_双语.html", c: "正定", e: "Zhengding", t: "四塔一寺的古城，古建筑博物馆", p: "河北" },
-  { f: "保定_LP文风_双语.html", c: "保定", e: "Baoding", t: "直隶的署，白洋淀的苇", p: "河北" },
-
-  { f: "大同_LP文风_双语.html", c: "大同", e: "Datong", t: "云冈的佛，恒山的风", p: "山西" },
-  { f: "运城_LP文风_双语.html", c: "运城", e: "Yuncheng", t: "关公故里，盐湖的盐", p: "山西" },
-  { f: "临汾_LP文风_双语.html", c: "临汾", e: "Linfen", t: "壶口的水，大槐树的根", p: "山西" },
-  { f: "平遥_LP文风_双语.html", c: "平遥", e: "Pingyao", t: "活着的明清金融城", p: "山西" },
-
-  { f: "汉中_LP文风_双语.html", c: "汉中", e: "Hanzhong", t: "汉江源头，两汉三国起笔处", p: "陕西" },
-  { f: "宝鸡_LP文风_双语.html", c: "宝鸡", e: "Baoji", t: "周秦发祥，青铜与法门", p: "陕西" },
-
-  { f: "天水_LP文风_双语.html", c: "天水", e: "Tianshui", t: "麦积山的佛，陇上江南", p: "甘肃" },
-
-  { f: "襄阳_LP文风_双语.html", c: "襄阳", e: "Xiangyang", t: "三国之城，汉江抱着的古城", p: "湖北" },
-  { f: "荆州_LP文风_双语.html", c: "荆州", e: "Jingzhou", t: "楚都故地，长江拐弯处的城", p: "湖北" },
-
-  { f: "徽州_LP文风_双语.html", c: "徽州", e: "Huizhou", t: "粉墙黛瓦的徽派老家", p: "安徽" },
-  { f: "亳州_LP文风_双语.html", c: "亳州", e: "Bozhou", t: "药都与三朝古都", p: "安徽" },
-
-  { f: "鄄城.html", c: "鄄城", e: "Juancheng", t: "黄河岸边的老县", p: "山东·县" },
-  { f: "郓城.html", c: "郓城", e: "Yuncheng", t: "水浒故里", p: "山东·县" },
-  { f: "曹县.html", c: "曹县", e: "Caoxian", t: "汤王之都，牡丹之乡", p: "山东·县" },
-  { f: "成武.html", c: "成武", e: "Chengwu", t: "伯乐故里", p: "山东·县" },
-  { f: "单县.html", c: "单县", e: "Shanxian", t: "古单父邑，羊肉汤之城", p: "山东·县" },
-  { f: "巨野.html", c: "巨野", e: "Juye", t: "麒麟出没处", p: "山东·县" },
-  { f: "梁山.html", c: "梁山", e: "Liangshan", t: "水泊梁山", p: "山东·县" },
-  { f: "嘉祥.html", c: "嘉祥", e: "Jiaxiang", t: "曾子故里，汉画像石之乡", p: "山东·县" },
-  { f: "金乡.html", c: "金乡", e: "Jinxiang", t: "大蒜之乡", p: "山东·县" },
-  { f: "鱼台.html", c: "鱼台", e: "Yutai", t: "孝贤故里", p: "山东·县" },
-  { f: "泗水.html", c: "泗水", e: "Sishui", t: "泗水滨，孔子观川处", p: "山东·县" },
-  { f: "平邑.html", c: "平邑", e: "Pingyi", t: "蒙山主峰所在地", p: "山东·县" },
-  { f: "蒙阴.html", c: "蒙阴", e: "Mengyin", t: "蒙山之阴，孟良崮", p: "山东·县" },
-  { f: "沂南.html", c: "沂南", e: "Yinan", t: "诸葛亮故里", p: "山东·县" },
-  { f: "沂水.html", c: "沂水", e: "Yishui", t: "沂河之源", p: "山东·县" },
-  { f: "兰陵.html", c: "兰陵", e: "Lanling", t: "荀子故里，兰陵酒", p: "山东·县" },
-  { f: "临沭.html", c: "临沭", e: "Linshu", t: "沭河岸边", p: "山东·县" },
-  { f: "郯城.html", c: "郯城", e: "Tancheng", t: "银杏之乡", p: "山东·县" },
-  { f: "滕州.html", c: "滕州", e: "Tengzhou", t: "微山湖东岸，墨子故里", p: "山东·县" },
-  { f: "微山.html", c: "微山", e: "Weishan", t: "微山湖主体", p: "山东·县" },
-  { f: "邹城.html", c: "邹城", e: "Zoucheng", t: "孟子故里，邹鲁圣地", p: "山东·县" },
-  { f: "费县.html", c: "费县", e: "Feixian", t: "沂蒙山小调诞生地", p: "山东·县" },
-  { f: "东明.html", c: "东明", e: "Dongming", t: "黄河入鲁第一县", p: "山东·县" },
-  { f: "汶上.html", c: "汶上", e: "Wenshang", t: "北朝佛教造像中心", p: "山东·县" },
-
-  { f: "民权.html", c: "民权", e: "Minquan", t: "庄子故里", p: "河南·县" },
-  { f: "宁陵.html", c: "宁陵", e: "Ningling", t: "中国酥梨之乡", p: "河南·县" },
-  { f: "睢县.html", c: "睢县", e: "Suixian", t: "中原水城", p: "河南·县" },
-  { f: "柘城.html", c: "柘城", e: "Zhecheng", t: "朱襄氏故里", p: "河南·县" },
-  { f: "夏邑.html", c: "夏邑", e: "Xiayi", t: "孔子祖籍地", p: "河南·县" },
-  { f: "虞城.html", c: "虞城", e: "Yucheng", t: "木兰故里", p: "河南·县" },
-  { f: "永城.html", c: "永城", e: "Yongcheng", t: "芒砀山，汉兴之地", p: "河南·县" },
-
-  { f: "砀山.html", c: "砀山", e: "Dangshan", t: "梨都之乡", p: "安徽·县" },
-  { f: "灵璧.html", c: "灵璧", e: "Lingbi", t: "奇石之乡", p: "安徽·县" },
-  { f: "泗县.html", c: "泗县", e: "Sixian", t: "泗州古城", p: "安徽·县" },
-  { f: "萧县.html", c: "萧县", e: "Xiaoxian", t: "中国书画艺术之乡", p: "安徽·县" },
-  { f: "蒙城.html", c: "蒙城", e: "Mengcheng", t: "庄子故里", p: "安徽·县" },
-  { f: "利辛.html", c: "利辛", e: "Lixin", t: "西淝河岸边", p: "安徽·县" },
-  { f: "涡阳.html", c: "涡阳", e: "Guoyang", t: "老子故里", p: "安徽·县" },
-  { f: "濉溪临涣.html", c: "濉溪临涣", e: "Linhuan, Suixi", t: "临涣古镇，铚城旧址", p: "安徽·县" },
-  { f: "埇桥符离集.html", c: "埇桥符离集", e: "Fuliji, Yongqiao", t: "符离集烧鸡之乡", p: "安徽·县" },
-
-  { f: "赣榆.html", c: "赣榆", e: "Ganyu", t: "连云港北大门，徐福故里", p: "江苏·县" },
-  { f: "东海.html", c: "东海", e: "Donghai", t: "水晶之乡", p: "江苏·县" },
-  { f: "灌南.html", c: "灌南", e: "Guannan", t: "灌河入海口", p: "江苏·县" },
-  { f: "灌云.html", c: "灌云", e: "Guanyun", t: "大伊山，灌云豆丹", p: "江苏·县" },
-  { f: "沛县.html", c: "沛县", e: "Peixian", t: "汉高祖刘邦故里", p: "江苏·县" },
-  { f: "邳州.html", c: "邳州", e: "Pizhou", t: "下邳古城，银杏之乡", p: "江苏·县" },
-  { f: "沭阳.html", c: "沭阳", e: "Shuyang", t: "花木之乡", p: "江苏·县" },
-  { f: "泗洪.html", c: "泗洪", e: "Sihong", t: "洪泽湖西岸，双沟酒", p: "江苏·县" },
-  { f: "泗阳.html", c: "泗阳", e: "Siyang", t: "杨树之乡，运河要冲", p: "江苏·县" },
-  { f: "睢宁.html", c: "睢宁", e: "Suining", t: "下邳国，汉墓群", p: "江苏·县" },
-  { f: "丰县.html", c: "丰县", e: "Fengxian", t: "汉高故里，天师故里", p: "江苏·县" },
-  { f: "新沂窑湾.html", c: "新沂窑湾", e: "Yaowan, Xinyi", t: "京杭大运河古镇", p: "江苏·县" },
-
-  { f: "京都_游记与攻略_LP风格.html", c: "京都游记", e: "Kyoto", t: "LP 风格单篇，日本", p: "其他" }
-];
-
-/* ===== 去重 ===== */
-const seen = new Set();
-const P = PAGES.filter(x => { if (seen.has(x.f)) return false; seen.add(x.f); return true; });
-document.getElementById('total').textContent = P.length;
-
-/* ===== 省份分组 + 排序 ===== */
-const GROUP_ORDER = ["区域总览","山东","河南","河北","山西","陕西","甘肃","湖北","安徽","江苏","其他"];
-const GROUPS = {};
-const GROUPS_COUNTY = {};
-P.forEach(x => {
-  const base = x.p.replace(/·县$/, '');
-  const isCounty = x.p.endsWith('·县');
-  if (!GROUPS[base]) GROUPS[base] = [];
-  if (!GROUPS_COUNTY[base]) GROUPS_COUNTY[base] = [];
-  if (isCounty) GROUPS_COUNTY[base].push(x); else GROUPS[base].push(x);
-});
-const allGroupKeys = [...new Set([...Object.keys(GROUPS), ...Object.keys(GROUPS_COUNTY)])];
-const sortedKeys = allGroupKeys.sort((a,b) => {
-  const ia = GROUP_ORDER.indexOf(a), ib = GROUP_ORDER.indexOf(b);
-  if (ia >= 0 && ib >= 0) return ia - ib;
-  if (ia >= 0) return -1; if (ib >= 0) return 1;
-  return a.localeCompare(b, "zh-CN");
-});
-
-/* ===== 渲染侧栏 ===== */
-const sidebar = document.getElementById('sidebar');
-sidebar.innerHTML = `<div class="sec">省份导航</div>` + sortedKeys.map(k => {
-  const c = (GROUPS[k]||[]).length + (GROUPS_COUNTY[k]||[]).length;
-  return `<a href="#g-${k}" data-prov="${k}"><span>${k}</span><b>${c}</b></a>`;
-}).join('');
-
-/* ===== 渲染快速导航 ===== */
-const qn = document.getElementById('quicknav');
-qn.innerHTML = `<span class="lbl">快速跳转</span>` + sortedKeys.map(k => {
-  const c = (GROUPS[k]||[]).length + (GROUPS_COUNTY[k]||[]).length;
-  return `<a href="#g-${k}">${k}<b>${c}</b></a>`;
-}).join('');
-
-/* ===== 渲染内容区 ===== */
-const sections = document.getElementById('sections');
-sections.innerHTML = sortedKeys.map(k => {
-  const cities = GROUPS[k] || [];
-  const counties = GROUPS_COUNTY[k] || [];
-  const total = cities.length + counties.length;
-  let html = `<div class="section" id="g-${k}" data-prov="${k}">
-    <div class="section-header">
-      <h2>${k}</h2><span class="en">${k}</span><span class="count">${total}</span>
-    </div>`;
-
-  if (cities.length) {
-    html += renderBlock(cities, `${k} · 城市`);
-  }
-  if (counties.length) {
-    html += renderBlock(counties, `${k} · 县级地志`);
-  }
-  html += `</div>`;
-  return html;
-}).join('');
-
-function renderBlock(items, label) {
-  return `<div style="margin-bottom:14px">
-    <div style="font-size:11px;color:var(--dim);margin-bottom:6px;letter-spacing:1px">${label}</div>
-    <div class="grid active" data-block="${label}">
-      ${items.map(x => `
-        <a class="card" href="${x.f}" data-f="${x.f}" data-c="${x.c}" data-e="${x.e}" data-t="${x.t}" data-p="${x.p}">
-          <div class="row1"><span class="cn">${x.c}</span><span class="en">${x.e}</span></div>
-          <div class="tag">${x.t}</div>
-          <div class="meta"><span class="prov-tag">${x.p}</span><span class="arrow">→</span></div>
-        </a>
-      `).join('')}
-    </div>
-    <div class="list" data-block="${label}">
-      ${items.map(x => `
-        <a class="list-row" href="${x.f}" data-f="${x.f}" data-c="${x.c}" data-e="${x.e}" data-t="${x.t}" data-p="${x.p}">
-          <span class="cn">${x.c}</span><span class="tag">${x.t}</span><span class="prov-tag">${x.p}</span><span class="arrow">→</span>
-        </a>
-      `).join('')}
-    </div>
-  </div>`;
-}
-
-/* ===== 视图切换 ===== */
-function setView(v) {
-  document.querySelectorAll('.grid, .list').forEach(el => {
-    el.classList.toggle('active', v === 'grid' ? el.classList.contains('grid') : el.classList.contains('list'));
+document.getElementById('q').addEventListener('input',function(){
+  var v=this.value.trim().toLowerCase();
+  document.querySelectorAll('section').forEach(function(sec){
+    sec.querySelectorAll('.grid').forEach(function(g){
+      var any=false;
+      g.querySelectorAll('.card').forEach(function(c){
+        var hit=c.dataset.name.toLowerCase().indexOf(v)>=0;
+        c.style.display=hit?'flex':'none';
+        if(hit)any=true;
+      });
+      var grp=g.previousElementSibling;
+      if(grp&&grp.classList.contains('grp')){grp.style.display=any?'block':'none';}
+    });
   });
-  document.getElementById('btn-grid').classList.toggle('active', v === 'grid');
-  document.getElementById('btn-list').classList.toggle('active', v === 'list');
-}
-
-/* ===== 搜索过滤 ===== */
-const q = document.getElementById('q');
-const none = document.getElementById('none');
-function doSearch() {
-  const s = q.value.trim().toLowerCase();
-  let hit = 0;
-  document.querySelectorAll('.card, .list-row').forEach(el => {
-    const ok = !s ||
-      (el.dataset.c||'').toLowerCase().includes(s) ||
-      (el.dataset.e||'').toLowerCase().includes(s) ||
-      (el.dataset.t||'').toLowerCase().includes(s) ||
-      (el.dataset.p||'').toLowerCase().includes(s);
-    el.style.display = ok ? '' : 'none';
-    if (ok) hit++;
-  });
-  document.querySelectorAll('.section').forEach(sec => {
-    const shown = Array.from(sec.querySelectorAll('[data-f]')).some(el => el.style.display !== 'none');
-    sec.style.display = shown ? '' : 'none';
-  });
-  none.classList.toggle('hide', hit > 0);
-}
-q.addEventListener('input', doSearch);
-
-/* ===== 侧栏滚动高亮 ===== */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const k = e.target.dataset.prov;
-      document.querySelectorAll('.sidebar a').forEach(a => a.classList.toggle('active', a.dataset.prov === k));
-    }
-  });
-}, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
-document.querySelectorAll('.section').forEach(s => observer.observe(s));
-
-/* ===== 随机跳转 ===== */
-function goRandom() {
-  const x = P[Math.floor(Math.random() * P.length)];
-  location.href = x.f;
-}
-
-/* ===== 键盘快捷键 ===== */
-document.addEventListener('keydown', e => {
-  if (e.target.tagName === 'INPUT') return;
-  if (e.code === 'Space' || e.code === 'KeyR') { e.preventDefault(); goRandom(); }
 });
 </script>
 </body>

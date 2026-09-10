@@ -53,9 +53,8 @@ if (Test-Path $themeFile) {
 
     foreach ($f in $htmlFiles) {
         $content = [System.IO.File]::ReadAllText($f.FullName, [System.Text.Encoding]::UTF8)
-        if ($content -match '--bg:#1c1a17') { $themeSkipped++; continue }
 
-        # Replace first <style>...</style> block
+        # Replace first <style>...</style> block with the latest theme
         $pattern = '(?s)(<style(?:\s[^>]*)?>).*?(</style>)'
         if ($content -match $pattern) {
             $newContent = [regex]::Replace($content, $pattern, {
@@ -64,6 +63,8 @@ if (Test-Path $themeFile) {
             if ($newContent -ne $content) {
                 [System.IO.File]::WriteAllText($f.FullName, $newContent, [System.Text.Encoding]::UTF8)
                 $themeInjected++
+            } else {
+                $themeSkipped++
             }
         }
     }

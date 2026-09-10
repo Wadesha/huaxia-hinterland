@@ -4,108 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>泗阳</title>
-<style>  :root{
-    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
-    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
-    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-padding-top:44px}
-  body{background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
-    line-height:1.55;font-size:14px}
-  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
-  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
-
-  /* ---- Hero ---- */
-  header.hero{background:var(--lp);color:var(--bg);padding:36px 18px 28px;text-align:center}
-  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
-    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:8px}
-  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(22px,4.5vw,36px);
-    margin:0 0 4px;letter-spacing:1px}
-  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(12px,2vw,16px)}
-  header.hero p{margin:10px auto 0;max-width:520px;font-size:13.5px;line-height:1.5}
-
-  /* ---- Lang toggle ---- */
-  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
-  .toggle button{border:0;background:transparent;color:#fff;padding:7px 16px;cursor:pointer;
-    font-size:12px;letter-spacing:1px;opacity:.5}
-  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
-
-  /* ---- TOC ---- */
-  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:12px 16px;margin:14px 0 6px}
-  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:6px;text-transform:uppercase}
-  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:24px}
-  .toc li{margin:2px 0;font-size:12.5px;break-inside:avoid;color:var(--muted)}
-  .toc a{color:var(--lp-dk);text-decoration:none}
-  .toc a:hover{color:var(--lp)}
-
-  /* ---- Sections ---- */
-  section{padding:18px 0;border-bottom:1px solid var(--line)}
-  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
-    border:1px solid var(--line2);border-radius:10px;padding:1px 7px;margin-bottom:6px}
-  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:18px;margin:0 0 4px;color:var(--lp)}
-  h2 .en{display:block;font-size:12px;color:var(--dim);font-weight:400;font-style:italic;margin-top:2px}
-  p{margin:0 0 10px}
-  .lead{font-size:13.5px;line-height:1.55;color:var(--ink)}
-  .lead::first-letter{font-size:2.6em;float:left;line-height:.8;padding:4px 8px 0 0;
-    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
-
-  /* ---- Tip ---- */
-  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
-    padding:9px 12px;margin:10px 0;font-size:12.5px;color:var(--muted);line-height:1.45}
-  .tip b{color:var(--lp)}
-
-  /* ---- Bilingual toggle ---- */
-  .en{display:none}
-  body.lang-en .zh{display:none}
-  body.lang-en .en{display:block}
-
-  /* ---- Back link ---- */
-  .backhome{display:inline-block;margin:10px 0 0;font-size:11px;color:var(--dim);
-    text-decoration:none;border:1px solid var(--line2);padding:3px 10px;border-radius:4px}
-  .backhome:hover{color:var(--lp);border-color:var(--lp)}
-
-  /* ---- Nav block (county pages) ---- */
-  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:14px 16px;margin:16px 0 6px}
-  .navblock h2{font-size:14px;color:var(--lp);margin-bottom:6px}
-  .navblock h3{font-size:12px;color:var(--dim);margin:8px 0 4px;font-weight:600}
-  .navnote{font-size:11.5px;color:var(--dim);margin-bottom:10px}
-  .navlinks a{display:inline-block;background:var(--card);border:1px solid var(--line2);
-    color:var(--lp-dk);text-decoration:none;padding:2px 8px;border-radius:4px;
-    font-size:11.5px;margin:2px 2px 0 0;transition:all .1s}
-  .navlinks a:hover{background:var(--lp);color:var(--bg);border-color:var(--lp)}
-  .navhome a{color:var(--dim);font-size:11px;text-decoration:none;margin-top:10px;display:inline-block}
-  .navhome a:hover{color:var(--lp)}
-
-  /* ---- Footer ---- */
-  footer{padding:14px 18px;text-align:center;color:var(--dim);font-size:11px;
-    border-top:1px solid var(--line);margin-top:20px}
-
-  /* ---- Responsive ---- */
-  @media(max-width:600px){
-    body{font-size:13.5px}
-    .wrap{padding:0 12px 30px}
-    header.hero{padding:24px 14px 20px}
-    section{padding:14px 0}
-    .toc ol{columns:1}
-    h2{font-size:16px}
-  }
-</style>
-<style id="navstyle">
-.navblock{margin:44px 0 0;padding:22px 0 0;border-top:2px solid #e7ddc9}
-.navblock h2{font-family:"Noto Serif SC",Georgia,serif;color:#8b6914;font-size:21px;margin:0 0 6px}
-.navnote{color:#6b645a;font-size:14px;margin:0 0 16px}
-.navgrp{margin:14px 0}
-.navgrp h3{font-size:15px;color:#3a352b;margin:0 0 9px;font-weight:600}
-.navlinks{display:flex;flex-wrap:wrap;gap:8px}
-.navlinks a{display:inline-block;background:#fff6e0;border:1px solid #ecd9a8;color:#8b6914;padding:5px 12px;border-radius:20px;font-size:14px;text-decoration:none}
-.navlinks a:hover{background:#fffaf0;border-color:#8b6914}
-.navhome{margin-top:18px}
-.navhome a{font-size:14px}
-</style>
+<link rel="stylesheet" href="assets/paper.css">
 </head>
 <body>
 <div class="wrap">
@@ -133,7 +32,19 @@
 <h2>怎么去</h2>
 <p>泗阳有高铁站，从宿迁过来十几分钟。洋河镇在县城西边，开车二十分钟。杨树博物馆在县城附近。</p>
 
-<div class="tip">膘鸡是泗阳宴席头菜，去馆子点一份。八集花生买现炒的。洋河酒厂参观问问能不能进。桃雕可以去云渡村看看。</div><div class="navblock" id="navblock"><h2>周边去处</h2><p class="navnote">同市相连，或跨过省界去邻境地界走走。</p><div class="navgrp"><h3>同市 · 宿迁</h3><p class="navlinks"><a href="%E6%B2%AD%E9%98%B3.html">沭阳</a><a href="%E6%B3%97%E6%B4%AA.html">泗洪</a></p></div><div class="navgrp"><h3>邻近地市</h3><div class="navgrp"><h3>邻近 · 徐州</h3><p class="navlinks"><a href="%E4%B8%B0%E5%8E%BF.html">丰县</a><a href="%E6%96%B0%E6%B2%82%E7%AA%91%E6%B9%BE.html">新沂窑湾</a><a href="%E6%B2%9B%E5%8E%BF.html">沛县</a><a href="%E7%9D%A2%E5%AE%81.html">睢宁</a><a href="%E9%82%B3%E5%B7%9E.html">邳州</a></p></div><div class="navgrp"><h3>邻近 · 连云港</h3><p class="navlinks"><a href="%E4%B8%9C%E6%B5%B7.html">东海</a><a href="%E7%81%8C%E4%BA%91.html">灌云</a><a href="%E7%81%8C%E5%8D%97.html">灌南</a><a href="%E8%B5%A3%E6%A6%86.html">赣榆</a></p></div><div class="navgrp"><h3>邻近 · 宿州</h3><p class="navlinks"><a href="%E5%9F%87%E6%A1%A5%E7%AC%A6%E7%A6%BB%E9%9B%86.html">埇桥符离集</a><a href="%E6%B3%97%E5%8E%BF.html">泗县</a><a href="%E7%81%B5%E7%92%A7.html">灵璧</a><a href="%E7%A0%80%E5%B1%B1.html">砀山</a><a href="%E8%90%A7%E5%8E%BF.html">萧县</a></p></div></div><p class="navhome"><a href="zlibrary/%E6%B7%AE%E6%B5%B7%E8%85%B9%E5%9C%B0_%E7%BB%BC%E5%90%88%E7%B4%A2%E5%BC%95.html">← 返回淮海腹地总索引</a></p></div><footer>
+<div class="tip">膘鸡是泗阳宴席头菜，去馆子点一份。八集花生买现炒的。洋河酒厂参观问问能不能进。桃雕可以去云渡村看看。</div><h2>妈祖文化园</h2>
+<p>京杭大运河从泗阳城边过，河边的妈祖文化园里立着一尊三面妈祖圣像，三个面朝向三个方向，这在妈祖庙里很少见。园子临水，不收门票，当地人饭后沿河堤散步就会走到这里。运河上的船队排成长队等过闸，站在岸边看船也是一景。</p>
+<h2>曾经叫桃源</h2>
+<p>泗阳在民国以前叫桃源县，县城里至今还有以桃源命名的街道和桥。一九一四年因为和湖南桃源重名，才改回"泗阳"，取的是境内泗水故道之意。一个县名换了，老地名却留在日常生活里，问路时本地人还是会说"去桃源路"。</p>
+<h2>故道果园</h2>
+<p>黄河故道从县境穿过，故道两侧的沙土地适合种果树，桃园、梨园连成片。春天花一开，故道大堤上就是一条花路；桃子下来的时候，路边摆摊的直接把秤挂在树杈上。八集的小花生、泗阳的膘鸡，也都能在这条故道沿线找到最地道的。</p>
+<h2>泗水国的封土</h2>
+<p>西汉朝廷在这一带封过泗水国，王陵区在县北三庄一带，田野里封土连成片，本地人叫"王坟"。汉代封国的地面遗存在苏北不算多见，站在田埂上看这一排土丘，能掂出当年封国的分量。收割之后去看最清楚，麦茬地里一个土丘就是一个故事。</p>
+<h2>走运河大堤</h2>
+<p>运河大堤上有路，从城区沿堤走到妈祖文化园，一路意杨林荫遮着，四五里地不觉着长。对岸是农场，河里船队排着等过闸，汽笛声隔着水面传过来。泗阳的日常一半在这条河边上，看船、遛弯、钓鱼的人一天不断，走一趟比逛景点收获多。</p>
+<h2>成子湖</h2>
+<p>县境西南挨着成子湖，是洪泽湖的一角，湖边有渔村，芦苇荡连到天边。湖鲜和运河船家饭是一个路子，小鱼锅贴最见功夫——小鱼贴在锅边，锅底炖鱼汤，一锅两吃。湖上落日时分，工棚收网归来，苇子梢上落满水鸟。</p>
+<div class="navblock" id="navblock"><h2>周边去处</h2><p class="navnote">同市相连，或跨过省界去邻境地界走走。</p><div class="navgrp"><h3>同市 · 宿迁</h3><p class="navlinks"><a href="%E6%B2%AD%E9%98%B3.html">沭阳</a><a href="%E6%B3%97%E6%B4%AA.html">泗洪</a></p></div><div class="navgrp"><h3>邻近地市</h3><div class="navgrp"><h3>邻近 · 徐州</h3><p class="navlinks"><a href="%E4%B8%B0%E5%8E%BF.html">丰县</a><a href="%E6%96%B0%E6%B2%82%E7%AA%91%E6%B9%BE.html">新沂窑湾</a><a href="%E6%B2%9B%E5%8E%BF.html">沛县</a><a href="%E7%9D%A2%E5%AE%81.html">睢宁</a><a href="%E9%82%B3%E5%B7%9E.html">邳州</a></p></div><div class="navgrp"><h3>邻近 · 连云港</h3><p class="navlinks"><a href="%E4%B8%9C%E6%B5%B7.html">东海</a><a href="%E7%81%8C%E4%BA%91.html">灌云</a><a href="%E7%81%8C%E5%8D%97.html">灌南</a><a href="%E8%B5%A3%E6%A6%86.html">赣榆</a></p></div><div class="navgrp"><h3>邻近 · 宿州</h3><p class="navlinks"><a href="%E5%9F%87%E6%A1%A5%E7%AC%A6%E7%A6%BB%E9%9B%86.html">埇桥符离集</a><a href="%E6%B3%97%E5%8E%BF.html">泗县</a><a href="%E7%81%B5%E7%92%A7.html">灵璧</a><a href="%E7%A0%80%E5%B1%B1.html">砀山</a><a href="%E8%90%A7%E5%8E%BF.html">萧县</a></p></div></div><p class="navhome"><a href="index.html">← 返回淮海腹地总索引</a></p></div><footer>
 <p>游记仿写练习。内容原创，史实为公开常识，欢迎实地核对。</p>
 </footer>
 

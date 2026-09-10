@@ -4,108 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>邹城</title>
-<style>  :root{
-    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
-    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
-    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-padding-top:44px}
-  body{background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
-    line-height:1.55;font-size:14px}
-  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
-  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
-
-  /* ---- Hero ---- */
-  header.hero{background:var(--lp);color:var(--bg);padding:36px 18px 28px;text-align:center}
-  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
-    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:8px}
-  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(22px,4.5vw,36px);
-    margin:0 0 4px;letter-spacing:1px}
-  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(12px,2vw,16px)}
-  header.hero p{margin:10px auto 0;max-width:520px;font-size:13.5px;line-height:1.5}
-
-  /* ---- Lang toggle ---- */
-  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
-  .toggle button{border:0;background:transparent;color:#fff;padding:7px 16px;cursor:pointer;
-    font-size:12px;letter-spacing:1px;opacity:.5}
-  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
-
-  /* ---- TOC ---- */
-  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:12px 16px;margin:14px 0 6px}
-  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:6px;text-transform:uppercase}
-  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:24px}
-  .toc li{margin:2px 0;font-size:12.5px;break-inside:avoid;color:var(--muted)}
-  .toc a{color:var(--lp-dk);text-decoration:none}
-  .toc a:hover{color:var(--lp)}
-
-  /* ---- Sections ---- */
-  section{padding:18px 0;border-bottom:1px solid var(--line)}
-  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
-    border:1px solid var(--line2);border-radius:10px;padding:1px 7px;margin-bottom:6px}
-  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:18px;margin:0 0 4px;color:var(--lp)}
-  h2 .en{display:block;font-size:12px;color:var(--dim);font-weight:400;font-style:italic;margin-top:2px}
-  p{margin:0 0 10px}
-  .lead{font-size:13.5px;line-height:1.55;color:var(--ink)}
-  .lead::first-letter{font-size:2.6em;float:left;line-height:.8;padding:4px 8px 0 0;
-    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
-
-  /* ---- Tip ---- */
-  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
-    padding:9px 12px;margin:10px 0;font-size:12.5px;color:var(--muted);line-height:1.45}
-  .tip b{color:var(--lp)}
-
-  /* ---- Bilingual toggle ---- */
-  .en{display:none}
-  body.lang-en .zh{display:none}
-  body.lang-en .en{display:block}
-
-  /* ---- Back link ---- */
-  .backhome{display:inline-block;margin:10px 0 0;font-size:11px;color:var(--dim);
-    text-decoration:none;border:1px solid var(--line2);padding:3px 10px;border-radius:4px}
-  .backhome:hover{color:var(--lp);border-color:var(--lp)}
-
-  /* ---- Nav block (county pages) ---- */
-  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:14px 16px;margin:16px 0 6px}
-  .navblock h2{font-size:14px;color:var(--lp);margin-bottom:6px}
-  .navblock h3{font-size:12px;color:var(--dim);margin:8px 0 4px;font-weight:600}
-  .navnote{font-size:11.5px;color:var(--dim);margin-bottom:10px}
-  .navlinks a{display:inline-block;background:var(--card);border:1px solid var(--line2);
-    color:var(--lp-dk);text-decoration:none;padding:2px 8px;border-radius:4px;
-    font-size:11.5px;margin:2px 2px 0 0;transition:all .1s}
-  .navlinks a:hover{background:var(--lp);color:var(--bg);border-color:var(--lp)}
-  .navhome a{color:var(--dim);font-size:11px;text-decoration:none;margin-top:10px;display:inline-block}
-  .navhome a:hover{color:var(--lp)}
-
-  /* ---- Footer ---- */
-  footer{padding:14px 18px;text-align:center;color:var(--dim);font-size:11px;
-    border-top:1px solid var(--line);margin-top:20px}
-
-  /* ---- Responsive ---- */
-  @media(max-width:600px){
-    body{font-size:13.5px}
-    .wrap{padding:0 12px 30px}
-    header.hero{padding:24px 14px 20px}
-    section{padding:14px 0}
-    .toc ol{columns:1}
-    h2{font-size:16px}
-  }
-</style>
-<style id="navstyle">
-.navblock{margin:44px 0 0;padding:22px 0 0;border-top:2px solid #e7ddc9}
-.navblock h2{font-family:"Noto Serif SC",Georgia,serif;color:#8b6914;font-size:21px;margin:0 0 6px}
-.navnote{color:#6b645a;font-size:14px;margin:0 0 16px}
-.navgrp{margin:14px 0}
-.navgrp h3{font-size:15px;color:#3a352b;margin:0 0 9px;font-weight:600}
-.navlinks{display:flex;flex-wrap:wrap;gap:8px}
-.navlinks a{display:inline-block;background:#fff6e0;border:1px solid #ecd9a8;color:#8b6914;padding:5px 12px;border-radius:20px;font-size:14px;text-decoration:none}
-.navlinks a:hover{background:#fffaf0;border-color:#8b6914}
-.navhome{margin-top:18px}
-.navhome a{font-size:14px}
-</style>
+<link rel="stylesheet" href="assets/paper.css">
 </head>
 <body>
 <div class="wrap">
@@ -135,7 +34,7 @@
 <h2>怎么去</h2>
 <p>邹城有高铁站，从济宁过来十分钟，从曲阜过来也是十分钟。孟庙孟府在市区里，走路就能到。上九山古村在城外，开车约半小时。</p>
 
-<div class="tip">孟庙孟府联票三十五块，比曲阜孔庙便宜很多，游客也少得多。峄山是邹城的自然景观，值得一去。孟子故里还有"VR大空间数字影院"可以体验。</div><div class="navblock" id="navblock"><h2>周边去处</h2><p class="navnote">同市相连，或跨过省界去邻境地界走走。</p><div class="navgrp"><h3>同市 · 济宁</h3><p class="navlinks"><a href="%E5%98%89%E7%A5%A5.html">嘉祥</a><a href="%E5%BE%AE%E5%B1%B1.html">微山</a><a href="%E6%A2%81%E5%B1%B1.html">梁山</a><a href="%E6%B1%B6%E4%B8%8A.html">汶上</a><a href="%E6%B3%97%E6%B0%B4.html">泗水</a><a href="%E9%87%91%E4%B9%A1.html">金乡</a><a href="%E9%B1%BC%E5%8F%B0.html">鱼台</a></p></div><div class="navgrp"><h3>邻近地市</h3><div class="navgrp"><h3>邻近 · 菏泽</h3><p class="navlinks"><a href="%E4%B8%9C%E6%98%8E.html">东明</a><a href="%E5%8D%95%E5%8E%BF.html">单县</a><a href="%E5%B7%A8%E9%87%8E.html">巨野</a><a href="%E6%88%90%E6%AD%A6.html">成武</a><a href="%E6%9B%B9%E5%8E%BF.html">曹县</a><a href="%E9%83%93%E5%9F%8E.html">郓城</a><a href="%E9%84%84%E5%9F%8E.html">鄄城</a></p></div><div class="navgrp"><h3>邻近 · 徐州</h3><p class="navlinks"><a href="%E4%B8%B0%E5%8E%BF.html">丰县</a><a href="%E6%96%B0%E6%B2%82%E7%AA%91%E6%B9%BE.html">新沂窑湾</a><a href="%E6%B2%9B%E5%8E%BF.html">沛县</a><a href="%E7%9D%A2%E5%AE%81.html">睢宁</a><a href="%E9%82%B3%E5%B7%9E.html">邳州</a></p></div><div class="navgrp"><h3>邻近 · 临沂</h3><p class="navlinks"><a href="%E4%B8%B4%E6%B2%AD.html">临沭</a><a href="%E5%85%B0%E9%99%B5.html">兰陵</a><a href="%E5%B9%B3%E9%82%91.html">平邑</a><a href="%E6%B2%82%E5%8D%97.html">沂南</a><a href="%E6%B2%82%E6%B0%B4.html">沂水</a><a href="%E8%8E%92%E5%8D%97.html">莒南</a><a href="%E8%92%99%E9%98%B4.html">蒙阴</a><a href="%E8%B4%B9%E5%8E%BF.html">费县</a><a href="%E9%83%AF%E5%9F%8E.html">郯城</a></p></div><div class="navgrp"><h3>邻近 · 枣庄</h3><p class="navlinks"><a href="%E6%BB%95%E5%B7%9E.html">滕州</a></p></div></div><p class="navhome"><a href="zlibrary/%E6%B7%AE%E6%B5%B7%E8%85%B9%E5%9C%B0_%E7%BB%BC%E5%90%88%E7%B4%A2%E5%BC%95.html">← 返回淮海腹地总索引</a></p></div><footer>
+<div class="tip">孟庙孟府联票三十五块，比曲阜孔庙便宜很多，游客也少得多。峄山是邹城的自然景观，值得一去。孟子故里还有"VR大空间数字影院"可以体验。</div><div class="navblock" id="navblock"><h2>周边去处</h2><p class="navnote">同市相连，或跨过省界去邻境地界走走。</p><div class="navgrp"><h3>同市 · 济宁</h3><p class="navlinks"><a href="%E5%98%89%E7%A5%A5.html">嘉祥</a><a href="%E5%BE%AE%E5%B1%B1.html">微山</a><a href="%E6%A2%81%E5%B1%B1.html">梁山</a><a href="%E6%B1%B6%E4%B8%8A.html">汶上</a><a href="%E6%B3%97%E6%B0%B4.html">泗水</a><a href="%E9%87%91%E4%B9%A1.html">金乡</a><a href="%E9%B1%BC%E5%8F%B0.html">鱼台</a></p></div><div class="navgrp"><h3>邻近地市</h3><div class="navgrp"><h3>邻近 · 菏泽</h3><p class="navlinks"><a href="%E4%B8%9C%E6%98%8E.html">东明</a><a href="%E5%8D%95%E5%8E%BF.html">单县</a><a href="%E5%B7%A8%E9%87%8E.html">巨野</a><a href="%E6%88%90%E6%AD%A6.html">成武</a><a href="%E6%9B%B9%E5%8E%BF.html">曹县</a><a href="%E9%83%93%E5%9F%8E.html">郓城</a><a href="%E9%84%84%E5%9F%8E.html">鄄城</a></p></div><div class="navgrp"><h3>邻近 · 徐州</h3><p class="navlinks"><a href="%E4%B8%B0%E5%8E%BF.html">丰县</a><a href="%E6%96%B0%E6%B2%82%E7%AA%91%E6%B9%BE.html">新沂窑湾</a><a href="%E6%B2%9B%E5%8E%BF.html">沛县</a><a href="%E7%9D%A2%E5%AE%81.html">睢宁</a><a href="%E9%82%B3%E5%B7%9E.html">邳州</a></p></div><div class="navgrp"><h3>邻近 · 临沂</h3><p class="navlinks"><a href="%E4%B8%B4%E6%B2%AD.html">临沭</a><a href="%E5%85%B0%E9%99%B5.html">兰陵</a><a href="%E5%B9%B3%E9%82%91.html">平邑</a><a href="%E6%B2%82%E5%8D%97.html">沂南</a><a href="%E6%B2%82%E6%B0%B4.html">沂水</a><a href="%E8%8E%92%E5%8D%97.html">莒南</a><a href="%E8%92%99%E9%98%B4.html">蒙阴</a><a href="%E8%B4%B9%E5%8E%BF.html">费县</a><a href="%E9%83%AF%E5%9F%8E.html">郯城</a></p></div><div class="navgrp"><h3>邻近 · 枣庄</h3><p class="navlinks"><a href="%E6%BB%95%E5%B7%9E.html">滕州</a></p></div></div><p class="navhome"><a href="index.html">← 返回淮海腹地总索引</a></p></div><footer>
 <p>游记仿写练习。内容原创，史实为公开常识，欢迎实地核对。</p>
 </footer>
 

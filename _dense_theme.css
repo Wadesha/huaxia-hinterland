@@ -57,17 +57,20 @@
   body.lang-en .zh{display:none}
   body.lang-en .en{display:block}
 
-  /* Nav block (county pages) */
+  /* Nav block (county pages) — compact */
   .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:12px 14px;margin:12px 0 4px}
-  .navblock h2{font-size:13px;color:var(--lp);margin-bottom:5px}
-  .navblock h3{font-size:11px;color:var(--dim);margin:6px 0 3px;font-weight:600}
-  .navnote{font-size:11px;color:var(--dim);margin-bottom:8px}
-  .navlinks a{display:inline-block;background:var(--card);border:1px solid var(--line2);
-    color:var(--lp-dk);text-decoration:none;padding:1px 7px;border-radius:3px;
-    font-size:11px;margin:1px 2px 0 0;transition:all .1s}
-  .navlinks a:hover{background:var(--lp);color:var(--bg);border-color:var(--lp)}
-  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:8px;display:inline-block}
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
   .navhome a:hover{color:var(--lp)}
 
   /* Footer */

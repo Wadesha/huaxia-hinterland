@@ -62,17 +62,20 @@
     text-decoration:none;border:1px solid var(--line2);padding:3px 10px;border-radius:4px}
   .backhome:hover{color:var(--lp);border-color:var(--lp)}
 
-  /* ---- Nav block (county pages) ---- */
+  /* ---- Nav block (county pages) — compact ---- */
   .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
-    padding:14px 16px;margin:16px 0 6px}
-  .navblock h2{font-size:14px;color:var(--lp);margin-bottom:6px}
-  .navblock h3{font-size:12px;color:var(--dim);margin:8px 0 4px;font-weight:600}
-  .navnote{font-size:11.5px;color:var(--dim);margin-bottom:10px}
-  .navlinks a{display:inline-block;background:var(--card);border:1px solid var(--line2);
-    color:var(--lp-dk);text-decoration:none;padding:2px 8px;border-radius:4px;
-    font-size:11.5px;margin:2px 2px 0 0;transition:all .1s}
-  .navlinks a:hover{background:var(--lp);color:var(--bg);border-color:var(--lp)}
-  .navhome a{color:var(--dim);font-size:11px;text-decoration:none;margin-top:10px;display:inline-block}
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
   .navhome a:hover{color:var(--lp)}
 
   /* ---- Footer ---- */
@@ -88,15 +91,3 @@
     .toc ol{columns:1}
     h2{font-size:16px}
   }
-
-/* ---- 县区互链导航块 ---- */
-.navblock{margin:44px 0 0;padding:22px 0 0;border-top:2px solid #e7ddc9}
-.navblock h2{font-family:"Noto Serif SC",Georgia,serif;color:#8b6914;font-size:21px;margin:0 0 6px}
-.navnote{color:#6b645a;font-size:14px;margin:0 0 16px}
-.navgrp{margin:14px 0}
-.navgrp h3{font-size:15px;color:#3a352b;margin:0 0 9px;font-weight:600}
-.navlinks{display:flex;flex-wrap:wrap;gap:8px}
-.navlinks a{display:inline-block;background:#fff6e0;border:1px solid #ecd9a8;color:#8b6914;padding:5px 12px;border-radius:20px;font-size:14px;text-decoration:none}
-.navlinks a:hover{background:#fffaf0;border-color:#8b6914}
-.navhome{margin-top:18px}
-.navhome a{font-size:14px}

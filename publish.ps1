@@ -39,6 +39,39 @@ if ($RunPy) {
     } else { Write-Warn "File not found: $RunPy" }
 }
 
+# Step 0.5: Auto-inject dense dark theme into content pages
+Write-Step "Theme injection (dark dense)..."
+$themeFile = "$PSScriptRoot\_dense_theme.css"
+$themeInjected = 0
+$themeSkipped = 0
+
+if (Test-Path $themeFile) {
+    $themeCss = [System.IO.File]::ReadAllText($themeFile, [System.Text.Encoding]::UTF8)
+    $htmlFiles = Get-ChildItem -Path . -Filter '*.html' -File |
+        Where-Object { $_.Name -ne 'index.html' } |
+        Sort-Object Name
+
+    foreach ($f in $htmlFiles) {
+        $content = [System.IO.File]::ReadAllText($f.FullName, [System.Text.Encoding]::UTF8)
+        if ($content -match '--bg:#1c1a17') { $themeSkipped++; continue }
+
+        # Replace first <style>...</style> block
+        $pattern = '(?s)(<style(?:\s[^>]*)?>).*?(</style>)'
+        if ($content -match $pattern) {
+            $newContent = [regex]::Replace($content, $pattern, {
+                param($m) return $m.Groups[1].Value + "`r`n" + $themeCss.TrimEnd() + "`r`n" + $m.Groups[2].Value
+            }, 1)
+            if ($newContent -ne $content) {
+                [System.IO.File]::WriteAllText($f.FullName, $newContent, [System.Text.Encoding]::UTF8)
+                $themeInjected++
+            }
+        }
+    }
+    Write-OK "Theme injected: $themeInjected | already had: $themeSkipped"
+} else {
+    Write-Warn "_dense_theme.css not found, skipping theme injection"
+}
+
 # Step 1: Scan HTML pages
 Write-Step "Scanning content pages..."
 $excludePattern = 'index|V1|V2|\u5bf9\u6bd4|\.tmp'

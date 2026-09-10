@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>泰安 · Tai'an — 泰山脚下的城，登岱的门户</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>泰安</h1>
+  <div class="en-title">Tai'an</div>
+  <p class="zh">一座为山而生的城——岱庙的汉柏、红门的石阶，把"登"和"拜"都铺成了路。</p>
+  <p class="en">A city born for the mountain — Dai Temple's Han cypresses, the Red Gate's stone steps, paving 'climbing' and 'worship' into a road.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔山顶，去岱庙摸汉柏 / Arrive at Dai Temple</a></li>
+      <li><a href="#s2">泰安到底是什么 / What Tai'an is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">岱庙：山下的第一进 / Dai Temple: the first court</a></li>
+      <li><a href="#s5">红门到南天门 / Red Gate to South Heaven Gate</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔山顶，去岱庙摸汉柏<span class="en">Arrive at Dai Temple</span></h2>
+    <div class="zh">
+      <p class="lead">泰安不声不响地躺在泰山脚下。你一下高铁，满眼是普通的山城，可往里走，岱庙先把你按下——里面那排汉柏，是汉武帝那阵栽的，两千年了还绿着。</p>
+      <p>我第一次懂泰安，是在红门的傍晚。石阶从城里一路钻进山，挑夫的扁担吱呀，卖香的老太太坐在阶边。那一刻你明白，这座城把"山"当祖宗供。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an quietly lies at Mount Tai's foot. Step off the train and it's an ordinary mountain town, yet walk in and Dai Temple presses you first — a row of Han cypresses planted in Emperor Wu's time, still green after two thousand years.</p>
+      <p>I got Tai'an at the Red Gate at dusk. Stone steps bore from town into the mountain, a porter's shoulder-pole creaked, an old incense seller sat by the step. That moment you see this city worships the mountain as ancestor.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>泰安到底是什么<span class="en">What Tai'an is</span></h2>
+    <div class="zh">
+      <p class="lead">泰安是因泰山而设的城，古称岱，泰山封禅的皇帝从这里起步。它不靠别的，靠的是一座山——五岳之首，帝王来拜，百姓来朝。</p>
+      <p>它还是登岱的门户。红门、中天门、南天门，一级级把人往天上送，城只是山的第一级台阶。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an was set for Mount Tai, old name Dai, where emperors began their Fengshan rites. It leans on nothing else but one mountain — first of the Five Sacred Peaks, where emperors came to worship, common folk to pay court.</p>
+      <p>It's also the gate to climb Dai. Red Gate, Middle Heaven Gate, South Heaven Gate — step by step they send you skyward; the town is but the mountain's first stair.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">泰安站在京沪铁路线上，高铁从济南过来半小时出头，从北京过来两小时多。山下到红门步行可达，登顶有徒步和索道两路；天外村有旅游车到中天门再换索道。</p>
+      <p>去周边曲阜、济南都得从泰安中转，车程个把小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；登山轻装，水和小食山下备好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; climb light, water and snacks ready at the foot.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an sits on the Beijing–Shanghai line; high-speed from Jinan half an hour, from Beijing just over two hours. The Red Gate is a walk from the foot; the summit has two roads, on foot or by cable; from Tianwai Village a tourist bus reaches Middle Heaven Gate then a cable car.</p>
+      <p>For Qufu and Jinan change at Tai'an, about an hour each.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；登山轻装，水和小食山下备好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; climb light, water and snacks ready at the foot.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>岱庙：山下的第一进<span class="en">Dai Temple: the first court</span></h2>
+    <div class="zh">
+      <p class="lead">岱庙是泰山的庙，也是一座城。城墙、城门、汉柏、宋天贶殿，把"拜山"的排场摆得齐齐整整。你站在天贶殿前，连呼吸都放轻——殿里的壁画，是宋代的原笔。</p>
+      <p>庙里的碑林比展馆实在，历代帝王的题字挨着立，读一遍像翻了一部正史。</p>
+      <aside class="tip"><b>当地贴士：</b>岱庙门票含登岱，留半天；天贶殿光线暗，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Dai Temple ticket covers the climb, allow half a day; the hall is dim, no flash.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Dai Temple is the mountain's temple, also a walled city. Walls, gates, Han cypresses, the Song Heaven Blessing Hall — the whole show of 'worshipping the mountain' set in order. Stand before the hall and breath eases — the murals within are Song original brush.</p>
+      <p>The stele forest beats any exhibit; emperors' inscriptions through ages stand side by side, read once like flipping an official history.</p>
+      <aside class="tip"><b>当地贴士：</b>岱庙门票含登岱，留半天；天贶殿光线暗，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Dai Temple ticket covers the climb, allow half a day; the hall is dim, no flash.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>红门到南天门<span class="en">Red Gate to South Heaven Gate</span></h2>
+    <div class="zh">
+      <p class="lead">从红门起步，石阶一级级往上，经斗母宫、经石峪、中天门，再到十八盘——那段最陡，台阶像立起来的。你爬得喘，可一抬头，南天门在云里。</p>
+      <p>十八盘是考验，也是奖赏。登顶那一刻，云海在脚下铺开，你会懂为什么帝王要来。</p>
+      <aside class="tip"><b>当地贴士：</b>十八盘陡，慢爬别停；索道可省脚，留体力看日出。</aside>
+      <aside class="tip"><b>Local tip:</b>The Eighteen Bends are steep, climb slow, don't stop; the cable saves legs, keep strength for the sunrise.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Start at the Red Gate, stone steps rise rung by rung past Doumu Palace, the Sutra Valley, Middle Heaven Gate, to the Eighteen Bends — steepest there, steps near vertical. You pant climbing, yet look up and South Heaven Gate floats in cloud.</p>
+      <p>The Eighteen Bends test and reward. At the top the sea of cloud spreads underfoot; you'll get why emperors came.</p>
+      <aside class="tip"><b>当地贴士：</b>十八盘陡，慢爬别停；索道可省脚，留体力看日出。</aside>
+      <aside class="tip"><b>Local tip:</b>The Eighteen Bends are steep, climb slow, don't stop; the cable saves legs, keep strength for the sunrise.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">泰安的味道在煎饼和豆腐之间。泰安煎饼薄如纸，卷大葱辣酱，咔嚓一口是山民的干粮哲学。泰山豆腐用山泉水点，嫩而不散，白菜炖一锅最暖。</p>
+      <p>赤鳞鱼是溪里的珍品，刺少肉细，清蒸最鲜；夜市里炒鸡、豆腐脑都不贵。</p>
+      <aside class="tip"><b>当地贴士：</b>煎饼认现烙，卷葱最香；赤鳞鱼价高，问清再点。</aside>
+      <aside class="tip"><b>Local tip:</b>For pancakes trust fresh-griddled, scallion roll best; red-scale fish costs, ask before ordering.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an's flavour sits between pancake and tofu. Tai'an pancakes thin as paper, rolled with scallion and chili paste, one crackle the mountain folk's dry-rations philosophy. Taishan tofu set with spring water, tender not broken, best in a cabbage pot.</p>
+      <p>The red-scale fish is a stream treasure, few bones, fine flesh, steamed freshest; the night market's fried chicken and tofu brain are cheap.</p>
+      <aside class="tip"><b>当地贴士：</b>煎饼认现烙，卷葱最香；赤鳞鱼价高，问清再点。</aside>
+      <aside class="tip"><b>Local tip:</b>For pancakes trust fresh-griddled, scallion roll best; red-scale fish costs, ask before ordering.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">泰山是圣山也是景区，碑刻别摸，别刻字，闪光灯对壁画是慢刀子。登山别独行夜路，十八盘窄，靠右慢行。</p>
+      <p>泰安人实在，问路指得清，可别拿"这山是不是人造的"去戳——他们把岱宗当骨，你客气点，他们能把每座庙的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Tai Shan is a sacred mountain and a scenic area; don't touch the steles, don't carve, flash hurts murals slow as a knife. Don't hike alone by night; the Eighteen Bends are narrow, keep right, go slow.</p>
+      <p>Tai'an folk are plain; they point clear, just don't poke with 'is this mountain man-made' — they take the sacred peak as bone; be polite and they'll tell you each temple's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天山花满坡，泰安舒服。夏天山顶凉，是避暑的好去处，可多雨。秋天天高云淡，红叶染山，最是登临的好时候。冬天冷，可雪后岱庙肃穆，山顶玉树琼枝。</p>
+      <p>若为了日出，得算准天气；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>看日出查预报；山顶风大温低，带羽绒。</aside>
+      <aside class="tip"><b>Handy tip:</b>'For sunrise check the forecast; the summit wind strong, cold, bring a down jacket.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring flowers fleck the slopes, Tai'an eased. Summer the summit cools, a good escape from heat, yet rainy. Autumn high and clear, red leaves dye the mountain — the best time to climb. Winter cold, yet after snow Dai Temple solemn, the summit a jade of ice.</p>
+      <p>For sunrise time the weather; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>看日出查预报；山顶风大温低，带羽绒。</aside>
+      <aside class="tip"><b>Handy tip:</b>'For sunrise check the forecast; the summit wind strong, cold, bring a down jacket.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">岱庙是免费的天然步道，绕庙墙走一圈，汉柏、碑林挨着过。城里的通天街随便钻，老字号、山货摊都在沿线。</p>
+      <p>虎山公园顺河，骑车比走路爽，夕阳把河染成橘色。泰安的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>岱庙外围步道免费；通天街细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dai Temple's outer path is free; Tongtian Street, look close at old names.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Dai Temple is a free path; circle its wall and the Han cypresses, the stele forest line the way. The town's Tongtian Street wanders free, old names and mountain goods along it.</p>
+      <p>Hushan Park runs by the river, better by bike; at dusk it dyes the river orange. Tai'an's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>岱庙外围步道免费；通天街细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dai Temple's outer path is free; Tongtian Street, look close at old names.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">泰安最贵的东西，大多不要钱。岱庙的风、红门在暮色里的石阶、通天街那阵香灰味，站着看就是参与。雪后汉柏配红墙，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。泰安教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>岱庙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Dai Temple's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an's priciest things mostly cost nothing. Dai Temple's wind, the Red Gate's dusk steps, Tongtian Street's incense-ash scent — stand and you're in it. Snow on Han cypresses with red walls beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Tai'an taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>岱庙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Dai Temple's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">泰安不会一下子把你看服。它没有名城的精巧，也没有水乡的柔。它正，它硬，它又山又庙——一级石阶能让人沉默，一棵汉柏能让人回头。</p>
+      <p>你逛过岱庙的一院汉柏、红门的一路石阶、南天门的一身云，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"五岳独尊"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'an won't win you at once. No famous town's finesse, no water town's softness. It's proper, hard, mountain and temple — one stone step silences you, one Han cypress turns you back.</p>
+      <p>You'll see Dai Temple's court of Han cypresses, the Red Gate's stair of stone, South Heaven Gate's cloak of cloud — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'solemn among the Five Peaks'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宿州 · Suzhou, Anhui — V1 v1</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v1">V1 · v1</div>
+  <h1>宿州</h1>
+  <div class="en-title">Suzhou, Anhui</div>
+  <p class="zh">安徽北大门，烧鸡的镇、藏过皇帝的山、会长成风景的石头，还有春天一整片白花的梨园。</p>
+  <p class="en">Anhui's northern gate: a town of roast chicken, a hill that once hid an emperor, stones that grow into scenery, and in spring a whole white sea of pear blossom.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">一座很容易被念错名的城</a></li>
+      <li><a href="#s2">符离集：一路烧鸡，一个镇</a></li>
+      <li><a href="#s3">皇藏峪：山里藏过一个人</a></li>
+      <li><a href="#s4">灵璧石：石头也有长相</a></li>
+      <li><a href="#s5">砀山：春天一整片白</a></li>
+      <li><a href="#s6">大泽乡：一句喊出来的话</a></li>
+      <li><a href="#s7">虞姬墓</a></li>
+      <li><a href="#s8">运河从地下过</a></li>
+      <li><a href="#s9">吃：鸡、馍与汤</a></li>
+      <li><a href="#s10">几件要紧事</a></li>
+      <li><a href="#s11">离开的时候</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>一座很容易被念错名的城<span class="en">A city whose name is always misread</span></h2>
+    <div class="zh">
+      <p class="lead">安徽有个宿州，江苏有个宿迁，两个都在淮海一带，别搞混。</p>
+      <p>宿州在安徽最北，往北就是江苏，往西是河南。</p>
+      <p>它 1999 年才撤地设市，城里到处是新修的路。</p>
+      <p>你在街上看，招牌上最多的是烧鸡和梨。</p>
+      <p>这两样东西，基本就是这座城的自我介绍。</p>
+    </div>
+    <div class="en">
+      <p class="lead">There is a Suzhou in Anhui and a Suqian in Jiangsu, both in this Huaihai corner, and people mix them up constantly.</p>
+      <p>Suzhou sits at Anhui's northern edge, with Jiangsu to the north and Henan to the west.</p>
+      <p>It only became a prefecture-level city in 1999, and the town is full of newly laid roads.</p>
+      <p>Look at the shopfronts: roast chicken and pears, mostly.</p>
+      <p>Those two things are more or less how the city introduces itself.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>符离集：一路烧鸡，一个镇<span class="en">Fuliji: a town that is one long roast chicken</span></h2>
+    <div class="zh">
+      <p class="lead">符离集在市区北边，是个镇，也是个火车站名。</p>
+      <p>镇上的主业是烧鸡，一家挨一家，香味一路飘。</p>
+      <p>你随便挑一家，鸡是现捞的，撕开就吃。</p>
+      <p>肉烂，骨头酥，香料味进得深。</p>
+      <p>高铁上很多人提着真空包装的烧鸡，就是从这带出去的。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Fuliji is a town north of the city, and also a station name.</p>
+      <p>The town's trade is roast chicken, shop after shop, the smell following you down the street.</p>
+      <p>Pick any one of them: the bird comes out of the pot and is pulled apart by hand.</p>
+      <p>The meat falls away, the bones are soft, and the spice has gone in deep.</p>
+      <p>Half the vacuum-packed chickens people carry onto trains come from around here.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>皇藏峪：山里藏过一个人<span class="en">Huangcangyu: a hill that hid a man</span></h2>
+    <div class="zh">
+      <p class="lead">皇藏峪在萧县，离市区有点远，是一片山峪。</p>
+      <p>传说刘邦在这儿躲过追兵，所以叫皇藏峪。</p>
+      <p>峪里树很老，青檀长在石头缝里，根把石头包住了。</p>
+      <p>你沿着石阶往上走，林子密，光是碎的。</p>
+      <p>山顶有座寺，香火不旺，但安静。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huangcangyu is in Xiaoxian county, some way from the city — a wooded valley.</p>
+      <p>The story goes that Liu Bang hid here from his pursuers, which is how the valley got its name: the hiding place of an emperor.</p>
+      <p>The trees are ancient; the wingceltis grows straight out of rock, its roots wrapping the stone.</p>
+      <p>You climb stone steps through dense woodland, the light broken into pieces.</p>
+      <p>There is a temple at the top, not much visited and very quiet.</p>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>灵璧石：石头也有长相<span class="en">Lingbi stone: stones with faces</span></h2>
+    <div class="zh">
+      <p class="lead">灵璧在宿州东南，出一种石头，是全国最有名的观赏石之一。</p>
+      <p>灵璧石黑，敲起来有声音，讲究皱、瘦、漏、透。</p>
+      <p>你在市场上逛，一块石头可以卖几千，也可以卖几十万。</p>
+      <p>外行看热闹，看形状像什么，看表面的纹路。</p>
+      <p>真要买，先多问几家，价钱差得没边。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lingbi, southeast of Suzhou, produces a stone that is among the best-known scholar's rocks in China.</p>
+      <p>Lingbi stone is black, rings when struck, and is judged on wrinkle, thinness, perforation and translucency.</p>
+      <p>Walk the market: one stone goes for a few thousand, another for hundreds of thousands.</p>
+      <p>Outsiders look for the fun of it — what the shape resembles, how the surface is veined.</p>
+      <p>If you mean to buy, ask at several stalls first; the spread in price has no floor.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>砀山：春天一整片白<span class="en">Dangshan: a whole white spring</span></h2>
+    <div class="zh">
+      <p class="lead">砀山在宿州最北边，靠着黄河故道。</p>
+      <p>这儿是产梨的地方，梨园一片接一片。</p>
+      <p>春天开花的时候，地里全是白的，风一吹落一层。</p>
+      <p>你走进梨园，脚下是沙土，头顶是花。</p>
+      <p>秋天结果，砀山酥梨皮薄汁多，到处都在卖。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Dangshan is at Suzhou's northern edge, along the old bed of the Yellow River.</p>
+      <p>This is pear country, orchard after orchard.</p>
+      <p>When it flowers in spring the whole ground turns white, and the wind brings down a layer of petals.</p>
+      <p>Walk into the orchards: sandy soil underfoot, blossom overhead.</p>
+      <p>Autumn brings the fruit — Dangshan pears, thin-skinned and juicy, on sale everywhere.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>大泽乡：一句喊出来的话<span class="en">Dazexiang: one shouted sentence</span></h2>
+    <div class="zh">
+      <p class="lead">涉故台在埇桥区的大泽乡，是一处土台。</p>
+      <p>公元前 209 年，陈胜吴广在这儿揭竿而起。</p>
+      <p>你站在台前，四周是田，什么也没有。</p>
+      <p>"王侯将相宁有种乎"这句话，就是从这附近喊出去的。</p>
+      <p>台不大，土是夯的，边上立着碑。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Shegudai is a platform of rammed earth at Dazexiang in Yongqiao district.</p>
+      <p>In 209 BC Chen Sheng and Wu Guang raised their revolt on this spot.</p>
+      <p>Stand in front of the platform: fields on every side and nothing else.</p>
+      <p>"Are kings and generals born to the purple?" — that line went out from somewhere around here.</p>
+      <p>The platform is small, made of tamped earth, with a stele beside it.</p>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>虞姬墓<span class="en">The tomb of Consort Yu</span></h2>
+    <div class="zh">
+      <p class="lead">灵璧有座虞姬墓，说是项羽那位虞姬的墓。</p>
+      <p>墓不大，园子修得规整，碑是新的。</p>
+      <p>你绕着走一圈，几分钟就完了。</p>
+      <p>故事的分量比坟本身重——垓下那夜，她死在霸王前面。</p>
+      <p>本地人把这当作一段旧事，不悲不喜。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lingbi has a tomb said to be that of Consort Yu, Xiang Yu's woman.</p>
+      <p>The tomb is small, the grounds tidy, the stele new.</p>
+      <p>Walk around it and you are done in a few minutes.</p>
+      <p>The story outweighs the grave — that night at Gaixia, she died before the hegemon did.</p>
+      <p>Locals treat it as an old story, without either grief or pride.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>运河从地下过<span class="en">The canal runs underneath</span></h2>
+    <div class="zh">
+      <p class="lead">隋唐大运河从宿州城里穿过，如今埋在地下。</p>
+      <p>前些年挖出来一段河道和码头，建了遗址展示。</p>
+      <p>你在市区就能走到，不用专门跑远路。</p>
+      <p>展馆不大，看地层剖面最直观，一层一层都是年代。</p>
+      <p>出了馆是马路和小区，运河在哪儿只能靠牌子认。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Sui–Tang Grand Canal once ran through Suzhou, and now lies underground.</p>
+      <p>Some years ago a stretch of channel and a quay were excavated and opened as a heritage site.</p>
+      <p>It is within the city, so no special trip is needed.</p>
+      <p>The museum is small; the stratigraphic section is the clearest thing in it, layer upon layer of periods.</p>
+      <p>Outside are roads and housing estates, and only a sign tells you where the canal ran.</p>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>吃：鸡、馍与汤<span class="en">Food: chicken, bread and soup</span></h2>
+    <div class="zh">
+      <p class="lead">宿州的吃很北方，量大，油重，价低。</p>
+      <p>符离集烧鸡是头牌，热的最好吃，凉的也不差。</p>
+      <p>街上有一种烙馍，卷菜卷肉，一张顶一顿。</p>
+      <p>你早上去喝汤，配馍，几块钱就饱了。</p>
+      <p>这里不太讲究摆盘，好吃管饱就算合格。</p>
+      <aside class="tip"><b>实用贴士：</b>符离集烧鸡买热的现吃，带走的真空装口味差一截；砀山梨以秋季为佳，春天去主要看花，花期通常只有十来天。</aside>
+      <aside class="tip"><b>Handy tip:</b>Buy Fuliji chicken hot and eat it there — the vacuum-packed version loses a step. Dangshan pears are best in autumn; a spring visit is about the blossom, which usually lasts little more than ten days.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suzhou food is northern: large portions, plenty of oil, low prices.</p>
+      <p>Fuliji roast chicken is the headline dish, best hot, still good cold.</p>
+      <p>There is a griddle bread on the streets, rolled around vegetables or meat, one sheet to a meal.</p>
+      <p>Go for soup in the early hours, bread alongside it, and a few yuan fills you up.</p>
+      <p>Presentation is not a priority here; filling and tasting good is enough to pass.</p>
+      <aside class="tip"><b>实用贴士：</b>符离集烧鸡买热的现吃，带走的真空装口味差一截；砀山梨以秋季为佳，春天去主要看花，花期通常只有十来天。</aside>
+      <aside class="tip"><b>Handy tip:</b>Buy Fuliji chicken hot and eat it there — the vacuum-packed version loses a step. Dangshan pears are best in autumn; a spring visit is about the blossom, which usually lasts little more than ten days.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>几件要紧事<span class="en">A few things that matter</span></h2>
+    <div class="zh">
+      <p class="lead">宿州的看点分散在几个县：砀山在最北，萧县在西，灵璧在东南。</p>
+      <p>你按县走，一天跑一个地方比较稳。</p>
+      <p>高铁站是宿州东站，离市区有段路。</p>
+      <p>各县之间有班车，班次不算密，赶时间就打车或包车。</p>
+      <p>春天看花，秋天吃梨，别的时候来就专心吃鸡。</p>
+      <aside class="tip"><b>实用贴士：</b>砀山、萧县、灵璧三处方向各不相同，与市区车程均在一小时上下；皇藏峪在萧县境内，进峪后全程步行，来回约 3 小时。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dangshan, Xiaoxian and Lingbi lie in three different directions, each about an hour from the city. Huangcangyu is inside Xiaoxian, and the valley is walked end to end — around three hours there and back.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suzhou's sights scatter across its counties: Dangshan in the far north, Xiaoxian west, Lingbi southeast.</p>
+      <p>Take them county by county — one place a day is a realistic pace.</p>
+      <p>The high-speed station is Suzhou East, some way out of town.</p>
+      <p>Coaches run between the counties but not often, so hire a car or take a taxi if time is short.</p>
+      <p>Come in spring for blossom, autumn for pears, and at any other time simply for the chicken.</p>
+      <aside class="tip"><b>实用贴士：</b>砀山、萧县、灵璧三处方向各不相同，与市区车程均在一小时上下；皇藏峪在萧县境内，进峪后全程步行，来回约 3 小时。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dangshan, Xiaoxian and Lingbi lie in three different directions, each about an hour from the city. Huangcangyu is inside Xiaoxian, and the valley is walked end to end — around three hours there and back.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>离开的时候<span class="en">On leaving</span></h2>
+    <div class="zh">
+      <p class="lead">宿州不怎么上榜单，也没什么必看的东西。</p>
+      <p>可你吃了鸡，看了梨花，摸过那些黑石头，会觉得不虚此行。</p>
+      <p>这地方的东西都很具体：一只鸡、一块石、一片梨园、一个土台。</p>
+      <p>没有一样是宏大的，凑起来却挺像回事。</p>
+      <p>走的时候你会提一只烧鸡上车。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suzhou does not appear on many lists, and it has nothing you must see.</p>
+      <p>But you eat the chicken, see the blossom, handle the black stones, and the trip does not feel wasted.</p>
+      <p>Everything here is concrete: a chicken, a stone, an orchard, a mound of earth.</p>
+      <p>Not one of them is grand, and together they amount to something.</p>
+      <p>You leave carrying a roast chicken onto the train.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

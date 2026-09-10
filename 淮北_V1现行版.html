@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>淮北 · Huaibei — V1 v1</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v1">V1 · v1</div>
+  <h1>淮北</h1>
+  <div class="en-title">Huaibei</div>
+  <p class="zh">一座挖煤挖出来的城，地下有矿，地上有茶馆——塌陷积水成了湖，老镇上的茶炉还没熄。</p>
+  <p class="en">A city dug out of coal: mines below, teahouses above, and the water that filled the hollows has become lakes.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先看这座城是怎么来的</a></li>
+      <li><a href="#s2">相山：城边唯一的一片高</a></li>
+      <li><a href="#s3">临涣：一座被茶泡着的古镇</a></li>
+      <li><a href="#s4">茶馆里的时间</a></li>
+      <li><a href="#s5">柳孜：运河埋在地底下</a></li>
+      <li><a href="#s6">塌陷区变成了湖</a></li>
+      <li><a href="#s7">双堆集：一次围歼</a></li>
+      <li><a href="#s8">酒与面</a></li>
+      <li><a href="#s9">一座在改行的城</a></li>
+      <li><a href="#s10">几件要紧事</a></li>
+      <li><a href="#s11">离开的时候</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先看这座城是怎么来的<span class="en">How this city came to exist</span></h2>
+    <div class="zh">
+      <p class="lead">淮北是安徽最北的地级市，旁边就是河南和山东。</p>
+      <p>它很年轻，因煤而建，1960 年才设市。</p>
+      <p>你在城里走，能看到很多"矿"字头的地名和单位。</p>
+      <p>这地方平原为主，山只有相山那一小片。</p>
+      <p>城不大，走路加公交就能转完，别怕迷路。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huaibei is Anhui's northernmost prefecture-level city, with Henan and Shandong close by.</p>
+      <p>It is young, built on coal, and only became a city in 1960.</p>
+      <p>Walk around and you keep hitting place names and work units with "mine" in them.</p>
+      <p>The land is mostly plain; the only real hills are the small Xiangshan range.</p>
+      <p>The city is not large — walking plus buses covers it, so don't fear getting lost.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>相山：城边唯一的一片高<span class="en">Xiangshan: the only high ground</span></h2>
+    <div class="zh">
+      <p class="lead">相山在城西北，海拔不高，却是这片平原上少见的起伏。</p>
+      <p>山上有庙，也有碑，树长得密。</p>
+      <p>你爬到半山腰回头，能看见整座城铺在下面。</p>
+      <p>本地人周末来这儿遛弯、打牌、带孩子。</p>
+      <p>山不高，但它是这座城的制高点，也是唯一的""景""。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xiangshan rises northwest of town, low, but it is rare unevenness on this plain.</p>
+      <p>There is a temple on it, and steles, and dense trees.</p>
+      <p>Halfway up, turn around: the whole city is laid out below you.</p>
+      <p>Locals come at weekends to stroll, play cards and bring their children.</p>
+      <p>It is not high, but it is the city's high point and its only real "sight".</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>临涣：一座被茶泡着的古镇<span class="en">Linhuan, a town steeped in tea</span></h2>
+    <div class="zh">
+      <p class="lead">临涣在濉溪，离市区有段路，是座老镇。</p>
+      <p>镇上有好几家老茶馆，房子旧，炉子老，桌子磨得发亮。</p>
+      <p>这里喝的是棒棒茶，用茶梗煮，颜色深，味道粗。</p>
+      <p>你坐下来，一壶几块钱，坐多久都行。</p>
+      <p>满屋子都是本地口音，没人看你，也没人赶你。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Linhuan is in Suixi county, some way from the city, and it is an old town.</p>
+      <p>It has several old teahouses: old buildings, old stoves, tables worn shiny.</p>
+      <p>What they serve is stick tea, brewed from tea stems, dark in the cup and rough on the tongue.</p>
+      <p>Sit down and a pot costs a few yuan, and you can stay as long as you like.</p>
+      <p>The room is full of local speech; nobody looks at you and nobody moves you on.</p>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>茶馆里的时间<span class="en">Time inside a teahouse</span></h2>
+    <div class="zh">
+      <p class="lead">临涣的茶馆开门很早，天没亮就有人来。</p>
+      <p>老人端着杯子聊天，话题从收成到孙子，什么都聊。</p>
+      <p>你要是不赶时间，就点一壶，坐着听。</p>
+      <p>茶粗，水烫，话多。</p>
+      <p>这种地方不卖体验，它就是日子本身。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The teahouses at Linhuan open early — people arrive before it is properly light.</p>
+      <p>Old men hold their cups and talk, about the harvest and about grandsons and about everything else.</p>
+      <p>If you are not in a hurry, order a pot and sit and listen.</p>
+      <p>The tea is coarse, the water is scalding, and the talk is endless.</p>
+      <p>A place like this does not sell an experience; it is simply the day itself.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>柳孜：运河埋在地底下<span class="en">Liuzi: the canal under the fields</span></h2>
+    <div class="zh">
+      <p class="lead">濉溪的柳孜村底下埋着一段隋唐大运河。</p>
+      <p>二十世纪末考古挖出了石构码头、沉船和成堆的瓷器。</p>
+      <p>现场建了馆，你能看到当年河道的位置和出土的船。</p>
+      <p>站在那儿看，脚下这片平地从前是一条繁忙的水道。</p>
+      <p>现在只剩麦地和村路，看不出一点水的痕迹。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Under Liuzi village in Suixi lies a stretch of the Sui–Tang Grand Canal.</p>
+      <p>Excavation at the end of the last century uncovered a stone quay, sunken boats and heaps of porcelain.</p>
+      <p>A museum stands on the site, showing where the channel ran and the boats that came out of it.</p>
+      <p>Stand there and consider that this flat ground was once a busy waterway.</p>
+      <p>Now there are wheat fields and village roads, and not a trace of water.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>塌陷区变成了湖<span class="en">The hollows became lakes</span></h2>
+    <div class="zh">
+      <p class="lead">挖煤会把地面挖沉，沉下去就积水。</p>
+      <p>淮北城边有好几片这样的水面，现在都修成了湿地公园。</p>
+      <p>你在湖边走，芦苇长得很高，鸟也多。</p>
+      <p>南湖、中湖都是这么来的。</p>
+      <p>一片塌陷地，最后变成城里最舒服的地方，这事挺有意思。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Mining makes the ground sink, and what sinks fills with water.</p>
+      <p>There are several such sheets of water around Huaibei, all of them now made into wetland parks.</p>
+      <p>Walk along them: the reeds are tall and the birds are plentiful.</p>
+      <p>The South Lake and the Central Lake both began this way.</p>
+      <p>That a collapsed pit should end up the pleasantest place in the city is a good joke on the place.</p>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>双堆集：一次围歼<span class="en">Shuangduiji: a battle of encirclement</span></h2>
+    <div class="zh">
+      <p class="lead">双堆集在濉溪，是个村子。</p>
+      <p>1948 年冬天，这里打过一场硬仗，是淮海战役的一部分。</p>
+      <p>村外有烈士陵园和纪念馆，塔立在地平线上很远就看得见。</p>
+      <p>你进去看展板，地形图上是密密麻麻的箭头。</p>
+      <p>出来是一片麦田，安静得有点突然。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Shuangduiji is a village in Suixi.</p>
+      <p>In the winter of 1948 a hard battle was fought here, part of the Huaihai Campaign.</p>
+      <p>Outside the village stand a memorial park and a museum, the tower visible from far off across the flat land.</p>
+      <p>Go in and read the panels; the maps are dense with arrows.</p>
+      <p>Outside there are wheat fields, quiet enough to be startling.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>酒与面<span class="en">Liquor and wheat</span></h2>
+    <div class="zh">
+      <p class="lead">濉溪出酒，口子窖是本地的名字，街上到处是招牌。</p>
+      <p>本地人喝酒实在，杯子小，次数多。</p>
+      <p>吃的以面食为主，面条、烙馍、水煎包。</p>
+      <p>你可以去早市吃一碗汤，配馍，几块钱管饱。</p>
+      <p>这里不讲究精致，讲究实在。</p>
+      <aside class="tip"><b>实用贴士：</b>临涣茶馆集中在老街一带，一壶棒棒茶几块钱，续水不另收；去之前别吃太饱，本地早点分量足。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Linhuan teahouses cluster on the old street; a pot of stick tea costs a few yuan and refills are free. Don't arrive too full — local breakfasts are large.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suixi makes liquor, and Kouzijiao is the local name, splashed across shopfronts everywhere.</p>
+      <p>People here drink steadily rather than showily: small glasses, many rounds.</p>
+      <p>The food is wheat-based — noodles, griddle cakes, pan-fried buns.</p>
+      <p>Go to an early market for a bowl of soup with bread; a few yuan and you are full.</p>
+      <p>Refinement is not the point here; substance is.</p>
+      <aside class="tip"><b>实用贴士：</b>临涣茶馆集中在老街一带，一壶棒棒茶几块钱，续水不另收；去之前别吃太饱，本地早点分量足。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Linhuan teahouses cluster on the old street; a pot of stick tea costs a few yuan and refills are free. Don't arrive too full — local breakfasts are large.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>一座在改行的城<span class="en">A city changing trade</span></h2>
+    <div class="zh">
+      <p class="lead">煤挖了六十年，浅的挖完了，深的不好挖。</p>
+      <p>这座城正在想别的路子：新材料、食品、旅游。</p>
+      <p>你在新区能看到新的厂房和新的路。</p>
+      <p>老城区慢一些，人也松一些。</p>
+      <p>转型这种事说起来大，走起来就是一条街一条街地改。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Coal has been dug here for sixty years; the shallow seams are gone and the deep ones are awkward.</p>
+      <p>The city is looking for other lines of work: new materials, food processing, tourism.</p>
+      <p>In the new district you see new factory buildings and new roads.</p>
+      <p>The old centre is slower, and the people are looser.</p>
+      <p>"Restructuring" sounds grand, but on the ground it is one street at a time.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>几件要紧事<span class="en">A few things that matter</span></h2>
+    <div class="zh">
+      <p class="lead">淮北的看点都在市区外：临涣在南边，柳孜和双堆集在濉溪。</p>
+      <p>你最好包车或者坐班车，公交班次少。</p>
+      <p>高铁站是淮北北站，离市区有点远。</p>
+      <p>城里消费低，吃住都不贵。</p>
+      <p>夏天热，冬天干冷，秋天最舒服。</p>
+      <aside class="tip"><b>实用贴士：</b>临涣、柳孜、双堆集三处方向不同，一天走完要包车；柳孜遗址博物馆以遗迹与出土器物为主，参观前先看一眼展陈介绍更容易看懂。</aside>
+      <aside class="tip"><b>Handy tip:</b>Linhuan, Liuzi and Shuangduiji lie in different directions, so covering them in one day means hiring a car. The museum at Liuzi is about the remains and the finds — read the introduction first and the site makes far more sense.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Everything worth seeing is outside the city: Linhuan to the south, Liuzi and Shuangduiji in Suixi county.</p>
+      <p>Hire a car or take a coach; the buses are infrequent.</p>
+      <p>The high-speed station is Huaibei North, some distance from town.</p>
+      <p>Prices in the city are low, and neither eating nor sleeping costs much.</p>
+      <p>Summers are hot and winters dry and cold; autumn is the comfortable season.</p>
+      <aside class="tip"><b>实用贴士：</b>临涣、柳孜、双堆集三处方向不同，一天走完要包车；柳孜遗址博物馆以遗迹与出土器物为主，参观前先看一眼展陈介绍更容易看懂。</aside>
+      <aside class="tip"><b>Handy tip:</b>Linhuan, Liuzi and Shuangduiji lie in different directions, so covering them in one day means hiring a car. The museum at Liuzi is about the remains and the finds — read the introduction first and the site makes far more sense.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>离开的时候<span class="en">On leaving</span></h2>
+    <div class="zh">
+      <p class="lead">淮北不是旅游城市，它自己也知道。</p>
+      <p>可你坐一会儿茶馆，看看塌陷湖，会记下点东西。</p>
+      <p>一座城把自己挖沉，又把沉下去的地方改成公园。</p>
+      <p>这种修补比风景更有意思。</p>
+      <p>走的时候你会想，这地方挺实在。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huaibei is not a tourist city, and it knows it.</p>
+      <p>But sit in a teahouse for a while, look at the sunken lakes, and something stays with you.</p>
+      <p>A city dug itself into a hole, then turned the hole into a park.</p>
+      <p>That repair is more interesting than any scenery.</p>
+      <p>You leave thinking: this is a solid sort of place.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

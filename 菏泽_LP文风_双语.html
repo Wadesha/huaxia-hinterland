@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>菏泽 · Heze — 一座为花低头的城，也是好汉的故乡</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>菏泽</h1>
+  <div class="en-title">Heze</div>
+  <p class="zh">全世界面积最大的牡丹种在这儿，可它也是一百单八将里多半好汉的老家——柔软和硬气，菏泽都认。</p>
+  <p class="en">The world's largest peony fields grow here, yet it's also hometown to most of the 108 outlaws — Heze holds both the soft and the hard.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">开场游记 / Arrive as petals open</a></li>
+      <li><a href="#s2">菏泽到底是什么 / What Heze is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">牡丹：一座城为花低头 / The peony</a></li>
+      <li><a href="#s5">吃什么 / What to eat</a></li>
+      <li><a href="#s6">水浒：好汉的另一种家乡 / Water Margin</a></li>
+      <li><a href="#s7">黄河故道与孙膑 / Old river & Sun Bin</a></li>
+      <li><a href="#s8">单县：一碗汤的县城 / Shanxian's soup</a></li>
+      <li><a href="#s9">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s10">什么时候去 / When to go</a></li>
+      <li><a href="#s11">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s12">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s13">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 开场游记 -->
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别查攻略，去花海里站站<span class="en">Arrive as the petals open</span></h2>
+    <div class="zh">
+      <p class="lead">菏泽不靠名气吃饭。你下高铁，站前广场连个像样的雕像都没有，可四月一来，整座城像被谁按了开花的开关——马路隔离带、单位院子、市民的阳台，全是牡丹。</p>
+      <p>我第一次懂菏泽，是在曹州牡丹园雾还没散的那阵。几千株牡丹铺成一片紫红的海，露水挂在瓣上，没人说话，只有快门声和蜜蜂。那一刻你明白，为什么这座城肯为一朵花低头。</p>
+      <p>往西到郓城，画风一拧：忠义庙、好汉塑像、墙上"替天行道"的标语，花城的旁边就是江湖。同一片平原，既能盛开，也能掀桌子——菏泽的好玩，正在这股拧巴。</p>
+      <aside class="tip"><b>当地贴士：</b>把曹州牡丹园当圆心，郓城、单县、黄河故道都在 1 小时车程内；住菏泽城，当日往返周边，比拖箱子赶场舒服。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Heze doesn't trade on fame. Step off the train and the square has no statue worth noting — yet come April, the whole city flips a bloom switch: medians, courtyard walls, balcony planters, all peonies.</p>
+      <p>I understood Heze first in Caozhou Peony Garden before the mist lifted. Thousands of peonies spread a purple-red sea, dew on the petals, no one speaking but shutters and bees. That moment you get why this city bends for one flower.</p>
+      <p>West in Yuncheng the mood twists: loyalty temples, outlaw statues, "justice for the people" on the walls — beside the flower city sits the river-and-lake world. One plain that both blooms and flips the table; Heze's fun is exactly that contradiction.</p>
+      <aside class="tip"><b>Local tip:</b> Use Caozhou Garden as your hub; Yuncheng, Shanxian and the old river are all within an hour by road — stay in the city, day-trip the rest.</aside>
+    </div>
+  </section>
+
+  <!-- 2 菏泽到底是什么 -->
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>菏泽到底是什么<span class="en">What Heze actually is</span></h2>
+    <div class="zh">
+      <p class="lead">菏泽古称曹州，地处鲁西南，黄河故道从城边斜斜划过。它同时是"牡丹之都"和"水浒故里"——一个出花，一个出好汉，听着拧，却都是这片平原的脾气：能盛开，也能掀桌子。</p>
+      <p>菏泽人自己说得实在：咱这儿没名山，没大海，可花能种到全世界最大，好汉能出到一百单八将里占多半。这种"不靠天吃饭、靠一口气活着"的劲，是鲁西南最本真的底色。</p>
+      <p>所以别用"花城"两个字就打发了它。菏泽的软是牡丹的软，硬是孙膑的硬、好汉的硬，两股缠在一块儿，急不得，也拆不开。</p>
+      <aside class="tip"><b>实用贴士：</b>想看花冲四月来；想看好汉冲郓城来；想看黄河故道冲鄄城来。三处气质不同，别一天塞满。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Heze, old Caozhou, sits in southwest Shandong; the Yellow River's old course cuts diagonally past the city. It is both "peony capital" and "Water Margin hometown" — one breeds flowers, one outlaws; sounds contradictory, yet both are this plain's temper: it can bloom, it can flip the table.</p>
+      <p>Heze people put it plain: no famous mountain, no sea, yet we grow the world's biggest peony and breed most of the 108 outlaws. This "we don't live off heaven, we live off a streak of will" is southwest Shandong's truest base.</p>
+      <p>So don't dismiss it as a "flower city". Heze's soft is the peony's soft, its hard is Sun Bin's hard, the outlaws' hard — two strands braided, neither rushed nor pulled apart.</p>
+      <aside class="tip"><b>Handy tip:</b> For flowers come in April; for outlaws to Yuncheng; for the old river to Juancheng. The three moods differ; don't cram them in a day.</aside>
+    </div>
+  </section>
+
+  <!-- 3 怎么走 -->
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p>菏泽牡丹机场有少量国内线，高铁菏泽东站在日兰与京九线上，从济宁过来不到一小时，从徐州两小时出头。市内公交慢，打车便宜；牡丹盛花期有专线公交直达曹州牡丹园。</p>
+      <p>郓城、单县、鄄城都通城际公交或短途车，黄河故道得包车或骑车才逛得舒展。想省心，市区租辆车半天能跑完牡丹园加水浒好汉城。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；牡丹花期打车难，园外停车也满，早出门比晚出门从容。</aside>
+    </div>
+    <div class="en">
+      <p>Heze Mudan Airport has a few domestic flights; Heze East on the Rizhao–Lanzhou and Beijing–Kowloon lines is under an hour from Jining, just over two from Xuzhou. City buses are slow, cabs cheap; at peak bloom a shuttle bus runs straight to Caozhou Garden.</p>
+      <p>Yuncheng, Shanxian and Juancheng link by intercity or short-haul buses; the old river needs a hired car or bike to roam. For ease, rent a car in town for half a day and cover the garden plus the outlaw city.</p>
+      <aside class="tip"><b>Handy tip:</b> Use the official 12306 app; during bloom cabs are scarce and car parks full — leave earlier, not later, for ease.</aside>
+    </div>
+  </section>
+
+  <!-- 4 牡丹 -->
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>牡丹：一座城为花低头<span class="en">The peony that bends a city</span></h2>
+    <div class="zh">
+      <p class="lead">曹州牡丹园是世界面积最大的牡丹专类园，品种上千，四月盛花时整片地像被染料打翻。菏泽人把牡丹吃进嘴里——牡丹糕、牡丹饼、牡丹花茶，花瓣焯过凉拌，清苦回甘。</p>
+      <p>看花别只奔大园。古今园、百花园是老园子，树古人少，一棵百年牡丹能比你爷爷还大。花农蹲在垄边抽烟，你问一句，他能给你讲半小时哪株是"花王"哪株是"花后"。</p>
+      <p>菏泽的牡丹不只好看，还能当药、当菜、当礼。它把"富贵"这词从年画里拽出来，种进了泥土里——这才是真本事。</p>
+      <aside class="tip"><b>当地贴士：</b>看花赶四月，盛花期就十来天，错过等来年；园区大，穿舒服的鞋，别踩花垄。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Caozhou Peony Garden is the world's largest peony garden, over a thousand varieties; at April peak the ground looks like spilled dye. Heze people eat the peony — peony cake, peony biscuit, peony tea, blanched petals tossed cold, bitter then sweet.</p>
+      <p>Don't chase only the big garden. The Old and Hundred-Flower gardens are old, with ancient trees and few people; a century-old peony can out-age your granddad. A grower crouches by the bed smoking; ask once and he'll spend half an hour on which is "king" and which "queen".</p>
+      <p>Heze's peony isn't just pretty — it's medicine, vegetable, gift. It pulls "wealth" out of the New Year print and plants it in soil; that's the real skill.</p>
+      <aside class="tip"><b>Local tip:</b> For flowers come in April; peak lasts barely ten days, miss it and wait a year; the garden is huge, wear easy shoes, don't trample the beds.</aside>
+    </div>
+  </section>
+
+  <!-- 5 吃什么 -->
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p>菏泽的味道在汤里。单县羊肉汤是招牌，奶白的汤不加酱油，撒一把香菜胡椒粉，配吊炉烧饼掰着泡，是鲁西南人喝汤的哲学。曹州烧饼酥得掉渣，郓城壮馍是厚实的肉饼，水煎包底脆。牡丹入馔，是这城独一份的雅。</p>
+      <p>街头还有糁汤、胡辣汤，辣得通透，配油条是一顿扎实的开场。想尝花，去老字号要一碟牡丹花瓣凉调，清苦里回一口甜，像把春天含在舌尖。</p>
+      <aside class="tip"><b>当地贴士：</b>单县羊肉汤认老字号，趁热喝，凉了膻味上来;烧饼现烤最香，凉了就硬。</aside>
+    </div>
+    <div class="en">
+      <p>Heze's flavour lives in its soup. Shanxian mutton soup is the signboard — milky broth with no soy, a handful of coriander and pepper, dunked with a hung-oven biscuit, the soup philosophy of southwest Shandong. Caozhou biscuit flakes at a touch, Yuncheng zhuangmo is a hefty meat pie, pan-fried buns crisp-bottomed. Peony on the plate is this city's one-of-a-kind grace.</p>
+      <p>Street stalls also serve sa soup and hot pepper soup, cleanly hot, with fried dough for a solid opener. For flowers, ask an old name for a plate of cold-dressed peony petals — bitter then a sip of sweet, like holding spring on the tongue.</p>
+      <aside class="tip"><b>Local tip:</b> For Shanxian soup trust the old names, drink it hot — cold, the gamy note rises; biscuits are best from the oven, hard once cool.</aside>
+    </div>
+  </section>
+
+  <!-- 6 水浒 -->
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>水浒：好汉的另一种家乡<span class="en">Water Margin's other hometown</span></h2>
+    <div class="zh">
+      <p class="lead">郓城是水浒英雄的故里，宋江、晁盖、吴用都在这儿落过脚。水浒好汉城把小说里的街巷搭成实景，忠义堂、县衙、勾栏，导游讲起"替天行道"比书上还起劲。</p>
+      <p>别较真哪块砖是宋江踩过的——菏泽人自己也说，这是凭吊，不是考古。可那种"路见不平"的劲是真种在这片土里的：平原上的人，没山可靠，就靠一股义气立身。</p>
+      <p>好汉城外那堵写满标语的墙，傍晚聚着下棋的老人和卖糖葫芦的孩子，江湖和日子就这么挨着过。</p>
+      <aside class="tip"><b>实用贴士：</b>好汉城是仿古实景，cosplay 演员多，拍照好玩但别当真古迹;想看真水浒渊源，去郓城周边的村镇听老人讲。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yuncheng is the outlaws' hometown; Song Jiang, Chao Gai, Wu Yong all trod here. The Outlaws City builds the novel's lanes as real sets — the Hall of Loyalty, the county yamen, the brothel-stage — guides fire up "justice for the people" better than the book.</p>
+      <p>Don't fuss which brick Song Jiang stepped on — Heze people say it's tribute, not archaeology. Yet the "right a wrong on the road" streak is truly planted here: plain-dwellers with no mountain to lean on stand on loyalty alone.</p>
+      <p>Outside the city wall, scrawled with slogans, at dusk old men play chess and kids sell candied haws — the river-and-lake world and daily life side by side.</p>
+      <aside class="tip"><b>Handy tip:</b> The Outlaws City is a built set, cosplay actors abound — fun to shoot, don't take it for real ruin; for true Water Margin roots, hear the old folk in Yuncheng's villages.</aside>
+    </div>
+  </section>
+
+  <!-- 7 黄河故道与孙膑 -->
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>黄河故道与孙膑<span class="en">The old river and Sun Bin</span></h2>
+    <div class="zh">
+      <p class="lead">黄河夺淮那几百年，故道在菏泽留下一道弯。今天故道成了林带和湿地，大堤上骑车，风把芦苇吹成浪。鄄城说自己是孙膑故里——那位围魏救赵的兵圣，平原上长出的脑子比刀快。</p>
+      <p>故道边上多是林场和鱼塘，没人催你走。坐在堤上看河水慢吞吞拐弯，会懂为什么古人把"兵形像水"挂在嘴边——菏泽这片土，花学水而柔，将学水而变。</p>
+      <p>孙膑祠在小院里，香火不旺，安静得能听见自己的脚步。这种不喧哗的厚重，和牡丹园的闹刚好是两副面孔。</p>
+      <aside class="tip"><b>实用贴士：</b>黄河故道免费，大堤路平适合骑车;孙膑祠在小院里，安静，别大声。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The centuries the Yellow River hijacked the Huai left a bend at Heze. Today the old course is forest belt and wetland; ride the embankment and wind turns reeds to waves. Juancheng claims Sun Bin's hometown — the strategist of "besiege Wei, save Zhao", a plains-born mind quicker than any blade.</p>
+      <p>The old banks are mostly woods and fish ponds; no one rushes you. Sit on the dike and watch the river bend slow, and you'll get why the ancients said "war's form is like water" — Heze's soil: the flower learns water's soft, the general water's change.</p>
+      <p>Sun Bin's shrine sits in a small yard, thin incense, quiet enough to hear your own step. This unhurried weight, against the garden's noise, is two faces of one place.</p>
+      <aside class="tip"><b>Handy tip:</b> The old river is free, the embankment flat and good for biking; Sun Bin's shrine is a quiet yard — keep your voice down.</aside>
+    </div>
+  </section>
+
+  <!-- 8 单县 -->
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>单县：一碗汤的县城<span class="en">Shanxian: a county of one bowl</span></h2>
+    <div class="zh">
+      <p class="lead">单县为了一碗羊肉汤，值得专程拐一趟。老汤日夜吊着，羊骨熬到奶白，馆子一家挨一家，本地人端碗蹲在门口喝。汤分清汤红汤，清汤见功夫，红汤过瘾。</p>
+      <p>配吊炉烧饼，掰成块泡进去，汤一浸，饼芯还软边还脆。一身寒意全化在胃里，出门脚底都轻。单县人说话慢，喝汤更慢，你急不来，不如蹲下跟着喝。</p>
+      <p>单县离菏泽主城约一小时车程，顺路还能看湖西革命老区的小馆子，墙面还留着旧标语——历史和一顿饭，在这座县城挨得近。</p>
+      <aside class="tip"><b>当地贴士：</b>单县离菏泽主城约一小时车程;羊肉汤饭点最旺，趁热喝最香，凉了膻味上来。</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Shanxian deserves a detour for one bowl of mutton soup. The stock simmers day and night, bones boiled to milky white, joints shoulder to shoulder, locals crouch at the door with their bowls. Clear or red, clear shows the skill, red the thrill.</p>
+      <p>With a hung-oven biscuit broken in, the soup soaks it — soft core, crisp edge. The chill in your bones melts away, and you step out lighter. Shanxian people speak slow and sip slower; you can't hurry, so crouch and drink along.</p>
+      <p>Shanxian is about an hour from Heze's core; on the way you can see the old halls of the lakeside revolutionary base, walls still bearing old slogans — history and a meal sit close in this county.</p>
+      <aside class="tip"><b>Local tip:</b> Shanxian is about an hour from Heze's core; the soup peaks at meal times, drink it hot for the best, cold and the gamy note rises.</aside>
+    </div>
+  </section>
+
+  <!-- 9 懂点规矩 -->
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p>牡丹园里别伸手掐花，也别踩花垄——花是菏泽的脸面。进水浒好汉城别爬塑像，那是凭吊不是游乐场。羊肉汤馆里，本地人喝汤不响，安静是礼数。</p>
+      <p>菏泽人热情，问路指错了也会陪你笑，可别拿"牡丹是不是洛阳的好"去戳他们——这座城为花较了上百年的真，你客气点，他们能把最好的一垄指给你。</p>
+      <aside class="tip"><b>实用贴士：</b>牡丹花期满城都是花，街头花坛也能看，不必非挤收费园;聊花就聊花，别扯"哪的花王"引争论。</aside>
+    </div>
+    <div class="en">
+      <p>In the peony garden don't pick or trample the beds — the flower is Heze's face. At the Outlaws City don't climb the statues; it's tribute, not a playground. In the mutton soup house, locals sip without a sound — quiet is the courtesy.</p>
+      <p>Heze people are warm; ask the way and they'll laugh even when wrong, but don't poke them with "isn't Luoyang's peony better" — this city has argued flowers for centuries; be polite and they'll point you to the finest bed.</p>
+      <aside class="tip"><b>Handy tip:</b> At bloom the whole city is flowers, roadside beds included, no need to crowd the paid garden; talk flowers, not "whose king is better", to avoid a debate.</aside>
+    </div>
+  </section>
+
+  <!-- 10 什么时候去 -->
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p>四月是菏泽的高光，牡丹倾城，可人也多。想清静，五月之后花谢了，故道绿了，反而好走。秋天黄河故道芦苇黄，单县羊肉汤在凉天里最暖。冬天冷，可一碗热汤下肚，整座城都软下来。</p>
+      <p>若你只为花来，四月是唯一答案，盛花期就十来天，盯着天气走别盯日历。若你为汤和好汉来，其余三季都成，人少还便宜。</p>
+      <aside class="tip"><b>当地贴士：</b>看牡丹锁定四月;避人流选工作日;冬天来为羊肉汤，不为花。</aside>
+    </div>
+    <div class="en">
+      <p>April is Heze's spotlight, peonies overwhelm the city, yet so do crowds. For quiet, after May the bloom falls and the old river greens — easier to walk. Autumn turns the old river's reeds gold; Shanxian soup warms best in cool weather. Winter is cold, yet one hot bowl and the whole city softens.</p>
+      <p>If you came only for flowers, April is the sole answer — peak lasts barely ten days, watch the weather not the calendar. If for soup and outlaws, the other three seasons all work, fewer people and cheaper.</p>
+      <aside class="tip"><b>Local tip:</b> For peonies lock on April; dodge crowds on weekdays; winter comes for mutton soup, not flowers.</aside>
+    </div>
+  </section>
+
+  <!-- 11 去哪悠走 -->
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p>曹州牡丹园之外，还有古今园、百花园，老园子人少树古，适合慢慢转。黄河故道大堤是免费的天然步道，夕阳把河滩染成橘色，骑车比走路爽。郓城的老街还留着几进旧院子，门墩上的石狮子被摸得发亮。</p>
+      <p>单县的老城散步道临着水，傍晚灯亮，卖汤的馆子冒白烟。菏泽的好走，不在于景点密集，在于你走到哪都有人愿意跟你多讲两句——这座城的话匣子，比地图好用。</p>
+      <aside class="tip"><b>实用贴士：</b>几个牡丹园联票划算;故道大堤免费，顺着堤走别下河滩野泳。</aside>
+    </div>
+    <div class="en">
+      <p>Beyond Caozhou Garden, the Old and Hundred-Flower gardens are older, with ancient trees and few people, good for slow turns. The old river's embankment is a free natural path; at dusk it dyes the shoal orange, better by bike than on foot. Yuncheng's old streets keep a few old courtyards, stone lions on the door blocks rubbed shiny.</p>
+      <p>Shanxian's old town walk runs by water; at dusk the lamps light and soup houses steam white. Heze's joy isn't dense sights but that wherever you walk someone will tell you more — this city's talk box beats any map.</p>
+      <aside class="tip"><b>Handy tip:</b> The peony gardens sell a combo ticket; the old-river embankment is free — walk the dike, don't swim the wild shoal.</aside>
+    </div>
+  </section>
+
+  <!-- 12 不花钱也值得 -->
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p>菏泽最贵的东西，大多不要钱。四月满城的花，马路边、院墙里探头探脑，不用买票就看了个够。黄河故道的大堤、单县老城的羊肉香、水浒好汉城外那堵写满标语的墙，站着看就是参与。</p>
+      <p>牡丹花期，街头花坛比收费园还热闹，老人端杯茶在花下下棋，你站着看就是剧中人。菏泽教会我一件事：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>花期街头花坛免费;博物馆多周一闭馆，去前查开放日别扑空。</aside>
+    </div>
+    <div class="en">
+      <p>Heze's priciest things mostly cost nothing. In April the city's flowers poke from roadside beds and courtyard walls — no ticket needed to see your fill. The old river's embankment, Shanxian's old-town mutton scent, the slogan wall outside the Outlaws City — stand and you're in it.</p>
+      <p>At bloom the roadside beds outdo the paid garden; old men play chess under the flowers with a cup of tea, stand and you're in the scene. Heze taught me one thing: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>Local tip:</b> At bloom the roadside beds are free; many museums close Mondays — check open days first.</aside>
+    </div>
+  </section>
+
+  <!-- 13 收束 -->
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>收束：花开了，你就来<span class="en">Before you leave: come when it blooms</span></h2>
+    <div class="zh">
+      <p class="lead">菏泽不会一下子把你迷住。它没有江南的精致，也没有名山的压迫。它慢，它土，它又软又硬——一朵花能让人低头，一碗汤能让人回头。</p>
+      <p>你逛过曹州牡丹园的一地落红、郓城好汉城的一声断喝、单县羊肉汤的一口奶白，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"花开了，你就来；汤凉了，我再给你热"的厚道。它不急着留你，却总让你惦记。</p>
+      <p>所以别想着一次看全。菏泽是那种要你回头的地方——回头越多，它越把真东西亮给你。下次来，还请空着肚子、带着好奇。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Heze won't hypnotise you at once. It has none of Jiangnan's refinement, none of the famous mountain's weight. It's slow, it's plain, soft and hard at once — a flower bends you, a bowl brings you back.</p>
+      <p>You'll see Caozhou's fallen petals, hear Yuncheng's outlaw shout, taste Shanxian's milky broth, and leaving you'll get it: what this land gives most freely was never fame, but the decency of "the flower's open, so come; the soup's cold, I'll reheat it". It won't rush to keep you, yet always leaves you missing it.</p>
+      <p>So don't expect to see it all at once. Heze is a place that asks you back — the more you return, the more it shows its real self. Next time, come hungry, come curious.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>京都 · 游记与出行攻略（Lonely Planet 风格仿写）</title>
+<style>
+  :root{
+    --lp-yellow:#f2b01e;
+    --lp-ink:#1a1a1a;
+    --lp-muted:#5b5750;
+    --lp-line:#e6e1d6;
+    --lp-bg:#fbfaf6;
+    --lp-accent:#c0392b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--lp-bg);color:var(--lp-ink);
+    font-family:"Noto Serif SC","Songti SC","Source Han Serif SC",Georgia,serif;
+    line-height:1.85;font-size:17px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:48px 28px 96px;}
+  header.kicker{
+    border-top:6px solid var(--lp-yellow);
+    padding-top:18px;margin-bottom:8px;
+  }
+  .eyebrow{
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:.22em;
+    font-size:12px;color:var(--lp-muted);font-weight:700;
+  }
+  h1{
+    font-size:42px;line-height:1.15;margin:.3em 0 .1em;
+    letter-spacing:.01em;
+  }
+  .sub{color:var(--lp-muted);font-size:15px;font-family:"Helvetica Neue",Arial,sans-serif;}
+  h2{
+    font-size:26px;margin:2.2em 0 .6em;
+    padding-bottom:.25em;border-bottom:2px solid var(--lp-yellow);
+  }
+  h3{font-size:19px;margin:1.6em 0 .4em;color:var(--lp-ink);}
+  p{margin:.7em 0;}
+  .lead{font-size:19px;color:#2c2c2c;}
+  blockquote{
+    margin:1.4em 0;padding:.2em 0 .2em 1.1em;
+    border-left:4px solid var(--lp-yellow);color:var(--lp-muted);
+    font-style:italic;
+  }
+  .tip{
+    background:#fffdf6;border:1px solid var(--lp-line);
+    border-left:4px solid var(--lp-accent);
+    padding:12px 16px;margin:1.2em 0;border-radius:4px;
+    font-size:15.5px;
+  }
+  .tip b{color:var(--lp-accent);font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.04em;}
+  .teardown{background:#fff;border:1px solid var(--lp-line);border-radius:6px;padding:6px 22px;margin:1.4em 0;}
+  .teardown li{margin:.6em 0;}
+  .teardown .en{color:var(--lp-muted);font-style:italic;font-size:14.5px;display:block;}
+  footer{margin-top:3em;border-top:1px solid var(--lp-line);padding-top:1em;color:var(--lp-muted);font-size:13px;font-family:"Helvetica Neue",Arial,sans-serif;}
+  .tag{display:inline-block;background:var(--lp-yellow);color:#1a1a1a;font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;padding:3px 9px;border-radius:3px;margin-right:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="kicker">
+  <div class="eyebrow">Travel Writing · 仿写练习</div>
+  <h1>京都：在两千座寺庙之间迷路</h1>
+  <div class="sub">一份游记，加一份散点式出行攻略 —— 模仿 Lonely Planet 的语气与节奏写成，不含任何行程安排。</div>
+</header>
+
+<!-- ============ 文风拆解 ============ -->
+<h2><span class="tag">STYLE</span>先拆文风：LP 到底怎么写</h2>
+<p class="lead">下面这六条是 LP 目的地内容的"骨相"。记住它们，你写任何地方都能套上这副腔调。全部基于 LP 官网<strong>免费公开</strong>文章的写法归纳，非原文搬运。</p>
+<div class="teardown">
+  <ul>
+    <li><strong>开场先下论断，再给画面。</strong>不寒暄，第一句就替读者做决定。
+      <span class="en">原文套路："Kyoto is usually high on the must-visit list… one of Japan's most flat-out beautiful places."</span>
+      仿写："京都几乎出现在每个首次访日旅客的必去清单顶端——理由很充分。"</li>
+    <li><strong>全程用"你"对话。</strong>"你会…""不妨…""记得…"，把读者拉进场景，而不是旁观。
+      <span class="en">"You may stumble upon a small, picture-perfect shrine…"</span></li>
+    <li><strong>短句砸情绪，长句铺画面。</strong>节奏是：一句断言 → 一句描写 → 一句吐槽/感叹。
+      <span class="en">"Who can blame them?" / "And that's a wonderful thing."</span></li>
+    <li><strong>事实要带体温。</strong>历史、数字不干列，一定接一句"所以你此刻会体验到什么"。
+      <span class="en">夜莺地板会像鸟一样叫——那是防刺客的声学机关。</span></li>
+    <li><strong>观点鲜明，不怕主观。</strong>"值得""别错过""谁会怪他们呢"——推荐就是推荐，不假装中立。</li>
+    <li><strong>用"贴士"小框收口。</strong>每段实用信息压成一个带标签的 callout：当地贴士 / 实用贴士。</li>
+  </ul>
+</div>
+
+<!-- ============ 游记 ============ -->
+<h2><span class="tag">ESSAY</span>游记：橙红色的入口</h2>
+<p class="lead">第一次站在伏见稻荷大社的山脚下，你会被那片橙红吞没。一万道鸟居顺着山坡向上蜿蜒，像某种只属于这座城市的红色语法——每一道都是商家还愿时捐的，从江户时代捐到现在，没人喊停。</p>
+
+<p>清晨来是对的。住山的僧侣正往坡上走，野猫在石缝里探头。越往上，人声越薄，橙红在晨光里慢慢退成暖褐。你会忽然懂了为什么所有人都要来：不是为拍照，是为那种"被某种古老秩序轻轻托住"的感觉。山脚那群挤着合影的人？谁会怪他们呢。</p>
+
+<p>转到东山，画风就换了。木造町屋顺着坡道层叠，祇园的一条巷子里，灯光把石板染成蜜色。某间星巴克居然铺着榻榻米——是的，京都连连锁店都要先向老房子低头。拐进Sannenzaka的石阶，回头望一眼，整座城像被人轻轻按了静音。</p>
+
+<p>傍晚的八坂神社是另一回事。灯笼一亮，整个社境泛起一种不属于白天的光，暧昧、温热，像谁把黄昏留下来过夜。你不必懂神道，也能感到被某种东西温和地接住。</p>
+
+<p>京都最妙的地方，或许在于它允许你迷路。两千多座寺院、神社、园子，你随便挑个方向走，都能撞见一条开满樱的运河、一座藏在商业街中间的迷你神社、或一片本地人遛弯的小公园。顺着直觉走，反而比按图索骥更对味。</p>
+
+<!-- ============ 攻略 ============ -->
+<h2><span class="tag">GUIDE</span>出行攻略：散点式，不排日程</h2>
+<p>下面按"主题"给贴士，不替你排哪天去哪。你来了，顺着感觉挑。</p>
+
+<h3>怎么走</h3>
+<p>京都的心脏靠巴士串起来，地铁反而覆盖有限。市营巴士一张卡能到绝大多数寺院，但高峰时段挤得像沙丁鱼。想喘口气，就在河边租辆自行车——鸭川沿岸平、宽、风好，是这座城最舒服的移动方式。</p>
+<div class="tip"><b>实用贴士</b>　先办一张 IC 交通卡（ICOCA / Suica），巴士地铁通用，不用每次翻零钱。市内大部分景点集中在"巴士一日券"覆盖圈里，住得散才划算。</div>
+
+<h3>吃什么</h3>
+<p>京都菜走清淡高雅路线，汤豆腐是代表——嫩到筷子一碰就颤，蘸一点柑橘酱油，是种克制的鲜。抹茶更不必说，宇治一带种了八百年，从茶道到提拉米苏都能变。锦市场被称为"京都的厨房"，窄巷里塞满现烤、现炸、现试吃的小摊，空腹去，扶墙出。</p>
+<div class="tip"><b>当地贴士</b>　别被隔壁的"天下厨房"大阪抢了风头——京都自己的拉面也硬核。 Gurky 系（京都市营）的焦香系 broth 在高火里熬出烟熏味，吧台位还能看师傅现场表演，记得早去排队。</div>
+
+<h3>懂点规矩</h3>
+<p>神社的鸟居是一道界，中间那条缝是神明走的，你走两边。进殿前在"手水舍"舀水净手漱口，动作要轻，别把勺直接放回去。拍照前先看一眼有没有"撮影禁止"的小木牌——很多内部空间不欢迎镜头。</p>
+<div class="tip"><b>实用贴士</b>　伏见稻荷的"轻重石"（omokaru-ishi）玩法：先许愿，再掂一掂石头猜重量；若许完愿再掂觉得变轻了，愿望成真。纯属好玩，别太较真。</div>
+
+<h3>什么时候去</h3>
+<p>春樱（三月末到四月）与秋枫（十一月）是公认的两张王牌，景色封神，人也封路。夏天闷热但赶上祇园祭（七月），千年花车游行的阵仗值得挨一顿汗。冬天下雪的京都安静得不像话，寺院覆白时有一种近乎私密的肃穆。</p>
+<div class="tip"><b>当地贴士</b>　想独享岚山竹林或伏见稻荷？日出前去。同一个地方，天亮前和九点后是两个完全不同的宇宙。</div>
+
+<h3>去哪悠走</h3>
+<p>祇园与先斗町是看"老京都"的窗口，木格窗、料亭、偶尔一闪而过的和服背影。东山把寺院和坡道缝在一起，适合慢慢爬。岚山在城西，竹林、桂川、寺庙一并打包，自然党会不想走。哲学之道沿小溪铺开，樱花季是一条粉色的长廊，平时则是散步者的秘密。</p>
+
+<h3>不花钱也值得</h3>
+<p>鸭川随便一段都能坐一下午。京都御苑的地面随便躺，是城里少有的"建筑不能进但院子随便逛"的皇家空间。夜里的八坂神社、清晨的岚山竹林、东山 preserved 町屋的石阶——这些都不收门票，却最像京都。</p>
+<div class="tip"><b>实用贴士</b>　便利店（FamilyMart / Lawson）的玉子三明治、豚骨包、饭团便宜管饱，配一瓶茶，往哪片草地上一坐，就是一顿地道的京都野餐。</div>
+
+<footer>
+  本页为原创仿写练习，文风归纳基于 Lonely Planet 官网免费公开文章；事实性信息（如景点名称、习俗）为公共知识，未复制指南书正文。仅作个人写作学习之用。
+</footer>
+
+</div>
+</body>
+</html>

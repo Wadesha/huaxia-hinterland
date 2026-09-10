@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>临沂 · Linyi — 沂蒙的山，书圣的笔</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>临沂</h1>
+  <div class="en-title">Linyi</div>
+  <p class="zh">王羲之的老家，红嫂的故乡——笔墨和枪火，这座城都认。</p>
+  <p class="en">Hometown of calligrapher Wang Xizhi and the 'red sister'; brush and gunfire, this city knows both.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别查地图，去山里听沂蒙小调 / Arrive among the hills</a></li>
+      <li><a href="#s2">临沂到底是什么 / What Linyi is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">蒙山：孔子的"登东山而小鲁" / Mount Meng: where Confucius looked down on Lu</a></li>
+      <li><a href="#s5">书圣与地下河 / The sage's brush and the underground river</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别查地图，去山里听沂蒙小调<span class="en">Arrive among the hills</span></h2>
+    <div class="zh">
+      <p class="lead">临沂藏在鲁东南的群山里，名字里就带着水。你一下高铁，满城是塑料和物流的喧腾——它是全国最大的批发市场之一，可往北一小时进沂蒙山，世界立刻静成另一副面孔。</p>
+      <p>我第一次懂临沂，是在蒙山脚下的傍晚。炊烟从石头房顶慢吞吞升起来，远处有人在唱沂蒙小调，调子拐了九道弯，像山路本身。那一刻你明白，这座城有两副嗓子。</p>
+      <aside class="tip"><b>当地贴士：</b>以市区为基地，蒙山、竹泉村、地下大峡谷都在 1–2 小时车程；想清静住山里民宿，想热闹住城内。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in town; Meng Mountain, Zhuquan village, the underground canyon are 1–2 hours — stay in hills for quiet, in town for buzz.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi hides in the hills of southeast Shandong, its name carrying water. Step off the train and it's all plastic and logistics — among China's biggest wholesale markets — yet an hour north into the Yimeng hills the world turns to another face.</p>
+      <p>I got Linyi at dusk below Mount Meng. Smoke rose slow from stone roofs, someone sang the Yimeng tune, nine bends like the path itself. That moment you see this city has two voices.</p>
+      <aside class="tip"><b>当地贴士：</b>以市区为基地，蒙山、竹泉村、地下大峡谷都在 1–2 小时车程；想清静住山里民宿，想热闹住城内。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in town; Meng Mountain, Zhuquan village, the underground canyon are 1–2 hours — stay in hills for quiet, in town for buzz.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>临沂到底是什么<span class="en">What Linyi is</span></h2>
+    <div class="zh">
+      <p class="lead">临沂是书圣王羲之的老家，也是沂蒙革命老区的中心。笔墨和枪火，在这片土地上都不陌生——一个写出天下第一行书，一个走出百万支前小车。</p>
+      <p>它还是北方最大的商品城。商贸的活和山里的静，两种脾气长在同一个胸口，急不得，也拆不开。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi is hometown of the sage of calligraphy Wang Xizhi, and heart of the Yimeng revolutionary base. Brush and gunfire both know this soil — one wrote the world's first running-script, the other rolled out a million supply carts.</p>
+      <p>It's also the north's biggest commodity city. Trade's life and the hills' calm share one chest, neither rushed nor pulled apart.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">临沂启阳机场有国内线，高铁临沂北站在日兰线上，从济宁过来不到两小时。市内公交慢，打车便宜；进山得包车或坐城际公交，景点散。</p>
+      <p>蒙山、地下大峡谷这些地方公共交通能到，但班次稀，赶早出门比赶晚从容。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；进山包车划算，景点间距离大。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays in the hills, distances are large.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi Qiyang Airport has domestic flights; Linyi North on the Rizhao–Lanzhou line is under two hours from Jining. City buses slow, cabs cheap; the hills need a hired car or intercity bus, sights are spread.</p>
+      <p>Meng Mountain and the underground canyon are reachable by public transport, but runs are thin — leave earlier, not later.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；进山包车划算，景点间距离大。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays in the hills, distances are large.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>蒙山：孔子的"登东山而小鲁"<span class="en">Mount Meng: where Confucius looked down on Lu</span></h2>
+    <div class="zh">
+      <p class="lead">蒙山是沂蒙山的主峰，孔子当年"登东山而小鲁"，东山就是它。山不险，却厚，古松沿石阶排成阵，雾一来像谁把墨泼在纸上。</p>
+      <p>山里的空气甜，溪水凉得激牙。爬到顶看云海铺在脚下，会懂为什么古人把"寿"字刻了一面坡——蒙山也叫寿星山。</p>
+      <aside class="tip"><b>当地贴士：</b>蒙山台阶多，穿防滑鞋；雨后云海最盛，但路滑慢行。</aside>
+      <aside class="tip"><b>Local tip:</b>Meng has many steps, grip shoes; after rain the cloud sea peaks, but paths slick — go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Mount Meng is the Yimeng high peak; Confucius 'climbed East Mountain and Lu grew small' — that was it. Not steep but thick, old pines ranked like troops on the steps, mist like ink thrown on paper.</p>
+      <p>The air is sweet, the stream cold to the teeth. From the top a sea of cloud spreads below; you'll see why they carved 'longevity' down a whole slope — Meng is also the Longevity Mountain.</p>
+      <aside class="tip"><b>当地贴士：</b>蒙山台阶多，穿防滑鞋；雨后云海最盛，但路滑慢行。</aside>
+      <aside class="tip"><b>Local tip:</b>Meng has many steps, grip shoes; after rain the cloud sea peaks, but paths slick — go slow.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>书圣与地下河<span class="en">The sage's brush and the underground river</span></h2>
+    <div class="zh">
+      <p class="lead">王羲之故居在市区洗砚池边，传说他练字把一池水都染黑了。园子不大，竹林里一块碑就能让你站半天。临沂人写字的好，是刻在骨子里的——街头对联都比别处讲究。</p>
+      <p>地下大峡谷在沂水，钟乳石在头顶排成走廊，坐船钻进去，凉气顺着脖子灌，像进了大地的胸腔。这种奇，是平原城市给不了的。</p>
+      <aside class="tip"><b>实用贴士：</b>王羲之故居免费或低价；地下大峡谷船票另购，洞里恒凉带件外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>Wang's home is free or cheap; the canyon boat is extra, the cave stays cool — bring a layer.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Wang Xizhi's old home sits by the Ink-washing Pond; legend says his practice blackened a whole pool. The garden is small, one stele in the bamboo can hold you half an hour. Linyi people's love of writing is bone-deep — even street couplets are finer here.</p>
+      <p>The underground canyon at Yishui ranks stalactites into a corridor; boat in and cool air pours down your neck, like entering the earth's chest. A wonder no plain city can give.</p>
+      <aside class="tip"><b>实用贴士：</b>王羲之故居免费或低价；地下大峡谷船票另购，洞里恒凉带件外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>Wang's home is free or cheap; the canyon boat is extra, the cave stays cool — bring a layer.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">临沂的味道在煎饼里。杂粮煎饼摊得薄而韧，卷上大葱甜面酱，是沂蒙人几代人的主食。糁汤是招牌早餐——牛骨熬的稠汤，撒胡椒冲蛋花，辣得人清醒。</p>
+      <p>光棍鸡、临沂炒鸡都辣得通透，配烙饼。山里的野菜、河里的鱼，都是土法做，不摆盘却好吃。</p>
+      <aside class="tip"><b>当地贴士：</b>糁汤趁热喝，辣度看个人；煎饼现摊最香，卷什么都成。</aside>
+      <aside class="tip"><b>Local tip:</b>Sa soup drink hot, heat to taste; jianbing best fresh off the griddle, roll anything.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi's flavour is in the jianbing. Grain crepes rolled thin and tough, with scallion and sweet bean paste, generations of Yimeng staple. Sa soup is the signboard — beef-bone thick broth, pepper and egg, hot enough to wake you.</p>
+      <p>Guanggun chicken and Linyi fried chicken are cleanly hot with baked cake. Hill wild greens and river fish, plainly cooked, no plating yet good.</p>
+      <aside class="tip"><b>当地贴士：</b>糁汤趁热喝，辣度看个人；煎饼现摊最香，卷什么都成。</aside>
+      <aside class="tip"><b>Local tip:</b>Sa soup drink hot, heat to taste; jianbing best fresh off the griddle, roll anything.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">王羲之故居是文人圣地，进门把手机调静音，别在碑前大声喧哗。沂蒙老区多纪念馆，气氛庄重，别在展馆里嬉笑——这片土地记得的事比导游词重。</p>
+      <p>山里人家好客，进院先问声"家里有人吗"，别推门就进；递烟双手接，是礼数。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Wang's home is a literary shrine — silence your phone, no loud talk by the steles. Yimeng's memorials are solemn; no laughing in the halls — this land remembers heavier things than any caption.</p>
+      <p>Hill folk are hospitable; call 'anyone home?' before entering; take a offered cigarette with both hands — that's courtesy.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天蒙山新绿，沂水地下河恒温凉快，适合避人。夏天山里比城里低几度，是天然的空调。秋天红叶染坡，糁汤在凉天里最暖。冬天冷，可雪后蒙山肃穆，书法故里人少清静。</p>
+      <p>若为了山和洞，春夏秋都成；若为了清净，冬天最好。</p>
+      <aside class="tip"><b>实用贴士：</b>夏天进洞带外套；冬天山区路偶有结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer, bring a layer for the cave; winter hill roads ice sometimes — go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens Meng, the Yishui river stays cool — good to dodge crowds. Summer runs a few degrees below town, natural AC. Autumn dyes the slopes red; sa soup warms best in cool weather. Winter is cold, yet snow makes Meng solemn and the calligraphy home quiet.</p>
+      <p>For hills and cave, spring–autumn all work; for quiet, winter best.</p>
+      <aside class="tip"><b>实用贴士：</b>夏天进洞带外套；冬天山区路偶有结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer, bring a layer for the cave; winter hill roads ice sometimes — go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">竹泉村在沂南，泉从竹根下冒，石头房依水而建，是沂蒙山区少有的"水村"。不用买票也能在村外田埂走，看老乡晒玉米、赶羊。</p>
+      <p>沂河边上散步道免费，傍晚市民跳舞钓鱼，你站着看就是参与。临沂的好走，在于山水和市井挨得近。</p>
+      <aside class="tip"><b>实用贴士：</b>竹泉村免费区也值得逛；沂河大堤免费，顺着河走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>Zhuquan's free zone is worth it; the Yi embankment is free — walk, don't enter the water.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhuquan village in Yinan springs from bamboo roots, stone houses built on water — a rare 'water village' in the Yimeng. No ticket needed to walk the field paths outside, watch folk dry corn, herd sheep.</p>
+      <p>The Yi River promenade is free; at dusk citizens dance and fish, stand and you're in it. Linyi's joy is that hills-and-water and market life sit close.</p>
+      <aside class="tip"><b>实用贴士：</b>竹泉村免费区也值得逛；沂河大堤免费，顺着河走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>Zhuquan's free zone is worth it; the Yi embankment is free — walk, don't enter the water.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">临沂最贵的东西，大多不要钱。沂河的风、蒙山脚下的炊烟、王羲之故居外那杆老竹，站着看就是参与。雪后青山配红灯，比收费园里还好看。</p>
+      <p>市区书法广场的碑林免费，大爷们拿拖把蘸水在地上写大字，你站着看就是上了一课。临沂教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>书法广场傍晚最热闹；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The calligraphy square buzzes at dusk; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi's priciest things mostly cost nothing. The Yi's wind, Meng's foot smoke, the old bamboo beyond Wang's home — stand and you're in it. Snow on green hills with red lamps beats any paid garden.</p>
+      <p>The city's calligraphy square stele forest is free; old men write big characters with water and a mop — stand and you've taken a lesson. Linyi taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>书法广场傍晚最热闹；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The calligraphy square buzzes at dusk; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">临沂不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它慢，它厚，它又文又武——一支笔能写出天下第一行书，一辆小车能推出一个时代。</p>
+      <p>你逛过蒙山的一坡云海、羲之故居的一池墨痕、沂河边上的一阵舞，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"笔墨和枪火都认"的厚道。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Linyi won't win you at once. No famous mountain's fame, no water town's finesse. It's slow, deep, civil and martial — one brush wrote the world's first running-script, one cart pushed an era.</p>
+      <p>You'll see Meng's cloud slope, the ink stain by Wang's home, a dance by the Yi — and leaving you'll get it: what this land gives most freely was never fame, but the decency of 'knowing both brush and gunfire'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>正定 · Zhengding — 四塔一寺的古城，梁思成称"古建筑博物馆"</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>正定</h1>
+  <div class="en-title">Zhengding</div>
+  <p class="zh">一座被遗忘在石家庄北边的古郡——隆兴寺的铜观音、四座古塔，把唐宋元明的木构都留给了你。</p>
+  <p class="en">A forgotten ancient prefecture north of Shijiazhuang — Longxing Temple's bronze Guanyin and four old pagodas keep the woodwork of Tang, Song, Yuan and Ming for you.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别进城，去隆兴寺看大佛 / Arrive at Longxing</a></li>
+      <li><a href="#s2">正定到底是什么 / What Zhengding is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">隆兴寺：被梁思成记挂的寺 / Longxing: the temple Liang loved</a></li>
+      <li><a href="#s5">四塔与城墙 / The four pagodas & the wall</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别进城，去隆兴寺看大佛<span class="en">Arrive at Longxing</span></h2>
+    <div class="zh">
+      <p class="lead">正定不声不响地贴在石家庄北边。你一出北站，满眼是普通的小城，可往里走，隆兴寺的红墙先把你按住——里面那尊铜铸千手观音，高过两层楼，是北宋的原物。</p>
+      <p>我第一次懂正定，是在隆兴寺的摩尼殿。檐角翘成鸟翼，殿里的倒坐观音闲闲地看人，梁思成当年绕着它拍了几十张照片。那一刻你明白，这座城把"古"当日子过。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding quietly clings to Shijiazhuang's north. Step out the north station and it's an ordinary small town, yet walk in and Longxing's red wall stops you first — inside, a bronze thousand-arm Guanyin taller than two storeys, original from the Northern Song.</p>
+      <p>I got Zhengding in Longxing's Mani Hall. The eaves lift like bird wings, the seated-back Guanyin inside watches people at leisure; Liang Sicheng circled it for dozens of photos. That moment you see this city lives 'old' as daily life.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>正定到底是什么<span class="en">What Zhengding is</span></h2>
+    <div class="zh">
+      <p class="lead">正定是隋唐的恒州、五代的镇州，曾是华北的重镇，与保定、北京并称"北方三雄镇"。它不靠名山，靠的是一城唐宋木构——隆兴寺、开元寺须弥塔、临济寺澄灵塔，各有各的年纪。</p>
+      <p>它还是临济宗的祖庭。当年义玄禅师在这儿喝断妄言，"当头棒喝"四个字，后来成了整片汉语的骨。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding was Hengzhou of Sui-Tang, Zhenzhou of the Five Dynasties, once a northern power alongside Baoding and Beijing as 'three northern strong towns'. It leans not on a famous mountain but on a city of Tang-Song woodwork — Longxing, Kaiyuan's Sumeru pagoda, Linji's Chengling pagoda, each its own age.</p>
+      <p>It's also the cradle of the Linji school. Master Yixuan cut through nonsense here; 'a blow and a shout' later became bone of the whole Chinese tongue.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">正定紧挨石家庄，从石家庄站坐公交或高铁一站就到正定机场站（别被名字骗，它离正定古城更近）。城内全靠腿，古寺都在中轴线上，串起来不过两公里。</p>
+      <p>去隆兴寺、四塔都步行可达；想串周边赵州桥，得往南转赵县，车程个把小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；古城里住客栈，拖行李进巷费劲，轻装最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; stay in an inn in town, luggage in lanes is a chore, travel light.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding hugs Shijiazhuang; from the station a bus or one high-speed stop reaches Zhengding Airport station (don't be fooled by the name — it's closer to the old town). Inside, foot-only; the old temples sit on an axis, a two-kilometre string.</p>
+      <p>Longxing and the four pagodas are walkable; for the Zhaozhou Bridge turn south to Zhaoxian, about an hour.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；古城里住客栈，拖行李进巷费劲，轻装最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; stay in an inn in town, luggage in lanes is a chore, travel light.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>隆兴寺：被梁思成记挂的寺<span class="en">Longxing: the temple Liang loved</span></h2>
+    <div class="zh">
+      <p class="lead">隆兴寺没有山门，一进就见摩尼殿——这种"十字抱厦"的格局，全国只此一例。殿里倒坐观音，衣纹松活，眼神却把人定住。转过殿，戒坛、转轮藏、毗卢殿一路向北，把一座寺读成一本木构的史。</p>
+      <p>铜观音在毗卢殿后，合十的千手铺满后背，是北宋用万斤铜铸的。你仰头看，连呼吸都放轻。</p>
+      <aside class="tip"><b>当地贴士：</b>隆兴寺大，留半天；摩尼殿光线暗，手机静音，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Longxing is large, allow half a day; the Mani Hall is dim, silence phones, no flash.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Longxing has no front gate; step in and meet the Mani Hall — this 'cross-shaped wraparound' form exists nowhere else in the land. The seated-back Guanyin within, robes loose, gaze fixes you. Past it, the ordination terrace, the revolving library, the Vairocana hall run north, reading a temple as a history of wood.</p>
+      <p>The bronze Guanyin behind the Vairocana hall, a thousand hands in prayer across its back, cast from ten thousand jin of copper in the Northern Song. You look up, breath eased.</p>
+      <aside class="tip"><b>当地贴士：</b>隆兴寺大，留半天；摩尼殿光线暗，手机静音，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Longxing is large, allow half a day; the Mani Hall is dim, silence phones, no flash.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>四塔与城墙<span class="en">The four pagodas & the wall</span></h2>
+    <div class="zh">
+      <p class="lead">正定有四塔：开元寺的须弥塔是唐风方塔，广惠寺的花塔满身小塔像开了一树花，临济寺澄灵塔清秀，天宁寺凌霄塔砖木相套。四座各朝各代，站在城里的不同角落，你转一圈就像翻了一本建筑年表。</p>
+      <p>正定的城墙只剩残段，可登临处能望见四塔的尖，古城的轮廓还在。</p>
+      <aside class="tip"><b>当地贴士：</b>四塔分散在城里，骑车串最省脚；花塔拍照逆光美，赶傍晚。</aside>
+      <aside class="tip"><b>Local tip:</b>The four pagodas scatter through town, bike to link them; the flower pagoda backlit is lovely, go at dusk.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding keeps four pagodas: Kaiyuan's Sumeru is a Tang-style square tower, Guanghui's flower pagoda wears small pagodas like a tree in bloom, Linji's Chengling is slim, Tianning's Lingxiao layers brick and wood. Each a dynasty, standing in different corners — circle the town and you flip a chronology of building.</p>
+      <p>Zhengding's wall is only fragments, yet where climbable you see the four pagoda tips; the old town's outline survives.</p>
+      <aside class="tip"><b>当地贴士：</b>四塔分散在城里，骑车串最省脚；花塔拍照逆光美，赶傍晚。</aside>
+      <aside class="tip"><b>Local tip:</b>The four pagodas scatter through town, bike to link them; the flower pagoda backlit is lovely, go at dusk.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">正定的味道在面里。崩肝是熟肝切丝凉拌，嚼头十足；饸饹是压出来的荞麦面，浇肉汤，热乎一碗顶饿。缸炉烧饼贴炉壁烤，焦脆带芝麻香。</p>
+      <p>马家鸡是老字号，卤得透，凉切下酒；夜市里杂面、豆腐脑都不贵，是北方小城的实在。</p>
+      <aside class="tip"><b>当地贴士：</b>饸饹认老店，现压最香；崩肝凉食，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For hele trust old names, pressed fresh; benggan is cold, go easy if your stomach is weak.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding's flavour is in noodles. Benggan is cooked liver shredded and dressed cold, chewy; hele is pressed buckwheat noodles in meat broth, a hot bowl that fills. The kang-furnace sesame cake bakes on the wall, crisp with sesame.</p>
+      <p>Ma's chicken is an old name, braised through, cold-cut with wine; the night market's mixed noodles and tofu brain are cheap, the plainness of a northern town.</p>
+      <aside class="tip"><b>当地贴士：</b>饸饹认老店，现压最香；崩肝凉食，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For hele trust old names, pressed fresh; benggan is cold, go easy if your stomach is weak.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">隆兴寺是活寺也是文物，殿里别喧哗，别摸塑像。四塔多在寺内或路边，临济寺香火旺，进殿先合十。</p>
+      <p>正定人慢，问路指得清，可别拿"这寺是不是新的"去戳——他们把唐宋当祖宗，你客气点，他们能把每根梁的年纪说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Longxing is a living temple and a relic; no noise in the halls, don't touch the statues. The pagodas sit in temples or by the road; Linji burns incense, join palms at the gate.</p>
+      <p>Zhengding folk are slow; they point clear, just don't poke with 'is this temple new' — they treat Tang and Song as ancestors; be polite and they'll tell you each beam's age.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天城外麦绿，正定舒服。夏天槐荫浓，古寺里凉。秋天天高云淡，四塔的影拉得长。冬天冷，可雪后红墙配白雪，摩尼殿的翅檐更显瘦硬。</p>
+      <p>若为了静，冬春最好；若为了光，傍晚的红墙最对。</p>
+      <aside class="tip"><b>实用贴士：</b>雪后古寺美但砖滑，慢行；夏天的殿里凉，带件外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the temples are pretty but bricks slick, go slow; summer halls are cool, a layer.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the fields beyond the wall, Zhengding eased. Summer the locust shade thick, the old temples cool. Autumn high and clear, the pagoda shadows long. Winter cold, yet after snow red walls with white, the Mani Hall's wing-eaves leaner, harder.</p>
+      <p>For quiet winter and spring best; for light the red walls at dusk fit.</p>
+      <aside class="tip"><b>实用贴士：</b>雪后古寺美但砖滑，慢行；夏天的殿里凉，带件外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the temples are pretty but bricks slick, go slow; summer halls are cool, a layer.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">正定的中轴线是免费的天然步道，从南门残段走到隆兴寺，古寺古塔挨着过。城里的胡同随便钻，青砖门关着的故事比开着的多。</p>
+      <p>旺泉古街重修过，可老字号还在，喝茶听书不贵。正定的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>中轴线步道免费；旺泉街重修，细看老构件。</aside>
+      <aside class="tip"><b>Handy tip:</b>The axis path is free; Wangquan street was rebuilt, look close at old parts.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding's axis is a free path; from the south wall fragment to Longxing, old temples and pagodas side by side. The town's alleys are yours to wander; more stories behind closed blue-brick doors than open.</p>
+      <p>Wangquan old street was rebuilt, yet old names remain, tea and storytelling cheap. Zhengding's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>中轴线步道免费；旺泉街重修，细看老构件。</aside>
+      <aside class="tip"><b>Handy tip:</b>The axis path is free; Wangquan street was rebuilt, look close at old parts.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">正定最贵的东西，大多不要钱。隆兴寺的风、四塔在暮色里的尖、旺泉街那阵茶香，站着看就是参与。雪后红墙配白雪，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。正定教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>城墙残段免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall fragment is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding's priciest things mostly cost nothing. Longxing's wind, the four pagoda tips at dusk, Wangquan's tea scent — stand and you're in it. Snow on red walls with white beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Zhengding taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>城墙残段免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall fragment is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">正定不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它正，它旧，它又佛又木——一尊观音能让人沉默，一根翅檐能让人回头。</p>
+      <p>你逛过隆兴寺的一殿木构、四塔的一城尖影、旺泉街的一碗茶，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"北方雄镇"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zhengding won't win you at once. No famous mountain's fame, no water town's finesse. It's proper, old, Buddha and wood — one Guanyin silences you, one wing-eave turns you back.</p>
+      <p>You'll see Longxing's hall of wood, the town's skyline of four pagoda tips, a bowl of tea on Wangquan — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of a 'northern strong town'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

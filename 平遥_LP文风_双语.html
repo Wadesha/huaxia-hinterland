@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>平遥 · Pingyao — 一座活着的明清金融城</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>平遥</h1>
+  <div class="en-title">Pingyao</div>
+  <p class="zh">城墙围住的明清县城——票号、镖局、县衙，把"钱"和"规矩"都留在了砖里。</p>
+  <p class="en">A Ming-Qing county walled in time — draft banks, escort bureaus, a county yamen, all keeping 'money' and 'rules' in the brick.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔票号，去城墙走一圈 / Arrive on the wall</a></li>
+      <li><a href="#s2">平遥到底是什么 / What Pingyao is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">日昇昌与票号街 / Rishengchang & the draft-bank street</a></li>
+      <li><a href="#s5">县衙与文庙 / The yamen & the Confucian temple</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔票号，去城墙走一圈<span class="en">Arrive on the wall</span></h2>
+    <div class="zh">
+      <p class="lead">平遥不声不响地缩成一座方城。你一进南门，满眼灰瓦连片，可别急着钻巷子，先上城墙走一圈——六里长的城垛把整座城摁成一只龟，古人叫它"龟城"，头尾南北，四足东西。</p>
+      <p>我第一次懂平遥，是在西城墙的傍晚。夕阳把垛口拉成长影，远处魁星阁独立，卖醋的大娘推车经过。那一刻你明白，这座城把"守"和"活"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao quietly shrinks to one square city. Step through the south gate and it's all grey tiles, yet don't rush the alleys — walk the wall first: six li of crenellations press the city into a tortoise, the 'tortoise town' of old, head and tail north-south, four feet east-west.</p>
+      <p>I got Pingyao on the west wall at dusk. The setting sun dragged the crenellations long, the Kuixing tower stood lone, an old woman pushed vinegar past. That moment you see this city grows 'guarding' and 'living' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>平遥到底是什么<span class="en">What Pingyao is</span></h2>
+    <div class="zh">
+      <p class="lead">平遥是保存最完整的明清县城，墙里墙外一个样——县衙、文庙、城隍庙各就其位，街巷还是明代的格局。它不靠景点堆出来，靠的是一整套活着的秩序。</p>
+      <p>它还是中国金融的老家。日昇昌票号在这儿开出第一张汇票，"汇通天下"四个字，把全国的银子拴在一座小城里。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao is the most intact Ming-Qing county town, same within and without the wall — yamen, Confucian temple, city god temple each in place, lanes still keep the Ming layout. It isn't staged by sights but by a whole living order.</p>
+      <p>It's also the cradle of Chinese finance. Rishengchang drew the first draft here; 'rivers of silver reach the world' bound the nation's silver to one small city.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">平遥站在同蒲铁路线上，高铁从太原过来半小时出头，从西安过来两小时多。城内全靠腿，城墙围的方城步行半小时能横穿，巷子窄车进不去。</p>
+      <p>去周边王家大院、乔家大院得从平遥往东南转祁县、灵石，车程个把小时；壶口在更南，得留一整天。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；城内住客栈，推车行李进巷费劲，轻装最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; stay in an inn inside — carts in the lanes are a chore, travel light.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao station sits on the Tongpu line; high-speed from Taiyuan half an hour, from Xi'an just over two hours. Inside, foot-only — the walled square crosses on foot in half an hour, lanes too narrow for cars.</p>
+      <p>For Wang and Qiao family courtyards turn southeast to Qixian and Lingshi, about an hour; Hukou falls lie further south, a full day.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；城内住客栈，推车行李进巷费劲，轻装最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; stay in an inn inside — carts in the lanes are a chore, travel light.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>日昇昌与票号街<span class="en">Rishengchang & the draft-bank street</span></h2>
+    <div class="zh">
+      <p class="lead">日昇昌是票号的开山祖，院子不大，可每一进都藏着密押——汇银的数用暗语写，外人看是诗，内行看是钱。你站在柜台前，能闻到那股"信"字压过"银"字的旧气。</p>
+      <p>票号街一排老宅，协同庆的地道、蔚泰厚的账房，把清朝的金融江湖摊开给你看。镖局就在隔壁，护送的镖旗还在。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Rishengchang is the draft bank's founder; the yard is small yet every court hides a cipher — sums written in code, poetry to outsiders, silver to the trade. Stand at the counter and you smell the old air where 'trust' outweighs 'silver'.</p>
+      <p>A row of old houses on Draft-Bank Street — Xietongqing's tunnel, Weitaihou's counting room — spread the Qing financial world open. The escort bureau next door, its guard flags still hung.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>县衙与文庙<span class="en">The yamen & the Confucian temple</span></h2>
+    <div class="zh">
+      <p class="lead">平遥县衙是中规中矩的标本，大堂、二堂、牢狱一应俱全，升堂的鼓还在。每天有升堂的戏，演的是断案，看的是规矩。</p>
+      <p>文庙在城东南，大成殿是金代原构，全国少见。棂星门下走一遭，连脚步都正了。</p>
+      <aside class="tip"><b>当地贴士：</b>县衙升堂有固定场次，去前问清时间；文庙台阶多，慢上。</aside>
+      <aside class="tip"><b>Local tip:</b>The yamen session has set times — ask first; the temple has many steps, climb slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao's yamen is a textbook specimen — main and second halls, a jail, the drum for appeals still there. A daily session-play acts out judgement, shows the rules.</p>
+      <p>The Confucian temple lies southeast; the Dacheng Hall is a Jin-dynasty original, rare nationwide. Pass the Lingxing gate and even your tread straightens.</p>
+      <aside class="tip"><b>当地贴士：</b>县衙升堂有固定场次，去前问清时间；文庙台阶多，慢上。</aside>
+      <aside class="tip"><b>Local tip:</b>The yamen session has set times — ask first; the temple has many steps, climb slow.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">平遥的味道在醋和小米之间。平遥牛肉是冷切的功夫，腌得透、切得薄，咸香不腻。碗托是荞麦蒸的凉食，浇醋蒜，滑溜一口。</p>
+      <p>栲栳栳是莜面卷成筒蒸熟，蘸羊肉臊子；黄酒温一壶，配牛肉是晋商的夜宵哲学。</p>
+      <aside class="tip"><b>当地贴士：</b>平遥牛肉认老店，现切最香；碗托凉食，胃寒的少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For Pingyao beef trust old names, sliced fresh; the bowl nest is cold — go easy if your stomach is weak.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao's flavour sits between vinegar and millet. Pingyao beef is cold-cut craft — cured through, sliced thin, salty-savoury not greasy. The 'bowl nest' is steamed buckwheat, dressed in vinegar-garlic, one slick bite.</p>
+      <p>Kaolaolao are oat-flour rolls steamed, dipped in mutton gravy; warm a pot of yellow wine with beef — the Shanxi merchant's supper philosophy.</p>
+      <aside class="tip"><b>当地贴士：</b>平遥牛肉认老店，现切最香；碗托凉食，胃寒的少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For Pingyao beef trust old names, sliced fresh; the bowl nest is cold — go easy if your stomach is weak.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">平遥是活着的城，不是博物馆。巷里住户真在生活，拍照别怼脸，进院子先问。城墙别翻越，垛口窄，风大站外沿危险。</p>
+      <p>平遥人实在，问路指得清，可别拿"这城是不是拍戏的"去戳——他们把祖宗的规矩当真，你客气点，他们能把每条巷的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao is a living town, not a museum. Residents truly live in the lanes; don't shove a lens in faces, ask before entering a yard. Don't climb the wall; the crenellations are narrow, wind strong at the edge.</p>
+      <p>Pingyao folk are plain; they point clear, just don't poke with 'is this town a film set' — they take ancestors' rules as real; be polite and they'll tell you each lane's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天城外麦绿，平遥舒服。夏天山西凉，是避暑的好城。秋天天高云淡，文庙古柏更沉。冬天冷，可雪后城墙肃穆，巷里红灯映雪，另有一番好看。</p>
+      <p>若为了静，冬春最好；若为了热闹，年关的社火最对。</p>
+      <aside class="tip"><b>实用贴士：</b>雪后城墙美但砖滑，慢行；年关住宿紧，早订。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the wall is pretty but bricks slick, go slow; New Year lodgings tight, book early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the fields beyond the wall, Pingyao eased. Summer Shanxi cools, a good town to escape heat. Autumn high and clear, the temple's cypresses deeper. Winter cold, yet after snow the wall solemn, red lanterns on snow, a beauty of its own.</p>
+      <p>For quiet winter and spring best; for bustle the New Year fairs fit.</p>
+      <aside class="tip"><b>实用贴士：</b>雪后城墙美但砖滑，慢行；年关住宿紧，早订。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the wall is pretty but bricks slick, go slow; New Year lodgings tight, book early.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">平遥的城墙是免费的天然步道，绕城一圈六里，每座敌楼都刻着故事。城里的南大街随便钻，票号、镖局、老字号挨着过。</p>
+      <p>城外的双林寺、镇国寺在平遥东北，彩塑满堂，骑车比走路爽。平遥的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>城墙步道免费；双林寺在城外，留半天。</aside>
+      <aside class="tip"><b>Handy tip:</b>'The wall path is free; Shuanglin lies outside, allow half a day.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao's wall is a free path; a six-li loop, each watchtower carved with a tale. South Street in town wanders free, draft banks, escort bureaus, old names side by side.</p>
+      <p>Shuanglin and Zhenguo temples northeast hold halls of coloured sculpture; better by bike. Pingyao's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>城墙步道免费；双林寺在城外，留半天。</aside>
+      <aside class="tip"><b>Handy tip:</b>'The wall path is free; Shuanglin lies outside, allow half a day.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">平遥最贵的东西，大多不要钱。城墙的风、县衙在暮色里的轮廓、巷里那阵醋香，站着看就是参与。雪后红灯配灰瓦，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。平遥教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>城墙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao's priciest things mostly cost nothing. The wall's wind, the yamen's dusk outline, the lane's vinegar scent — stand and you're in it. Snow on red lanterns with grey tiles beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Pingyao taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>城墙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">平遥不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它正，它旧，它又钱又规矩——一张汇票能让人沉默，一碗牛肉能让人回头。</p>
+      <p>你逛过日昇昌的一院密押、县衙的一堂鼓、城墙的一圈影，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"汇通天下"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Pingyao won't win you at once. No famous mountain's fame, no water town's finesse. It's proper, old, silver and rules — one draft silences you, one bowl turns you back.</p>
+      <p>You'll see Rishengchang's court of ciphers, the yamen's hall of drums, the wall's ring of shadow — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'silver reaching the world'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

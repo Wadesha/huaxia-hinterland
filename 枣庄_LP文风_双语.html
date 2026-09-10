@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>枣庄 · Zaozhuang — 台儿庄的灯，微山湖的浪</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>枣庄</h1>
+  <div class="en-title">Zaozhuang</div>
+  <p class="zh">一座因煤而兴、因水而名的城——古城的灯一亮，工业的血肉就软成了江南。</p>
+  <p class="en">A city built on coal, renamed by water — light up the old town and its industrial bones soften into Jiangnan.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔古城，去湖边听歌 / Arrive by the lake</a></li>
+      <li><a href="#s2">枣庄到底是什么 / What Zaozhuang is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">台儿庄：一座重建的活古城 / Tai'erzhuang: a rebuilt living town</a></li>
+      <li><a href="#s5">微山湖与榴园 / Weishan Lake and the pomegranate garden</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔古城，去湖边听歌<span class="en">Arrive by the lake</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄不声不响。你一下高铁，满眼是灰扑扑的楼，可往南四十公里到台儿庄，画风一拧——运河穿城，灯影在水里碎成金。</p>
+      <p>我第一次懂枣庄，是在微山湖边的傍晚。渔家摇橹，远处的铁道游击队纪念碑立在苇荡里，有人用方言哼"弹起我心爱的土琵琶"。那一刻你明白，这座城把硬和软都长在了一起。</p>
+      <aside class="tip"><b>当地贴士：</b>以台儿庄为圆心，微山湖、冠世榴园都在 1 小时车程内；住古城里，夜游最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Use Tai'erzhuang as hub; Weishan Lake and the giant pomegranate garden are within an hour — stay in the old town, night walks best.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang keeps quiet. Step off the train and it's all grey blocks, yet forty kilometres south at Tai'erzhuang the mood twists — canal through town, lamp-light shattered to gold on the water.</p>
+      <p>I got Zaozhuang by Weishan Lake at dusk. A fisherman sculls, the Railway Guerrillas monument stands in the reeds, someone hums 'pluck my beloved pipa' in dialect. That moment you see this city wears hard and soft as one.</p>
+      <aside class="tip"><b>当地贴士：</b>以台儿庄为圆心，微山湖、冠世榴园都在 1 小时车程内；住古城里，夜游最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Use Tai'erzhuang as hub; Weishan Lake and the giant pomegranate garden are within an hour — stay in the old town, night walks best.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>枣庄到底是什么<span class="en">What Zaozhuang is</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄是座年轻的城市，因煤而起，却偏偏守着京杭大运河最完整的一段——台儿庄古城。工业的血肉里裹着水的魂，这种拧巴是全山东独一份。</p>
+      <p>它还是铁道游击队的故乡。运河、铁路、微山湖，三样本事凑在一块儿，让这座城既能扛事，也能抒情。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang is a young city, risen on coal, yet it guards the most intact stretch of the Grand Canal — Tai'erzhuang. Industrial flesh wrapped round a watery soul; that contradiction is unique in Shandong.</p>
+      <p>It's also home of the Railway Guerrillas. Canal, rail, lake — three skills in one place let the city both endure and lyricise.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄站和滕州东站都在京沪高铁线上，从徐州过来半小时出头，从济南两小时。市内到台儿庄有公交和旅游专线，微山湖得从薛城或滕州转车再换船。</p>
+      <p>古城里全靠腿，青石板路窄，车进不去，正好慢下来。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；古城外停车难，住里面省心。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; parking by the old town is tight, stay inside for ease.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang and Tengzhou East sit on the Beijing–Shanghai line, half an hour from Xuzhou, two from Jinan. Buses and tourist shuttles run to Tai'erzhuang; for Weishan Lake transfer at Xuecheng or Tengzhou then a boat.</p>
+      <p>The old town is foot-only; narrow flagstones keep cars out — slow down, as meant.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；古城外停车难，住里面省心。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; parking by the old town is tight, stay inside for ease.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>台儿庄：一座重建的活古城<span class="en">Tai'erzhuang: a rebuilt living town</span></h2>
+    <div class="zh">
+      <p class="lead">台儿庄古城是运河上少有的"水城"，桥多、船多、灯多。它曾在战火里被抹平，又照着老图纸一点点拼回来——拼得认真，连砖缝都对得上史料。</p>
+      <p>白天看的是建筑，夜里看的是倒影。沿河一溜酒吧茶馆，唱戏的、拉琴的、卖糖画的，江湖气和书卷气挨着过。</p>
+      <aside class="tip"><b>当地贴士：</b>古城门票不便宜，住一晚往往含二次入园；想看静的，赶开门那阵人最少。</aside>
+      <aside class="tip"><b>Local tip:</b>The town ticket isn't cheap; an overnight often includes re-entry; for quiet, go at opening when few are about.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'erzhuang is a rare 'water town' on the canal — many bridges, boats, lamps. Razed in war, it was pieced back from old plans so carefully the brick joints match the records.</p>
+      <p>By day you see architecture, by night reflections. A string of bars and teahouses along the river — opera, strings, sugar painting — river-and-lake and letters side by side.</p>
+      <aside class="tip"><b>当地贴士：</b>古城门票不便宜，住一晚往往含二次入园；想看静的，赶开门那阵人最少。</aside>
+      <aside class="tip"><b>Local tip:</b>The town ticket isn't cheap; an overnight often includes re-entry; for quiet, go at opening when few are about.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>微山湖与榴园<span class="en">Weishan Lake and the pomegranate garden</span></h2>
+    <div class="zh">
+      <p class="lead">微山湖在枣庄边上，夏天荷叶铺天，船在叶底下穿。湖心的铁道游击队纪念园，把那股劲留成了实物。冠世榴园在峄城，五月榴花红得像烧起来，秋天石榴咧嘴笑。</p>
+      <p>这两处都不挤，适合不想被人推着走的人。租条船，让渔家摇你去湖心，什么也不想，看水鸟起起落落就够花掉一整个日头。</p>
+      <aside class="tip"><b>实用贴士：</b>看荷花锁定夏天；上岛船有末班，别贪玩误了返程。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lotus means summer; island boats have a last run — don't linger past it.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Weishan Lake borders Zaozhuang; in summer lotus pads roof the sky, boats plough beneath. The lake-centre guerrillas park keeps that streak real. The giant pomegranate garden in Yicheng flames red in May, grins in autumn.</p>
+      <p>Neither crowds; rent a skiff, let a fisherman row you out, think of nothing, watch water birds — enough to spend a whole day.</p>
+      <aside class="tip"><b>实用贴士：</b>看荷花锁定夏天；上岛船有末班，别贪玩误了返程。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lotus means summer; island boats have a last run — don't linger past it.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄的味道在运河和煤炉之间。辣子鸡是招牌，本地小公鸡配大量干辣椒爆炒，辣得通透，配烙饼是工人的午餐哲学。微山湖的咸鸭蛋、四鼻鲤鱼，都是湖水直接喂出来的鲜。</p>
+      <p>菜煎饼是街头主角，杂粮饼摊上鸡蛋蔬菜，叠起来烙到焦脆，赶路时一卷就走。羊肉汤也实在，奶白一碗配烧饼。</p>
+      <aside class="tip"><b>当地贴士：</b>辣子鸡认老店，辣度可点；菜煎饼现烙最香，凉了皮就硬。</aside>
+      <aside class="tip"><b>Local tip:</b>For chilli chicken trust old names, set your heat; pancakes best hot off the griddle.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang's flavour sits between canal and coal stove. Chilli chicken is the signboard — local rooster with dry chillies, cleanly hot, with baked cake the workers' lunch philosophy. Weishan's salted duck eggs and four-nose carp are lake-fresh.</p>
+      <p>The vegetable pancake is the street star — grains griddled with egg and veg, folded crisp, a roll to go. Mutton soup is honest too, milky with a biscuit.</p>
+      <aside class="tip"><b>当地贴士：</b>辣子鸡认老店，辣度可点；菜煎饼现烙最香，凉了皮就硬。</aside>
+      <aside class="tip"><b>Local tip:</b>For chilli chicken trust old names, set your heat; pancakes best hot off the griddle.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">台儿庄是重建古城，别把它当真古迹考据——它是纪念，不是考古。微山湖上船穿好救生衣，湖面风大，站船头拍照别探太出去。</p>
+      <p>运河边老人多，问路他们乐意讲，可别拿"这城是不是假的"去戳——枣庄人把重建当还债，你客气点，他们能把每段砖的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'erzhuang is rebuilt; don't treat it as a real ruin to autopsy — it's tribute, not archaeology. On Weishan wear the life jacket; lake wind is strong, don't lean far out for a shot.</p>
+      <p>Canal-side elders love to talk; just don't poke with 'is this town fake' — Zaozhuang treats the rebuild as repaying a debt; be polite and they'll tell you each brick's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天峄城榴花红，夏天微山湖荷盛，都是好时候。秋天石榴熟、湖水清，人不算多。冬天古城灯会冷清些，可雪后青石板映着红灯，另有一番肃穆的好看。</p>
+      <p>若只为古城，四季都成；若为了湖和花，夏天秋天最对。</p>
+      <aside class="tip"><b>实用贴士：</b>花期和荷期都短，盯天气走；雪后古城美但路滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bloom and lotus are brief — watch weather; after snow the town is pretty but slick, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring flames the pomegranate flowers, summer swells Weishan's lotus — both good. Autumn ripens the fruit and clears the lake, few crowds. Winter dims the lantern fair, yet snow on red lanterns has its solemn beauty.</p>
+      <p>For the town any season works; for lake and flowers, summer and autumn fit best.</p>
+      <aside class="tip"><b>实用贴士：</b>花期和荷期都短，盯天气走；雪后古城美但路滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bloom and lotus are brief — watch weather; after snow the town is pretty but slick, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">台儿庄的运河边是免费的天然步道，沿河走，桥一座接一座，每座栏板上都刻着故事。古城外的万亩榴园，树下散步不收钱，秋天落叶铺金。</p>
+      <p>微山湖大堤也是免费的，夕阳把河滩染成橘色，骑车比走路爽。枣庄的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>古城外围步道免费；榴园春季花海、秋季采摘都热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>The town's outer path is free; the orchard blooms in spring, picks in autumn.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Tai'erzhuang's canal bank is a free path; bridge after bridge, each railing carved with a tale. The thousand-mu pomegranate orchard outside charges nothing to walk, gold with leaves in autumn.</p>
+      <p>Weishan's embankment is free too; at dusk it dyes the shoal orange, better by bike. Zaozhuang's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>古城外围步道免费；榴园春季花海、秋季采摘都热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>The town's outer path is free; the orchard blooms in spring, picks in autumn.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄最贵的东西，大多不要钱。台儿庄运河的水声、微山湖的荷香、古城墙外那堵老砖，站着看就是参与。雪后青石板上红灯的倒影，比收费园里还好看。</p>
+      <p>榴园里老乡摆摊卖自家石榴，你站着尝一块，他还会塞你半個。枣庄教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>花期街头花坛免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>At bloom roadside beds are free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang's priciest things mostly cost nothing. Tai'erzhuang's water sound, Weishan's lotus scent, the old brick beyond the wall — stand and you're in it. Snow on red lamps beats any paid garden.</p>
+      <p>Orchard folk sell their own pomegranates; taste one and they'll press half more on you. Zaozhuang taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>花期街头花坛免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>At bloom roadside beds are free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄不会一下子把你迷住。它没有名山的压迫，也没有江南的精致。它慢，它土，它又硬又软——一盏灯能让人停下，一首土琵琶能让人回头。</p>
+      <p>你逛过台儿庄的一河灯影、微山湖的一船荷香、榴园里的一地落叶，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"城毁了，咱就再建一座"的骨气。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang won't hypnotise you at once. No famous mountain's weight, no Jiangnan's refinement. It's slow, plain, hard and soft — one lamp stops you, one pipa brings you back.</p>
+      <p>You'll see Tai'erzhuang's lamp-lit river, Weishan's lotus boat, the orchard's fallen leaves, and leaving you'll get it: what this land gives most freely was never fame, but the grit of 'the town fell, so we'll build another'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

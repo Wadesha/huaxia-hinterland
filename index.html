@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>华夏腹地 · Hinterland of Huaxia — 随机阅读</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --card:#fff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.7;font-size:16px}
+
+  /* ===== Header ===== */
+  header.site-header{
+    background:var(--lp);color:var(--ink);
+    padding:28px 22px 20px;text-align:center;
+    border-bottom:1px solid var(--lp-dk);
+  }
+  header.site-header .kicker{
+    display:inline-block;background:var(--ink);color:var(--lp);font-size:11px;
+    letter-spacing:2px;padding:3px 10px;border-radius:20px;margin-bottom:8px;
+  }
+  header.site-header h1{
+    font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(22px,4vw,32px);
+    margin:0;letter-spacing:2px;
+  }
+  header.site-header .en-title{
+    font-style:italic;font-weight:400;opacity:.75;font-size:13px;margin-top:4px;
+  }
+  header.site-header p{
+    margin:10px auto 0;max-width:520px;font-size:14px;opacity:.85;
+  }
+
+  /* ===== Toolbar ===== */
+  .toolbar{
+    position:sticky;top:0;z-index:10;
+    background:var(--ink);color:#fff;
+    padding:10px 16px;display:flex;align-items:center;justify-content:space-between;
+    gap:12px;
+  }
+  .toolbar .btn{
+    background:var(--lp);color:var(--ink);border:0;
+    padding:8px 22px;border-radius:20px;font-size:14px;font-weight:600;
+    cursor:pointer;font-family:inherit;letter-spacing:1px;
+    transition:background .15s,transform .1s;
+  }
+  .toolbar .btn:hover{background:#ffc233}
+  .toolbar .btn:active{transform:scale(.97)}
+  .toolbar .btn .dice{margin-right:4px}
+  .toolbar .info{font-size:12.5px;opacity:.7;letter-spacing:.5px}
+  .toolbar .info b{color:var(--lp);opacity:1}
+  .toolbar .home-link{
+    color:var(--lp);text-decoration:none;font-size:13px;
+    opacity:.8;transition:opacity .15s;
+  }
+  .toolbar .home-link:hover{opacity:1;text-decoration:underline}
+
+  /* ===== Content Iframe ===== */
+  .reader{
+    width:100%;min-height:calc(100vh - 200px);
+    background:#fff;border:0;display:block;
+  }
+
+  /* ===== Footer ===== */
+  footer.site-footer{
+    padding:20px 22px 36px;text-align:center;color:var(--muted);font-size:12.5px;
+    border-top:1px solid var(--line);background:var(--paper);
+  }
+  footer.site-footer a{color:var(--lp-dk);text-decoration:none}
+  footer.site-footer a:hover{text-decoration:underline}
+
+  /* ===== Loading Overlay ===== */
+  .loading{
+    position:fixed;inset:0;background:var(--paper);
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;z-index:5;
+  }
+  .loading .spinner{
+    width:40px;height:40px;border:3px solid var(--line);
+    border-top-color:var(--lp);border-radius:50%;
+    animation:spin 1s linear infinite;
+  }
+  .loading .hint{margin-top:14px;color:var(--muted);font-size:14px;letter-spacing:1px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ===== Index View (卡片列表) ===== */
+  .index-view{max-width:960px;margin:0 auto;padding:28px 22px 60px}
+  .index-view .grp{margin:28px 0 8px;padding-left:12px;border-left:4px solid var(--lp)}
+  .index-view .grp h2{font-family:"Noto Serif SC",Georgia,serif;font-size:18px;margin:0;color:var(--lp-dk)}
+  .index-view .grp h2 .en{font-size:12px;color:var(--muted);font-weight:400;font-style:italic;margin-left:6px}
+  .index-view .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:12px}
+  .index-view .card{
+    display:block;background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:14px 16px;text-decoration:none;color:var(--ink);
+    transition:transform .12s,box-shadow .12s,border-color .12s;
+  }
+  .index-view .card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(28,26,23,.12);border-color:var(--lp)}
+  .index-view .card h3{margin:0 0 4px;font-family:"Noto Serif SC",Georgia,serif;font-size:17px}
+  .index-view .card h3 .en{display:block;font-size:11.5px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  .index-view .card .tag{font-size:13px;color:#4a4334;margin:4px 0 0;min-height:2.4em}
+  .index-view .search-bar{
+    position:sticky;top:0;z-index:5;background:var(--ink);padding:12px 22px;display:flex;justify-content:center;
+  }
+  .index-view .search-bar input{
+    width:min(420px,90%);padding:8px 14px;border:0;border-radius:20px;
+    font-size:14px;font-family:inherit;background:#fff;color:var(--ink);
+  }
+  .index-view .search-bar input:focus{outline:2px solid var(--lp)}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- ===== 随机阅读视图 ===== -->
+<div id="readerView">
+  <header class="site-header">
+    <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+    <h1>华夏腹地</h1>
+    <div class="en-title">Hinterland of Huaxia — a bilingual series</div>
+    <p>点击"掷骰子"随机开启一篇目的地写作。中英对照，篇篇原创。</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn" onclick="randomPick()" title="随机下一篇"><span class="dice">🎲</span>换一篇</button>
+    <span class="info">当前：<b id="currentName">加载中…</b> &nbsp;·&nbsp; 共 <b id="totalCount">-</b> 篇</span>
+    <a class="home-link" href="#" onclick="showIndex();return false">📖 浏览全部</a>
+  </div>
+
+  <iframe id="contentFrame" class="reader" title="内容阅读器"></iframe>
+
+  <footer class="site-footer">
+    本文为 Lonely Planet 文风仿写练习：内容原创，仅借其笔法，不复制任何 LP 原文。<br>
+    地名与史实为公开常识，欢迎实地核对。 · <a href="#" onclick="showIndex();return false">查看全部 →</a>
+  </footer>
+
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <div class="hint">翻开下一页…</div>
+  </div>
+</div>
+
+<!-- ===== 浏览全部视图 ===== -->
+<div id="indexView" class="hide">
+  <header class="site-header">
+    <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+    <h1>华夏腹地</h1>
+    <div class="en-title">Hinterland of Huaxia — a bilingual series</div>
+    <p>29 篇城市写作 + 县级地志，全量列表在此。</p>
+  </header>
+  <div class="toolbar">
+    <a class="home-link" href="#" onclick="showReader();return false">← 返回随机阅读</a>
+    <span class="info">共 <b id="totalCount2">-</b> 篇 · 可搜索</span>
+    <span></span>
+  </div>
+  <div class="search-bar">
+    <input id="q" type="search" placeholder="输入城市名筛选…">
+  </div>
+  <div class="index-view" id="indexContainer"></div>
+  <footer class="site-footer">
+    本文为 Lonely Planet 文风仿写练习：内容原创，仅借其笔法，不复制任何 LP 原文。
+  </footer>
+</div>
+
+<script>
+/* =============================================================
+ * 页面池 — 发布时由 publish.ps1 自动生成
+ * 如需手动更新，运行 publish.ps1 即可刷新此数组
+ * ============================================================= */
+const CONTENT_PAGES = [
+  "曹县.html",
+  "成武.html",
+  "单县.html",
+  "砀山.html",
+  "东海.html",
+  "东明.html",
+  "费县.html",
+  "丰县.html",
+  "赣榆.html",
+  "灌南.html",
+  "灌云.html",
+  "嘉祥.html",
+  "金乡.html",
+  "莒南.html",
+  "巨野.html",
+  "鄄城.html",
+  "兰陵.html",
+  "利辛.html",
+  "梁山.html",
+  "灵璧.html",
+  "临沭.html",
+  "沛县.html",
+  "邳州.html",
+  "平邑.html",
+  "沭阳.html",
+  "泗洪.html",
+  "泗县.html",
+  "泗水.html",
+  "泗阳.html",
+  "睢宁.html",
+  "睢县.html",
+  "濉溪临涣.html",
+  "郯城.html",
+  "滕州.html",
+  "微山.html",
+  "汶上.html",
+  "涡阳.html",
+  "夏邑.html",
+  "萧县.html",
+  "新沂窑湾.html",
+  "沂南.html",
+  "沂水.html",
+  "永城.html",
+  "埇桥符离集.html",
+  "鱼台.html",
+  "虞城.html",
+  "郓城.html",
+  "柘城.html",
+  "邹城.html",
+  "安阳_LP文风_双语.html",
+  "宝鸡_LP文风_双语.html",
+  "保定_LP文风_双语.html",
+  "亳州_LP文风_双语.html",
+  "大同_LP文风_双语.html",
+  "赣州_V1现行版.html",
+  "邯郸_LP文风_双语.html",
+  "汉中_LP文风_双语.html",
+  "菏泽_LP文风_双语.html",
+  "徽州_LP文风_双语.html",
+  "济宁_LP文风_双语.html",
+  "荆州_LP文风_双语.html",
+  "开封_LP文风_双语.html",
+  "聊城_LP文风_双语.html",
+  "临汾_LP文风_双语.html",
+  "临沂_LP文风_双语.html",
+  "洛阳_LP文风_双语.html",
+  "南阳_LP文风_双语.html",
+  "平遥_LP文风_双语.html",
+  "曲阜_LP文风_双语.html",
+  "商丘_LP文风_双语.html",
+  "泰安_LP文风_双语.html",
+  "天水_LP文风_双语.html",
+  "襄阳_LP文风_双语.html",
+  "运城_LP文风_双语.html",
+  "枣庄_LP文风_双语.html",
+  "正定_LP文风_双语.html",
+  "周口_LP文风_双语.html",
+  "淄博_LP文风_双语.html",
+  "淮海区域_LP文风_双语.html",
+  "双线实验.html",
+  "京都_游记与攻略_LP风格.html"
+];
+
+/* ===== 随机阅读模式 ===== */
+const frame = document.getElementById('contentFrame');
+const loading = document.getElementById('loading');
+const currentName = document.getElementById('currentName');
+document.getElementById('totalCount').textContent = CONTENT_PAGES.length;
+document.getElementById('totalCount2').textContent = CONTENT_PAGES.length;
+
+let lastIndex = -1;
+
+function getDisplayName(filename) {
+  return filename.replace(/_/g,' ').replace(/\.html$,'').replace('_LP文风_双语','');
+}
+
+function randomPick() {
+  let idx;
+  do { idx = Math.floor(Math.random() * CONTENT_PAGES.length); } while (idx === lastIndex && CONTENT_PAGES.length > 1);
+  lastIndex = idx;
+  const page = CONTENT_PAGES[idx];
+  currentName.textContent = getDisplayName(page);
+  loading.style.display = 'flex';
+  frame.src = page;
+  frame.onload = () => { loading.style.display = 'none'; };
+}
+
+/* ===== 浏览全部模式 ===== */
+function showReader() {
+  document.getElementById('readerView').classList.remove('hide');
+  document.getElementById('indexView').classList.add('hide');
+  window.scrollTo(0,0);
+}
+
+function showIndex() {
+  document.getElementById('readerView').classList.add('hide');
+  document.getElementById('indexView').classList.remove('hide');
+  buildIndex();
+  window.scrollTo(0,0);
+}
+
+/* ===== 构建索引卡片 ===== */
+let indexBuilt = false;
+function buildIndex() {
+  if (indexBuilt) return;
+  indexBuilt = true;
+
+  // 按省份分组（简单启发式）
+  const groups = {
+    "区域总览": { en: "Overview", pages: [] },
+    "山东":     { en: "Shandong", pages: [] },
+    "河南":     { en: "Henan", pages: [] },
+    "河北":     { en: "Hebei", pages: [] },
+    "山西":     { en: "Shanxi", pages: [] },
+    "陕西":     { en: "Shaanxi", pages: [] },
+    "甘肃":     { en: "Gansu", pages: [] },
+    "湖北":     { en: "Hubei", pages: [] },
+    "安徽":     { en: "Anhui", pages: [] },
+    "江苏":     { en: "Jiangsu", pages: [] },
+    "江西":     { en: "Jiangxi", pages: [] },
+    "实验与其他": { en: "Experiments & Other", pages: [] },
+  };
+
+  // 省份关键词映射
+  const provinceMap = [
+    { prov: "山东", kws: ["济宁","菏泽","枣庄","临沂","聊城","淄博","泰安","曲阜","鄄城","郓城","曹县","成武","单县","巨野","梁山","嘉祥","鱼台","金乡","泗水","平邑","蒙阴","沂南","沂水","兰陵","临沭","郯城","滕州","微山","邹城"] },
+    { prov: "河南", kws: ["开封","安阳","商丘","周口","洛阳","南阳","民权","宁陵","睢县","柘城","夏邑","虞城","永城","鹿邑"] },
+    { prov: "河北", kws: ["邯郸","正定","保定"] },
+    { prov: "山西", kws: ["大同","运城","临汾","平遥"] },
+    { prov: "陕西", kws: ["汉中","宝鸡"] },
+    { prov: "甘肃", kws: ["天水"] },
+    { prov: "湖北", kws: ["襄阳","荆州"] },
+    { prov: "安徽", kws: ["徽州","亳州","砀山","灵璧","泗县","萧县","蒙城","利辛","涡阳","濉溪","埇桥"] },
+    { prov: "江苏", kws: ["赣榆","东海","灌南","灌云","沛县","邳州","沭阳","泗洪","泗阳","睢宁","丰县","新沂"] },
+    { prov: "江西", kws: ["赣州"] },
+  ];
+
+  CONTENT_PAGES.forEach(f => {
+    const name = getDisplayName(f);
+    let placed = false;
+    for (const {prov, kws} of provinceMap) {
+      if (kws.some(k => name.includes(k))) {
+        groups[prov].pages.push({ file: f, name });
+        placed = true; break;
+      }
+    }
+    if (!placed) {
+      if (name.includes("淮海") || name.includes("区域")) groups["区域总览"].pages.push({ file: f, name });
+      else if (name.includes("双线") || name.includes("京都")) groups["实验与其他"].pages.push({ file: f, name });
+      else groups["实验与其他"].pages.push({ file: f, name });
+    }
+  });
+
+  const container = document.getElementById('indexContainer');
+  let html = '';
+  Object.entries(groups).forEach(([label, g]) => {
+    if (g.pages.length === 0) return;
+    html += `<div class="grp"><h2>${label}<span class="en">${g.en} · ${g.pages.length}</span></h2><div class="grid">`;
+    g.pages.forEach(p => {
+      html += `<a class="card" href="${p.file}" target="_blank" rel="noopener">
+        <h3>${p.name}</h3>
+        <div class="tag">打开阅读 →</div>
+      </a>`;
+    });
+    html += '</div></div>';
+  });
+  container.innerHTML = html;
+
+  // 搜索功能
+  document.getElementById('q').addEventListener('input', function () {
+    const s = this.value.trim().toLowerCase();
+    document.querySelectorAll('.card').forEach(c => {
+      const ok = !s || c.textContent.toLowerCase().includes(s);
+      c.style.display = ok ? '' : 'none';
+    });
+    document.querySelectorAll('.grp').forEach(g => {
+      const anyShown = Array.from(g.querySelectorAll('.card')).some(c => c.style.display !== 'none');
+      g.style.display = anyShown ? '' : 'none';
+    });
+  });
+}
+
+/* ===== 启动：URL 参数或随机 ===== */
+const params = new URLSearchParams(window.location.search);
+if (params.get('page') && CONTENT_PAGES.includes(params.get('page'))) {
+  const p = params.get('page');
+  lastIndex = CONTENT_PAGES.indexOf(p);
+  currentName.textContent = getDisplayName(p);
+  frame.src = p;
+  frame.onload = () => { loading.style.display = 'none'; };
+} else if (params.get('view') === 'all') {
+  showIndex();
+  loading.style.display = 'none';
+} else {
+  randomPick();
+}
+
+/* ===== 键盘快捷键 ===== */
+document.addEventListener('keydown', function (e) {
+  if (e.target.tagName === 'INPUT') return;
+  if (e.code === 'Space' || e.code === 'KeyR') { e.preventDefault(); randomPick(); }
+});
+</script>
+</body>
+</html>

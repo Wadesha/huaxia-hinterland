@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宝鸡 · Baoji — 周秦发祥的城，青铜与法门</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>宝鸡</h1>
+  <div class="en-title">Baoji</div>
+  <p class="zh">一座从青铜器里走出来的城——周原的窖藏、法门寺的佛指、太白山的雪，把"根"和"高"都留在了秦岭以西。</p>
+  <p class="en">A city that walked out of bronze vessels — the Zhouyuan hoard, Famen Temple's finger bone, Taibai's snow, keeping 'root' and 'height' west of the Qin range.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔法门，去周原看铜 / Arrive at Zhouyuan</a></li>
+      <li><a href="#s2">宝鸡到底是什么 / What Baoji is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">青铜器博物院与周原 / The Bronze Museum & Zhouyuan</a></li>
+      <li><a href="#s5">法门寺 / Famen Temple</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔法门，去周原看铜<span class="en">Arrive at Zhouyuan</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡不声不响地坐在关中的西头。你一下高铁，满眼是普通的工业城，可往东走，周原的博物馆先把你按住——一堆西周的窖藏青铜，锈得发绿，是三千年前周人埋的。</p>
+      <p>我第一次懂宝鸡，是在石鼓山的傍晚。山不高，可站在顶上能望见渭河弯成一道弓，远处的秦岭压着雪线。那一刻你明白，这座城把"根"和"高"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji quietly sits at the west end of the Guanzhong plain. Step off the train and it's an ordinary industrial city, yet walk east and the Zhouyuan museum stops you first — a hoard of Western Zhou bronze, green with rust, buried three thousand years back by the Zhou.</p>
+      <p>I got Baoji on Stone-Drum Hill at dusk. The hill is low, yet from the top you see the Wei river bend like a bow, the Qin range pressing a snow line beyond. That moment you see this city grows 'root' and 'height' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>宝鸡到底是什么<span class="en">What Baoji is</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡是周秦的发祥地。周人在周原起家，秦人在雍城养马，后来都打出一片天下。它不靠名山，靠的是一段开头——华夏最早的两段王朝叙事，都从这片黄土写起。</p>
+      <p>它还是青铜的库房。何尊上的"中国"二字，是这两个字第一次出现；毛公鼎、虢季子白盘，件件是国宝。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji was where Zhou and Qin rose. The Zhou started at Zhouyuan, the Qin bred horses at Yongcheng, each later fought out a realm. It leans not on a famous mountain but on an opening — the earliest two dynastic tales of Huaxia both begin on this loess.</p>
+      <p>It's also a storehouse of bronze. The two characters 'central state' on the He zun are their first ever appearance; the Maogong ding, the Guoji subai pan, each a national treasure.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡站在宝兰、西宝铁路线上，高铁从西安过来两小时出头，从兰州过来两小时多。市内到青铜器博物院、周原公交可达；太白山、法门寺在城东南，得转旅游专线。</p>
+      <p>去周边天水（麦积山）得往西转，车程个把小时到两小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；太白山远，早去早回。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; Taibai is far, go early, back early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji sits on the Baoji–Lanzhou and Xi'an–Baoji lines; high-speed from Xi'an just over two hours, from Lanzhou just over two. Buses reach the Bronze Ware Museum and Zhouyuan; Taibai and Famen lie southeast, by tourist shuttle.</p>
+      <p>For Tianshui (Maiji) turn west, one to two hours.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；太白山远，早去早回。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; Taibai is far, go early, back early.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>青铜器博物院与周原<span class="en">The Bronze Museum & Zhouyuan</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡青铜器博物院是看铜的地方，何尊、逨盘一字排开，铭文比史书还长。周原在扶风、岐山一带，车马坑、甲骨、窖藏都在地里，你站在展厅，连呼吸都放轻。</p>
+      <p>周原的凤雏建筑基址，是西周的朝廷雏形；站上去，你会懂什么叫"溥天之下，莫非王土"。</p>
+      <aside class="tip"><b>当地贴士：</b>青铜院留半天；周原遗址散，骑车串最省脚。</aside>
+      <aside class="tip"><b>Local tip:</b>The bronze museum needs half a day; Zhouyuan's sites scatter, bike to link them.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Baoji Bronze Ware Museum is where you see bronze; the He zun, the Lai pan line up, inscriptions longer than histories. Zhouyuan around Fufeng and Qishan keeps chariot pits, oracle bone, hoard in the ground; stand in the hall and breath eases.</p>
+      <p>Zhouyuan's Fengchu foundation is the Zhou court in embryo; stand on it and you'll know 'under the vast sky, all is the king's soil'.</p>
+      <aside class="tip"><b>当地贴士：</b>青铜院留半天；周原遗址散，骑车串最省脚。</aside>
+      <aside class="tip"><b>Local tip:</b>The bronze museum needs half a day; Zhouyuan's sites scatter, bike to link them.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>法门寺<span class="en">Famen Temple</span></h2>
+    <div class="zh">
+      <p class="lead">法门寺因一枚佛指舍利成了圣地。唐代的地宫重见天日，金银器、秘色瓷、丝绸，把大唐的富堆在你眼前。合十舍利塔高得仰头，塔下地宫的灯常年不灭。</p>
+      <p>你站在地宫口，连脚步都放轻——那枚指骨，信的人叫它"真身"。</p>
+      <aside class="tip"><b>当地贴士：</b>法门寺大，留半天；地宫珍贵，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Famen is large, allow half a day; the palace is precious, no flash.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Famen Temple became holy for one finger bone of the Buddha. The Tang underground palace saw daylight again; gold and silver ware, secret-colour porcelain, silk pile the Tang's wealth before your eyes. The Sheli stupa towers to make you look up; the palace lamp below never dies.</p>
+      <p>Stand at the palace mouth and tread eases — that finger bone, believers call the 'true body'.</p>
+      <aside class="tip"><b>当地贴士：</b>法门寺大，留半天；地宫珍贵，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Famen is large, allow half a day; the palace is precious, no flash.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡的味道在面与肉之间。擀面皮是蒸了再擀的凉食，浇辣油，筋道一口，是早餐的哲学。臊子面是酸汤底，红黄绿一层叠，一碗不过桥。</p>
+      <p>酥饺、油糕是油锅里滚出来的甜；岐山醋调一切，连凉皮都带酸香。夜市里揪面、削面都不贵。</p>
+      <aside class="tip"><b>当地贴士：</b>擀面皮认现擀，现吃最香；臊子面酸汤，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For rolled skin trust fresh-rolled, eat at once; saozi broth is sour, go easy if weak stomach.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji's flavour sits between noodle and meat. The rolled noodle-skin is steamed then rolled, dressed in chili oil, one chewy bite, the breakfast philosophy. Saozi noodles in a sour broth, red yellow green layered, one bowl no crossing.</p>
+      <p>Crisp dumpling and oil cake are sweets rolled from the wok; Qishan vinegar dresses all, even the cold skin carries sour scent. The night market's pulled and peeled noodles are cheap.</p>
+      <aside class="tip"><b>当地贴士：</b>擀面皮认现擀，现吃最香；臊子面酸汤，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For rolled skin trust fresh-rolled, eat at once; saozi broth is sour, go easy if weak stomach.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">法门寺是活寺也是文物，殿里别喧哗，地宫别摸，别用闪光灯。太白山是保护区，别离栈道，别采药。</p>
+      <p>宝鸡人直，问路指得清，可别拿"这铜是不是假的"去戳——他们把周当骨，你客气点，他们能把每件器的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Famen is a living temple and relic; no noise in halls, don't touch the palace, no flash. Taibai is a reserve; don't leave the plank path, don't pick herbs.</p>
+      <p>Baoji folk are direct; they point clear, just don't poke with 'is this bronze fake' — they take the Zhou as bone; be polite and they'll tell you each vessel's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天渭河柳绿，宝鸡舒服。夏天太白山里凉，是避暑的好去处，可多雨。秋天天高云淡，秦岭的桦黄最艳。冬天冷，可雪后法门塔肃穆，太白山顶玉树琼枝。</p>
+      <p>若为了山，夏天最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>太白山顶风大温低，带羽绒；夏天多雨，带伞。</aside>
+      <aside class="tip"><b>Handy tip:</b>Taibai's summit wind strong, cold, bring down; summer rainy, bring a brolly.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the Wei's willows, Baoji eased. Summer Taibai cools, a good escape from heat, yet rainy. Autumn high and clear, the Qin's birch yellow brightest. Winter cold, yet after snow Famen's stupa solemn, Taibai's summit a jade of ice.</p>
+      <p>For the mountain summer fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>太白山顶风大温低，带羽绒；夏天多雨，带伞。</aside>
+      <aside class="tip"><b>Handy tip:</b>Taibai's summit wind strong, cold, bring down; summer rainy, bring a brolly.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">石鼓山是免费的天然步道，沿山走，渭河在脚下弯成弓。城里的经二路随便钻，老字号、擀面皮摊都在沿线。</p>
+      <p>渭河公园顺水，骑车比走路爽，夕阳把河染成橘色。宝鸡的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>石鼓山步道免费；经二路细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>Stone-Drum path is free; Jing'er Road, look close at old names.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Stone-Drum Hill is a free path; walk it and the Wei bends like a bow below. The town's Jing'er Road wanders free, old names and rolled-noodle stalls along it.</p>
+      <p>The Wei riverside park runs by the water, better by bike; at dusk it dyes the river orange. Baoji's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>石鼓山步道免费；经二路细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>Stone-Drum path is free; Jing'er Road, look close at old names.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡最贵的东西，大多不要钱。渭河的风、石鼓山在暮色里的影、经二路那阵辣香，站着看就是参与。雪后古塔配白雪，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。宝鸡教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>石鼓山步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Stone-Drum path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji's priciest things mostly cost nothing. The Wei's wind, Stone-Drum's dusk shadow, Jing'er's chili scent — stand and you're in it. Snow on the old stupa with white beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Baoji taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>石鼓山步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Stone-Drum path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">宝鸡不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它厚，它正，它又根又铜——一件器能让人沉默，一座塔能让人回头。</p>
+      <p>你逛过青铜院的一厅锈绿、周原的一地夯土、法门的一塔灯，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"溥天之下"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Baoji won't win you at once. No famous mountain's fame, no water town's finesse. It's deep, proper, root and bronze — one vessel silences you, one stupa turns you back.</p>
+      <p>You'll see the bronze hall's rust-green, Zhouyuan's ground of rammed earth, Famen's tower of lamp — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'under the vast sky'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

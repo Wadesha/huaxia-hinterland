@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>淮北 · Huaibei — V2 v2</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v2">V2 · v2</div>
+  <h1>淮北</h1>
+  <div class="en-title">Huaibei</div>
+  <p class="zh">1960 年因煤设市，六十年后浅部煤层渐尽；塌陷积水改成了湿地公园，柳孜的麦地下埋着隋唐大运河的石码头——一座正在给自己换行的城。</p>
+  <p class="en">Founded on coal in 1960, its shallow seams all but worked out sixty years later: mining subsidence has been turned into wetland parks, and under the wheat at Liuzi lies a stone quay of the Sui–Tang Grand Canal — a city changing trade on itself.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">一座挖出来的城</a></li>
+      <li><a href="#s2">相山</a></li>
+      <li><a href="#s3">临涣：茶梗煮出来的一天</a></li>
+      <li><a href="#s4">临涣的另一面：总前委旧址</a></li>
+      <li><a href="#s5">柳孜：麦地下的石码头</a></li>
+      <li><a href="#s6">塌陷区：从坑到湖</a></li>
+      <li><a href="#s7">双堆集</a></li>
+      <li><a href="#s8">酒与面食</a></li>
+      <li><a href="#s9">换行的过程</a></li>
+      <li><a href="#s10">方向与距离</a></li>
+      <li><a href="#s11">一座实在的城</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>一座挖出来的城<span class="en">A city dug out of the ground</span></h2>
+    <div class="zh">
+      <p class="lead">淮北位于安徽最北端，与河南、江苏接壤，是全省最年轻的地级市之一，1960 年因煤田开发而设市。</p>
+      <p>地处黄淮平原，境内几乎无山，只有相山一脉在城西北稍稍隆起，成为这座平原城市唯一的制高点。</p>
+      <p>建城的理由写在名字里，也写在地名里：矿区、矿务局、矿工路，这些词构成了城市最初的骨架。</p>
+      <p>城不大，主干道笔直，从老城到新区车程只需二十来分钟，方向感在这里很容易建立。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huaibei sits at Anhui's northern tip, bordering Henan and Jiangsu, and is one of the province's youngest prefecture-level cities, established in 1960 to work a coalfield.</p>
+      <p>It lies on the Huang-Huai plain with almost no hills; only the Xiangshan ridge lifts slightly northwest of town, the sole high ground this flat city has.</p>
+      <p>The reason for the city's existence is written in its name and in its street names — mine district, mining bureau, miners' road — words that formed the original skeleton of the place.</p>
+      <p>It is not big: the arterial roads run straight and the drive from the old centre to the new district takes barely twenty minutes, so orientation comes easily.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>相山<span class="en">Xiangshan</span></h2>
+    <div class="zh">
+      <p class="lead">相山是淮北境内唯一的山体，主峰海拔约 300 米，山上有显通寺与历代碑刻，林木覆盖良好。</p>
+      <p>从山腰回望，整座城在平原上摊开，楼群、矸石山与远处的冷却塔同处一个画面，城市的工业身份一目了然。</p>
+      <p>周末的相山属于本地家庭：打牌的、遛孩子的、唱戏的，各自占据一片树荫，互不打扰。</p>
+      <p>山不高，爬起来不费劲，它的意义不在于风景，而在于给一座没有起伏的城市提供了一处可以回望自己的高台。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xiangshan is the only real hill in Huaibei; its main peak stands at roughly 300 metres, and it carries the Xiantong temple, steles from several periods, and a good cover of trees.</p>
+      <p>From the slope the whole city spreads out across the plain, and tower blocks, spoil heaps and distant cooling towers appear in the same frame — the industrial identity of the place made plain.</p>
+      <p>At weekends the hill belongs to local families: card players, people walking children, opera singers, each group holding a patch of shade without troubling the others.</p>
+      <p>It is low and undemanding, and its point is not scenery but this: it gives a city with no relief somewhere to climb and look back at itself.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>临涣：茶梗煮出来的一天<span class="en">Linhuan: days brewed from tea stems</span></h2>
+    <div class="zh">
+      <p class="lead">临涣属濉溪县，是一座有数百年历史的古镇，镇上的茶馆至今成排开着，房屋、炉灶与桌凳都带着明显的年头。</p>
+      <p>这里喝的是棒棒茶，用茶梗而非叶片熬煮，汤色深褐，滋味粗重，一壶只需几块钱，续水不加钱。</p>
+      <p>茶馆天不亮就开门，老人自带杯子落座，话题从庄稼、孙子一直到镇上的新闻，声音混在水汽里一直不散。</p>
+      <p>它不表演"古镇生活"，也没有为外人准备的节目；你坐下就坐下，坐多久都行，没人多看你一眼。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Linhuan, in Suixi county, is a town several hundred years old whose teahouses still run in a row, their buildings, stoves, tables and benches all visibly aged.</p>
+      <p>What is served is stick tea, boiled from tea stems rather than leaf: dark brown in the cup, rough in the mouth, a few yuan a pot with free refills.</p>
+      <p>The teahouses open before proper daylight; old men arrive with their own cups and hold forth on crops, grandsons and local news, the talk mixing into the steam and never quite stopping.</p>
+      <p>It does not perform "old-town life" and keeps no programme for outsiders — sit down, stay as long as you like, and nobody gives you a second look.</p>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>临涣的另一面：总前委旧址<span class="en">Linhuan's other face: a command post</span></h2>
+    <div class="zh">
+      <p class="lead">镇上的文昌宫曾作为淮海战役总前委驻地使用，1948 年冬，这场决战的统一指挥就在这样一座小镇的旧建筑里进行。</p>
+      <p>这组建筑与几百米外的茶馆构成了一种奇特的并置：一边是指挥几十万人的作战指令，一边是几块钱一壶的粗茶。</p>
+      <p>展厅里的电报、地图与手令数量不多，但把"总前委"这个抽象的词落到了几间实际的屋子上。</p>
+      <p>从文昌宫出来再走进茶馆，那种从战争到日常的切换，比任何解说词都直接。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Wenchang palace in the town served as the headquarters of the Huaihai Campaign's general front committee; in the winter of 1948 the unified command of that decisive battle ran from an old building in a market town like this one.</p>
+      <p>The building and the teahouses a few hundred metres away make an odd pairing: orders directing several hundred thousand men on one side, a few yuan of coarse tea on the other.</p>
+      <p>The telegrams, maps and handwritten orders in the display are not numerous, but they bring the abstract term "general front committee" down to a few actual rooms.</p>
+      <p>Walk out of the palace and into a teahouse, and the switch from war to ordinary life lands harder than any caption could manage.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>柳孜：麦地下的石码头<span class="en">Liuzi: a stone quay under the wheat</span></h2>
+    <div class="zh">
+      <p class="lead">柳孜村地下的柳孜遗址，是隋唐大运河通济渠段的一处重要遗存，1999 年的发掘出土了石构码头、8 艘唐代沉船与大量瓷器。</p>
+      <p>这批发现为大运河的河道走向与漕运规模提供了实物证据，也为 2014 年"大运河"列入世界遗产名录提供了支撑。</p>
+      <p>如今遗址上建了博物馆，展陈以河道剖面、沉船本体与出土器物为主，看展前先读一遍介绍，现场会清楚很多。</p>
+      <p>站在馆外，四周是平整的麦田与村路，水早已退回地下，只有发掘留下的方坑证明这里曾经行船。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Liuzi site beneath Liuzi village is a major remnant of the Tongji channel of the Sui–Tang Grand Canal; excavation in 1999 uncovered a stone quay, eight Tang-period sunken boats and a large quantity of porcelain.</p>
+      <p>The finds gave physical evidence for the canal's line and for the scale of grain transport on it, and they helped underpin the Grand Canal's inscription on the World Heritage list in 2014.</p>
+      <p>A museum now stands over the site, displaying the channel section, the boats themselves and the objects recovered; read the introduction first and the ground makes far more sense.</p>
+      <p>Outside, the country is flat wheat and village roads — the water has long since retreated underground, and only the square pits of the dig prove that boats once passed here.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>塌陷区：从坑到湖<span class="en">Subsidence: from pit to lake</span></h2>
+    <div class="zh">
+      <p class="lead">煤矿采空之后地表下沉，地下水与降雨在低处积聚，形成大片塌陷水面，这是资源型城市最普遍也最难处理的后遗症。</p>
+      <p>淮北的做法是把这些水面连成系统，治理岸线、种植水生植物，改造成南湖、中湖等一批湿地公园。</p>
+      <p>今天的湖边芦苇成片，水鸟种类可观，成为市民散步、跑步与垂钓最常去的开放空间。</p>
+      <p>一片由开采造成的塌陷地最终变成城里最舒服的地方，这个过程本身就是这座城最值得看的东西。</p>
+    </div>
+    <div class="en">
+      <p class="lead">When the coal is worked out the surface subsides, and groundwater and rain collect in the hollows to form large sheets of water — the most common and most awkward legacy of a resource city.</p>
+      <p>Huaibei's answer has been to link these waters into a system: stabilise the banks, plant aquatic vegetation, and convert them into wetland parks such as the South Lake and the Central Lake.</p>
+      <p>Today the shores are dense with reeds and hold a respectable range of waterbirds, and they are where residents walk, run and fish in the open.</p>
+      <p>That ground collapsed by mining should end up the pleasantest place in the city is itself the most interesting thing to see here.</p>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>双堆集<span class="en">Shuangduiji</span></h2>
+    <div class="zh">
+      <p class="lead">濉溪县的双堆集是淮海战役第二阶段的主战场，1948 年 11 月至 12 月，围歼战在这里持续了二十余天。</p>
+      <p>村外的烈士陵园与纪念馆建于此后，纪念塔立在平原上，十几公里外就能看见。</p>
+      <p>馆内的地形图与序列展板把包围与反包围的过程拆开来讲，箭头密集，推进得很细。</p>
+      <p>展馆之外是一望无际的麦田，风一过就只有麦子的声音，战争现场与今日农田之间的距离近得不真实。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Shuangduiji in Suixi county was the main battlefield of the second phase of the Huaihai Campaign; through November and December 1948 the encirclement battle ran here for more than twenty days.</p>
+      <p>The memorial park and museum outside the village were built afterwards, their tower standing on the flat land visible from more than ten kilometres away.</p>
+      <p>Inside, the relief maps and sequenced panels take the encirclement and counter-encirclement apart step by step, dense with arrows and fine in their detail.</p>
+      <p>Beyond the museum lies unbounded wheat, where the wind brings nothing but the sound of the crop — the distance between a battlefield and today's farmland feels unreal.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>酒与面食<span class="en">Liquor and wheat</span></h2>
+    <div class="zh">
+      <p class="lead">濉溪酿酒的历史可追溯到明清，口子窖是当地最有名的品牌，街上的招牌密度几乎可以作为认路的地标。</p>
+      <p>本地的饮酒方式是小杯多次，节奏稳，不劝不闹，一顿饭可以喝很久。</p>
+      <p>日常饮食以面食为主：面条、烙馍、水煎包与各种汤，份量大、油盐重，价格也低。</p>
+      <p>早市是最值得去的地方之一，几块钱一碗汤配一块馍，站着吃完，一天就开始了。</p>
+      <aside class="tip"><b>实用贴士：</b>临涣茶馆集中在老街一带，一壶棒棒茶几块钱，续水不另收；本地早点分量足，去之前别吃太饱。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Linhuan teahouses cluster along the old street; a pot of stick tea costs a few yuan and refills are free. Local breakfasts are large, so don't arrive already full.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Distilling at Suixi can be traced back to the Ming and Qing, and Kouzijiao is the best-known local label — the density of its shopfronts amounts to a landmark for finding your way.</p>
+      <p>Drinking here runs to small glasses and many rounds, steady in tempo, with neither urging nor rowdiness; a meal can last a long while.</p>
+      <p>Everyday food is wheat: noodles, griddle cakes, pan-fried buns and various soups, in large portions, heavy on oil and salt, and cheap.</p>
+      <p>The early market is one of the best places in town: a bowl of soup and a piece of bread for a few yuan, eaten standing, and the day has started.</p>
+      <aside class="tip"><b>实用贴士：</b>临涣茶馆集中在老街一带，一壶棒棒茶几块钱，续水不另收；本地早点分量足，去之前别吃太饱。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Linhuan teahouses cluster along the old street; a pot of stick tea costs a few yuan and refills are free. Local breakfasts are large, so don't arrive already full.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>换行的过程<span class="en">The process of changing trade</span></h2>
+    <div class="zh">
+      <p class="lead">煤在这座城下挖了六十年，浅部资源逐渐枯竭，开采成本上升，产业单一的代价开始显现。</p>
+      <p>近年来的方向是新材料、食品加工、装备制造与旅游，新区的厂房和道路都是按这个方向铺开的。</p>
+      <p>塌陷区治理既是环境工程，也顺带成了城市公共空间的来源，算是一次被动的意外收获。</p>
+      <p>宏观的"转型"讲起来很抽象，落到街头就是老厂在拆、新路在修、湖边多了一条步道。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Coal has been worked beneath this city for sixty years; the shallow reserves are thinning, extraction costs are rising, and the price of a single-industry economy is becoming visible.</p>
+      <p>The current direction is new materials, food processing, equipment manufacturing and tourism, and the factory buildings and roads of the new district are laid out accordingly.</p>
+      <p>Treating the subsidence areas was an environmental job that also happens to have produced the city's public space — an unplanned gain, for once in its favour.</p>
+      <p>"Restructuring" is abstract at the macro level; on the street it means old plants coming down, new roads going in, and another path laid along a lake.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>方向与距离<span class="en">Directions and distances</span></h2>
+    <div class="zh">
+      <p class="lead">淮北的看点全在市区以外：临涣在南，柳孜与双堆集在濉溪县境内，三处方向不同，一天走完最好包车。</p>
+      <p>高铁停靠淮北北站，离市区有一段距离，进城的班车与出租车都还算方便。</p>
+      <p>市内消费水平低，住宿与餐饮都便宜，公交可以覆盖日常出行但班次不密。</p>
+      <p>夏热冬冷，秋季最舒适；湖区风大，早晚温差明显，多带一件外套不会错。</p>
+      <aside class="tip"><b>实用贴士：</b>临涣、柳孜、双堆集三处方向不同，一天走完要包车；柳孜遗址博物馆以遗迹与出土器物为主，先看展陈介绍再去现场更容易看懂。</aside>
+      <aside class="tip"><b>Handy tip:</b>Linhuan, Liuzi and Shuangduiji lie in different directions, so covering them in one day means hiring a car. The Liuzi museum is about the remains and the finds — read the introduction before you walk the site.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Everything worth seeing in Huaibei is outside the city: Linhuan to the south, Liuzi and Shuangduiji within Suixi county — three places in three directions, best covered in a day with a hired car.</p>
+      <p>High-speed trains stop at Huaibei North, some way out, though shuttle buses and taxis into town are reasonably easy.</p>
+      <p>Prices in the city are low, rooms and meals both cheap, and buses cover everyday journeys though not frequently.</p>
+      <p>Summers are hot and winters cold, with autumn the most comfortable; it is windy on the lakes and the day-night range is wide, so an extra layer is never wasted.</p>
+      <aside class="tip"><b>实用贴士：</b>临涣、柳孜、双堆集三处方向不同，一天走完要包车；柳孜遗址博物馆以遗迹与出土器物为主，先看展陈介绍再去现场更容易看懂。</aside>
+      <aside class="tip"><b>Handy tip:</b>Linhuan, Liuzi and Shuangduiji lie in different directions, so covering them in one day means hiring a car. The Liuzi museum is about the remains and the finds — read the introduction before you walk the site.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>一座实在的城<span class="en">A solid sort of place</span></h2>
+    <div class="zh">
+      <p class="lead">淮北从不以旅游目的地自居，景点少，名气小，连宣传语都说得朴素。</p>
+      <p>但它有几样东西是别处没有的：几百年的茶馆、埋着唐代沉船的麦地、由塌陷区改成的湖。</p>
+      <p>这座城把挖空的地下换成了水面，把一次产业上的困境变成了市民散步的地方。</p>
+      <p>它不解释自己。看得懂看不懂，终究是你自己的事。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huaibei has never presented itself as a destination: the sights are few, the reputation small, and even the slogans are plain.</p>
+      <p>Yet it holds a few things found nowhere else — teahouses several centuries old, wheat fields with Tang boats under them, lakes that were once collapsed pits.</p>
+      <p>The city traded its hollowed-out underground for open water, and turned an industrial dead end into somewhere its residents go walking.</p>
+      <p>It does not explain itself. Whether you read it or not is, in the end, your own business.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

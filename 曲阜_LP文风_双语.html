@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>曲阜 · Qufu — 孔子的城，三孔与礼</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>曲阜</h1>
+  <div class="en-title">Qufu</div>
+  <p class="zh">一座为一个人活了两千年的城——孔庙的柏、孔府的礼、孔林的松，把"儒"刻进了砖缝。</p>
+  <p class="en">A city that has lived two thousand years for one man — Confucius Temple's cypresses, the mansion's rites, the forest's pines, carving 'ru' into the brick joints.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔孔庙，去万仞宫墙下站一会 / Arrive at the wall</a></li>
+      <li><a href="#s2">曲阜到底是什么 / What Qufu is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">孔庙：活的太学 / The Confucius Temple: a living academy</a></li>
+      <li><a href="#s5">孔府与孔林 / The mansion & the forest</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔孔庙，去万仞宫墙下站一会<span class="en">Arrive at the wall</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜不声不响地缩在鲁西南。你一下高铁，满眼是平平无奇的小城，可往里走，万仞宫墙先把你按住——那四个字是乾隆写的，说的是孔子学问高到墙有万仞。</p>
+      <p>我第一次懂曲阜，是在孔庙的傍晚。古柏把光切成碎金，卖拓片的老者坐在廊下，远的钟声一下一下。那一刻你明白，这座城把"礼"当空气呼吸。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu quietly shrinks in southwest Shandong. Step off the train and it's an ordinary small town, yet walk in and the Ten-Thousand-Ren Wall stops you first — those four characters are Qianlong's, saying Confucius's learning rises ten thousand ren high.</p>
+      <p>I got Qufu in the Confucius Temple at dusk. Old cypresses cut the light to broken gold, an old rubbing-seller sat under the eave, a distant bell stroke by stroke. That moment you see this city breathes 'rite' as air.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>曲阜到底是什么<span class="en">What Qufu is</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜是鲁国的旧都，孔子的家乡。孔庙、孔府、孔林，合称"三孔"，是后世给一位老师的最高排场。它不靠一座山，靠的是一个人——两千年来，香火没断过。</p>
+      <p>它还是礼的活标本。城里人说话慢，让路先，连吵架都讲道理，那是儒留在骨里的样子。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu was the old capital of Lu, hometown of Confucius. The temple, the mansion, the forest — the 'Three Kong' — are the highest show later ages gave one teacher. It leans not on a mountain but on one man; for two thousand years the incense never stopped.</p>
+      <p>It's also a living specimen of rite. Townsfolk speak slow, yield the way, even quarrels keep reason — that's ru left in the bone.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜站在京沪铁路线上，高铁从济南过来一小时出头，从北京过来两小时多。三孔都在城里，步行或公交串联；孔林在城北，得坐电瓶车进。</p>
+      <p>去周边邹城（孟子）、泰山得从曲阜中转，车程个把小时到两小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；三孔联票划算，留一整天。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; the Three Kong combo saves, allow a full day.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu sits on the Beijing–Shanghai line; high-speed from Jinan just over an hour, from Beijing just over two. The Three Kong sit in town, linked by foot or bus; the forest lies north, reached by electric cart.</p>
+      <p>For Zoucheng (Mencius) and Mount Tai change at Qufu, one to two hours.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；三孔联票划算，留一整天。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official ticketing; the Three Kong combo saves, allow a full day.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>孔庙：活的太学<span class="en">The Confucius Temple: a living academy</span></h2>
+    <div class="zh">
+      <p class="lead">孔庙是全国最大的孔庙，也是一座城。棂星门、大成殿、杏坛，沿着中轴一路排开，古柏把天遮成墨绿。大成殿的盘龙石柱，是明代的绝活，比故宫的还少有人见。</p>
+      <p>你站在杏坛下，能闻到那股"教"字压过"权"字的旧气。每年祭孔，钟鼓一起，整座庙醒过来。</p>
+      <aside class="tip"><b>当地贴士：</b>孔庙大，留半天；大成殿石柱珍贵，别摸别靠。</aside>
+      <aside class="tip"><b>Local tip:</b>The temple is large, allow half a day; Dacheng's columns are precious, don't touch or lean.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Confucius Temple is the nation's largest, also a walled city. The Lingxing Gate, Dacheng Hall, the Apricot Altar line the axis; old cypresses shade the sky to ink-green. Dacheng's coiled-dragon columns are a Ming masterwork, rarer seen than the Forbidden City's.</p>
+      <p>Stand under the Apricot Altar and you smell the old air where 'teaching' outweighs 'power'. Each year at the rite, bells and drums wake the whole temple.</p>
+      <aside class="tip"><b>当地贴士：</b>孔庙大，留半天；大成殿石柱珍贵，别摸别靠。</aside>
+      <aside class="tip"><b>Local tip:</b>The temple is large, allow half a day; Dacheng's columns are precious, don't touch or lean.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>孔府与孔林<span class="en">The mansion & the forest</span></h2>
+    <div class="zh">
+      <p class="lead">孔府是孔子后人的宅，前后九进，礼数写在每一道门上。你穿过厅堂，连脚步都正了。孔林是孔家的墓园，古柏夹道，洙水桥一跨，两千年的静铺开来。</p>
+      <p>孔林里树比人多，碑比话多。你走在神道，会懂什么叫"叶落归根"。</p>
+      <aside class="tip"><b>当地贴士：</b>孔林远，坐电瓶车进；墓碑多，慢看别喧哗。</aside>
+      <aside class="tip"><b>Local tip:</b>The forest is far, take the cart in; many graves, look slow, no noise.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Kong mansion was the sage's descendants' home, nine courts deep, rite written on every gate. Pass the halls and even your tread straightens. The forest is the Kong clan's graves, old cypresses line the way, the Zhushui bridge crossed, two thousand years of quiet spread out.</p>
+      <p>In the forest trees outnumber people, steles outnumber words. Walk the spirit road and you'll know 'leaves return to the root'.</p>
+      <aside class="tip"><b>当地贴士：</b>孔林远，坐电瓶车进；墓碑多，慢看别喧哗。</aside>
+      <aside class="tip"><b>Local tip:</b>The forest is far, take the cart in; many graves, look slow, no noise.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜的味道在粥和酱之间。曲阜熏豆腐用松木熏，外皮起皱，蘸蒜汁，一口一个香。孔府菜是宴席的本事，诗礼银杏、带子上朝，名字都文气。</p>
+      <p>煎饼卷大葱是日常，糁汤热乎一碗醒神；夜市里烤串、豆腐脑都不贵。</p>
+      <aside class="tip"><b>当地贴士：</b>熏豆腐认老店，现熏最香；孔府菜价高，问清再点。</aside>
+      <aside class="tip"><b>Local tip:</b>For smoked tofu trust old names, fresh-smoked; Kongfu cuisine costs, ask before ordering.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu's flavour sits between congee and paste. Qufu smoked tofu cured over pine, skin wrinkled, dipped in garlic juice, one bite a scent. Kongfu cuisine is a banquet craft — 'poem-rite' ginkgo, 'son-follows-father-to-court', names all literary.</p>
+      <p>Pancake with scallion is daily; the grain soup hot wakes you; the night market's skewers and tofu brain are cheap.</p>
+      <aside class="tip"><b>当地贴士：</b>熏豆腐认老店，现熏最香；孔府菜价高，问清再点。</aside>
+      <aside class="tip"><b>Local tip:</b>For smoked tofu trust old names, fresh-smoked; Kongfu cuisine costs, ask before ordering.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">三孔是圣地也是文物，碑刻别摸，别刻字，殿里手机静音。孔林是墓园，别踩碑，别喧哗。</p>
+      <p>曲阜人慢，问路指得清，可别拿"这礼是不是假的"去戳——他们把儒当骨，你客气点，他们能把每道门的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Three Kong are sacred and relic; don't touch steles, don't carve, silence phones in halls. The forest is a graveyard; don't step on steles, no noise.</p>
+      <p>Qufu folk are slow; they point clear, just don't poke with 'is this rite false' — they take ru as bone; be polite and they'll tell you each gate's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天孔林新绿，曲阜舒服。夏天古柏浓荫，庙里凉。秋天天高云淡，杏坛的影拉得长。冬天冷，可雪后大成殿肃穆，古柏映雪另有一番好看。</p>
+      <p>若为了静，冬春最好；若为了礼，祭孔季最对（查当年日期）。</p>
+      <aside class="tip"><b>实用贴士：</b>雪后石阶滑，慢行；祭孔季人多，早去。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the steps slick, go slow; sacrifice season crowds, go early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the forest, Qufu eased. Summer the old cypresses shade deep, the temple cool. Autumn high and clear, the Apricot Altar's shadow long. Winter cold, yet after snow Dacheng solemn, old cypress on snow, a beauty of its own.</p>
+      <p>For quiet winter and spring best; for rite the sacrifice season fits (check the year's dates).</p>
+      <aside class="tip"><b>实用贴士：</b>雪后石阶滑，慢行；祭孔季人多，早去。</aside>
+      <aside class="tip"><b>Handy tip:</b>After snow the steps slick, go slow; sacrifice season crowds, go early.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">孔庙的中轴线是免费的天然步道，从万仞宫墙走到大成殿，古柏碑林挨着过。城里的鼓楼街随便钻，老字号、拓片铺都在沿线。</p>
+      <p>颜庙、周公庙在城边，清静少人。曲阜的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>孔庙外围步道免费；鼓楼街细看拓片。</aside>
+      <aside class="tip"><b>Handy tip:</b>The temple's outer path is free; Gulou Street, look close at rubbings.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The temple's axis is a free path; from the Ten-Thousand-Ren Wall to Dacheng, old cypresses and steles side by side. The town's Gulou Street wanders free, old names and rubbing shops along it.</p>
+      <p>Yan Temple and Zhougong Temple sit at the edge, quiet, few. Qufu's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>孔庙外围步道免费；鼓楼街细看拓片。</aside>
+      <aside class="tip"><b>Handy tip:</b>The temple's outer path is free; Gulou Street, look close at rubbings.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜最贵的东西，大多不要钱。孔庙的风、万仞宫墙在暮色里的字、鼓楼街那阵墨香，站着看就是参与。雪后古柏配红墙，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。曲阜教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>孔庙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The temple's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu's priciest things mostly cost nothing. The temple's wind, the wall's dusk characters, Gulou Street's ink scent — stand and you're in it. Snow on old cypresses with red walls beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Qufu taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>孔庙外围步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The temple's outer path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">曲阜不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它正，它旧，它又礼又儒——一道门能让人沉默，一棵柏能让人回头。</p>
+      <p>你逛过孔庙的一院古柏、孔府的一堂礼、孔林的一地松，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"万仞宫墙"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Qufu won't win you at once. No famous mountain's fame, no water town's finesse. It's proper, old, rite and ru — one gate silences you, one cypress turns you back.</p>
+      <p>You'll see the temple's court of old cypresses, the mansion's hall of rite, the forest's ground of pines — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of a 'ten-thousand-ren wall'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

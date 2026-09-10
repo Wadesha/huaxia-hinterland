@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>连云港 · Lianyungang — V2 v2</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v2">V2 · v2</div>
+  <h1>连云港</h1>
+  <div class="en-title">Lianyungang</div>
+  <p class="zh">陇海铁路向东铺到尽头，接上黄海；花果山从市区里长出来，孔望山的崖壁上还留着东汉的凿痕——一座被港口与神话同时定义的城。</p>
+  <p class="en">The Longhai railway runs east to its end and meets the Yellow Sea; Huaguo Mountain rises out of the built-up streets, and the cliff face at Kongwang still carries chisel marks from the Eastern Han — a city defined at once by its port and by a myth.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">一条铁路的东端</a></li>
+      <li><a href="#s2">花果山：山在先，故事在后</a></li>
+      <li><a href="#s3">连岛与大堤</a></li>
+      <li><a href="#s4">孔望山：崖壁上的东汉</a></li>
+      <li><a href="#s5">将军崖：更早的那批刻痕</a></li>
+      <li><a href="#s6">港口：半座城的脾气</a></li>
+      <li><a href="#s7">东海水晶</a></li>
+      <li><a href="#s8">吃：不加花样的海鲜</a></li>
+      <li><a href="#s9">海州：比港更老的那半个城</a></li>
+      <li><a href="#s10">方向与车站</a></li>
+      <li><a href="#s11">山、海与一条到头的铁路</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>一条铁路的东端<span class="en">The eastern end of a railway</span></h2>
+    <div class="zh">
+      <p class="lead">陇海铁路自兰州向东铺来，在连云港抵到尽头，再往前只有黄海，这条线因此成了中国内陆货物最短的出海通道之一。</p>
+      <p>城贴着江苏最东北的角落，北面与山东接壤，方言、面食与性格都带着明显的北方痕迹。</p>
+      <p>1933 年开港建埠之后，城市的重心逐渐从海州老城移向东部海岸，形成今天老城与港区并置的格局。</p>
+      <p>山海之间只隔十几公里，从市区的山脚到连岛的沙滩，一小时内可以完成从岩层到海水的一切切换。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Longhai railway runs east from Lanzhou and reaches its end at Lianyungang, where there is nothing ahead but the Yellow Sea; the line thereby became one of the shortest outlets to salt water for cargo from China's interior.</p>
+      <p>The city clings to Jiangsu's far north-eastern corner, bordering Shandong to the north, and its dialect, its wheat-based food and its temperament all carry a distinctly northern cast.</p>
+      <p>After the port opened in 1933, the weight of the city shifted steadily from the old town at Haizhou east towards the coast, producing today's arrangement of old town and port district side by side.</p>
+      <p>Only a dozen-odd kilometres separate mountain from sea: from the foot of Huaguo Mountain to the sand at Lian Island, a single hour covers the whole change from rock to water.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>花果山：山在先，故事在后<span class="en">Huaguo Mountain: the hill first, the story after</span></h2>
+    <div class="zh">
+      <p class="lead">花果山自市区边缘拔起，主峰玉女峰海拔 625.3 米，是江苏省的最高点，山体上遍布花岗岩的球状风化地貌。</p>
+      <p>《西游记》把这座山借去做了孙猴子的老家，水帘洞、七十二洞、三元宫一路排开，香火与游客共用同一条石阶。</p>
+      <p>山上的猴群是野生猕猴，长期与游人相处之后学会了讨食，也学会了抢你手里的袋子。</p>
+      <p>山是先有的。小说是后到的，本地人对这层关系的态度一直很坦然：借来的故事不妨碍山本身。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huaguo Mountain lifts off the edge of the built-up area; its summit, Jade Maiden Peak, stands at 625.3 metres, the highest point in Jiangsu, and the massif is covered in spheroidally weathered granite.</p>
+      <p>Journey to the West borrowed the mountain as the Monkey King's home, and the Water Curtain Cave, the Seventy-two Caves and the Sanyuan palace line the route, with worshippers and day-trippers sharing the same stone steps.</p>
+      <p>The monkeys up there are wild macaques, and long contact with visitors has taught them two things: how to beg, and how to snatch a bag.</p>
+      <p>The mountain came first and the novel arrived later, a sequence locals have always taken calmly — a borrowed story does nothing to spoil the hill itself.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>连岛与大堤<span class="en">Lian Island and the causeway</span></h2>
+    <div class="zh">
+      <p class="lead">连岛是江苏面积最大的海岛，一条长堤把它与陆地连起来，堤身两侧的水色在风向上会出现明显的差别。</p>
+      <p>岛上有一段沙质浴场，沙粒偏粗，坡度平缓，退潮时露出大片的潮间带。</p>
+      <p>你从礁石上回望港区，龙门吊成排立在天际线前，货轮进出有序，风景与作业共用同一片水面。</p>
+      <p>这片海并不以颜色取胜，它的美在于一直有人在用：渔船、货轮、赶海的人，各自占着不同的水位。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lian Island is the largest sea island in Jiangsu; a long causeway joins it to the mainland, and the water on the two sides of that causeway differs noticeably in colour depending on the wind.</p>
+      <p>The island has a stretch of bathing beach, coarse-grained and gently shelving, which at low tide exposes a wide intertidal flat.</p>
+      <p>Looking back from the rocks towards the port, gantry cranes stand in rows along the skyline and cargo ships move in and out in order — scenery and work sharing the same water.</p>
+      <p>This sea does not win on colour. Its appeal is that it is constantly in use: fishing boats, freighters and people gathering shellfish each occupy a different level of it.</p>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>孔望山：崖壁上的东汉<span class="en">Kongwang Mountain: the Eastern Han on a cliff</span></h2>
+    <div class="zh">
+      <p class="lead">城西南的孔望山并不高，山坡东面却保存着一片摩崖造像，人物、佛像与世俗场面被密密地刻在同一面石壁上。</p>
+      <p>造像的年代一般定在东汉晚期，距今约一千八百余年，其中佛的题材让它成为中国最早的佛教摩崖造像的候选之一。</p>
+      <p>"候选"两个字不能省：关于题材的辨识与断代，学界至今仍有争论，现场的解说牌只是其中一种说法。</p>
+      <p>风化的程度很深。多数造像只剩轮廓，但那些凿痕的走向还在，站在崖前能感到一只手曾经反复落在同一个位置。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Kongwang Mountain, southwest of the city, is low, yet on its eastern slope a set of cliff carvings survives: figures, Buddhas and scenes of ordinary life cut densely into a single rock face.</p>
+      <p>The carvings are generally dated to the late Eastern Han, some eighteen hundred years ago, and their Buddhist subject matter makes them a candidate for the earliest Buddhist cliff sculpture in China.</p>
+      <p>The word "candidate" matters: the identification of the subjects and the dating are still debated, and the notice board on site offers only one reading.</p>
+      <p>Weathering has gone deep, and most figures survive only as outlines, yet the direction of the chisel marks remains — stand at the cliff and you can feel a hand returning again and again to the same spot.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>将军崖：更早的那批刻痕<span class="en">Jiangjun Cliff: the older marks</span></h2>
+    <div class="zh">
+      <p class="lead">海州锦屏山南麓的将军崖岩画，是一处新石器时代的刻石，人面、兽面、禾苗与星象图案被凿在平整的岩面上。</p>
+      <p>这些图案的含义至今没有定论，祭祀、农事与原始天文观测都是被反复提出的解释，谁也说服不了谁。</p>
+      <p>它的年代以数千年计，比这座城里任何一座建筑都古老，也比"连云港"这个名字本身老得多。</p>
+      <p>崖前山风不断，草长得密，访客稀少，反而适合站久一点，看那些线条在光线下时隐时现。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The rock art at Jiangjun Cliff, on the southern slope of the Jinping hills near Haizhou, is a Neolithic engraving: human faces, animal faces, grain and star patterns cut into a smoothed rock surface.</p>
+      <p>What the designs mean is still unsettled — ritual, agriculture and early astronomy are all offered repeatedly as explanations, and none has carried the field.</p>
+      <p>It is dated in thousands of years, older than any structure in the city and far older than the name Lianyungang itself.</p>
+      <p>The wind never stops at the cliff, the grass grows thick and visitors are few, which makes it a good place to stand a while and watch the lines appear and vanish with the light.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>港口：半座城的脾气<span class="en">The port: half the city's temper</span></h2>
+    <div class="zh">
+      <p class="lead">城市因港而得名，也因港而改写结构：1933 年开港之后，东部海岸迅速聚起了码头、铁路支线与工人住区。</p>
+      <p>今天的港区里，集装箱被堆成彩色的墙，龙门吊沿水平线排开，卡车一辆接一辆地穿过宽阔的货运大道。</p>
+      <p>它是新亚欧大陆桥的东方出海口之一，来自内陆的货物在此装船，或者在此上岸继续向西。</p>
+      <p>这套钢铁与货车的秩序塑造了城市的一半性格：务实、直接、不大在乎好看。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The city takes its name from the port and had its structure rewritten by it: after the harbour opened in 1933, docks, rail spurs and workers' housing gathered quickly along the eastern shore.</p>
+      <p>In the port district today containers are stacked into coloured walls, gantry cranes line the horizon, and lorries pass one after another down broad freight avenues.</p>
+      <p>It is one of the eastern sea gates of the New Eurasian Land Bridge: cargo from the interior is loaded here, or lands here to continue west.</p>
+      <p>That order of steel and trucks has shaped half the city's character — practical, blunt, not much concerned with looking well.</p>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>东海水晶<span class="en">Crystal from Donghai</span></h2>
+    <div class="zh">
+      <p class="lead">市区以西的东海县地下富藏水晶，储量与产量在国内都排得上名，这座县城因此成了远近闻名的水晶集散地。</p>
+      <p>市场里的柜台摆着原石、手串与雕件，灯光从不同角度打进去，矿石内部的絮状包裹体被照得清清楚楚。</p>
+      <p>外行也能逛：看颜色是否通透，摸分量是否压手，对着光找裂纹，这三条已经能过滤掉不少东西。</p>
+      <p>真要出手，最好带上懂行的人，同一块料的价格在不同柜台之间可以差出好几倍。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Donghai county, west of the city, sits over rich crystal deposits and ranks high in China for both reserves and output, which has made the county town a distribution centre known well beyond the region.</p>
+      <p>Counters in the market hold rough stone, bracelets and carvings, lit from several angles so that the cloudy inclusions inside are thrown into sharp relief.</p>
+      <p>Even an outsider can browse: check whether the colour is clean, feel whether the weight sits heavy in the hand, hold it to the light for fractures — those three tests already rule out a good deal.</p>
+      <p>To actually buy, bring someone who knows the trade: the same material can be priced several times over between one counter and the next.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>吃：不加花样的海鲜<span class="en">Seafood without flourishes</span></h2>
+    <div class="zh">
+      <p class="lead">连云港的海鲜做法简单，蒸、煮、红烧三招为主，端上桌的是分量而不是摆盘。</p>
+      <p>梭子蟹在秋后最肥，掰开壳能看到满膏；沙光鱼是本地常见的海鱼，肉细，煮出的汤发白。</p>
+      <p>沿海伏季休渔通常从 5 月持续到 8 月，这几个月品种明显变少，价格也随之上扬。</p>
+      <p>便宜的那一半快乐在街头：一碗凉粉浇上蒜汁与辣椒，几块钱一份，吃完继续赶路。</p>
+      <aside class="tip"><b>实用贴士：</b>海鲜在墟沟、海棠路一带最集中，点单前先问价；伏季休渔（一般 5 月至 8 月）品种少、价钱高，介意的话避开。</aside>
+      <aside class="tip"><b>Handy tip:</b>Seafood places cluster around Xugou and Haitang Road — ask the price before ordering. During the summer fishing closure (generally May to August) choice is thin and prices high, so avoid it if that matters.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Seafood here is prepared simply — steamed, boiled or braised in soy — and what arrives at the table is quantity rather than presentation.</p>
+      <p>Swimming crabs are fattest after autumn, the shell cracking open on full roe; shaguang, a common local fish, has fine flesh and makes a milky soup.</p>
+      <p>The summer fishing closure along this coast generally runs from May to August, and in those months the choice narrows sharply while prices climb.</p>
+      <p>The cheaper half of the pleasure is on the street: a bowl of liangfen with garlic water and chilli for a few yuan, eaten standing, then on your way.</p>
+      <aside class="tip"><b>实用贴士：</b>海鲜在墟沟、海棠路一带最集中，点单前先问价；伏季休渔（一般 5 月至 8 月）品种少、价钱高，介意的话避开。</aside>
+      <aside class="tip"><b>Handy tip:</b>Seafood places cluster around Xugou and Haitang Road — ask the price before ordering. During the summer fishing closure (generally May to August) choice is thin and prices high, so avoid it if that matters.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>海州：比港更老的那半个城<span class="en">Haizhou: the half that predates the port</span></h2>
+    <div class="zh">
+      <p class="lead">海州是这一带最早的城邑之一，自南北朝起长期是州郡治所，历史比东部港区早了一千多年。</p>
+      <p>老街正在修缮，青砖老屋与新刷的墙面并列，脚手架与香火同时出现在同一条巷子里。</p>
+      <p>巷口晒着鱼干与咸菜，竹匾一架一架排开，气味是这座城真正的底味。</p>
+      <p>这里的节奏慢，买卖也慢，与十几公里外那种按船期计算的时间完全是两回事。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Haizhou is one of the oldest seats of government in the region, a prefectural capital from the Northern and Southern dynasties onwards, more than a thousand years older than the port district to the east.</p>
+      <p>The old street is under repair; grey-brick houses and freshly painted walls stand side by side, scaffolding and incense sharing the same lane.</p>
+      <p>Dried fish and pickles air at the lane mouths on bamboo trays set out in rows, and that smell is the city's actual base note.</p>
+      <p>The pace here is slow and so is the trade — a different order of time entirely from the dockside, a dozen kilometres away, where everything is counted against sailing schedules.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>方向与车站<span class="en">Directions and stations</span></h2>
+    <div class="zh">
+      <p class="lead">铁路客运主要落在连云港站与连云港东站，前者靠近海州与老城，后者临近港区与连岛，两站相距约 20 公里。</p>
+      <p>花果山、连岛与海州老城都通公交，票价低廉，但班次不密，你赶时间的话更适合打车。</p>
+      <p>夏季海岸日照强烈，海风又带盐分，帽子、饮水和防晒都要备好；冬季风硬，礁石区尤其站不住人。</p>
+      <p>海鲜虽好，肠胃敏感的人不宜一次过量，配主食、少生食，是更稳妥的吃法。</p>
+      <aside class="tip"><b>实用贴士：</b>连云港站与连云港东站相距约 20 公里，公交与打车均可；花果山有景区交通车，登玉女峰也可全程步行，来回约 4 小时。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lianyungang station and Lianyungang East are roughly 20 km apart, reachable by bus or taxi. Huaguo Mountain has a shuttle bus, though Jade Maiden Peak can be walked both ways — about four hours in total.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Passenger trains call mainly at Lianyungang station, near Haizhou and the old town, and Lianyungang East, close to the port and Lian Island; the two are about 20 km apart.</p>
+      <p>Buses reach Huaguo Mountain, Lian Island and old Haizhou cheaply, but not often, so anyone in a hurry is better off in a taxi.</p>
+      <p>Summer sun on the coast is fierce and the wind carries salt: bring a hat, water and sunblock. In winter the wind is hard, and the rock platforms are no place to stand.</p>
+      <p>Good as the seafood is, anyone with a delicate stomach should not overdo it in one sitting — eat staples alongside it and go easy on raw preparations.</p>
+      <aside class="tip"><b>实用贴士：</b>连云港站与连云港东站相距约 20 公里，公交与打车均可；花果山有景区交通车，登玉女峰也可全程步行，来回约 4 小时。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lianyungang station and Lianyungang East are roughly 20 km apart, reachable by bus or taxi. Huaguo Mountain has a shuttle bus, though Jade Maiden Peak can be walked both ways — about four hours in total.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>山、海与一条到头的铁路<span class="en">Mountain, sea, and a railway that stops</span></h2>
+    <div class="zh">
+      <p class="lead">连云港不是那种第一眼就讨人喜欢的城市：路面宽而粗，风里常年带咸，港口的噪音也从不真正消失。</p>
+      <p>但它的层次比看上去深——新石器时代的刻石、东汉的摩崖造像、明代的小说、1933 年的码头，一层压着一层，彼此并不打架。</p>
+      <p>铁路到此为止，海从这里开始，这种"尽头感"是别处少有的。</p>
+      <p>它不解释自己。也不修饰自己——看得懂看不懂，终究是你自己的事。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang is not a city that pleases at first sight: the roads are broad and rough, the air tastes of salt year-round, and the noise of the port never quite goes away.</p>
+      <p>But it has more layers than it appears to — Neolithic engravings, Eastern Han cliff sculpture, a Ming novel, a 1933 harbour, stacked one on another without crowding each other out.</p>
+      <p>The railway stops here and the sea starts here, and that sense of an ending is rare elsewhere.</p>
+      <p>It neither explains itself nor tidies itself up; whether you read it or not is the traveller's own business.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

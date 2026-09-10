@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>徽州 · Huizhou — 粉墙黛瓦的徽派老家</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>徽州</h1>
+  <div class="en-title">Huizhou</div>
+  <p class="zh">一座把"商"和"文"都刻进马头墙的城——宏村的水、西递的牌坊、歙县的墨，把皖南的静留给了你。</p>
+  <p class="en">A homeland where 'trade' and 'letters' are both cut into the horse-head walls — Hongcun's water, Xidi's arches, Shexian's ink, leaving the stillness of southern Anhui for you.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔宏村，去歙县看城墙 / Arrive at Shexian</a></li>
+      <li><a href="#s2">徽州到底是什么 / What Huizhou is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">宏村与西递 / Hongcun & Xidi</a></li>
+      <li><a href="#s5">歙县：墨、砚、坝 / Shexian: ink, stone, weir</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔宏村，去歙县看城墙<span class="en">Arrive at Shexian</span></h2>
+    <div class="zh">
+      <p class="lead">徽州不声不响地藏在皖南的群山里。你一下高铁到歙县北，满眼是普通的县城，可往里走，练江上的渔梁坝先把你按住——一道石坝把水拢成镜，唐宋就在这。</p>
+      <p>我第一次懂徽州，是在宏村的傍晚。月沼像一面落地的镜子，老人牵牛从画桥过，远处的雷岗山笼着烟。那一刻你明白，这座城把"水"和"居"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou quietly hides in the hills of southern Anhui. Step off the train at Shexian North and it's an ordinary county, yet walk in and the Yuliang weir on the Lian River stops you first — a stone dam gathering water to a mirror, Tang-Song old.</p>
+      <p>I got Huizhou in Hongcun at dusk. Moon Pond lies like a mirror dropped to earth, an old man leads his ox across the painted bridge, Leigang hill smokes beyond. That moment you see this land grows 'water' and 'dwelling' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>徽州到底是什么<span class="en">What Huizhou is</span></h2>
+    <div class="zh">
+      <p class="lead">徽州是明清的徽商老家，府治在歙县。它不靠一座山，靠的是一群人——徽商走南闯北，把钱捎回来，砌成粉墙黛瓦的村子。祠堂、牌坊、书院，把"儒商"两个字写进了砖。</p>
+      <p>它还是徽文化的根。新安画派、徽墨、歙砚、徽菜，一桩桩都从这些山里走出去。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou was the old home of the Ming-Qing Huizhou merchants, the prefecture seat at Shexian. It leans not on a mountain but on a people — Huizhou merchants ranged the land, sent money home, built villages of white wall and dark tile. Ancestral halls, memorial arches, academies wrote 'scholar-merchant' into brick.</p>
+      <p>It's also root of Huizhou culture. The Xin'an painting school, Huimo ink, She inkstone, Huizhou cuisine — each walked out of these hills.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">徽州没有机场，高铁到歙县北或黄山北，从杭州过来两小时出头，从合肥过来两小时多。宏村、西递在黟县，得从歙县转车再换中巴；呈坎、唐模在徽州区的潜口一带。</p>
+      <p>村与村散布在山里，最省事是包车或拼车，公交班次稀。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；村间路窄弯多，晕车备药。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; village roads narrow and curved, bring motion pills.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou has no airport; high-speed to Shexian North or Huangshan North, from Hangzhou just over two hours, from Hefei just over two. Hongcun and Xidi lie in Yi county, transfer at Shexian then a minibus; Chengkan and Tangmo sit by Qiankou in Huizhou district.</p>
+      <p>Villages scatter in the hills; a charter or carpool saves most, buses are few.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；村间路窄弯多，晕车备药。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; village roads narrow and curved, bring motion pills.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>宏村与西递<span class="en">Hongcun & Xidi</span></h2>
+    <div class="zh">
+      <p class="lead">宏村是牛形村，水从家家的门前过，月沼、南湖把天收进水里。西递是船形村，牌坊群立在村口，胡文的刺史坊是明人手笔。两村都进了世界名录，可天没亮就去，人未醒时最像画。</p>
+      <p>你站在画桥上，连脚步都放轻——水太静，怕惊了倒影。</p>
+      <aside class="tip"><b>当地贴士：</b>两村联票划算；赶开门那阵，旅行团未到。</aside>
+      <aside class="tip"><b>Local tip:</b>The two-village combo saves; go at opening before the groups.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hongcun is an ox-shaped village, water runs past every door, Moon Pond and South Lake gather the sky into water. Xidi is boat-shaped, a cluster of arches at the mouth, the Cishi Arch a Ming hand. Both on the world list, yet go at first light — before folk wake they are most like a painting.</p>
+      <p>Stand on the painted bridge and tread eases — the water too still, fear to break the reflection.</p>
+      <aside class="tip"><b>当地贴士：</b>两村联票划算；赶开门那阵，旅行团未到。</aside>
+      <aside class="tip"><b>Local tip:</b>The two-village combo saves; go at opening before the groups.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>歙县：墨、砚、坝<span class="en">Shexian: ink, stone, weir</span></h2>
+    <div class="zh">
+      <p class="lead">歙县是徽州的老府城。渔梁坝拢水成镜，是徽商下江南的起点；棠樾牌坊群七座一字排开，讲忠孝节义。徽墨、歙砚还在老作坊里锤打，你闻得到那股松烟的苦香。</p>
+      <p>城里的斗山街、大北街随便钻，老宅的砖雕关着的故事比开着的多。</p>
+      <aside class="tip"><b>当地贴士：</b>渔梁坝免费；墨砚作坊可看可买，问清再下手。</aside>
+      <aside class="tip"><b>Local tip:</b>The Yuliang weir is free; ink and inkstone workshops you can watch and buy, ask first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Shexian was Huizhou's old prefectural seat. The Yuliang weir gathers water to a mirror, the start where Huizhou merchants went down to the river towns; the Tangyue arches stand seven in a row, telling loyalty, filial, rite. Huimo ink and She inkstone are still hammered in old workshops — you smell the bitter pine-soot scent.</p>
+      <p>The town's Doushan and Dabei streets wander free; the brick-carving on old homes hides more tales than it shows.</p>
+      <aside class="tip"><b>当地贴士：</b>渔梁坝免费；墨砚作坊可看可买，问清再下手。</aside>
+      <aside class="tip"><b>Local tip:</b>The Yuliang weir is free; ink and inkstone workshops you can watch and buy, ask first.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">徽州的味道在咸和鲜之间。臭鳜鱼是发酵的功夫，闻着冲，吃着嫩，蒜瓣肉一抿脱骨。毛豆腐是长毛的豆腐，油煎撒椒，外脆里糯。</p>
+      <p>胡适一品锅是荤素一锅炖，笋干、肉圆、蛋饺层层叠；徽州馃是梅干菜馅的饼，赶路一卷就走。</p>
+      <aside class="tip"><b>当地贴士：</b>臭鳜鱼认老店，发酵味重；毛豆腐现煎最香，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For stinky fish trust old names, the ferment is strong; mao tofu best fresh-fried, sour when cold.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou's flavour sits between salt and fresh. Stinky mandarin fish is a ferment craft — strong to the nose, tender to the tongue, flesh off the bone like garlic clove. Mao tofu is furred bean curd, pan-fried with pepper, crisp out, sticky in.</p>
+      <p>Hu Shi's one-pot layers meat and veg — dried bamboo, pork balls, egg dumplings; the Huizhou guo is a preserved-vegetable cake, a roll to go.</p>
+      <aside class="tip"><b>当地贴士：</b>臭鳜鱼认老店，发酵味重；毛豆腐现煎最香，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For stinky fish trust old names, the ferment is strong; mao tofu best fresh-fried, sour when cold.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">徽州村落是活着的家，不是布景。祠堂、老宅里住户真在生活，拍照别怼脸，进院子先问。马头墙别爬，巷子窄，雨天青石板滑。</p>
+      <p>徽州人客气，问路指得清，可别拿"这村是不是拍戏的"去戳——他们把祖宗的匾当真，你客气点，他们能把每块砖雕的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou villages are living homes, not a set. Residents truly live in the halls and old houses; don't shove a lens in faces, ask before entering a yard. Don't climb the horse-head walls; lanes are narrow, blue flagstones slick in rain.</p>
+      <p>Huizhou folk are polite; they point clear, just don't poke with 'is this village a film set' — they take ancestors' plaques as real; be polite and they'll tell you each brick-carving's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天油菜花黄，宏村南湖最艳。夏天山里凉，是避暑的好村。秋天天高云淡，晒秋的辣椒南瓜铺满台，最是徽州的好看。冬天冷，可雪后粉墙黛瓦配白雪，像一幅留白的水墨。</p>
+      <p>若为了花，三月最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>晒秋看秋末；雪后青石板滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>The sun-dried autumn shows late autumn; after snow the flagstones slick, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring rape flowers yellow, Hongcun's South Lake brightest. Summer the hills cool, a good village to escape heat. Autumn high and clear, the 'sun-dried autumn' of chili and gourd spreads the terraces — most Huizhou of sights. Winter cold, yet after snow white wall and dark tile with white, like a ink wash left blank.</p>
+      <p>For flowers March fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>晒秋看秋末；雪后青石板滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>The sun-dried autumn shows late autumn; after snow the flagstones slick, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">宏村的南湖是免费的天然步道，沿湖走，画桥、书院挨着过。西递的村口牌坊群也免费，骑车比走路爽。徽州的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <p>徽州古城的练江边也免费，夕阳把水染成橘色。你走到哪，都能遇见一口可以直接喝的山泉。</p>
+      <aside class="tip"><b>实用贴士：</b>南湖步道免费；西递牌坊群细看石刻。</aside>
+      <aside class="tip"><b>Handy tip:</b>The South Lake path is free; Xidi's arches, look close at the carving.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hongcun's South Lake is a free path; walk it and the painted bridge, the academy line the way. Xidi's arch cluster at the mouth is free too, better by bike. Huizhou's joy is that someone everywhere will tell you more.</p>
+      <p>Shexian old town's Lian River bank is free; at dusk it dyes the water orange. Wherever you walk you meet a mountain spring you can drink straight.</p>
+      <aside class="tip"><b>实用贴士：</b>南湖步道免费；西递牌坊群细看石刻。</aside>
+      <aside class="tip"><b>Handy tip:</b>The South Lake path is free; Xidi's arches, look close at the carving.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">徽州最贵的东西，大多不要钱。南湖的风、渔梁坝在暮色里的镜、巷里那阵墨香，站着看就是参与。雪后粉墙配白雪，比收费园里还好看。</p>
+      <p>村口老太太们晒菜不收钱，你站着看就是捧场。徽州教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>南湖步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The South Lake path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou's priciest things mostly cost nothing. South Lake's wind, the Yuliang weir's dusk mirror, the lane's ink scent — stand and you're in it. Snow on white wall with white beats any paid garden.</p>
+      <p>Old women airing vegetables at the mouth charge nothing; stand and watch, that's applause. Huizhou taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>南湖步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The South Lake path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">徽州不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它静，它旧，它又商又文——一面月沼能让人沉默，一块砖雕能让人回头。</p>
+      <p>你逛过宏村的一池月沼、西递的一群牌坊、歙县的一坝净水，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"粉墙黛瓦"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huizhou won't win you at once. No famous mountain's fame, no water town's finesse. It's still, old, trade and letters — one moon pond silences you, one brick carving turns you back.</p>
+      <p>You'll see Hongcun's pool of moon, Xidi's cluster of arches, Shexian's clean weir — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'white wall and dark tile'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

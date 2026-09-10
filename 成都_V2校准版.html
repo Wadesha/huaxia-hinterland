@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成都 · Chengdu — V2 v2</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v2">V2 · v2</div>
+  <h1>成都</h1>
+  <div class="en-title">Chengdu</div>
+  <p class="zh">海拔五百米的平原上，一年有两百多天见不到像样的太阳，却养出了中国最会过日子的一座城。</p>
+  <p class="en">On a plain five hundred metres up, with more than two hundred sunless days a year, sits the city that knows best how to live.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先坐下来，再谈看什么</a></li>
+      <li><a href="#s2">成都到底是什么</a></li>
+      <li><a href="#s3">怎么走</a></li>
+      <li><a href="#s4">武侯祠与锦里</a></li>
+      <li><a href="#s5">熊猫基地与金沙</a></li>
+      <li><a href="#s6">吃什么</a></li>
+      <li><a href="#s7">懂点规矩</a></li>
+      <li><a href="#s8">什么时候去</a></li>
+      <li><a href="#s9">去哪悠走</a></li>
+      <li><a href="#s10">不花钱也值得</a></li>
+      <li><a href="#s11">收束</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先坐下来，再谈看什么<span class="en">Sit down first, then talk of sights</span></h2>
+    <div class="zh">
+      <p class="lead">成都的天常年是灰的，全年日照不足 1100 小时，一年里有 200 多天见不到像样的太阳，盆地里的雾气常常要到日头高了才散去。</p>
+      <p>正是这种温吞的湿润，把这座海拔五百米上下、被岷江水养肥的平原城市，养出了一副不紧不慢的脾气。</p>
+      <p>人民公园鹤鸣茶社的竹椅从 1923 年摆到现在，一碗盖碗茶十几元，续水不要钱，掏耳朵的师傅手持音叉在桌椅间穿行而过。</p>
+      <p>隔壁读报的老人一坐就是半天，茶客来来去去，谁也不催谁，时间在这里是可以随便花掉的。</p>
+      <p>你坐下，时间就慢下来了。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Chengdu's sky is grey most of the year: annual sunshine falls short of 1100 hours and over 200 days pass without decent sun, the basin's mist often holding until the day is well up.</p>
+      <p>That tepid dampness is what bred the unhurried temper of this plain city, some 500 metres high and fattened by the Min river.</p>
+      <p>The bamboo chairs of Heming teahouse in the People's Park have stood since 1923; a lidded bowl of tea costs a dozen yuan or so, refills are free, and the ear-cleaner moves between tables with his tuning fork.</p>
+      <p>The old man with his newspaper sits half a day, tea-drinkers come and go, and nobody hurries anybody — time here is meant to be spent.</p>
+      <p>You sit down, and time slows.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>成都到底是什么<span class="en">What Chengdu is</span></h2>
+    <div class="zh">
+      <p class="lead">公元前 311 年，张仪与司马错在此筑城，成都这个名字 2300 多年没有改过，城址也未曾迁移，这在中国的大城里极为罕见。</p>
+      <p>脚下叠着两层更早的文明：金沙遗址距今约 3000 年，三星堆距今 3000 至 5000 年，出土的金器、玉器与象牙数以千计。</p>
+      <p>太阳神鸟金箔厚仅 0.2 毫米，外径 12.5 厘米，如今是中国文化遗产的标志。</p>
+      <p>公元 221 年刘备在此称帝，1024 年成都诞生了世界上第一张纸币交子，公元前 256 年建成的都江堰灌区今天已超过 1000 万亩。</p>
+      <p>一座城同时握着古蜀、三国、纸币与水利四张牌，并不多见。</p>
+    </div>
+    <div class="en">
+      <p class="lead">In 311 BC Zhang Yi and Sima Cuo walled a city here; the name Chengdu has not changed in more than 2300 years and the site has never moved, a rarity among China's great cities.</p>
+      <p>Two older civilizations lie beneath it: Jinsha at some 3000 years and Sanxingdui at 3000 to 5000, with thousands of gold, jade and ivory pieces recovered.</p>
+      <p>The sun-bird gold foil is just 0.2 millimetres thick and 12.5 centimetres across, and now serves as the emblem of China's cultural heritage.</p>
+      <p>Liu Bei took the throne here in 221 AD; in 1024 Chengdu produced jiaozi, the world's first paper money; and Dujiangyan, built in 256 BC, now commands an irrigated area of more than 10 million mu.</p>
+      <p>Few cities hold four such cards at once — old Shu, the Three Kingdoms, paper money and water engineering.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">成都东站是主要高铁枢纽，到西安约 4 小时、658 公里，到重庆约 1 小时 30 分、308 公里，两座车站都通地铁。</p>
+      <p>双流与天府两座机场分工，天府机场距市中心约 50 公里，地铁 18 号线直达，从城里过去留足 2 小时才稳当。</p>
+      <p>市内地铁运营里程已超 500 公里，十数条线路交织，绝大多数景点靠地铁加步行就能解决。</p>
+      <p>去都江堰走成灌快铁，约 30 分钟、60 公里出头，班次密，比走公路稳当。</p>
+      <aside class="tip"><b>实用贴士：</b>天府机场远，留足两小时；熊猫基地开园即入，人流与熊猫活跃度此消彼长。</aside>
+      <aside class="tip"><b>Handy tip:</b>Tianfu Airport is far — allow 2 hours; enter the panda base at opening, crowds and panda activity move in opposite directions.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Chengdu East is the main high-speed hub: about 4 hours and 658 kilometres to Xi'an, some 1 hour 30 minutes and 308 kilometres to Chongqing, both stations on the metro.</p>
+      <p>Two airports divide the traffic; Tianfu lies about 50 kilometres from the centre, reached directly by metro line 18, and 2 hours is a safe allowance.</p>
+      <p>The metro network runs over 500 kilometres across a dozen-odd lines, so most sights come down to a train ride and a walk.</p>
+      <p>For Dujiangyan take the Chengdu–Guanxian intercity: about 30 minutes and a little over 60 kilometres, with frequent services and steadier than the road.</p>
+      <aside class="tip"><b>实用贴士：</b>天府机场远，留足两小时；熊猫基地开园即入，人流与熊猫活跃度此消彼长。</aside>
+      <aside class="tip"><b>Handy tip:</b>Tianfu Airport is far — allow 2 hours; enter the panda base at opening, crowds and panda activity move in opposite directions.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>武侯祠与锦里<span class="en">Wuhou Shrine & Jinli</span></h2>
+    <div class="zh">
+      <p class="lead">武侯祠是全国唯一一座君臣合祀的祠庙，刘备的惠陵、汉昭烈庙与诸葛亮的武侯祠共处一园，占地约 3.7 万平方米。</p>
+      <p>红墙夹道的甬道两侧古柏森森，最老的一批栽于明代，你走在其中，脚步会不自觉放轻。</p>
+      <p>园内唐碑立于 809 年，因裴度撰文、柳公绰书写、鲁建刻字而被称作"三绝碑"，是研究蜀汉的第一手实物。</p>
+      <p>一墙之隔的锦里 2004 年开街，全长约 550 米，青石板上聚着小吃、糖画与川剧脸谱的铺子。</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠文物区需门票，南门进人少；锦里入夜灯亮后最热闹，也最挤。</aside>
+      <aside class="tip"><b>Local tip:</b>The Wuhou heritage zone charges admission; the south gate is quieter. Jinli livens — and crowds — once the lamps come on.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Wuhou Shrine is the only temple in the country where sovereign and minister are worshipped together — Liu Bei's Hui Tomb, the Han Zhaolie Temple and Zhuge Liang's shrine share one garden of some 37,000 square metres.</p>
+      <p>Ancient cypresses line the red-walled way, the oldest planted in the Ming; you walk it and your step lightens without trying.</p>
+      <p>The Tang stele in the garden was erected in 809, called the Stele of Three Perfections for Pei Du's text, Liu Gongchuo's calligraphy and Lu Jian's carving, a first-hand document of Shu-Han.</p>
+      <p>Next door, Jinli opened in 2004 along some 550 metres of flagstone with stalls of snacks, sugar figures and opera masks.</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠文物区需门票，南门进人少；锦里入夜灯亮后最热闹，也最挤。</aside>
+      <aside class="tip"><b>Local tip:</b>The Wuhou heritage zone charges admission; the south gate is quieter. Jinli livens — and crowds — once the lamps come on.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>熊猫基地与金沙<span class="en">Panda base & Jinsha</span></h2>
+    <div class="zh">
+      <p class="lead">大熊猫繁育研究基地 1987 年建立，占地逾千亩，现有大熊猫 200 余只，是全球最大的大熊猫迁地保护基地之一。</p>
+      <p>成年个体体重 80 至 120 公斤，每天要吃掉 12 至 38 公斤竹子，其余时间几乎都在睡。</p>
+      <p>这种把能耗压到最低的活法，是竹子这种低热量食物逼出来的，看着慵懒，实则是算计到了骨子里。</p>
+      <p>金沙遗址 2001 年被发现，年代距今约 3000 年，出土的金器、玉器、象牙与象牙器数以千计。</p>
+      <p>太阳神鸟金箔的 12 道旋芒被解读为一年十二个月，图案今天印在中国文化遗产的标志上。</p>
+      <aside class="tip"><b>当地贴士：</b>基地面积大，全程步行逾两小时；金沙遗址博物馆内恒温恒湿，禁止闪光。</aside>
+      <aside class="tip"><b>Local tip:</b>The base covers much ground — over 2 hours on foot; the Jinsha museum is climate-controlled and flash is forbidden.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The panda breeding base was founded in 1987 on more than a thousand mu and now holds over 200 giant pandas, one of the largest ex-situ conservation bases in the world.</p>
+      <p>Adults weigh 80 to 120 kilograms and eat 12 to 38 kilograms of bamboo a day, sleeping nearly all the rest.</p>
+      <p>That habit of driving energy down to the floor is forced by a food as low in calories as bamboo — it looks lazy, but the arithmetic goes to the bone.</p>
+      <p>Jinsha was discovered in 2001, roughly 3000 years old, yielding thousands of gold, jade and ivory objects.</p>
+      <p>The sun-bird foil's 12 whorls are read as the twelve months, a design now printed on China's cultural-heritage emblem.</p>
+      <aside class="tip"><b>当地贴士：</b>基地面积大，全程步行逾两小时；金沙遗址博物馆内恒温恒湿，禁止闪光。</aside>
+      <aside class="tip"><b>Local tip:</b>The base covers much ground — over 2 hours on foot; the Jinsha museum is climate-controlled and flash is forbidden.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">川菜讲味型，公认的复合味型有二十四种，从鱼香、怪味、荔枝到椒麻、红油、家常，调味的复杂程度居各大菜系之首。</p>
+      <p>麻来自本土的花椒，辣却要等到十六世纪末辣椒传入中国之后才进入这片盆地——所谓川菜，其实比很多人想象的要年轻得多。</p>
+      <p>郫县豆瓣的工艺可追溯到清康熙年间，麻婆豆腐则创于十九世纪六十年代成都北门万福桥的一间陈氏饭铺。</p>
+      <p>火锅里的毛肚讲究七上八下，多一分就老，蘸料是香油配蒜泥，用来降温，也解辣。</p>
+      <p>怕辣就说一声，店家见得多。</p>
+      <aside class="tip"><b>当地贴士：</b>味型众多，点单时说明辣度与是否接受花椒；老馆子翻台快，错开饭点更从容。</aside>
+      <aside class="tip"><b>Local tip:</b>With so many profiles, state your heat level and whether you take Sichuan pepper; old houses turn tables fast, so off-peak is easier.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Sichuan cooking is organised by flavour type, twenty-four compound profiles recognised in all — fish-fragrant, strange-flavour, lychee, pepper-numbing, red-oil, home-style — a complexity of seasoning unmatched among the regional cuisines.</p>
+      <p>The numbing note comes from native Sichuan pepper, yet the heat arrived only after chilli entered China in the late sixteenth century, which makes Sichuan cooking far younger than most people assume.</p>
+      <p>Pixian broad-bean paste traces to the Kangxi reign; mapo tofu was created in the eighteen-sixties at a Chen family eatery by Wanfu Bridge at Chengdu's north gate.</p>
+      <p>In hotpot, tripe is dipped seven times up and eight down, a moment more and it toughens; the dip is sesame oil and garlic, to cool and to cut the heat.</p>
+      <p>Say so if you fear the chilli — the kitchens have heard it all.</p>
+      <aside class="tip"><b>当地贴士：</b>味型众多，点单时说明辣度与是否接受花椒；老馆子翻台快，错开饭点更从容。</aside>
+      <aside class="tip"><b>Local tip:</b>With so many profiles, state your heat level and whether you take Sichuan pepper; old houses turn tables fast, so off-peak is easier.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">武侯祠与金沙都是文物单位，展柜不可触摸，闪光会加速彩绘与丝织品的褪色，安静参观是基本的分寸。</p>
+      <p>熊猫基地里投喂与敲击玻璃都会惊扰动物，这类行为在任何一座动物园都不被允许。</p>
+      <p>茶馆里的掏耳朵是一门手艺，工具要消毒，价格事先问清，别等做完再问。</p>
+      <p>问路时成都人指得仔细，只是别用"是否整日游玩"去打趣——把日子过好，在这里被视为正经本事，而非偷懒。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Wuhou Shrine and Jinsha are heritage sites: cases are not to be touched, flash accelerates the fading of pigments and silk, and quiet is simple courtesy.</p>
+      <p>At the panda base, feeding and glass-tapping disturb the animals, and are forbidden in any zoo worthy of the name.</p>
+      <p>Ear-cleaning in teahouses is a craft — instruments should be sterilised and the price agreed before, not after.</p>
+      <p>Locals give careful directions, but the joke 'do you play all day' lands badly: living well is treated here as a serious skill, not idleness.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">成都年均气温约十六度，一月均温五度上下，七月约二十五度，极端高温远低于同纬度的长江中下游。</p>
+      <p>年降水接近一千毫米，七、八两月最集中，相对湿度常年徘徊在八成左右。</p>
+      <p>日照稀少是盆地的常态，冬季阴冷而少雪，夏季闷热却不暴烈，一年四季都算好走。</p>
+      <p>想看银杏，十一月下旬到十二月初最好；想避暑，青城山比城区低好几度。</p>
+      <aside class="tip"><b>实用贴士：</b>年均湿度高，冬季体感低于气温，多备一件；夏季进山带薄外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>Humidity runs high — winter feels colder than the thermometer, bring a layer; take a thin coat into the hills in summer.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Chengdu averages about sixteen degrees a year, some five in January and twenty-five in July, with extremes well below those of the middle and lower Yangtze at the same latitude.</p>
+      <p>Annual rainfall nears a thousand millimetres, concentrated in July and August, and relative humidity hovers around eighty per cent.</p>
+      <p>Thin sunshine is the basin's norm: winter is damp and cold with little snow, summer close and muggy but never fierce, and every season stays walkable.</p>
+      <p>For ginkgo, late November into early December; to escape the heat, Qingcheng runs several degrees below the city.</p>
+      <aside class="tip"><b>实用贴士：</b>年均湿度高，冬季体感低于气温，多备一件；夏季进山带薄外套。</aside>
+      <aside class="tip"><b>Handy tip:</b>Humidity runs high — winter feels colder than the thermometer, bring a layer; take a thin coat into the hills in summer.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">都江堰建于公元前 256 年，鱼嘴分水堤、飞沙堰溢洪道与宝瓶口引水口，构成一套无坝引水的系统。</p>
+      <p>两千两百多年后它仍在灌溉，是全世界仍在使用的古代水利工程中年代最久的一处，站在安澜索桥上能看清全貌。</p>
+      <p>青城山主峰老君阁海拔约 1260 米，林木覆盖率极高，夏季比成都城区低好几度，是道教的发源地之一。</p>
+      <p>城内的浣花溪公园免费开放，与杜甫草堂相邻，竹林与溪水挨着，骑车比走路爽。</p>
+      <aside class="tip"><b>实用贴士：</b>都江堰与青城山相距不远，一日可并游；园内步道多台阶，缓行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dujiangyan and Qingcheng sit close enough to pair in a day; expect many steps, take them slowly.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Dujiangyan dates to 256 BC: the Fish Mouth dike, the Flying Sand Weir and the Bottle Neck inlet together form a damless system of diversion.</p>
+      <p>More than twenty-two centuries on it is still irrigating, the oldest ancient hydraulic work anywhere still in service — the whole layout reads clearly from the Anlan suspension bridge.</p>
+      <p>Qingcheng's main peak, Laojun Pavilion, stands at about 1260 metres under heavy forest, several degrees below the city in summer, and counts as one of the cradles of Daoism.</p>
+      <p>In town, Huaxixi Park is free and borders Du Fu's thatched cottage, bamboo and stream running side by side — better on a bike than on foot.</p>
+      <aside class="tip"><b>实用贴士：</b>都江堰与青城山相距不远，一日可并游；园内步道多台阶，缓行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Dujiangyan and Qingcheng sit close enough to pair in a day; expect many steps, take them slowly.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">人民公园免票开放，园内鹤鸣茶社自 1923 年营业至今，竹椅与盖碗构成了这座城最便宜的公共客厅。</p>
+      <p>成都在册的百年以上古银杏数以千计，十一月下旬整座城转金，街边就能看到，不必进任何收费园子。</p>
+      <p>浣花溪与杜甫草堂一带的步道也不收费，草木把城市的噪音隔在外面。</p>
+      <p>公园里的棋局从不收看客的钱，你站着看上几局，也就算是入了这座城的门。</p>
+      <aside class="tip"><b>当地贴士：</b>人民公园与浣花溪均免费；市属博物馆多在周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The People's Park and Huaxixi are free; municipal museums usually close Mondays — check before going.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The People's Park is free, and Heming teahouse within it has run since 1923 — bamboo chairs and lidded bowls make the city's cheapest public parlour.</p>
+      <p>Chengdu counts thousands of registered ginkgoes over a century old; in late November the whole city turns gold along ordinary streets, with no paid garden required.</p>
+      <p>The paths by Huaxixi and Du Fu's cottage are free too, planting and water shutting out the city's noise.</p>
+      <p>Chess games in the parks charge no onlookers — stand through a few and you have, in effect, entered the city.</p>
+      <aside class="tip"><b>当地贴士：</b>人民公园与浣花溪均免费；市属博物馆多在周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The People's Park and Huaxixi are free; municipal museums usually close Mondays — check before going.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">成都不是一眼惊艳的城，没有雪山的轮廓，也没有海岸的开阔，它给出的东西都很日常。</p>
+      <p>一年两百多天的阴天，一碗可以续水的茶，一顿让人出汗的火锅，一只每天睡十几个小时的熊猫，这些加起来就是它的全部本事。</p>
+      <p>再往深看，是两千三百年没有迁过址的城址、两千二百年还在灌溉的水利、三千年重见天日的金箔，以及二十四种味型撑起来的一整套生活。</p>
+      <p>成都最舍得给的从来不是名气，而是那种把日子过成日子的确定性。</p>
+      <p>它不急着留人，却总让人走了还想回来。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Chengdu is not a city that stuns at first glance: no snow-range silhouette, no open coast. What it offers is all ordinary.</p>
+      <p>Two hundred-odd sunless days a year, a bowl of tea that refills for free, a hotpot that makes you sweat, a panda that sleeps a dozen hours a day — add them up and you have the whole of its talent.</p>
+      <p>Deeper still: a site that never moved in twenty-three centuries, waterworks still irrigating after twenty-two, gold foil brought back to light after three thousand, and a whole way of living built on twenty-four flavour profiles.</p>
+      <p>What this land gives most freely was never fame, but the certainty of days lived as days.</p>
+      <p>It does not hurry to keep you, yet always leaves you wanting to return.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

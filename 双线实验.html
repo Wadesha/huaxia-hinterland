@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>双线文风实验 · 总目录</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.75;font-size:16.5px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:56px 22px 46px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(26px,5.5vw,42px);
+    margin:0 0 8px;letter-spacing:1px}
+  .en-title{font-style:italic;opacity:.85;font-size:clamp(14px,2.6vw,19px)}
+  header.hero p{margin:16px auto 0;max-width:660px;font-size:16px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+  .stat{background:rgba(255,255,255,.55);border:1px solid rgba(28,26,23,.15);border-radius:22px;
+    padding:6px 16px;font-size:13.5px}
+  .bar{position:sticky;top:0;z-index:6;background:var(--ink);padding:12px 22px;text-align:center}
+  .bar input{width:min(420px,82%);padding:9px 14px;border:0;border-radius:20px;font-size:15px;outline:none}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px 70px}
+  .grp{margin-top:36px}
+  .grp h2{font-family:"Noto Serif SC",Georgia,serif;font-size:20px;color:var(--lp-dk);
+    border-bottom:1px solid var(--line);padding-bottom:8px;margin:0 0 16px}
+  .card{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:18px 20px;margin-bottom:14px;text-decoration:none;color:inherit;
+    transition:transform .12s ease, box-shadow .12s ease}
+  .card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(28,26,23,.10)}
+  .card .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .card .zh{font-family:"Noto Serif SC",Georgia,serif;font-size:21px;font-weight:700}
+  .card .en{font-style:italic;color:var(--muted);font-size:14px}
+  .card .tag{font-size:11.5px;color:var(--muted);border:1px solid var(--line);
+    border-radius:12px;padding:1px 9px}
+  .card .desc{margin:8px 0 12px;color:#4a4334;font-size:15px}
+  .links{display:flex;gap:8px;flex-wrap:wrap}
+  .links a{font-size:13px;text-decoration:none;padding:5px 13px;border-radius:16px;color:#fff}
+  .links a.v1{background:var(--v1)}
+  .links a.v2{background:var(--v2)}
+  .links a.cmp{background:var(--ink);color:var(--lp)}
+  .none{display:none;text-align:center;color:var(--muted);padding:40px 0}
+  footer{padding:26px 22px 54px;text-align:center;color:var(--muted);font-size:13.5px;
+    max-width:860px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">VOICE A/B · 双线文风实验</div>
+  <h1>同一个主题，两种写法</h1>
+  <div class="en-title">One subject, written two ways</div>
+  <p>每个主题都写了两个<b>完整独立的双语版本</b>：左为 <b>V1 现行版</b>（短句为主、「你」密集、数字稀疏，系列现行写法），
+     右为 <b>V2 校准版</b>（长句铺陈、少用「你」、有信息量的数字、补历史与环境厚度，指标对齐真实中文 LP《四川和重庆》31 章 / 62,928 字实测值）。
+     「并排对比」页把两版的中文与英文全文逐节对照，并给出指标对照表。</p>
+  <div class="stats">
+    <span class="stat">主题 6 个</span>
+    <span class="stat">页面 18 个</span>
+    <span class="stat">目标：句长 43.1 字 · 短句率 6.6% · 「你」7.3/百句</span>
+  </div>
+</header>
+
+<div class="bar"><input id="q" type="search" placeholder="输入城市名筛选，例如：徐州"></div>
+
+<div style="text-align:center;margin:18px 0 -18px"><a href="index.html"
+  style="font-size:14px;color:var(--lp-dk);text-decoration:none">← 返回系列总目录（29 篇）</a></div>
+
+<div class="wrap">
+  <p class="none" id="none" style="display:none">没有匹配的主题。</p>
+
+  <div class="grp"><h2>淮海经济区 · 安徽（2）</h2>
+      <a class="card" href="%E5%AE%BF%E5%B7%9E_双版本对比.html">
+        <div class="top">
+          <span class="zh">宿州</span><span class="en">Suzhou (Anhui)</span><span class="tag">淮海经济区 · 安徽</span>
+        </div>
+        <div class="desc">大泽乡那声喊、藏过皇帝的山峪、黄河故道上的梨园</div>
+        <div class="links">
+          <a class="v1" href="%E5%AE%BF%E5%B7%9E_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E5%AE%BF%E5%B7%9E_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E5%AE%BF%E5%B7%9E_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+      <a class="card" href="%E6%B7%AE%E5%8C%97_双版本对比.html">
+        <div class="top">
+          <span class="zh">淮北</span><span class="en">Huaibei</span><span class="tag">淮海经济区 · 安徽</span>
+        </div>
+        <div class="desc">煤挖空了地面，塌陷区改成了湖；茶馆还在烧茶梗</div>
+        <div class="links">
+          <a class="v1" href="%E6%B7%AE%E5%8C%97_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E6%B7%AE%E5%8C%97_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E6%B7%AE%E5%8C%97_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+  </div>
+  <div class="grp"><h2>淮海经济区 · 江苏（3）</h2>
+      <a class="card" href="%E5%AE%BF%E8%BF%81_双版本对比.html">
+        <div class="top">
+          <span class="zh">宿迁</span><span class="en">Suqian</span><span class="tag">淮海经济区 · 江苏</span>
+        </div>
+        <div class="desc">1996 年才设市的新城，压着项羽的故里与几十年的老窖</div>
+        <div class="links">
+          <a class="v1" href="%E5%AE%BF%E8%BF%81_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E5%AE%BF%E8%BF%81_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E5%AE%BF%E8%BF%81_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+      <a class="card" href="%E5%BE%90%E5%B7%9E_双版本对比.html">
+        <div class="top">
+          <span class="zh">徐州</span><span class="en">Xuzhou</span><span class="tag">淮海经济区 · 江苏</span>
+        </div>
+        <div class="desc">汉墓凿在山腹里，黄河故道横在城北，两条干线在城中交叉</div>
+        <div class="links">
+          <a class="v1" href="%E5%BE%90%E5%B7%9E_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E5%BE%90%E5%B7%9E_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E5%BE%90%E5%B7%9E_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+      <a class="card" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_双版本对比.html">
+        <div class="top">
+          <span class="zh">连云港</span><span class="en">Lianyungang</span><span class="tag">淮海经济区 · 江苏</span>
+        </div>
+        <div class="desc">铁路向东到头就是海，崖壁上有东汉的凿痕</div>
+        <div class="links">
+          <a class="v1" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E8%BF%9E%E4%BA%91%E6%B8%AF_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+  </div>
+  <div class="grp"><h2>文风样板 · 四川（1）</h2>
+      <a class="card" href="%E6%88%90%E9%83%BD_双版本对比.html">
+        <div class="top">
+          <span class="zh">成都</span><span class="en">Chengdu</span><span class="tag">文风样板 · 四川</span>
+        </div>
+        <div class="desc">双线实验的第一个样板：两种写法逐句对照</div>
+        <div class="links">
+          <a class="v1" href="%E6%88%90%E9%83%BD_V1现行版.html">V1 现行版</a>
+          <a class="v2" href="%E6%88%90%E9%83%BD_V2校准版.html">V2 校准版</a>
+          <a class="cmp" href="%E6%88%90%E9%83%BD_双版本对比.html">并排对比</a>
+        </div>
+      </a>
+  </div>
+</div>
+
+<footer>
+  <p>本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p style="font-style:italic">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced.</p>
+</footer>
+
+<script>
+  var input = document.getElementById('q');
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var any = false;
+    document.querySelectorAll('.grp').forEach(function(g){
+      var shown = 0;
+      g.querySelectorAll('.card').forEach(function(c){
+        var hit = !q || c.textContent.toLowerCase().indexOf(q) >= 0;
+        c.style.display = hit ? '' : 'none';
+        if (hit) shown++;
+      });
+      g.style.display = shown ? '' : 'none';
+      any = any || shown;
+    });
+    document.getElementById('none').style.display = any ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>南阳 · Nanyang — 卧龙岗上的城，诸葛与汉</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>南阳</h1>
+  <div class="en-title">Nanyang</div>
+  <p class="zh">一座把"智"刻进卧龙岗的城——武侯祠的柏、汉画馆的石、丹江的水，把三国与汉都留在了豫西南。</p>
+  <p class="en">A city that carved 'wisdom' into the Sleeping Dragon Ridge — the Marquis Wu shrine's cypresses, the Han relief museum's stone, the Danjiang water, keeping the three kingdoms and Han capital in southwest Henan.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔三国，去汉画馆看石 / Arrive at the relief museum</a></li>
+      <li><a href="#s2">南阳到底是什么 / What Nanyang is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">卧龙岗与武侯祠 / The Sleeping Dragon Ridge</a></li>
+      <li><a href="#s5">汉画馆与医圣祠 / The relief museum & the sage shrine</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔三国，去汉画馆看石<span class="en">Arrive at the relief museum</span></h2>
+    <div class="zh">
+      <p class="lead">南阳不声不响地坐在豫西南的盆地。你一下高铁，满眼是普通的城，可往北走，汉画馆的画像石先把你按住——两汉的人把天界、百戏、车马都刻进石头，活了一样。</p>
+      <p>我第一次懂南阳，是在卧龙岗的傍晚。岗不高，可站在茅庐前，远处的白河慢慢流，松风把"淡泊"两个字吹得很轻。那一刻你明白，这座城把"智"和"水"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang quietly sits in the basin of southwest Henan. Step off the train and it's an ordinary city, yet walk north and the Han relief museum's figured stone stops you first — the two Han cut heaven, acrobatics, chariots into rock, alive as if.</p>
+      <p>I got Nanyang on the Sleeping Dragon Ridge at dusk. The ridge is low, yet stand before the thatched hut and the Bai river flows slow beyond, pine wind blows the words 'plain and calm' light. That moment you see this city grows 'wisdom' and 'water' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>南阳到底是什么<span class="en">What Nanyang is</span></h2>
+    <div class="zh">
+      <p class="lead">南阳是东汉的光武帝乡，刘秀从这里起兵，打出"风化最美"的盛世。它不靠名山，靠的是两个人：一位帝王，一位丞相——诸葛亮在卧龙岗躬耕，把"静以修身"写进了土里。</p>
+      <p>它还是汉画的库房。画像石、画像砖，件件是两汉的日常与想象；医圣张仲景、科圣张衡，也都是这的人。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang was Emperor Guangwu of Eastern Han's home; Liu Xiu rose in arms here, fought out a reign 'fairest in manner'. It leans not on a mountain but on two men: an emperor, a chancellor — Zhuge Liang tilled on the Sleeping Dragon Ridge, wrote 'stillness trains the self' into the soil.</p>
+      <p>It's also a storehouse of Han relief. Figured stone and brick, each a daily life and dream of the two Han; the sage of medicine Zhang Zhongjing, the sage of science Zhang Heng, were locals too.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">南阳站在焦柳、宁西铁路线上，高铁从武汉过来两小时出头，从郑州过来两小时多。市内到卧龙岗、汉画馆公交可达；丹江口、襄阳得往南转。</p>
+      <p>去周边襄阳（古隆中）、武当得往南转，车程个把小时到两小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；市内景点集中，公交串最省。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; the town sights cluster, bus to link them.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang sits on the Jiaozuo–Liuzhou and Nanjing–Xi'an lines; high-speed from Wuhan just over two hours, from Zhengzhou just over two. Buses reach the Sleeping Dragon Ridge and the relief museum; Danjiangkou and Xiangyang turn south.</p>
+      <p>For Xiangyang (old Longzhong) and Wudang turn south, one to two hours.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；市内景点集中，公交串最省。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; the town sights cluster, bus to link them.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>卧龙岗与武侯祠<span class="en">The Sleeping Dragon Ridge</span></h2>
+    <div class="zh">
+      <p class="lead">卧龙岗是诸葛亮的躬耕处，武侯祠在冈上，古柏把天遮成墨绿，匾额挨着挂。"臣本布衣"四个字刻在碑上，你站在茅庐前，连呼吸都放轻。</p>
+      <p>岗下的诸葛书院、三顾堂，把那段"三顾"讲成一座园的景。你走在甬道，会懂什么叫"淡泊明志"。</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠清静，留半天；茅庐是象征，别攀围栏。</aside>
+      <aside class="tip"><b>Local tip:</b>The shrine is quiet, allow half a day; the hut is symbol, don't climb the rail.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Sleeping Dragon Ridge is where Zhuge Liang tilled; the Marquis Wu shrine stands on the ridge, old cypresses shade the sky to ink-green, plaques hung in rows. The four characters 'I was a common man' cut in stone — stand before the thatched hut and breath eases.</p>
+      <p>Below, the Zhuge academy and the Three-Visits hall turn that 'three calls' into a garden's scene. Walk the path and you'll know 'plain heart shows the aim'.</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠清静，留半天；茅庐是象征，别攀围栏。</aside>
+      <aside class="tip"><b>Local tip:</b>The shrine is quiet, allow half a day; the hut is symbol, don't climb the rail.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>汉画馆与医圣祠<span class="en">The relief museum & the sage shrine</span></h2>
+    <div class="zh">
+      <p class="lead">汉画馆是全国最大的汉画像石馆，天界、仙境、百戏、车马，一层层铺开，比史书还热闹。医圣祠是张仲景的庙，墓冢在祠后，药香淡淡。</p>
+      <p>你站在画像石前，会懂两汉人怎么想天、想死、想乐——那股鲜活，比正史更真。</p>
+      <aside class="tip"><b>当地贴士：</b>汉画馆大，留半天；医圣祠清静，别喧哗。</aside>
+      <aside class="tip"><b>Local tip:</b>The relief museum is large, allow half a day; the sage shrine quiet, no noise.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The relief museum is the nation's largest of Han figured stone; heaven, immortals, acrobatics, chariots spread layer by layer, livelier than histories. The Sage of Medicine shrine is Zhang Zhongjing's temple, his tomb behind, a faint herb scent.</p>
+      <p>Stand before the figured stone and you'll know how the two Han imagined sky, death, joy — that vividness truer than the official record.</p>
+      <aside class="tip"><b>当地贴士：</b>汉画馆大，留半天；医圣祠清静，别喧哗。</aside>
+      <aside class="tip"><b>Local tip:</b>The relief museum is large, allow half a day; the sage shrine quiet, no noise.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">南阳的味道在面与肉之间。南阳牛肉汤是早餐的哲学，配饼丝，热乎一碗顶饿。博望锅盔是厚饼炕硬，咔嚓一口。</p>
+      <p>新野板面筋道，浇辣臊；黄石砚、玉雕是这的手艺，不花钱看。夜市里糊辣汤、水煎包都不贵。</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉汤认老店，现烙饼丝最香；板面辣，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef soup trust old names, fresh cake-shreds best; board-noodle is hot, go easy if weak stomach.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang's flavour sits between noodle and meat. Nanyang beef soup is the breakfast philosophy, with cake-shreds, a hot bowl that fills. Bowang guokui is a thick cake baked hard, one crackle.</p>
+      <p>Xinye board-noodle is chewy, dressed in chili gravy; the Yellow Stone inkstone and jade carving are local craft, free to view. The night market's peppery soup and pan-fried bun are cheap.</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉汤认老店，现烙饼丝最香；板面辣，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef soup trust old names, fresh cake-shreds best; board-noodle is hot, go easy if weak stomach.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">卧龙岗、医圣祠是文物也是景区，碑刻别摸，别刻字，殿里手机静音。汉画馆别用闪光灯，画像石怕潮怕光。</p>
+      <p>南阳人慢，问路指得清，可别拿"这智是不是编的"去戳——他们把诸葛当骨，你客气点，他们能把每通碑的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Sleeping Dragon Ridge and the sage shrine are relic and scenic area; don't touch steles, don't carve, silence phones in halls. The relief museum, no flash — figured stone fears damp and light.</p>
+      <p>Nanyang folk are slow; they point clear, just don't poke with 'is this wisdom made up' — they take Zhuge as bone; be polite and they'll tell you each stele's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天白河柳绿，南阳舒服。夏天盆地热，可岗上松风凉。秋天天高云淡，武侯祠的影拉得长。冬天冷，可雪后古柏肃穆，汉画馆里另有一番静。</p>
+      <p>若为了绿，夏天最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>夏天盆地热，带水遮阳；雪后石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer basin heats, bring water and shade; after snow the steps slick, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the Bai's willows, Nanyang eased. Summer the basin heats, yet the ridge's pine wind cools. Autumn high and clear, the shrine's shadow long. Winter cold, yet after snow old cypresses solemn, the relief museum another quiet.</p>
+      <p>For green summer fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>夏天盆地热，带水遮阳；雪后石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer basin heats, bring water and shade; after snow the steps slick, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">白河边的河滨路是免费的天然步道，沿水走，桥一座接一座，卧龙岗在沿线。城里的人民路随便钻，老字号、牛肉汤摊都在沿线。</p>
+      <p>白河湿地骑车比走路爽，夕阳把河染成橘色。南阳的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>河滨步道免费；人民路细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverbank path is free; Renmin Road, look close at old names.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Bai riverbank is a free path; bridge after bridge, the Sleeping Dragon Ridge on the way. The town's Renmin Road wanders free, old names and beef-soup stalls along it.</p>
+      <p>The Bai wetlands better by bike; at dusk it dyes the river orange. Nanyang's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>河滨步道免费；人民路细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverbank path is free; Renmin Road, look close at old names.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">南阳最贵的东西，大多不要钱。白河的风、卧龙岗在暮色里的柏、人民路那阵汤香，站着看就是参与。雪后古柏配白雪，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。南阳教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>河滨步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverbank path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang's priciest things mostly cost nothing. The Bai's wind, the ridge's dusk cypress, Renmin's soup scent — stand and you're in it. Snow on old cypresses with white beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Nanyang taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>河滨步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverbank path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">南阳不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它厚，它旧，它又智又水——一座茅庐能让人沉默，一通碑能让人回头。</p>
+      <p>你逛过卧龙岗的一冈松柏、汉画馆的一室石像、白河的一江绿，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"淡泊明志"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Nanyang won't win you at once. No famous mountain's fame, no water town's finesse. It's deep, old, wisdom and water — one thatched hut silences you, one stele turns you back.</p>
+      <p>You'll see the ridge's pine and cypress, the museum's hall of stone figures, the Bai's river of green — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'plain heart shows the aim'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

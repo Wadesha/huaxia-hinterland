@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>亳州 · Bozhou — 药都与三朝古都</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>亳州</h1>
+  <div class="en-title">Bozhou</div>
+  <p class="zh">一座把"药"和"道"都种进土里的城——华祖庵的芍、花戏楼的雕、曹操运兵道，把汉与道都留在了皖北。</p>
+  <p class="en">A city that planted 'medicine' and 'dao' in its soil — Hua Zu's peony, the flower theatre's carving, Cao Cao's troop tunnel, keeping Han and dao in northern Anhui.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔三国，去药市闻香 / Arrive at the herb market</a></li>
+      <li><a href="#s2">亳州到底是什么 / What Bozhou is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">花戏楼与华祖庵 / The Flower Theatre & Hua Zu Temple</a></li>
+      <li><a href="#s5">曹操运兵道 / Cao Cao's troop tunnel</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔三国，去药市闻香<span class="en">Arrive at the herb market</span></h2>
+    <div class="zh">
+      <p class="lead">亳州不声不响地缩在皖北的平原。你一下高铁，满眼是普通的城，可往北关走，一股药香先把你按住——这里是药都，春天芍花开时，城外一片紫云。</p>
+      <p>我第一次懂亳州，是在花戏楼的傍晚。戏台上的木雕层层叠，远处的涡河慢慢流，卖药的老人坐在阶下称重。那一刻你明白，这座城把"药"和"戏"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou quietly shrinks in the plain of northern Anhui. Step off the train and it's an ordinary city, yet walk the north gate and a scent of medicine stops you first — this is the herb capital; in spring the peony blooms, a purple cloud beyond the wall.</p>
+      <p>I got Bozhou at the Flower Theatre at dusk. The stage's wood carving layers deep, the Guo river flows slow beyond, an old herb seller sat weighing at the step. That moment you see this city grows 'medicine' and 'opera' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>亳州到底是什么<span class="en">What Bozhou is</span></h2>
+    <div class="zh">
+      <p class="lead">亳州是三朝古都——商汤在此建都，三国曹操是这儿的人，元末韩林儿也在这儿称王。它不靠一座山，靠的是两个人：一位医圣，一位枭雄。</p>
+      <p>它还是药都。华佗在这儿起家，至今全中国的药商还往这跑；"药不到亳州不齐"一句话，把这座城说透了。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou was capital of three dynasties — Tang of Shang founded his seat here, Cao Cao of the three kingdoms was a local, Han Lin'er of late Yuan crowned here too. It leans not on a mountain but on two men: a sage of medicine, a hero of chaos.</p>
+      <p>It's also the herb capital. Hua Tuo started here; to this day drug merchants across the land still run here; 'no herb is complete till it reaches Bozhou' says the town through.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">亳州站在京九、商合杭铁路线上，高铁从合肥过来两小时出头，从郑州过来两小时多。市内到花戏楼、华祖庵、曹操运兵道都步行或公交可达；去周边少林得往西南转。</p>
+      <p>去周边商丘、开封得往北转，车程个把小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；城内景点集中，步行串最省。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; the town sights cluster, walk to link them.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou sits on the Beijing–Kowloon and Shangqiu–Hangzhou lines; high-speed from Hefei just over two hours, from Zhengzhou just over two. The Flower Theatre, Hua Zu Temple and Cao Cao's tunnel are walkable or by bus; for Shaolin turn southwest.</p>
+      <p>For Shangqiu and Kaifeng turn north, about an hour.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；城内景点集中，步行串最省。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; the town sights cluster, walk to link them.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>花戏楼与华祖庵<span class="en">The Flower Theatre & Hua Zu Temple</span></h2>
+    <div class="zh">
+      <p class="lead">花戏楼是关帝庙的戏台，木雕、砖雕、铁旗杆，一样比一样细。你站在台下抬头，连呼吸都放轻。华祖庵是华佗的庙，药圃里种着芍、菊、薄荷，闻得到那股苦香。</p>
+      <p>华祖庵里还有华佗的故居遗址，五禽戏的图贴在墙上——你跟着比划两下，会懂什么叫"流水不腐"。</p>
+      <aside class="tip"><b>当地贴士：</b>花戏楼木雕细，别摸；华祖庵药圃可看，别采。</aside>
+      <aside class="tip"><b>Local tip:</b>The theatre's wood carving is fine, don't touch; the herb garden you may view, don't pick.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Flower Theatre is the opera stage of the Guan Yu temple; wood carving, brick carving, iron flagpoles, each finer than the last. Stand below and breath eases. Hua Zu Temple is Hua Tuo's shrine; the herb garden grows peony, chrysanthemum, mint — you smell the bitter scent.</p>
+      <p>The temple keeps Hua Tuo's home site; the Five-Animal play is pinned on the wall — copy it twice and you'll know 'running water never rots'.</p>
+      <aside class="tip"><b>当地贴士：</b>花戏楼木雕细，别摸；华祖庵药圃可看，别采。</aside>
+      <aside class="tip"><b>Local tip:</b>The theatre's wood carving is fine, don't touch; the herb garden you may view, don't pick.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>曹操运兵道<span class="en">Cao Cao's troop tunnel</span></h2>
+    <div class="zh">
+      <p class="lead">运兵道是曹操挖的地下迷宫，青砖券顶，岔道纵横，灯一灭就迷路。你弯着腰走，会懂什么叫"兵不厌诈"——这座城把诡道也修成了文物。</p>
+      <p>道口在城内几处，主道在人民北街，下去一趟像钻进一段三国。</p>
+      <aside class="tip"><b>当地贴士：</b>运兵道低矮，弯腰慢行；灯暗处跟紧队伍。</aside>
+      <aside class="tip"><b>Local tip:</b>The tunnel is low, stoop and go slow; keep close where lamps dim.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The troop tunnel is Cao Cao's underground maze, brick vaults, paths crossing, lose your way the moment lamps dim. You stoop through and get 'war loves trick' — this city even built its crafty way into a relic.</p>
+      <p>The mouths sit in several spots in town, the main under Renmin North Street; one descent is like drilling into a stretch of the three kingdoms.</p>
+      <aside class="tip"><b>当地贴士：</b>运兵道低矮，弯腰慢行；灯暗处跟紧队伍。</aside>
+      <aside class="tip"><b>Local tip:</b>The tunnel is low, stoop and go slow; keep close where lamps dim.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">亳州的味道在药与面之间。牛肉馍是现烙的厚饼夹牛肉，咔嚓一口油香；sa汤是麦仁熬的咸汤，打个蛋花，热乎一碗醒神。</p>
+      <p>锅盔、麻叶是油锅里出来的干粮；药膳是这的特长，当归炖鸡、黄芪排骨，补得不张扬。夜市里格拉条、豆腐脑都不贵。</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉馍认现烙，趁热吃；sa汤热乎，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef mo trust fresh-griddled, eat hot; sa soup best hot, sour when cold.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou's flavour sits between medicine and noodle. The beef mo is a fresh-griddled thick cake with beef, one crackle oily; sa soup is a wheat-berry broth with egg flower, a hot bowl that wakes.</p>
+      <p>Guokui and maye are dry rations from the wok; herbal meals are the local skill — angelica chicken, astragalus ribs, tonic without show. The night market's gela strips and tofu brain are cheap.</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉馍认现烙，趁热吃；sa汤热乎，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef mo trust fresh-griddled, eat hot; sa soup best hot, sour when cold.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">运兵道是文物，别刻字，灯暗处跟紧向导。花戏楼、华祖庵殿里手机静音，别喧哗。</p>
+      <p>亳州人实在，问路指得清，可别拿"这道是不是编的"去戳——他们把华佗当骨，你客气点，他们能把每味药的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The troop tunnel is relic; don't carve, keep close to the guide where lamps dim. The Flower Theatre and Hua Zu Temple, silence phones in halls, no noise.</p>
+      <p>Bozhou folk are plain; they point clear, just don't poke with 'is this tunnel made up' — they take Hua Tuo as bone; be polite and they'll tell you each herb's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天芍花满城，亳州最艳，药市也最旺。夏天平原热，可涡河边的风凉。秋天天高云淡，花戏楼的影拉得长。冬天冷，可雪后古楼肃穆，药圃枯枝另有一番好看。</p>
+      <p>若为了花，四月最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>芍花期短，盯天气走；雪后石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Peony bloom is brief, watch weather; after snow the steps slick, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring the peony fills the town, Bozhou brightest, the herb market busiest. Summer the plain heats, yet the Guo river wind cools. Autumn high and clear, the Flower Theatre's shadow long. Winter cold, yet after snow the old theatre solemn, the herb garden's bare twigs a beauty of its own.</p>
+      <p>For flowers April fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>芍花期短，盯天气走；雪后石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Peony bloom is brief, watch weather; after snow the steps slick, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">涡河边的河滨路是免费的天然步道，沿水走，桥一座接一座，花戏楼在沿线。城里的北关老街随便钻，药铺、戏园都在沿线。</p>
+      <p>道德中宫在城边，是老子的纪念处，清静少人。亳州的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>河滨步道免费；北关老街细看药铺。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverbank path is free; north-gate street, look close at herb shops.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Guo riverbank is a free path; bridge after bridge, the Flower Theatre on the way. The town's north-gate old street wanders free, herb shops and opera houses along it.</p>
+      <p>The Dao De Centre sits at the edge, a memorial to Laozi, quiet, few. Bozhou's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>河滨步道免费；北关老街细看药铺。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverbank path is free; north-gate street, look close at herb shops.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">亳州最贵的东西，大多不要钱。涡河的风、花戏楼在暮色里的雕、北关那阵药香，站着看就是参与。雪后古楼配白雪，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。亳州教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>河滨步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverbank path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou's priciest things mostly cost nothing. The Guo's wind, the Flower Theatre's dusk carving, the north gate's herb scent — stand and you're in it. Snow on the old theatre with white beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Bozhou taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>河滨步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverbank path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">亳州不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它厚，它旧，它又药又道——一座戏楼能让人沉默，一条地道能让人回头。</p>
+      <p>你逛过花戏楼的一台木雕、华祖庵的一圃药香、运兵道的一身凉，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"药不到亳州不齐"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Bozhou won't win you at once. No famous mountain's fame, no water town's finesse. It's deep, old, medicine and dao — one theatre silences you, one tunnel turns you back.</p>
+      <p>You'll see the Flower Theatre's stage of wood, Hua Zu's garden of scent, the troop tunnel's cloak of cool — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'no herb complete till Bozhou'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宿迁 · Suqian — V2 v2</title>
+<style>
+  :root{--lp:#f2b01e;--lp-dk:#c98a07;--ink:#1c1a17;--muted:#6b645a;
+        --paper:#fbf8f1;--line:#e7ddc9;--tipbg:#fff6e0;
+        --v1:#2f6f8f;--v2:#a34b12;}
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  header.hero{background:var(--lp);color:#1c1a17;padding:60px 22px 52px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(28px,6vw,46px);
+    margin:0 0 8px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(15px,3vw,21px)}
+  header.hero p{margin:16px auto 0;max-width:640px;font-size:17px}
+  .badge{display:inline-block;color:#fff;font-size:12px;letter-spacing:2px;
+    padding:5px 14px;border-radius:20px;margin-bottom:14px}
+  .badge.v1{background:var(--v1)} .badge.v2{background:var(--v2)}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:25px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;
+    color:var(--lp-dk);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  footer{padding:28px 22px 56px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+  /* 对比页 */
+  .cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1180px;margin:0 auto;padding:0 22px 70px}
+  .cmp>div{padding:26px 26px;border:1px solid var(--line)}
+  .cmp .l{border-right:0;border-radius:10px 0 0 10px}
+  .cmp .r{border-radius:0 10px 10px 0}
+  .cmp h2{font-size:20px;margin-top:0}
+  .cmp .meta{font-size:12.5px;color:var(--muted);margin:0 0 16px;letter-spacing:.5px}
+  .cmp p{font-size:15.5px;line-height:1.85}
+  .cmp .hd{background:var(--ink);color:#fff;padding:12px 26px;font-size:14px;letter-spacing:2px}
+  .cmp .hd.l{background:var(--v1);border-radius:10px 10px 0 0}
+  .cmp .hd.r{background:var(--v2);border-radius:10px 10px 0 0}
+  table{border-collapse:collapse;max-width:1180px;margin:24px auto 40px;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:8px 14px;text-align:center}
+  th{background:#fff;color:var(--lp-dk)}
+  td.k{text-align:left;color:var(--muted)}
+  @media(max-width:820px){.cmp{grid-template-columns:1fr}.cmp .l{border-right:1px solid var(--line);
+    border-radius:10px 10px 0 0}.cmp .r{border-radius:0 0 10px 10px}}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="badge v2">V2 · v2</div>
+  <h1>宿迁</h1>
+  <div class="en-title">Suqian</div>
+  <p class="zh">1996 年才设市的新城，压着公元前 232 年出生的项羽、清代的龙王行宫与几十年的老窖池——新的路牌底下全是旧东西。</p>
+  <p class="en">A city created only in 1996, laid over the birthplace of Xiang Yu, born in 232 BC, over a Qing palace built for a river god, and over fermentation pits decades old — everything beneath the new signage is old.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">一座很新的城，压着很旧的底</a></li>
+      <li><a href="#s2">项王故里：为一位败者留的院子</a></li>
+      <li><a href="#s3">骆马湖</a></li>
+      <li><a href="#s4">皂河：庙里的行宫</a></li>
+      <li><a href="#s5">酒：洋河与双沟</a></li>
+      <li><a href="#s6">三台山与衲田</a></li>
+      <li><a href="#s7">下草湾：以万年为单位</a></li>
+      <li><a href="#s8">运河还在跑船</a></li>
+      <li><a href="#s9">吃：面、鸡与小鱼</a></li>
+      <li><a href="#s10">方向与距离</a></li>
+      <li><a href="#s11">不响，但压得住</a></li>
+    </ol>
+  </nav>
+
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>一座很新的城，压着很旧的底<span class="en">A new city over old ground</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁在 1996 年从老淮阴地区分出，成为江苏较年轻的地级市，城市面貌因此几乎全是新的：宽路、新楼、平整的行政区块。</p>
+      <p>它夹在徐州、连云港与淮安之间，方言、面食与口味都偏北，与苏南那种精致的调子相去甚远。</p>
+      <p>但新只是表层：往地下数，有数万年前人类活动过的土层；往历史里数，有楚汉相争与明清漕运。</p>
+      <p>新的路牌上写着"项王故里"与"中国酒都"，这两块招牌都不是新造的词，一个两千多年，一个也有几十年。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian was carved out of the old Huaiyin prefecture in 1996, making it one of Jiangsu's younger prefecture-level cities, and almost everything visible is accordingly new: wide roads, new blocks, tidily laid-out administrative districts.</p>
+      <p>It sits wedged between Xuzhou, Lianyungang and Huai'an, and its dialect, its wheat-based food and its tastes all lean north, a long way from the refined register of southern Jiangsu.</p>
+      <p>But newness is only the surface: below ground lies soil where people were active tens of thousands of years ago, and in the record lie the Chu–Han wars and the grain transport of the Ming and Qing.</p>
+      <p>The new signs read "home of King Xiang" and "China's liquor capital" — neither term was invented recently; one is more than two thousand years old, the other several decades.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>项王故里：为一位败者留的院子<span class="en">A courtyard kept for the man who lost</span></h2>
+    <div class="zh">
+      <p class="lead">项羽生于下相，即今天的宿迁，时间一般记为公元前 232 年；他在此度过少年，此后起兵、破秦、封王，最终在垓下自刎。</p>
+      <p>今存的项王故里是历代重修的院落，中轴对称，古柏数株，其中相传为项羽手植的槐树是整座院子最被看重的一棵树。</p>
+      <p>院子不大，看点也不在规模，而在于中国人为一位失败者保存故里的习惯——成王败寇的说法在这里并不适用。</p>
+      <p>本地人谈起他时语气平淡，既不惋惜也不夸耀，像说一个很早就出门、再没回来的同乡。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xiang Yu was born at Xiaxiang — modern Suqian — in what is usually given as 232 BC; he spent his boyhood here before raising an army, breaking Qin, taking a kingdom, and finally cutting his own throat at Gaixia.</p>
+      <p>The compound that stands today is the product of repeated rebuilding over the centuries: a symmetrical courtyard, several ancient cypresses, and the locust tree said to have been planted by Xiang Yu himself, the most regarded tree in the grounds.</p>
+      <p>The compound is not large and the point is not scale, but rather the Chinese habit of keeping a home for the man who lost — the saying about the winner becoming king does not apply here.</p>
+      <p>Locals speak of him flatly, neither mourning nor boasting, as though describing a fellow townsman who left early and never came back.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>骆马湖<span class="en">Luoma Lake</span></h2>
+    <div class="zh">
+      <p class="lead">骆马湖位于城北，是江苏省的主要淡水湖之一，湖面开阔，稍有风力便起浪，岸线以浅滩与芦苇为主。</p>
+      <p>沿湖修了湿地公园与骑行绿道，芦苇高过人头，鸟类种类不少，观鸟的人多在此停留。</p>
+      <p>湖上的渔业并未停歇，小木船与大拖网仍在作业，岸边常有刚起的水产直接过秤。</p>
+      <p>日落时分光线压得很低，整个湖面被收成一条窄而亮的线，是这片水最值得等的一刻。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Luoma Lake lies north of the city and is one of Jiangsu's principal freshwater lakes: broad, quick to raise a chop in any wind, its shoreline mostly shallows and reed beds.</p>
+      <p>A wetland park and a cycling greenway run along the shore; the reeds stand taller than a person, the birdlife is varied, and birders tend to stop here.</p>
+      <p>Fishing on the lake has not stopped — small wooden boats and large drag nets still work it, and at the shore the catch is often weighed straight off the water.</p>
+      <p>At sunset the light comes in very low and the whole surface narrows into a single bright line, the one moment on this water worth waiting for.</p>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>皂河：庙里的行宫<span class="en">Zaohe: a palace inside a temple</span></h2>
+    <div class="zh">
+      <p class="lead">城西北的皂河镇上有一组大型建筑群，前为敕建的安澜龙王庙，后为接待皇帝的宫殿格局，因而常被称作乾隆行宫。</p>
+      <p>清帝南巡期间多次在此驻跸，这组建筑因此兼有祭祀河神与接驾两套功能，规格之高在一座镇上显得反常。</p>
+      <p>庙与宫叠在同一条轴线上，这种组合在全国留存不多，也是它最有价值的地方。</p>
+      <p>梁枋上的彩画已经褪色，颜色仍在；院里石碑的字口也还清楚，能看出当年立碑的人是谁。</p>
+    </div>
+    <div class="en">
+      <p class="lead">At Zaohe, northwest of the city, stands a large complex: an imperially commissioned temple to the dragon king at the front, palace layout behind it to receive the emperor, which is why it is often called the Qianlong travelling palace.</p>
+      <p>The Qing emperors halted here repeatedly during their southern tours, so the buildings serve two purposes at once — sacrificing to the river god and receiving the sovereign — and the specification is strangely grand for a market town.</p>
+      <p>Temple and palace stacked on a single axis is a combination that survives in few places in the country, and it is the most valuable thing about the site.</p>
+      <p>The painted beams have faded but the pigment holds, and the characters cut into the courtyard steles are still legible enough to show who raised them.</p>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>酒：洋河与双沟<span class="en">Liquor: Yanghe and Shuanggou</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁境内有两大白酒产区，城南的洋河与泗洪的双沟，两者都属浓香型，也都在中国名酒之列。</p>
+      <p>发酵用的老窖池是酒厂真正的核心，窖泥经年累月不换，其中的微生物群落决定了一池酒的脾气。</p>
+      <p>进了厂区先闻到的是味道，其次才看到窖池、甑桶与酒库，这种顺序在任何一家老酒厂都一样。</p>
+      <p>本地人买酒不看包装，只认年份与批次，同一品牌不同年份的价差可以很大。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian holds two major baijiu districts, Yanghe south of the city and Shuanggou in Sihong; both make the strong-aroma style, and both are counted among China's famous liquors.</p>
+      <p>The real core of a distillery is its old fermentation pits: the pit mud is never replaced, and the microbial community living in it decides the character of everything that pit produces.</p>
+      <p>Enter any old distillery and the smell arrives before the pits, the stills and the warehouses do — the order is the same everywhere.</p>
+      <p>Locals buy by vintage and batch rather than packaging, and the price gap between two years of the same brand can be wide.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>三台山与衲田<span class="en">Three Terrace Mountain and the patchwork fields</span></h2>
+    <div class="zh">
+      <p class="lead">城北的三台山并不高，山林覆盖良好，山下则是一片按地形拼合的花田，被称作衲田，取其如僧衣百衲之意。</p>
+      <p>花田按色块分割，田埂纵横，观赏的重点是图案与等高线本身，而不只是花期。</p>
+      <p>花期人多，非花期安静，两种时候各有各的看法；你若只想走一走，非花期更舒服。</p>
+      <p>从田里抬头能望见骆马湖的方向，山、田、水在同一个视野里叠起来，是这一带少见的开阔地。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Three Terrace Mountain north of the city is not high and is well wooded; below it lies a flower field pieced together to follow the terrain, called the patchwork field, after the patched robe of a monk.</p>
+      <p>The field is divided into colour blocks with paths crossing it in both directions, and what is worth seeing is the pattern and the contour lines, not only the bloom.</p>
+      <p>The flowering season brings crowds, while the off-season brings quiet, and each has its own argument; if you only want a walk, the off-season is kinder.</p>
+      <p>Looking up from the fields you can see towards Luoma Lake, and hill, field and water stack into a single view — an openness rare in this part of the plain.</p>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>下草湾：以万年为单位<span class="en">Xiacaowan: counted in tens of thousands of years</span></h2>
+    <div class="zh">
+      <p class="lead">泗洪的下草湾遗址在二十世纪中叶出土过古人类化石，年代以数万年计，是这一带最早的人类活动证据之一。</p>
+      <p>出土材料有限，学界的断代与归属至今仍有讨论，现场能看到的东西也确实不多：一片草地与一块说明牌。</p>
+      <p>但对一座 1996 年才设市的城市来说，这块牌子意义不小——它把此地的时间轴往前拉了几万倍。</p>
+      <p>站在那儿，脚下就是当年有人生活过的土层，这类景点的价值从来不在眼睛能收到的那部分。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Xiacaowan site in Sihong produced early human fossils in the middle of the last century, dated in the tens of thousands of years and among the earliest evidence of human activity in this region.</p>
+      <p>The material recovered is limited, its dating and classification are still discussed, and there is genuinely little to see: a patch of grass and an explanatory board.</p>
+      <p>For a city established only in 1996, though, the board carries weight — it stretches the local timeline back tens of thousands of times over.</p>
+      <p>Stand there and the soil underfoot is ground where people once lived; the value of a site like this has never lain in what the eye receives.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>运河还在跑船<span class="en">The canal still carries boats</span></h2>
+    <div class="zh">
+      <p class="lead">京杭大运河自宿迁境内穿过，河面开阔，驳船以拖带的方式成列行进，一艘动力船后面往往挂着十余艘。</p>
+      <p>这条人工水道开凿于隋代、定型于元代，至今仍承担货运，是少数还在按原用途运转的古代大型工程。</p>
+      <p>沿岸修了步道，散步的人与钓鱼的人共用同一段栏杆，货船就在他们脚下过去。</p>
+      <p>它老得不能再老，却并未变成展品，这种"还在干活"的状态比河本身更值得看。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Grand Canal crosses Suqian, broad here, with barges moving in towed strings — a dozen or more often hung behind a single powered boat.</p>
+      <p>Cut in the Sui and set in its present line under the Yuan, this artificial waterway still carries freight: one of the few large ancient engineering works operating at its original purpose.</p>
+      <p>A path runs along the bank, and walkers and anglers share the same stretch of railing while the cargo boats pass beneath them.</p>
+      <p>It is as old as anything can be, and yet it has not become an exhibit — that it is still working is more worth seeing than the river itself.</p>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>吃：面、鸡与小鱼<span class="en">Food: wheat, chicken and small fish</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁的饮食偏北方，面食占比高，口味重油重盐，与苏南的清淡形成分明的对照。</p>
+      <p>符离集烧鸡的名头属安徽宿州，但在此地同样常见，特点是肉烂、骨酥、香料味透进骨头里。</p>
+      <p>糁汤是早间的常见食物，以禽汤加麦仁与胡椒熬成，辛香浓稠，配馍或油条吃。</p>
+      <p>小鱼熬辣椒是本地的下饭菜，河湖里的小鱼不去骨，与辣椒同熬，鲜与辣都不含糊。</p>
+      <aside class="tip"><b>实用贴士：</b>洋河酒厂参观通常需提前预约，散客先打听当日是否开放；餐馆晚间生意最好，去晚了要等位。</aside>
+      <aside class="tip"><b>Handy tip:</b>Visits to the Yanghe distillery usually need booking in advance, so ask whether it is open to individuals that day. Restaurants do their best trade at night, and late means queuing.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The food here leans north: wheat dominates, the cooking is heavy on oil and salt, and the contrast with the lightness of southern Jiangsu is sharp.</p>
+      <p>Fuliji roast chicken carries the name of Suzhou in Anhui, but it is just as common here — meat falling apart, bones softened, spice driven through to the bone.</p>
+      <p>Sa tang is the usual breakfast dish, simmered from poultry stock with wheat berries and pepper until hot, thick and aromatic, eaten with bread or fried dough.</p>
+      <p>Small fish stewed with chilli is the local rice-opener: fish from the lakes left unboned and stewed hard with chilli, neither the freshness nor the heat held back.</p>
+      <aside class="tip"><b>实用贴士：</b>洋河酒厂参观通常需提前预约，散客先打听当日是否开放；餐馆晚间生意最好，去晚了要等位。</aside>
+      <aside class="tip"><b>Handy tip:</b>Visits to the Yanghe distillery usually need booking in advance, so ask whether it is open to individuals that day. Restaurants do their best trade at night, and late means queuing.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>方向与距离<span class="en">Directions and distances</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁的看点分散在三个方向：骆马湖与三台山在北，洋河与双沟在南，项王故里在老城区。</p>
+      <p>高铁停靠宿迁站，离市区有一段距离，打车最省事；公交便宜但收班早，夜间班次很少。</p>
+      <p>湖边与山上风大，春季与秋季最舒服，夏季日晒强，冬季湿冷。</p>
+      <p>环湖骑行是最划算的玩法，只是沿途补给点不多，出发前要把水带够。</p>
+      <aside class="tip"><b>实用贴士：</b>项王故里、皂河龙王庙、三台山分处老城、西北与城北，公交可达但耗时；骆马湖环湖路适合骑行，沿途补给点少，出发前带足饮水。</aside>
+      <aside class="tip"><b>Handy tip:</b>Xiang Yu's old home, the Zaohe dragon-king temple and Three Terrace Mountain lie in the old town, the northwest and the north — reachable by bus but slow. The loop road around Luoma Lake suits cycling, though supply points are few, so carry enough water.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian's sights scatter across three directions: Luoma Lake and Three Terrace Mountain to the north, the distilleries at Yanghe and Shuanggou to the south, Xiang Yu's old home in the old town.</p>
+      <p>High-speed trains stop at Suqian station, some distance from the centre, and a taxi is the least trouble; buses are cheap but stop early, with few night services.</p>
+      <p>It is windy by the lake and on the hills; spring and autumn are most comfortable, summer sun is strong and winter is damp and cold.</p>
+      <p>Cycling around the lake is the best value of all, except that supply points along the route are sparse — carry water before you set off.</p>
+      <aside class="tip"><b>实用贴士：</b>项王故里、皂河龙王庙、三台山分处老城、西北与城北，公交可达但耗时；骆马湖环湖路适合骑行，沿途补给点少，出发前带足饮水。</aside>
+      <aside class="tip"><b>Handy tip:</b>Xiang Yu's old home, the Zaohe dragon-king temple and Three Terrace Mountain lie in the old town, the northwest and the north — reachable by bus but slow. The loop road around Luoma Lake suits cycling, though supply points are few, so carry enough water.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>不响，但压得住<span class="en">It makes no noise, and it holds</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁不是会让人一见倾心的城市：街道宽而空，新区整齐得有些乏味，夜里也谈不上热闹。</p>
+      <p>但它手里的牌其实不差——一位失败者的故里、一片仍在作业的湖、两处几十年的老窖、一条还在跑船的运河。</p>
+      <p>这些东西彼此无关，却都指向同一个事实：此地的层理很厚，只是不善于表达。</p>
+      <p>它不解释自己。看得懂看不懂，终究是你自己的事。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian is not a city that wins you over at once: the streets are wide and empty, the new districts tidy to the point of dullness, and the nights are not lively.</p>
+      <p>Yet the cards it holds are not bad — the home of a man who lost, a lake still being worked, two sets of fermentation pits decades old, a canal still carrying freight.</p>
+      <p>These things have nothing to do with one another, and yet they point to the same fact: the strata here are thick, and simply not good at saying so.</p>
+      <p>It does not explain itself. Whether you read it or not is, in the end, your own business.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

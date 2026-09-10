@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大同 · Datong — 云冈的佛，恒山的风</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>大同</h1>
+  <div class="en-title">Datong</div>
+  <p class="zh">北魏的京，辽金的陪都——一座被煤和佛共同养大的城，石头里坐着笑了一千年的佛。</p>
+  <p class="en">Northern Wei's capital, Liao–Jin's secondary capital — a city raised by coal and Buddha, stone Buddhas smiling a thousand years.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔云冈，去古城墙坐坐 / Arrive on the old wall</a></li>
+      <li><a href="#s2">大同到底是什么 / What Datong is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">云冈石窟 / The Yungang Grottoes</a></li>
+      <li><a href="#s5">恒山与悬空寺 / Hengshan and the Hanging Temple</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔云冈，去古城墙坐坐<span class="en">Arrive on the old wall</span></h2>
+    <div class="zh">
+      <p class="lead">大同不声不响。你一下高铁，城新得没脾气，可往里走，明代砖城猛地亮出来——一座包裹完整的城，城墙阔得能跑马，像北方怀里的一方印。</p>
+      <p>我第一次懂大同，是在古城墙的傍晚。角楼影子在城下拖长，远处有人在唱晋北调，风把沙吹得一层层斜。那一刻你明白，这座城把"边"字写进了骨。</p>
+      <aside class="tip"><b>当地贴士：</b>以大同古城为基地，云冈、恒山、土林都在 1–2 小时车程；住城内，骑车绕城最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the old town; Yungang, Hengshan, the earth forest are 1–2 hours — stay inside, bike the ring.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Datong keeps quiet. Step off the train and the city is new without temper, yet walk in and the Ming brick wall lights sudden — a fully enclosed city, walls wide enough to run a horse, a seal in the north's arms.</p>
+      <p>I got Datong at dusk on the old wall. The corner tower's shadow lengthens, someone sang the north-Shanxi tune, wind laid sand in slants. That moment you see this city wrote 'frontier' into its bone.</p>
+      <aside class="tip"><b>当地贴士：</b>以大同古城为基地，云冈、恒山、土林都在 1–2 小时车程；住城内，骑车绕城最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the old town; Yungang, Hengshan, the earth forest are 1–2 hours — stay inside, bike the ring.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>大同到底是什么<span class="en">What Datong is</span></h2>
+    <div class="zh">
+      <p class="lead">大同是北魏的京，辽金两代的陪都，屏藩中原的北门锁钥。它守过边、炼过煤，也雕过佛——云冈的石头笑了一千年，煤窑的黑和石窟的金在同一个胸口。</p>
+      <p>今天的煤淡了，佛还在。大同的好，在于它又边又佛——一座城能把"守"和"笑"都供在石头里。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Datong was Northern Wei's capital, Liao–Jin's secondary capital, the north-gate key shielding the central plain. It held the frontier, smelt coal, carved Buddhas — Yungang's stone smiled a thousand years, the mine's black and the grotto's gold in one chest.</p>
+      <p>Coal fades now, the Buddhas remain. Datong's grace is frontier and Buddhist — one city enshrines both 'hold' and 'smile' in stone.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">大同南站在大张高铁上，从太原过来高铁两小时出头，从北京过来约三小时。市内公交慢，打车便宜；云冈在城西有公交，恒山在浑源得包车或坐县际车。</p>
+      <p>古城不大，骑车最舒服；土林在城东南，路程远赶早出门。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；去恒山包车划算，景点散。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays for Hengshan, sights spread.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Datong South on the Datong–Zhangjiakou line is just over two hours from Taiyuan, about three from Beijing. City buses slow, cabs cheap; Yungang west of town has a bus, Hengshan in Hunyuan needs a hired car or county link.</p>
+      <p>The old town small, bike best; the earth forest southeast is far, leave earlier.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；去恒山包车划算，景点散。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays for Hengshan, sights spread.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>云冈石窟<span class="en">The Yungang Grottoes</span></h2>
+    <div class="zh">
+      <p class="lead">云冈在城西武州山，北魏皇家开凿，窟窟坐佛，最大的高十七米，笑得温厚。石头被风沙磨了一千年，金漆褪了，可那股"从容"还在——好像再大的乱，佛都见过。</p>
+      <p>你不用懂佛教，也能被那种"石头也会笑"的劲镇住。窟外的礼佛大道新修，可真东西在洞里，凉得激骨。</p>
+      <aside class="tip"><b>当地贴士：</b>云冈门票含大窟；洞里恒凉带件外套，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Yungang ticket covers the great caves; caves stay cool, a layer, no flash.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yungang in Wuzhou Mountain west of town, opened by the Northern Wei court, every cave a seated Buddha, the largest seventeen metres, smiling warm. Wind and sand wore the stone a thousand years, gold faded, yet the 'ease' remains — as if no turmoil escaped the Buddha's eye.</p>
+      <p>You needn't know Buddhism to be hushed by 'stone can smile'. The outer procession path is new, but the real thing is in the caves, cold to the bone.</p>
+      <aside class="tip"><b>当地贴士：</b>云冈门票含大窟；洞里恒凉带件外套，别用闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Yungang ticket covers the great caves; caves stay cool, a layer, no flash.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>恒山与悬空寺<span class="en">Hengshan and the Hanging Temple</span></h2>
+    <div class="zh">
+      <p class="lead">恒山是五岳的北岳，山不险却厚，古松沿石阶排成阵。悬空寺贴在崖壁上，木柱插进石缝，像从山里长出来——一座寺，把"险"修成了艺术。</p>
+      <p>你走在寺里的窄廊，脚下是空，风从谷里灌上来，会懂为什么古人把"天人合一"活成了一种姿势——不争，却什么都不怕。</p>
+      <aside class="tip"><b>实用贴士：</b>悬空寺门票限流，赶早；恒山台阶多，穿防滑鞋。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Hanging Temple limits entry, go early; Hengshan many steps, grip shoes.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hengshan is the Northern Sacred Mountain, not steep but thick, old pines ranked on the steps. The Hanging Temple clings to the cliff, wood posts in stone cracks, grown from the mountain — a temple that made 'peril' art.</p>
+      <p>Walk the narrow corridor, void below, wind up from the valley, and get why ancients lived 'heaven and man as one' as a posture — contending nothing, fearing nothing.</p>
+      <aside class="tip"><b>实用贴士：</b>悬空寺门票限流，赶早；恒山台阶多，穿防滑鞋。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Hanging Temple limits entry, go early; Hengshan many steps, grip shoes.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">大同的味道在晋北的锅里。刀削面是招牌，师傅一刀一刀把面片削进锅，根根带棱，配臊子是一碗的功夫哲学。羊杂割是羊骨熬的稠汤，胡椒冲得通透，配烧饼。</p>
+      <p>黄糕是本地主食，黄米蒸了捶软，蘸肉汤最香。夜市便宜管饱，街头一口锅能香半条街。</p>
+      <aside class="tip"><b>当地贴士：</b>刀削面认老店，削得薄才香；羊杂割趁热，凉了膻。</aside>
+      <aside class="tip"><b>Local tip:</b>Knife-cut noodle from old names, thin shaves tastiest; yangzage hot, cool turns gamy.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Datong's flavour is in the north-Shanxi pot. Knife-cut noodle is the signboard — the master shaves ribbons into the pot, each edged, with topping a bowl's philosophy of skill. Yangzage is mutton-bone thick broth, pepper cleanly hot, with a biscuit.</p>
+      <p>Yellow cake is local staple, yellow millet steamed and pounded soft, best with meat broth. The night market cheap and filling; one street pot scents half a lane.</p>
+      <aside class="tip"><b>当地贴士：</b>刀削面认老店，削得薄才香；羊杂割趁热，凉了膻。</aside>
+      <aside class="tip"><b>Local tip:</b>Knife-cut noodle from old names, thin shaves tastiest; yangzage hot, cool turns gamy.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">云冈、悬空寺是庄重圣地，进门手机静音，别在窟里大声。佛和寺都怕汗，别伸手摸石壁木柱。恒山崖陡，别探身拍照。</p>
+      <p>大同人硬气，问路指得清，可别拿"煤城脏不脏"去戳——这座城把黑和金都认了，你客气点，他们能把每尊佛的来路说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Yungang and the Hanging Temple are solemn — silence phones, no loud talk in caves. Buddha and temple dislike sweat; don't touch stone or post. Hengshan cliff steep; don't lean for shots.</p>
+      <p>Datong people are hard; they point clear, just don't poke with 'is the coal city dirty' — the city owns both black and gold, be polite and they'll tell you each Buddha's road.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天恒山新绿，云冈舒服。秋天天高云淡，悬空寺配蓝天最好看。夏天凉，是北方的空调。冬天冷，可雪后云冈肃穆，古城白砖黑瓦像一幅水墨。</p>
+      <p>若为了佛与山，春秋最对；若为了清静，冬天人最少。</p>
+      <aside class="tip"><b>实用贴士：</b>夏天洞里带外套；冬天崖边结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer caves, a layer; winter cliff ice, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens Hengshan, Yungang ease. Autumn high and clear, the Hanging Temple with blue sky best. Summer cool, the north's AC. Winter cold, yet snow makes Yungang solemn, the old town ink-painting.</p>
+      <p>For Buddha and mountain, spring–autumn fit; for quiet, winter fewest.</p>
+      <aside class="tip"><b>实用贴士：</b>夏天洞里带外套；冬天崖边结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer caves, a layer; winter cliff ice, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">古城墙是免费的天然步道，骑车绕城，钟楼、华严寺都在沿线。城内胡同随便钻，青砖门关着的故事比开着的多。</p>
+      <p>土林在城东南，黄土地被风蚀成奇形，站着看就是半部地质史。大同的好走，在于佛和城把整片北疆摁成了一条线。</p>
+      <aside class="tip"><b>实用贴士：</b>城墙骑车免费；土林免费区顺沟走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The wall bike is free; the earth forest free zone follows the gully, don't enter water.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The old wall is a free path; bike the ring and the drum tower, Huayan Temple line the way. The inner alleys are yours to wander; more stories behind closed blue-brick doors than open.</p>
+      <p>The earth forest southeast of town, loess wind-carved to strange shapes, stand and you've read half a geological history. Datong's joy is Buddha and town stringing the whole northern frontier on one line.</p>
+      <aside class="tip"><b>实用贴士：</b>城墙骑车免费；土林免费区顺沟走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The wall bike is free; the earth forest free zone follows the gully, don't enter water.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">大同最贵的东西，大多不要钱。古城墙的风、云冈在暮色里的轮廓、华严寺外那阵晋北调，站着看就是参与。雪后古城配红灯，比收费园里还好看。</p>
+      <p>城边大爷们唱戏不收钱，你站着听就是捧场。大同教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>城墙步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Datong's priciest things mostly cost nothing. The old wall's wind, Yungang's dusk outline, the north-Shanxi tune beyond Huayan — stand and you're in it. Snow on the old town with red lamps beats any paid garden.</p>
+      <p>Old men sing opera free by the town; stand and listen, that's applause. Datong taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>城墙步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The wall path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">大同不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它边，它佛，它又黑又金——一座城能守北疆，一尊佛能笑千年。</p>
+      <p>你逛过古城的一圈方墙、云冈的一窟笑佛、悬空寺的一线木廊，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"石头也会笑"的从容。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Datong won't win you at once. No famous mountain's fame, no water town's finesse. It's frontier, Buddhist, black and gold — one city held the north, one Buddha smiled a thousand years.</p>
+      <p>You'll see the square wall's ring, Yungang's smiling Buddha, the Hanging Temple's wooden corridor — and leaving you'll get it: what this land gives most freely was never fame, but the ease of 'stone can smile'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>汉中 · Hanzhong — 汉江源头的城，两汉三国起笔处</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>汉中</h1>
+  <div class="en-title">Hanzhong</div>
+  <p class="zh">一座把"汉"字写进江里的城——石门栈道、武侯祠、褒斜道，把两汉三国的开头都留在了秦岭以南。</p>
+  <p class="en">A city that writes 'Han' into its river — the Stone-Gate plank road, the Marquis Wu shrine, the Bao-Xie way, keeping the opening of two Han and three kingdoms south of the Qin range.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔三国，去汉江边站一会 / Arrive by the Han</a></li>
+      <li><a href="#s2">汉中到底是什么 / What Hanzhong is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">石门栈道 / The Stone-Gate plank road</a></li>
+      <li><a href="#s5">武侯祠与定军山 / The Marquis Wu shrine & Dingjun</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔三国，去汉江边站一会<span class="en">Arrive by the Han</span></h2>
+    <div class="zh">
+      <p class="lead">汉中不声不响地躺在秦岭以南的盆地。你一下高铁，满眼是平平无奇的城，可往汉江边走，一道大坝把水拢成湖，远处的龙岗大桥像一道弧。</p>
+      <p>我第一次懂汉中，是在石门栈道的傍晚。悬崖上的栈孔一排排，是两千年前人凿的，江风一吹，你忽然懂了"明修栈道"四个字。那一刻你明白，这座城把"路"和"史"长在一起。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong quietly lies in the basin south of the Qin range. Step off the train and it's an ordinary city, yet walk the Han River and a dam gathers water to a lake, the Longgang bridge arcs beyond.</p>
+      <p>I got Hanzhong on the Stone-Gate plank road at dusk. The holes for planks line the cliff, cut two thousand years ago; the river wind blows and you suddenly know 'mend the plank road by daylight'. That moment you see this city grows 'road' and 'history' as one.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>汉中到底是什么<span class="en">What Hanzhong is</span></h2>
+    <div class="zh">
+      <p class="lead">汉中是从秦岭往南的第一块平地，汉江从这里发源，刘邦被封在这里，后来打出"汉"的天下——汉人、汉字、汉江，根都在这。它不靠一座山，靠的是一条江和一段开局。</p>
+      <p>它还是三国的棋盘。诸葛亮屯兵沔阳，六出祁山都从这儿起笔；定军山、武侯祠，把"鞠躬尽瘁"留在了土里。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong is the first flat ground south from the Qin range; the Han River starts here, Liu Bang was enfeoffed here, then fought out a realm called 'Han' — Han people, Han script, Han river, all rooted here. It leans not on a mountain but on a river and an opening.</p>
+      <p>It's also the board of the three kingdoms. Zhuge Liang camped at Mianyang, six sorties from Qishan all begun here; Dingjun Hill and the Marquis Wu shrine left 'give all till the end' in the soil.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">汉中站在西成高铁线上，从西安过来两小时出头，从成都过来两小时多。市内到石门、武侯祠有公交和旅游专线；去周边黎坪、南湖得往南转车。</p>
+      <p>去周边剑门关、青木川得往西转宁强、广元，车程个把小时到两小时。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；市内公交可达主要景点。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; city buses reach the main sights.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong sits on the Xi'an–Chengdu line; from Xi'an just over two hours, from Chengdu just over two. Buses and tourist shuttles run to the Stone Gate and the Marquis Wu shrine; for Liping and South Lake turn south.</p>
+      <p>For the Sword Gate and Qingmuchuan turn west to Ningqiang and Guangyuan, one to two hours.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；市内公交可达主要景点。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; city buses reach the main sights.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>石门栈道<span class="en">The Stone-Gate plank road</span></h2>
+    <div class="zh">
+      <p class="lead">石门是褒谷里的水利与栈道，古人凿山引水，在崖上打孔架木，江河之上硬走出一条路。如今水库淹了旧道，新栈道沿崖重修，你走在上面，脚底是汉江的绿。</p>
+      <p>栈道边的摩崖石刻是魏汉的真迹，褒斜道的"衮雪"二字传是曹操手笔。你站在崖下，连呼吸都放轻。</p>
+      <aside class="tip"><b>当地贴士：</b>新栈道悬空，慢行别靠栏；石刻珍贵，别摸别拓。</aside>
+      <aside class="tip"><b>Local tip:</b>The new road hangs high, walk slow, don't lean the rail; the inscriptions are precious, don't touch or rub.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Stone Gate is waterworks and plank road in the Bao valley; the ancients cut the mountain for water, bored holes in the cliff to lay wood, forcing a road above the river. The reservoir drowned the old way; a new road rebuilt along the cliff — walk it and the Han River's green is underfoot.</p>
+      <p>The cliff inscriptions by the road are Wei-Han originals; the two characters 'rolling snow' are said Cao Cao's hand. Stand under the cliff and breath eases.</p>
+      <aside class="tip"><b>当地贴士：</b>新栈道悬空，慢行别靠栏；石刻珍贵，别摸别拓。</aside>
+      <aside class="tip"><b>Local tip:</b>The new road hangs high, walk slow, don't lean the rail; the inscriptions are precious, don't touch or rub.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>武侯祠与定军山<span class="en">The Marquis Wu shrine & Dingjun</span></h2>
+    <div class="zh">
+      <p class="lead">武侯祠在勉县，是后人为诸葛亮立的庙，古柏把天遮成墨绿，匾额挨着挂。定军山在祠南，老将军黄忠斩将处，如今是茶园一片。</p>
+      <p>你站在祠里，会懂什么叫"出师未捷身先死"——那股劲，汉中人记了两千年。</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠清静，留半天；定军山可远望，茶园慎入。</aside>
+      <aside class="tip"><b>Local tip:</b>'The shrine is quiet, allow half a day; Dingjun you can view afar, the tea garden step with care.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Marquis Wu shrine stands in Mianxian, raised by later ages for Zhuge Liang; old cypresses shade the sky to ink-green, plaques hung in rows. Dingjun Hill south of it, where old general Huang Zhong beheaded a foe, is now a tea garden.</p>
+      <p>Stand in the shrine and you'll know 'he left before the win, his body spent'; that streak Hanzhong folk have kept two thousand years.</p>
+      <aside class="tip"><b>当地贴士：</b>武侯祠清静，留半天；定军山可远望，茶园慎入。</aside>
+      <aside class="tip"><b>Local tip:</b>'The shrine is quiet, allow half a day; Dingjun you can view afar, the tea garden step with care.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">汉中的味道在面皮和菜之间。汉中热面皮是蒸出来的凉食，浇辣油蒜水，滑溜一口，是早餐的哲学。菜豆腐是豆浆点酸做的，配浆水菜，酸爽开胃。</p>
+      <p>粉皮、核桃馍、罐罐鸡，都是夜市里不花钱学来的手艺；柑桔是汉江边的甜。</p>
+      <aside class="tip"><b>当地贴士：</b>热面皮认老店，现蒸最香；菜豆腐凉食，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For noodle-skin trust old names, fresh-steamed; vegetable tofu cold, go easy if weak stomach.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong's flavour sits between noodle-skin and greens. Hanzhong hot noodle-skin is steamed then cooled, dressed in chili oil and garlic water, one slick bite, the breakfast philosophy. Vegetable tofu is soy milk curdled sour, with pickled greens, sharp and appetite-opening.</p>
+      <p>Flour sheets, walnut cake, pot chicken — skills learned free at the night market; the oranges sweet by the Han.</p>
+      <aside class="tip"><b>当地贴士：</b>热面皮认老店，现蒸最香；菜豆腐凉食，胃寒少贪。</aside>
+      <aside class="tip"><b>Local tip:</b>For noodle-skin trust old names, fresh-steamed; vegetable tofu cold, go easy if weak stomach.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">石门、武侯祠是文物也是景区，石刻别摸，别刻字，别用闪光灯。栈道悬空，小孩老人靠里走。</p>
+      <p>汉中人慢，问路指得清，可别拿"这史是不是编的"去戳——他们把两汉当骨，你客气点，他们能把每条栈孔的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Stone Gate and the shrine are relic and scenic area; don't touch inscriptions, don't carve, no flash. The plank road hangs; kids and elders keep inside.</p>
+      <p>Hanzhong folk are slow; they point clear, just don't poke with 'is this history made up' — they take the two Han as bone; be polite and they'll tell you each plank hole's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天汉江柳绿，汉中舒服。夏天秦岭南麓凉，是避暑的好城。秋天天高云淡，定军山茶绿更沉。冬天冷，可雪后石门肃穆，栈影映水另有一番好看。</p>
+      <p>若为了绿，夏天最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>栈道悬空，雨天慢行；夏天江边带水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The plank road hangs, walk slow in rain; summer by the river, bring water.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the Han's willows, Hanzhong eased. Summer the Qin range's south foot cools, a good town to escape heat. Autumn high and clear, Dingjun's tea green deeper. Winter cold, yet after snow the Stone Gate solemn, plank-shadow on water, a beauty of its own.</p>
+      <p>For green summer fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>栈道悬空，雨天慢行；夏天江边带水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The plank road hangs, walk slow in rain; summer by the river, bring water.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">汉江边的滨江路是免费的天然步道，沿水走，桥一座接一座，龙岗大桥在沿线。城里的东关街随便钻，老字号、热面皮摊都在沿线。</p>
+      <p>南湖在城西南，骑车比走路爽，夕阳把湖染成橘色。汉中的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>滨江步道免费；东关街细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverside path is free; Dongguan Street, look close at old names.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The riverside path by the Han is a free walk; bridge after bridge, the Longgang bridge on the way. The town's Dongguan Street wanders free, old names and noodle-skin stalls along it.</p>
+      <p>South Lake lies southwest; better by bike; at dusk it dyes the lake orange. Hanzhong's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>滨江步道免费；东关街细看老字号。</aside>
+      <aside class="tip"><b>Handy tip:</b>The riverside path is free; Dongguan Street, look close at old names.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">汉中最贵的东西，大多不要钱。汉江的风、石门在暮色里的栈影、东关街那阵辣香，站着看就是参与。雪后古柏配白雪，比收费园里还好看。</p>
+      <p>巷里大爷们下棋不收钱，你站着看就是捧场。汉中教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>滨江步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverside path is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong's priciest things mostly cost nothing. The Han's wind, the Stone Gate's dusk plank-shadow, Dongguan's chili scent — stand and you're in it. Snow on old cypresses with white beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Hanzhong taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>滨江步道免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The riverside path is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">汉中不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它正，它厚，它又江又史——一道栈孔能让人沉默，一座祠能让人回头。</p>
+      <p>你逛过石门的一崖栈影、武侯祠的一院柏、汉江的一江绿，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"明修栈道"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Hanzhong won't win you at once. No famous mountain's fame, no water town's finesse. It's proper, deep, river and history — one plank hole silences you, one shrine turns you back.</p>
+      <p>You'll see the Stone Gate's cliff of plank-shadow, the shrine's court of cypress, the Han's river of green — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'mend the plank road by daylight'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

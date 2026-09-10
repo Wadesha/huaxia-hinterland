@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>安阳 · Anyang — 甲骨的故乡，太行的骨</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>安阳</h1>
+  <div class="en-title">Anyang</div>
+  <p class="zh">一片甲骨惊天下，一座太行立中原——文字和山，安阳都老得有理。</p>
+  <p class="en">One oracle bone shook the world; the Taihang stands in the plain — writing and mountain, Anyang is old with reason.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔殷墟，去洹河边坐坐 / Arrive by the Huan River</a></li>
+      <li><a href="#s2">安阳到底是什么 / What Anyang is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">殷墟与甲骨文 / Yinxu and the oracle bones</a></li>
+      <li><a href="#s5">文字博物馆与红旗渠 / The writing museum and the Red Flag Canal</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔殷墟，去洹河边坐坐<span class="en">Arrive by the Huan River</span></h2>
+    <div class="zh">
+      <p class="lead">安阳不声不响。你一下高铁，城灰扑扑的，可往南到殷墟，画风一拧——洹水慢流，一片茅草底下压着三千年前的王朝。</p>
+      <p>我第一次懂安阳，是在殷墟的傍晚。解说员指着地上的黄土说"这儿是宫殿，那儿是王陵"，风把草吹得一层层倒。那一刻你明白，这座城脚下的每一寸，都比史书还老。</p>
+      <aside class="tip"><b>当地贴士：</b>以殷墟为重心，文字博物馆、袁林、太行都在 1 小时内；住市区，当日往返周边。</aside>
+      <aside class="tip"><b>Local tip:</b>Center on Yinxu; the writing museum, Yuan's tomb, Taihang all within an hour — stay in town, day-trip.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang keeps quiet. Step off the train and the city is grey, yet south at Yinxu the mood twists — the Huan flows slow, a dynasty three thousand years down under the grass.</p>
+      <p>I got Anyang at dusk in Yinxu. The guide pointed at yellow earth — 'palace here, royal tomb there' — wind laid the grass in waves. That moment you see every inch under this city is older than the histories.</p>
+      <aside class="tip"><b>当地贴士：</b>以殷墟为重心，文字博物馆、袁林、太行都在 1 小时内；住市区，当日往返周边。</aside>
+      <aside class="tip"><b>Local tip:</b>Center on Yinxu; the writing museum, Yuan's tomb, Taihang all within an hour — stay in town, day-trip.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>安阳到底是什么<span class="en">What Anyang is</span></h2>
+    <div class="zh">
+      <p class="lead">安阳是甲骨文之乡，殷墟是商代晚期的都城，一片刻字的龟甲让中国人第一次认出了自己的字。它还是红旗渠的源头——林州人用十年在太行腰上凿出一条"人工天河"。文字和渠，一文一武，都是硬骨头。</p>
+      <p>太行在城西耸起，把平原和山硬硬切开。安阳的好，在于它又古又硬，软不下来。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang is home of oracle bone script; Yinxu was the late-Shang capital, a carved turtle shell first let Chinese read their own writing. It's also source of the Red Flag Canal — Línzhou folk cut an 'artificial sky-river' in the Taihang's waist in ten years. Script and canal, civil and martial, both hard bone.</p>
+      <p>The Taihang rises west, hard-cutting plain from mountain. Anyang's grace is ancient and hard, refuses to soften.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">安阳站在京广线上，从郑州过来高铁一小时出头，从石家庄过来约两小时。市内公交慢，打车便宜；殷墟、文字博物馆有公交，太行得包车或坐县际车。</p>
+      <p>林州红旗渠在城南山地，路程远，赶早出门比赶晚从容。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；去太行包车划算，景点散。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays in the Taihang, sights spread.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang sits on the Beijing–Guangzhou line, just over an hour from Zhengzhou, about two from Shijiazhuang. City buses slow, cabs cheap; Yinxu and the writing museum have buses, the Taihang needs a hired car or county link.</p>
+      <p>Linzhou's Red Flag Canal south in the hills is far; leave earlier, not later.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；去太行包车划算，景点散。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; a hired car pays in the Taihang, sights spread.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>殷墟与甲骨文<span class="en">Yinxu and the oracle bones</span></h2>
+    <div class="zh">
+      <p class="lead">殷墟是商代晚期的都城遗址，洹水两岸铺着宫殿和王陵。最惊人是甲骨窖穴——当年清末的药材铺里，刻字龟甲被当"龙骨"磨粉，直到有人认出是字。今天展厅里一片甲骨，就是你三千年前的祖先在问"明天下雨吗"。</p>
+      <p>车马坑里马和车同葬，青铜器的绿锈里藏着礼制。你不用懂考古，也能被那种"字比王朝活得久"的劲镇住。</p>
+      <aside class="tip"><b>当地贴士：</b>殷墟联票含王陵区；甲骨展厅细看，每片都是一封古信。</aside>
+      <aside class="tip"><b>Local tip:</b>The Yinxu combo covers the tomb zone; the bone hall rewards slow looking, each a letter from antiquity.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yinxu is the late-Shang capital, palaces and tombs along the Huan. Most stunning is the oracle-bone pit — in late Qing, carved shells were ground as 'dragon bone' medicine until someone read the writing. A bone in the case is your ancestor three thousand years asking 'will it rain tomorrow'.</p>
+      <p>Horse-and-chariot pits bury both; bronze-green rust hides ritual. You needn't know archaeology to be hushed by 'writing outlives dynasty'.</p>
+      <aside class="tip"><b>当地贴士：</b>殷墟联票含王陵区；甲骨展厅细看，每片都是一封古信。</aside>
+      <aside class="tip"><b>Local tip:</b>The Yinxu combo covers the tomb zone; the bone hall rewards slow looking, each a letter from antiquity.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>文字博物馆与红旗渠<span class="en">The writing museum and the Red Flag Canal</span></h2>
+    <div class="zh">
+      <p class="lead">中国文字博物馆在市区，外形像甲骨，馆里从刻画到楷书把汉字的来路讲全。门外一片字碑林，站着看就是上了一课。</p>
+      <p>红旗渠在林州太行，渠水贴着绝壁走，像一条银线缝在山腰。当年没机械，靠人钎凿肩扛，十年成渠。站渠边吹风，会懂"人工天河"四字的分量。</p>
+      <aside class="tip"><b>实用贴士：</b>文字博物馆免费；红旗渠景区大，穿防滑鞋，崖边慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>The writing museum is free; the canal site is large, grip shoes, slow at the cliff edge.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The National Writing Museum in town looks like an oracle bone; from marks to regular script it tells the whole road of Chinese characters. Outside, a forest of character steles — stand and you've taken a lesson.</p>
+      <p>The Red Flag Canal in Línzhou's Taihang threads cliffs like a silver line sewn on the mountain's waist. No machines then, only chisel and shoulder, ten years to a canal. Stand by it and grasp 'artificial sky-river'.</p>
+      <aside class="tip"><b>实用贴士：</b>文字博物馆免费；红旗渠景区大，穿防滑鞋，崖边慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>The writing museum is free; the canal site is large, grip shoes, slow at the cliff edge.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">安阳的味道在太行和黄河之间。道口烧鸡是招牌，陈年老汤焖到骨酥，手一抖肉就脱。粉浆饭是本地早餐——绿豆浆发酵熬的酸粥，配油条，是豫北人的汤哲学。</p>
+      <p>扁粉菜、皮渣都是街头主角，便宜管饱。山里的野菜、河里的鱼，土法做，不摆盘却好吃。</p>
+      <aside class="tip"><b>当地贴士：</b>道口烧鸡认老字号，凉吃更香；粉浆饭趁热，酸度看个人。</aside>
+      <aside class="tip"><b>Local tip:</b>Daokou chicken from old names, colder tastier; fenjiang porridge hot, sour to taste.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang's flavour sits between Taihang and the Yellow River. Daokou braised chicken is the signboard — old broth till the bone softens, meat falls at a shake. Fenjiang porridge is local breakfast — fermented mung-bean gruel with fried dough, the soup philosophy of north Henan.</p>
+      <p>Flat-vermicelli stew and pi zha are street stars, cheap and filling. Hill greens and river fish, plainly cooked, no plating yet good.</p>
+      <aside class="tip"><b>当地贴士：</b>道口烧鸡认老字号，凉吃更香；粉浆饭趁热，酸度看个人。</aside>
+      <aside class="tip"><b>Local tip:</b>Daokou chicken from old names, colder tastier; fenjiang porridge hot, sour to taste.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">殷墟、文字博物馆是庄重之地，进门手机静音，别在展厅里大声。甲骨是国宝，玻璃柜外看，别敲。太行渠边崖陡，别探身拍照。</p>
+      <p>安阳人硬气，问路指得清，可别拿"甲骨文是不是迷信"去戳——这座城把字当根，你客气点，他们能把每个字的来路说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Yinxu and the writing museum are solemn — silence phones, no loud talk in halls. Bones are national treasure; view through glass, don't tap. The Taihang cliff by the canal is steep; don't lean for shots.</p>
+      <p>Anyang people are hard; they point clear, just don't poke with 'is oracle script superstition' — the city takes writing as root, be polite and they'll tell you each character's road.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天太行新绿，殷墟草青，舒服。秋天天高云淡，红旗渠配蓝天最好看。夏天热，山里比城里低几度。冬天冷，可雪后殷墟肃穆，文字博物馆人少清静。</p>
+      <p>若为了甲骨和文字，四季都成；若为了太行和渠，春秋最对。</p>
+      <aside class="tip"><b>实用贴士：</b>夏天进山带水；冬天崖边结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer hills, bring water; winter cliff ice, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring greens the Taihang, Yinxu's grass soft, ease. Autumn high and clear, the Red Flag Canal with blue sky best. Summer hot, hills a few degrees lower. Winter cold, yet snow makes Yinxu solemn, the writing museum quiet.</p>
+      <p>For bones and script, any season works; for Taihang and canal, spring–autumn fit.</p>
+      <aside class="tip"><b>实用贴士：</b>夏天进山带水；冬天崖边结冰，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer hills, bring water; winter cliff ice, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">殷墟外的洹河岸是免费的天然步道，沿河走，草丛里说不定踩着三千年前的砖。文字博物馆外的字碑林免费，站着看就是半部汉字史。</p>
+      <p>太行大峡谷徒步道免费段多，溪水凉得激牙。安阳的好走，在于你走到哪都能撞见"老"字。</p>
+      <aside class="tip"><b>实用贴士：</b>洹河步道免费；太行免费段顺沟走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Huan path is free; Taihang free stretches follow the gully, don't enter water.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Huan bank beyond Yinxu is a free path; walk it and you might step on a three-thousand-year brick in the grass. The writing museum's character-stele forest is free — stand and you've read half the Chinese-script history.</p>
+      <p>The Taihang grand-canyon has free hiking stretches, stream cold to the teeth. Anyang's joy is bumping 'old' wherever you walk.</p>
+      <aside class="tip"><b>实用贴士：</b>洹河步道免费；太行免费段顺沟走别下水。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Huan path is free; Taihang free stretches follow the gully, don't enter water.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">安阳最贵的东西，大多不要钱。洹河的风、殷墟在暮色里的轮廓、文字博物馆外的字碑，站着看就是参与。雪后甲骨配红灯，比收费园里还好看。</p>
+      <p>市区老街大爷们写地书不收钱，你站着看就是捧场。安阳教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>字碑林免费看；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The character forest is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang's priciest things mostly cost nothing. The Huan's wind, Yinxu's dusk outline, the writing museum's character steles — stand and you're in it. Snow on the bones with red lamps beats any paid garden.</p>
+      <p>Old men write ground-calligraphy free in the old streets; stand and watch, that's applause. Anyang taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>字碑林免费看；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>The character forest is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">安阳不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它老，它硬，它又文又武——一片甲骨能惊动天下，一条渠能缝住太行。</p>
+      <p>你逛过殷墟的一地黄土、文字博物馆的一廊字碑、红旗渠的一线银水，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"字比王朝活得久"的沉。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Anyang won't win you at once. No famous mountain's fame, no water town's finesse. It's old, hard, civil and martial — one bone shook the world, one canal sewed the Taihang.</p>
+      <p>You'll see Yinxu's yellow earth, the museum's character走廊, the canal's silver thread — and leaving you'll get it: what this land gives most freely was never fame, but the weight of 'writing outlives dynasty'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

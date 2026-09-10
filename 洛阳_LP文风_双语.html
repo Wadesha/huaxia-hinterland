@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>洛阳 · Luoyang — 十三朝古都，龙门石窟与牡丹</title>
+<style>
+  :root{
+    --lp:#f2b01e; --lp-dk:#c98a07; --ink:#1c1a17; --muted:#6b645a;
+    --paper:#fbf8f1; --line:#e7ddc9; --tipbg:#fff6e0;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:58px}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    line-height:1.78;font-size:17px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif}
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px 80px}
+  header.hero{background:var(--lp);color:#1c1a17;padding:64px 22px 56px;text-align:center}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(30px,6vw,52px);
+    margin:0 0 10px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(16px,3vw,22px)}
+  header.hero p{margin:18px auto 0;max-width:620px;font-size:17px}
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;
+    justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:12px 22px;cursor:pointer;
+    font-size:15px;letter-spacing:1px;opacity:.55}
+  .toggle button.on{opacity:1;box-shadow:inset 0 -3px 0 var(--lp)}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:26px;margin:0 0 6px;color:var(--lp-dk)}
+  h2 .en{display:block;font-size:15px;color:var(--muted);font-weight:400;font-style:italic;margin-top:2px}
+  p{margin:0 0 16px}
+  .lead::first-letter{font-size:3.1em;float:left;line-height:.8;padding:6px 10px 0 0;color:var(--lp-dk);
+    font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+  .tip{background:var(--tipbg);border-left:5px solid var(--lp);border-radius:0 8px 8px 0;
+    padding:14px 18px;margin:18px 0;font-size:15.5px;color:#4a4334}
+  .tip b{color:var(--lp-dk)}
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+  body.lang-en .lead::first-letter{color:var(--lp-dk)}
+  footer{padding:30px 22px 60px;text-align:center;color:var(--muted);font-size:13.5px}
+  .kicker{display:inline-block;background:var(--ink);color:var(--lp);font-size:12px;
+    letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .toc{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin:30px 0 8px}
+  .toc .toc-in{font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:10px}
+  .toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+  .toc li{margin:5px 0;font-size:14.5px;break-inside:avoid}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .secno{display:inline-block;font-size:13px;letter-spacing:1px;color:var(--muted);
+    border:1px solid var(--line);border-radius:14px;padding:2px 10px;margin-bottom:8px}
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>洛阳</h1>
+  <div class="en-title">Luoyang</div>
+  <p class="zh">一座把"中"字刻进地里的中原王城——伊河两岸的佛，和满城的花，都认得千年的序。</p>
+  <p class="en">A royal city of the Central Plains that carved 'centre' into its soil — the Buddhas by the Yi and the city's flowers both know a thousand-year prelude.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔石窟，去老城闻汤 / Arrive by the old town</a></li>
+      <li><a href="#s2">洛阳到底是什么 / What Luoyang is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">龙门：伊河两岸的佛 / Longmen: the Buddhas by the Yi</a></li>
+      <li><a href="#s5">白马寺与关林 / White Horse Temple & Guanlin</a></li>
+      <li><a href="#s6">吃什么 / What to eat</a></li>
+      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s8">什么时候去 / When to go</a></li>
+      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s11">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔石窟，去老城闻汤<span class="en">Arrive by the old town</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳不声不响地坐在中原正中。你一下高铁，满眼是平平无奇的城，可往老城走，一条街的汤馆把整座城熬出了魂——牛肉汤、羊肉汤、不翻汤，天没亮就排到巷口。</p>
+      <p>我第一次懂洛阳，是在西关的汤摊。老板舀汤的手稳，饼丝往里一沉，热气糊了眼镜，旁边大爷用洛阳话聊着龙门的事。那一刻你明白，这座城把"吃"和"史"熬成了一锅。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang sits quiet at the dead centre of the Zhongyuan plain. Step off the train and it looks like any city, yet walk the old town and a whole street of broth houses has boiled a soul into it — beef, mutton, the 'no-flip' soup, queued to the alley mouth before light.</p>
+      <p>I got Luoyang at a broth stall by Xiguan. The owner's ladle hand steady, the baked cake sinking in, steam fogging my glasses, an old man chatting Longmen in Luoyang dialect. That moment you see this city stews 'eating' and 'history' in one pot.</p>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>洛阳到底是什么<span class="en">What Luoyang is</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳是十三朝古都，华夏的"中"字就落在它脚下——周、汉、唐都把王城安在这儿，连名字都带着"洛水之阳"的方位讲究。它不靠一座山撑门面，靠的是一条河与一脉佛光。</p>
+      <p>它还是丝路东端的起点之一。龙门石窟、白马寺，把中原和西域、和印度拴在一根线上，让这座城既能称王，也能礼佛。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang was capital to thirteen dynasties; the 'centre' of Huaxia falls at its feet — Zhou, Han, Tang all set their royal seat here, the name itself a study in 'north bank of the Luo'. It leans not on a mountain but on a river and a streak of Buddha-light.</p>
+      <p>It was also a starting point of the Silk Road's east end. Longmen and White Horse Temple tie the Central Plains to the west and to India on one thread, letting the city crown kings and honour the Buddha alike.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳站和洛阳龙门站都在铁路线上，龙门站走高铁，从郑州过来不到一小时，从西安两小时出头。市内到龙门有公交和旅游专线，老城全靠腿，青石板路窄，车进不去。</p>
+      <p>去周边少林、嵩山得从洛阳往东南转登封，车程一个多小时；白马寺在城东，公交直达。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；老城停车难，住里面省心。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; old-town parking is tight, stay inside for ease.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang and Longmen stations both sit on the rail line; Longmen takes the high-speed, under an hour from Zhengzhou, just over two from Xi'an. Buses and tourist shuttles run to Longmen; the old town is foot-only on narrow flagstones.</p>
+      <p>For Shaolin and Songshan turn southeast to Dengfeng, over an hour; White Horse Temple lies east of the city, on a direct bus.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；老城停车难，住里面省心。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; old-town parking is tight, stay inside for ease.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>龙门：伊河两岸的佛<span class="en">Longmen: the Buddhas by the Yi</span></h2>
+    <div class="zh">
+      <p class="lead">龙门是伊河切开两山的峡谷，西山密密麻麻全是佛龛，卢舍那大佛端坐高处，眉眼带笑，是武则天捐脂粉钱那阵凿的。你站在香山对面望过去，整面山是一本书刻在石头上。</p>
+      <p>东山人少清静，琵琶峰上白居易长眠，松风比西山轻。傍晚伊河泛光，游船一摇，佛影在水里晃，比白天更沉静。</p>
+      <aside class="tip"><b>当地贴士：</b>石窟露天，夏天带水遮阳；想看静的赶开门那阵，旅行团未到。</aside>
+      <aside class="tip"><b>Local tip:</b>The grottoes are open — summer, bring water and shade; for quiet go at opening before the groups.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Longmen is the Yi river slicing a gorge between two hills; the west cliff is packed with niches, the Lushena Buddha seated high, smiling — carved when Wu Zetian gave her rouge money. Stand across on Xiangshan and the whole mountain is a book cut in stone.</p>
+      <p>The east hill is quiet, fewer feet; at Pipa Peak Bai Juyi sleeps, pine wind lighter than the west. At dusk the Yi shimmers, a boat rocks, Buddha-shadows waver on the water, calmer than by day.</p>
+      <aside class="tip"><b>当地贴士：</b>石窟露天，夏天带水遮阳；想看静的赶开门那阵，旅行团未到。</aside>
+      <aside class="tip"><b>Local tip:</b>The grottoes are open — summer, bring water and shade; for quiet go at opening before the groups.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>白马寺与关林<span class="en">White Horse Temple & Guanlin</span></h2>
+    <div class="zh">
+      <p class="lead">白马寺是汉地第一座官办寺院，灰瓦红墙，院子里两匹石马认得千年。它不张扬，可你一踏进去，连脚步都放轻。</p>
+      <p>关林是关羽首级安奉处，古柏森森，香火比景点更像一个活着的信仰。两处都在城边，半天能串完。</p>
+    </div>
+    <div class="en">
+      <p class="lead">White Horse Temple is the first state-built monastery on Han Chinese soil, grey tiles and red walls, two stone horses in the yard knowing a thousand years. It doesn't boast, yet step in and your tread softens.</p>
+      <p>Guanlin honours where Guan Yu's head rests; old cypresses thick, the incense more a living faith than a sight. Both sit at the city's edge, a half-day string.</p>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳的味道在汤里。牛肉汤配饼丝是工人的早餐哲学，不翻汤是鸡蛋摊成的薄皮浸在酸汤里，啜一口醒神。水席是另一桩本事——二十四道汤汤水水，酸辣当头，牡丹燕菜用萝卜雕成花，骗得过眼。</p>
+      <p>浆面条发酵的酸、锅贴焦脆的边，都是夜市里不花钱学来的手艺。</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉汤认老店，辣度可点；不翻汤现做的是功夫，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef soup trust old names, set your heat; the no-flip sheet is best fresh, sour when cold.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang's flavour is in broth. Beef soup with cake-shreds is the workers' breakfast philosophy; the 'no-flip' soup is a thin egg sheet soaked in sour broth, one sip wakes you. The water-banquet is another craft — twenty-four soupy dishes, sour-hot led, the 'peony swallow' carved from radish fooling the eye.</p>
+      <p>The fermented tang of jiang noodles, the crisp edge of pot-stickers — skills learned free at the night market.</p>
+      <aside class="tip"><b>当地贴士：</b>牛肉汤认老店，辣度可点；不翻汤现做的是功夫，凉了腥。</aside>
+      <aside class="tip"><b>Local tip:</b>For beef soup trust old names, set your heat; the no-flip sheet is best fresh, sour when cold.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">龙门是文物，别摸佛、别刻字，闪光灯对壁画是慢刀子。老城汤馆拼桌是常事，你坐下来，邻座能把整座城的掌故倒给你。</p>
+      <p>洛阳人慢，问路指得清，可别拿"这佛是不是真的"去戳——他们把石窟当祖宗，你客气点，他们能把每个龛的来由说给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Longmen is a relic — don't touch the Buddhas, don't carve, flash hurts the murals slow as a knife. Sharing a table at an old-town broth house is normal; sit and the neighbour pours the city's tales.</p>
+      <p>Luoyang folk are slow; they point clear, just don't poke with 'are these Buddhas real' — they treat the grottoes as ancestors; be polite and they'll tell you each niche's story.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天满城牡丹，王城公园、隋唐遗址都成了花海，是一年里最旺的景。夏天伊河清、山里凉，秋天香山枫红，关林古柏更沉。冬天冷，可雪后龙门肃穆，游人稀。</p>
+      <p>若为了花，四月最对；若为了静，冬春最好。</p>
+      <aside class="tip"><b>实用贴士：</b>牡丹花期短，盯天气走；雪后石窟美但石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Peony bloom is brief — watch weather; after snow the grottoes are pretty but the stone steps slick, go slow.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring floods the city with peonies, Wangcheng Park and the Sui-Tang ruins a sea of bloom — the year's busiest sight. Summer clears the Yi, cools the hills; autumn reddens Xiangshan's maples, deepens Guanlin's cypresses. Winter is cold, yet after snow Longmen solemn, few visitors.</p>
+      <p>For flowers April fits; for quiet winter and spring best.</p>
+      <aside class="tip"><b>实用贴士：</b>牡丹花期短，盯天气走；雪后石窟美但石阶滑，慢行。</aside>
+      <aside class="tip"><b>Handy tip:</b>Peony bloom is brief — watch weather; after snow the grottoes are pretty but the stone steps slick, go slow.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">龙门外的伊河大堤是免费的天然步道，沿河走，佛影在岸。老城的胡同随便钻，青砖门关着的故事比开着的多。</p>
+      <p>洛浦公园顺河十几公里，骑车比走路爽，星子亮时河边有人唱戏。洛阳的好走，在于你走到哪都有人愿意多讲两句。</p>
+      <aside class="tip"><b>实用贴士：</b>洛浦公园免费；老城步道窄，慢走细看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Luopu Park is free; the old-town lanes are narrow — walk slow, look close.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Longmen's outer Yi embankment is a free path; walk it and Buddha-shadows line the bank. The old town's alleys are yours to wander; more stories behind closed blue-brick doors than open.</p>
+      <p>Luopu Park runs a dozen kilometres by the river, better by bike; when stars are out folk sing opera by the water. Luoyang's joy is that someone everywhere will tell you more.</p>
+      <aside class="tip"><b>实用贴士：</b>洛浦公园免费；老城步道窄，慢走细看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Luopu Park is free; the old-town lanes are narrow — walk slow, look close.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳最贵的东西，大多不要钱。伊河的风、龙门在暮色里的轮廓、老城汤馆飘出的香，站着看就是参与。雪后关林配古柏，比收费园里还好看。</p>
+      <p>胡同里大爷们下棋不收钱，你站着看就是捧场。洛阳教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>洛浦公园免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Luopu Park is free; many museums close Mondays — check first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang's priciest things mostly cost nothing. The Yi's wind, Longmen's dusk outline, the old town's broth scent — stand and you're in it. Snow on Guanlin with old cypresses beats any paid garden.</p>
+      <p>Old men play chess free in the lanes; stand and watch, that's applause. Luoyang taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>洛浦公园免费；博物馆多周一闭馆，去前查开放日。</aside>
+      <aside class="tip"><b>Local tip:</b>Luopu Park is free; many museums close Mondays — check first.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">洛阳不会一下子把你看服。它没有名山的名气，也没有水乡的精巧。它正，它厚，它又佛又汤——一尊佛能让人沉默，一碗汤能让人回头。</p>
+      <p>你逛过龙门的一山佛影、白马寺的一院松、老城的一街汤香，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"中天下而立"的稳。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Luoyang won't win you at once. No famous mountain's fame, no water town's finesse. It's proper, deep, Buddha and broth — one Buddha silences you, one bowl turns you back.</p>
+      <p>You'll see Longmen's hills of Buddha-shadow, White Horse's courtyard of pines, the old town's street of broth — and leaving you'll get it: what this land gives most freely was never fame, but the steadiness of 'standing at the world's centre'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

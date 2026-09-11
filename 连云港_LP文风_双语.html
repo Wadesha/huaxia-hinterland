@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>连云港 · Lianyungang — 花果山的猴，连岛的海</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>连云港</h1>
+  <div class="en-title">Lianyungang</div>
+  <p class="zh">江苏东北角的海港城市，新亚欧大陆桥的东端起点，也是《西游记》的故乡——花果山的水帘洞认在这儿，连岛的浪拍得响。</p>
+  <p class="en">A port city on Jiangsu's northeast corner, the eastern end of the New Eurasian Land Bridge, and home of Journey to the West — Flower Fruit Mountain's Water Curtain Cave is claimed here, Lien Island's waves crash loud.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔花果山，去海边吹吹风 / Arrive by the sea</a></li>
+      <li><a href="#s2">连云港到底是什么 / What Lianyungang is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">花果山与云台山 / Flower Fruit Mountain & Yuntai Mountain</a></li>
+      <li><a href="#s5">连岛与海州湾 / Lien Island & Haizhou Bay</a></li>
+      <li><a href="#s6">孔望山摩崖石刻 / Kongwang Mountain cliff carvings</a></li>
+      <li><a href="#s7">东海水晶城与西双湖 / Donghai Crystal City & Xishuang Lake</a></li>
+      <li><a href="#s8">海风与渔民 / Coastal folk</a></li>
+      <li><a href="#s9">连岛夜生活 / Lien Island after dark</a></li>
+      <li><a href="#s10">吃什么 / What to eat</a></li>
+      <li><a href="#s11">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s12">什么时候去 / When to go</a></li>
+      <li><a href="#s13">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s14">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s15">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔花果山，去海边吹吹风<span class="en">Arrive by the sea</span></h2>
+    <div class="zh">
+      <p class="lead">连云港不声不响。你一到海边，先闻到咸风，海从城市边缘一直铺到天边。往花果山去要爬山，得先把来时的燥气在海边放掉。</p>
+      <p>我第一次懂连云港，是在连岛的傍晚。浪一遍遍舔着滩，远处有渔船收网，夕阳把整片海染成绸子。那一刻你明白，这座城把"海"和"仙"都养在怀里。</p>
+      <aside class="tip"><b>当地贴士：</b>以连云港市区为基地，花果山、连岛都在市内；东海水晶城在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in town; Flower Fruit Mountain and Lien Island are in the city, Donghai crystal town beyond.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang keeps quiet. Reach the coast and you smell the salt wind first — the sea spreads from the city's edge all the way to the horizon. Flower Fruit Mountain asks for climbing; drop the road dust here by the sea first.</p>
+      <p>I got Lianyungang at dusk on Lien Island. Waves licked the beach again and again, fishing boats hauled nets far off, sunset dyed the whole sea to silk. That moment you see the city holds both 'sea' and 'immortal' in its arms.</p>
+      <aside class="tip"><b>当地贴士：</b>以连云港市区为基地，花果山、连岛都在市内；东海水晶城在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in town; Flower Fruit Mountain and Lien Island are in the city, Donghai crystal town beyond.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>连云港到底是什么<span class="en">What Lianyungang is</span></h2>
+    <div class="zh">
+      <p class="lead">连云港是江苏东北角的海港城市，新亚欧大陆桥的东端起点，淮海唯一傍海的地方。它更因《西游记》出名——吴承恩笔下的花果山、水帘洞，都认在本地。</p>
+      <p>今天的连云港一半港区一半度假，云台山、连岛、东海的水晶，把"山、海、仙"凑成一桌。连云港的好，在于它又运输又传奇——货轮装得下世界，花果山装得下童年。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang is Jiangsu's northeastern port, the eastern end of the New Eurasian Land Bridge, the only Huaihai city by the sea. It's far more famous for Journey to the West — Wu Cheng'en's Flower Fruit Mountain and Water Curtain Cave are both claimed here.</p>
+      <p>Today's Lianyungang is half-port, half-holiday; Yuntai Mountain, Lien Island, Donghai's crystals — mountain, sea, and immortal on one plate. Lianyungang's grace is freight and legend — cargo ships hold the world, Flower Fruit Mountain holds childhood.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">连云港站和东海站都在连淮扬镇高铁线上，从徐州过来半个多小时，从南京两小时出头。市区到连岛、花果山有公交和旅游线，去东海水晶城可坐县际车。</p>
+      <p>连岛景区有观光车；花果山从山门到顶有索道。</p>
+      <aside class="tip"><b>实用贴士：</b>连岛跨海大桥有限行，周末可能堵车；花果山索道下山排长队，赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Lien Island bridge has traffic controls, weekends may jam; Flower Fruit Mountain cable car down queues long — go early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang and Donghai stations are on the Lianyungang–Nanjing HSR — half an hour from Xuzhou, over two from Nanjing. Buses and tourist lines reach Lien Island and Flower Fruit Mountain from town; Donghai crystal town needs a county-level bus.</p>
+      <p>Lien Island scenic area has shuttle carts; Flower Fruit Mountain has a cable car from the gate to the top.</p>
+      <aside class="tip"><b>实用贴士：</b>连岛跨海大桥有限行，周末可能堵车；花果山索道下山排长队，赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>The Lien Island bridge has traffic controls, weekends may jam; Flower Fruit Mountain cable car down queues long — go early.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>花果山与云台山<span class="en">Flower Fruit Mountain & Yuntai Mountain</span></h2>
+    <div class="zh">
+      <p class="lead">花果山是连云港最响的招牌，山不高，爬起来不累。水帘洞其实是个瀑布洞，水流不大，可《西游记》的情怀一上来，你还是会摸进洞里拍个照。山上有好多猴子雕像，活的猴子也有几只，别掏手机喂。</p>
+      <p>云台山是连云港的城市后山，主峰玉女峰是江苏最高点。你可以从前山爬，也可以从后山上，风景各有不同。山上有寺庙，香火不算旺，可树很密，路很静。</p>
+      <aside class="tip"><b>当地贴士：</b>花果山门票含水帘洞；云台山景区部分区域免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Flower Fruit Mountain ticket includes the cave; parts of Yuntai's scenic area are free.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Flower Fruit Mountain is Lianyungang's loudest sign — not high, an easy climb. Water Curtain Cave is actually a waterfall cave; the water isn't heavy, but Journey to the West nostalgia hits hard and you'll still duck inside for a photo. Stone monkey statues dot the slopes, a few live ones too — don't pull out your phone to feed them.</p>
+      <p>Yuntai Mountain is Lianyungang's backyard — Jade Maiden Peak, Jiangsu's highest point. Climb from the front or approach from the back, different views each way. A temple sits on the mountain, incense not too heavy, but trees thick and trails quiet.</p>
+      <aside class="tip"><b>当地贴士：</b>花果山门票含水帘洞；云台山景区部分区域免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Flower Fruit Mountain ticket includes the cave; parts of Yuntai's scenic area are free.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>连岛与海州湾<span class="en">Lien Island & Haizhou Bay</span></h2>
+    <div class="zh">
+      <p class="lead">连岛是连云港的海中岛，沙滩宽阔，潮来潮去，冲浪、赶海都在这一带。你踏浪走，看落日把海面烧成铜，是江苏难得的爽快。岛上还有个苏马湾，人少，沙细，适合躺着发呆。</p>
+      <p>海州湾是连云港的湾区，渔船进进出出，码头附近有海鲜市场，刚上岸的鱼虾论斤卖。你可以在码头找个大排档，让老板给你选几样，煮一煮就是一顿鲜。</p>
+      <aside class="tip"><b>实用贴士：</b>连岛赶海赶退潮后两小时；海鲜市场砍价对半起。</aside>
+      <aside class="tip"><b>Handy tip:</b>Shell-collect on Lien Island two hours after low tide; haggle at the seafood market, start at half the price.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lien Island is Lianyungang's island in the sea — a wide beach, tides coming and going, surfing and shell-collecting here. Wade through the waves, watch sunset burn the sea to copper — a rare bracing pleasure in Jiangsu. Suma Bay on the island is quieter, sand finer, perfect for lying and staring.</p>
+      <p>Haizhou Bay is the city's bay — fishing boats move in and out, a seafood market near the pier sells just-landed fish and shrimp by the kilo. Find a street stall by the dock, let the picker choose a few items, boil them up and you have a meal of pure freshness.</p>
+      <aside class="tip"><b>实用贴士：</b>连岛赶海赶退潮后两小时；海鲜市场砍价对半起。</aside>
+      <aside class="tip"><b>Handy tip:</b>Shell-collect on Lien Island two hours after low tide; haggle at the seafood market, start at half the price.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>孔望山摩崖石刻<span class="en">Kongwang Mountain cliff carvings</span></h2>
+    <div class="zh">
+      <p class="lead">孔望山不大，但山上的摩崖石刻是中国最早的佛教造像之一——东汉桓帝时期刻的，比敦煌莫高窟还早几百年。你沿着山路走，在一块不起眼的崖壁上，能看到一个释迦牟尼坐像和一组佛教故事。</p>
+      <p>最有意思的是"叠罗汉"造像，一群人叠在一起，据说是佛教传入中国最早的图像证据。旁边还有一个汉代石象，是全国现存最早的圆雕石象之一。</p>
+      <aside class="tip"><b>当地贴士：</b>孔望山门票便宜；石刻分散在山间，慢慢找。</aside>
+      <aside class="tip"><b>Local tip:</b>Kongwang Mountain ticket is cheap; carvings spread across the hillside — take your time.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Kongwang Mountain is small, but its cliff carvings rank among China's earliest Buddhist statuary — carved in Eastern Han, centuries before Dunhuang. Walk the trail and on a plain-looking cliff face you'll find a seated Sakyamuni and a set of Buddhist narrative scenes.</p>
+      <p>Most curious is the 'stacked figures' group, thought to be the earliest image evidence of Buddhism entering China. Nearby stands a Han stone elephant, one of the country's earliest full-round stone elephants.</p>
+      <aside class="tip"><b>当地贴士：</b>孔望山门票便宜；石刻分散在山间，慢慢找。</aside>
+      <aside class="tip"><b>Local tip:</b>Kongwang Mountain ticket is cheap; carvings spread across the hillside — take your time.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>东海水晶城与西双湖<span class="en">Donghai Crystal City & Xishuang Lake</span></h2>
+    <div class="zh">
+      <p class="lead">东海是"中国水晶之都"，县城里的水晶城像一个巨大的珠宝迷宫——从原石到成品，从批发到零售，几万种水晶摆在那儿，让人看花眼。</p>
+      <p>水晶城旁边就是西双湖，两个湖连在一起，像东海的两只大眼睛。湖边种着百合花，春天开得漫山遍野。你买了水晶，可以在湖边找个咖啡馆坐好一阵子，把这趟旅行的重量放一放。</p>
+      <aside class="tip"><b>实用贴士：</b>水晶买大件请货比三家，认准鉴定证书；西双湖免费，春天看百合最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Big crystal purchases — compare three shops, ask for certificates; Xishuang Lake is free, best in spring for lilies.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Donghai is China's crystal capital; the town's Crystal City is a labyrinth of gemstones — rough to finished, wholesale to retail, tens of thousands of pieces on display.</p>
+      <p>Adjacent is Xishuang Lake, two connected lakes like Donghai's two big eyes. Lily carpets cover the hillsides in spring. After buying crystals, find a café by the lake and sit the long daylight hours away — let the trip's weight off.</p>
+      <aside class="tip"><b>实用贴士：</b>水晶买大件请货比三家，认准鉴定证书；西双湖免费，春天看百合最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Big crystal purchases — compare three shops, ask for certificates; Xishuang Lake is free, best in spring for lilies.</aside>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>海风与渔民<span class="en">Coastal folk</span></h2>
+    <div class="zh">
+      <p class="lead">连岛的渔民凌晨三点就出海了。我问过一个姓刘的船老大，他说四十多年来，除了台风天，没停过。他的船是三十万买的，老婆在岸边开大排档，儿子在码头卸货，一家都拴在这一片海里。</p>
+      <p>码头上你能看见这些男人的手——粗，黑，指甲缝里嵌着洗不掉的海盐。他们说话声音大，像在跟海较劲，可转身对家里人就软了。这种"一半跟海拼，一半给家暖"的日子，是连云港最扎实的底色。</p>
+      <aside class="tip"><b>当地贴士：</b>想跟渔民聊天，码头早六点前后到；别在他们靠岸时拍照，先打招呼。</aside>
+      <aside class="tip"><b>Local tip:</b>Chat with fishermen at the dock around six a.m.; don't snap while they're landing — say hello first.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lien Island fishermen sail out at three in the dark. I asked an old skipper surnamed Liu — he hasn't missed a day in forty years except for typhoons. His boat cost three hundred thousand; his wife runs a shoreline stall, his son unloads at the dock. The whole family tied to this one patch of sea.</p>
+      <p>On the dock you see their hands — thick, black, salt trapped under nails that won't wash out. They speak loud, like arguing with the sea, but turn gentle with family. This 'half-fighting-the-sea, half-warming-home' life is Lianyungang's truest colour.</p>
+      <aside class="tip"><b>当地贴士：</b>想跟渔民聊天，码头早六点前后到；别在他们靠岸时拍照，先打招呼。</aside>
+      <aside class="tip"><b>Local tip:</b>Chat with fishermen at the dock around six a.m.; don't snap while they're landing — say hello first.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>连岛夜生活<span class="en">Lien Island after dark</span></h2>
+    <div class="zh">
+      <p class="lead">连岛天黑得早，但一黑就彻底变了样。沙滩上有人点起篝火，不是旅游项目，是年轻人自己捡的柴火烤的。烤的不是棉花糖，是刚从码头买回的海鲜，生蚝、扇贝，撒点辣椒面，蹲在地上就吃。</p>
+      <p>我见过最有意思的一幕：一个卖海鲜的小伙子白天在码头扛货，夜里在沙滩弹吉他，唱的是赵雷的《成都》，可海风一吹，调子就拐成了大海的腔。没人鼓掌，大家该吃的吃，该喝的喝，可那首歌就那样飘在浪上。</p>
+      <aside class="tip"><b>当地贴士：</b>岛上住宿夏天很贵，提前订；自带点面包和啤酒，沙滩上的大排档不便宜。</aside>
+      <aside class="tip"><b>Local tip:</b>Accommodation on the island is pricey in summer — book ahead. Bring some bread and beer; the beach stalls aren't cheap.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Dark falls early on Lien Island, but once it's dark the place shifts entirely. Beach fires glow — not tourist events, just kids gathering driftwood. They roast not marshmallows but fresh-caught oysters and scallops, sprinkle chilli powder, squat on the sand and eat.</p>
+      <p>I saw the loveliest thing: a seafood porter by day, guitar player on the beach by night, singing Zhao Lei's 'Chengdu' — but the sea wind twisted the tune into something its own. No applause; people ate and drank, and that song drifted over the waves.</p>
+      <aside class="tip"><b>当地贴士：</b>岛上住宿夏天很贵，提前订；自带点面包和啤酒，沙滩上的大排档不便宜。</aside>
+      <aside class="tip"><b>Local tip:</b>Accommodation on the island is pricey in summer — book ahead. Bring some bread and beer; the beach stalls aren't cheap.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">连云港的味道在"鲜"字里。海鲜是主角，螃蟹、皮皮虾、蛏子，清蒸一上桌就是山海红脸。海州湾的鱼虾没有腥气，靠的是刚上岸的那股活。</p>
+      <p>小鱼煎饼是本地特色，薄饼卷着炸小鱼，一口下去咸香酥脆。云台山脚下的狗肉馆名声在外，配烧饼，是山民的硬菜。</p>
+      <aside class="tip"><b>当地贴士：</b>海鲜大排档认明码标价；小鱼煎饼在海州老铺最正。</aside>
+      <aside class="tip"><b>Local tip:</b>Seafood stalls — choose the clear-price ones; little fish pancakes best at old Haizhou shops.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang's flavour lives in 'fresh'. Seafood is the lead — crabs, mantis shrimp, razor clams, steamed and served up red as mountain and sea. Haizhou Bay's fish and shrimp have no fishy bite — it's the just-landed vitality.</p>
+      <p>Little fish pancakes are a local speciality — thin pancake rolled around fried small fish, salty and crisp in one bite. Dog meat houses below Yuntai have a reputation, served with flatbread, the mountain folk's hearty dish.</p>
+      <aside class="tip"><b>当地贴士：</b>海鲜大排档认明码标价；小鱼煎饼在海州老铺最正。</aside>
+      <aside class="tip"><b>Local tip:</b>Seafood stalls — choose the clear-price ones; little fish pancakes best at old Haizhou shops.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">花果山的野生猴子会抢食物，别在它们面前掏零食。海边游泳注意安全，连岛有暗流标记，别超线。东海水晶市场水深，买大件请货比三家。</p>
+      <p>连云港人实在，问路指得清，可别拿"花果山是假的"去戳——这座城市把《西游记》当故乡，你客气点，他们能把每块石头和猴子的旧账都讲给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Flower Fruit Mountain's wild monkeys will snatch food — don't reach for snacks in front of them. Swim safely by the coast; Lien Island marks rip currents — don't cross the line. Donghai's crystal market runs deep — for big purchases, compare three shops.</p>
+      <p>Lianyungang folk are straightforward, point clear for directions; just don't poke with 'is Flower Fruit Mountain fake?' — the city counts Journey to the West as hometown, be polite and they'll tell every stone and monkey's old story.</p>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">夏天连云港最旺，海风凉、沙滩晒，游泳赶海正当时。春秋人不挤，花果山和连岛都好走。冬天海鲜肥美，海面清冷另有一种辽阔。</p>
+      <p>若为了海与浪，夏天最对；若为了山与猴，春秋更舒服。</p>
+      <aside class="tip"><b>实用贴士：</b>夏季连岛有沙滩音乐会；冬季花果山赏雪别有风味。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer Lien Island beach concerts; winter snow on Flower Fruit Mountain has its own charm.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Summer is Lianyungang's peak — sea wind cool, beach sun warm, swimming and shell-collecting just right. Spring and autumn draw fewer people, Flower Fruit Mountain and Lien Island easy to walk. Winter fattens seafood, and the sea's cold vastness is a different thing entirely.</p>
+      <p>For sea and waves, summer fits best; for mountain and monkeys, spring–autumn more comfortable.</p>
+      <aside class="tip"><b>实用贴士：</b>夏季连岛有沙滩音乐会；冬季花果山赏雪别有风味。</aside>
+      <aside class="tip"><b>Handy tip:</b>Summer Lien Island beach concerts; winter snow on Flower Fruit Mountain has its own charm.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">连岛的环岛路免费，沿海走能看到不同角度的海，远处的渔船和近处的礁石配成一幅画。花果山的登山步道免费（需先进山门），沿途有老寺庙和新亭台。云台山的森林步道不收钱，适合慢慢呼吸。</p>
+      <p>连云港的好走，在于海把整座城都摊开了，你随便往外走，就走到一片开阔面前。</p>
+      <aside class="tip"><b>实用贴士：</b>连岛环岛路骑行最舒服；云台山看日出赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lien Island ring road by bike most comfortable; Yuntai for sunrise, go early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lien Island's ring road is free — walk along it and you see the sea from every angle, distant fishing boats and near reefs making a painting. Flower Fruit Mountain's hiking path is free (need the mountain gate ticket first), old temples and new pavilions along the way. Yuntai's forest path costs nothing, perfect for slow breathing.</p>
+      <p>Lianyungang is walkable because the sea spreads the whole city open; step any direction and you reach a wide view.</p>
+      <aside class="tip"><b>实用贴士：</b>连岛环岛路骑行最舒服；云台山看日出赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>Lien Island ring road by bike most comfortable; Yuntai for sunrise, go early.</aside>
+    </div>
+  </section>
+  <section id="s14">
+    <span class="secno">14</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">连云港最贵的东西，大多不要钱。海风、浪声、连岛在暮色里的轮廓，站着看就是参与。日出时海面碎金，比任何票价都值。</p>
+      <p>海边大爷们赶海拾贝不收钱，你跟着学就是捧场。连云港教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>连岛环岛路全免费；云台山部分区域免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>Lien Island ring road entirely free; parts of Yuntai open free.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang's priciest things mostly cost nothing — sea wind, the sound of waves, Lien Island's dusk silhouette; stand and you're in it. Sunrise splinters gold across the sea, worth any ticket.</p>
+      <p>Old men collect shells free by the coast; follow along, that's applause. Lianyungang taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>连岛环岛路全免费；云台山部分区域免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>Lien Island ring road entirely free; parts of Yuntai open free.</aside>
+    </div>
+  </section>
+  <section id="s15">
+    <span class="secno">15</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">连云港不会一下子把你看服。它没有名山的名气，也没有古城的气韵。它咸，它野，它又海又仙——一声浪能让人沉默，一对猴能让人回头。</p>
+      <p>你看过花果山的洞、连岛的浪、海州湾的一船鲜，临走会明白：这座城把运输码头上的硬朗压在海底下，把最野的童真留给了山上那几只猴。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Lianyungang won't win you at once. No famous mountain's fame, no old town's grace. It's salty, wild, sea-and-immortal — one wave silences you, a pair of monkeys turns you back.</p>
+      <p>You've seen the mountain cave, the island waves, the bay's boat of freshness — and leaving you'll get it: the city presses the port's hardness under the sea, and leaves its wildest childlike joy to those few monkeys on the hill. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宿迁 · Suqian — 项王的城，骆马湖的酒</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>宿迁</h1>
+  <div class="en-title">Suqian</div>
+  <p class="zh">西楚霸王项羽的故里，也是绵柔洋河的产地——一座城把"豪气"和"酒香"都酿在瓶子里，骆马湖的水养出苏北最软的温柔。</p>
+  <p class="en">Hometown of the Overlord Xiang Yu and home of Yanghe's mellow liquor — a city that brews both 'heroic spirit' and 'wine fragrance' into its bottles, Luo Ma Lake's water raising the gentlest softness in northern Jiangsu.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔项王，去骆马湖边坐坐 / Arrive by Luo Ma Lake</a></li>
+      <li><a href="#s2">宿迁到底是什么 / What Suqian is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">项王故里 / The Overlord's home</a></li>
+      <li><a href="#s5">骆马湖与洋河酒镇 / Luo Ma Lake & Yanghe wine town</a></li>
+      <li><a href="#s6">洪泽湖湿地 / Hongze Lake wetland</a></li>
+      <li><a href="#s7">当地人的日常 / Suqian everyday</a></li>
+      <li><a href="#s8">洋河酒窖工人 / Cellar hands of Yanghe</a></li>
+      <li><a href="#s9">吃什么 / What to eat</a></li>
+      <li><a href="#s10">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s11">什么时候去 / When to go</a></li>
+      <li><a href="#s12">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s13">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s14">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔项王，去骆马湖边坐坐<span class="en">Arrive by Luo Ma Lake</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁不声不响。你一下高铁，城平得没脾气，可往骆马湖一坐，水天一色，风把湖面吹得到处是碎银。往项王故里去前，先把来时的赶劲在这里歇下来。</p>
+      <p>我第一次懂宿迁，是在骆马湖的傍晚。天水之间只剩一层薄金，远处有帆影，岸边有人守着渔网。那一刻你明白，这座城把"豪气"压得很深，可日子却是软的。</p>
+      <aside class="tip"><b>当地贴士：</b>以宿迁城区为基地，项王、骆马湖都在市区；洋河酒镇、洪泽湖在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; the Overlord and Luo Ma downtown, Yanghe town and Hongze beyond.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian keeps quiet. Step off and the city is flat without temper, yet sit by Luo Ma Lake and water meets sky, wind flinging silver all over. Before the Overlord's home, rest your hurry here.</p>
+      <p>I got Suqian at dusk by Luo Ma Lake. Between sky and water a thin gold, a mast far off, someone watching nets on the shore. That moment you see the city hides its spirit deep, yet its days stay soft.</p>
+      <aside class="tip"><b>当地贴士：</b>以宿迁城区为基地，项王、骆马湖都在市区；洋河酒镇、洪泽湖在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; the Overlord and Luo Ma downtown, Yanghe town and Hongze beyond.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>宿迁到底是什么<span class="en">What Suqian is</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁是西楚霸王项羽的故里，楚汉相争的殇从这里写起。它也是"中国酒都"，洋河、双沟两大名酒的产地，绵柔的浓香销往全国。</p>
+      <p>今天的宿迁一半楚风一半酒香，骆马湖、洪泽湖两大湖把它养得水润。宿迁的好，在于它又豪又软——从没有比"霸王"更硬的招牌，也没有比"绵柔"更软的暗号。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian is Xiang Yu's hometown; the grief of the Chu–Han wars begins here. It's also the 'wine capital of China', home of Yanghe and Shuanggou liquor, its mellow scent sold nationwide.</p>
+      <p>Today Suqian is half-Chu, half-wine; Luo Ma and Hongze lakes keep it moist. Suqian's grace is hero and softness — no signboard harder than 'Overlord', no password softer than 'mellow'.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁站在徐州–淮安线上，从徐州过来一小时内，从南京两小时出头。市区不大，打车便宜；去项王、骆马湖有公交，去洋河镇和洪泽湖得走一段。</p>
+      <p>湖边走最舒服，市区骑车就能串起来。</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；湖区往返赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official channels for tickets; leave early for the lakes.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian on the Xuzhou–Huai'an line is within an hour of Xuzhou, over two from Nanjing. The city's compact, cabs cheap; buses reach the Overlord and Luo Ma, Yanghe and Hongze need a stretch.</p>
+      <p>Lakeshore walks best; the city links by bike.</p>
+      <aside class="tip"><b>实用贴士：</b>买票认准官方渠道；湖区往返赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>Use official channels for tickets; leave early for the lakes.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>项王故里<span class="en">The Overlord's home</span></h2>
+    <div class="zh">
+      <p class="lead">项王故里在城中，纪念项羽的祠庙，殿宇巍峨，塑像凛然，传说门口那株槐还是项羽手植。你走进去，能感到"力拔山兮气盖世"的那股劲仍在。</p>
+      <p>它更像一座祠堂而不只是一处景点，香火和游人都在认这位"至死不肯过江东"的英雄。你不必懂楚汉全史，也能被那股悲壮的骨气一震。</p>
+      <aside class="tip"><b>当地贴士：</b>项王故里门票含祠庙园区；槐树传说听听就好。</aside>
+      <aside class="tip"><b>Local tip:</b>The Overlord's ticket covers the halls; the locust tale is for delight.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Overlord's home stands in the city, a shrine to Xiang Yu — tall halls, a stern effigy; legend says the locust by the gate is his own planting. Walk in and feel 'strength pulling mountains' still in the air.</p>
+      <p>It reads more as an ancestral hall than a sight — incense and visitors alike honour this hero who 'would not cross the river east'. You needn't know the full war to be struck by that tragic spine.</p>
+      <aside class="tip"><b>当地贴士：</b>项王故里门票含祠庙园区；槐树传说听听就好。</aside>
+      <aside class="tip"><b>Local tip:</b>The Overlord's ticket covers the halls; the locust tale is for delight.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>骆马湖与洋河酒镇<span class="en">Luo Ma Lake & Yanghe wine town</span></h2>
+    <div class="zh">
+      <p class="lead">骆马湖在城北，湖面开阔，是苏北有名的淡水湖，湖边湿地芦苇连天。你租条船进湖，水鸟低飞，比景点更接地气。</p>
+      <p>洋河镇在城南，是"绵柔浓香"的老家，酒厂开放参观，你能闻到粮窖和窖泥混着的那股醇。中国人讲"酒逢知己"，这条河的水就是最好的知己。</p>
+      <aside class="tip"><b>实用贴士：</b>酿酒开窖多在秋天；酒厂参观有导览，提前约。</aside>
+      <aside class="tip"><b>Handy tip:</b>Cellar-opening clusters in autumn; distillery tours are guided, book ahead.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Luo Ma Lake north of town is a wide body, a famed fresh lake of northern Jiangsu, reeds over the wetlands. Hire a boat in and waterbirds skim — homelier than any sight.</p>
+      <p>Yanghe town south is home of 'mellow strong aroma'; the distillery opens for tours, and you smell the blend of grain cellar and pit-mould — that blend an invitation itself to linger here. The Chinese say 'wine finds its friend'; this river's water is the best of friends.</p>
+      <aside class="tip"><b>实用贴士：</b>酿酒开窖多在秋天；酒厂参观有导览，提前约。</aside>
+      <aside class="tip"><b>Handy tip:</b>Cellar-opening clusters in autumn; distillery tours are guided, book ahead.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>洪泽湖湿地<span class="en">Hongze Lake wetland</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁的洪泽湖湿地是华东最大的湿地保护区之一，滩涂辽阔，芦苇遮天，每年有三十多种候鸟来过冬。你可以坐观鸟船进湖，也可以走木栈道穿芦苇荡，水鸟从你身边擦过翅膀。</p>
+      <p>最绝的是湿地深处的"荷花荡"，千亩荷花连在一起，夏天开得通红。你租条小船划进去，人在花海里飘，头顶是蓝的，脚下也是蓝的。</p>
+      <aside class="tip"><b>实用贴士：</b>候鸟过境在秋冬；荷花荡七八月最盛。</aside>
+      <aside class="tip"><b>Handy tip:</b>Migratory birds autumn–winter; lotus sway peaks July–August.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian's Hongze Lake wetland is one of eastern China's largest protected wetlands — vast mudflats, sky-high reeds, thirty-plus migratory bird species wintering here. Board a bird-watching boat or walk the wooden path through reed marshes; waterbirds skim your shoulder.</p>
+      <p>At the wetland's heart lies a 'lotus sway', thousands of acres in bloom come summer. Rent a skiff and drift in — sea of red blooms overhead, water blue below, nothing but quiet.</p>
+      <aside class="tip"><b>实用贴士：</b>候鸟过境在秋冬；荷花荡七八月最盛。</aside>
+      <aside class="tip"><b>Handy tip:</b>Migratory birds autumn–winter; lotus sway peaks July–August.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>当地人的日常<span class="en">Suqian everyday</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁男人爱喝早酒。不是白酒，是洋河镇上打回来的散装黄酒，加几粒话梅泡着，配几碟盐水花生和拌黄瓜。在骆马湖边的棚子下坐着喝，你看他半杯下去脸就红了，话也多了，开始讲项羽的故事，讲他爷爷当年在洋河酒厂挑酒桶的事。</p>
+      <p>女人的事在菜场。宿迁的菜场卖的不是普通菜，是骆马湖刚捞上来的银鱼、洪泽湖的青蟹苗、洋河镇的酒糟——这些东西你在别的地方买不到。她们拎着菜篮子边走边聊，声音不高，可那种过日子的扎实劲，你离十步远都能闻见。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian men drink pre-dawn wine. Not Baijiu, but bulk yellow rice wine drawn from Yanghe town, steeped with a few sour plum candies. Serve it with salted peanuts and cucumber salad under a shack by Luo Ma Lake. After half a glass his face reddens, words flow, and he tells of Xiang Yu, and his grandfather hauling wine barrels at the Yanghe distillery.</p>
+      <p>Women run the food market. Suqian markets don't sell ordinary vegetables — Luo Ma's just-caught silverfish, Hongze's blue crab fry, Yanghe's distiller's grain. You can't buy these elsewhere. They carry baskets and chat soft, but the solidness of daily life is perceptible ten steps away.</p>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>洋河酒窖工人<span class="en">Cellar hands of Yanghe</span></h2>
+    <div class="zh">
+      <p class="lead">洋河酒厂的工人凌晨两点就进窖了。窖里常年十八度，闷得慌，他们得扛着沉重的酒甑和料桶，一层一层地蒸。我跟过一个叫老王的工人，他说做了二十年，手上的老茧比酒窖的砖还硬。</p>
+      <p>他说最累的是开窖那天——秋天开窖，几百个窖池一起掏，整个厂区都是酒糟和窖泥的味道，人在里面待半小时就上头。可那天也是工人最开心的日子，因为新酒出来了，老板会请全厂喝一杯。</p>
+      <aside class="tip"><b>当地贴士：</b>想参观真实的开窖场面，九月到十月间来，跟酒厂预约。</aside>
+      <aside class="tip"><b>Local tip:</b>To see a real cellar opening, come September–October and book with the distillery.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yanghe distillery workers enter the cellars at two in the dark. The caves hold a steady eighteen degrees, oppressive heat, and they carry heavy steamer vats and grain buckets, layer by layer. I followed one called Lao Wang — twenty years on the job, calluses harder than the cellar bricks.</p>
+      <p>He said the hardest day is cellar-opening in autumn — hundreds of pits dug together, the whole plant reeking of distiller's grain and pit-mould. After half an hour inside you're drunk on fumes. But it's also the happiest day, because the new liquor flows and the boss buys everyone a glass.</p>
+      <aside class="tip"><b>当地贴士：</b>想参观真实的开窖场面，九月到十月间来，跟酒厂预约。</aside>
+      <aside class="tip"><b>Local tip:</b>To see a real cellar opening, come September–October and book with the distillery.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁的味道在"酒香"和"湖鲜"里。洋河、双沟的酒是招牌，抿一口绵柔，配几碟下酒菜是宿迁人的韵味。骆马湖的白鱼、银鱼清蒸，鲜得有湖水味。</p>
+      <p>霸王别姬是本地硬菜，鳖与鸡同炖，名字就霸气，汤鲜肉烂。皂河的蹄膀酱香浓，配酒正合适。夜市里湖鲜管够，一碗鱼汤就够你记住一座城。</p>
+      <aside class="tip"><b>当地贴士：</b>白酒别贪杯；霸王别姬认老店，汤是精华。</aside>
+      <aside class="tip"><b>Local tip:</b>Go easy on the liquor; the Overlord dish from old names, the broth is the point.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian's flavour runs on 'wine scent' and 'lake fresh'. Yanghe and Shuanggou are the signboard — a sip of mellow with a few dishes, Suqian's temper. Luo Ma's silverfish and whitefish steamed, lake-fresh.</p>
+      <p>The 'Overlord farewells his concubine' is the hearty one — turtle and chicken slow-braised, a name of pure bravado, rich broth, falling meat. Zaohe's trotter glazes savoury, right with wine. The night market hands you lake fresh; one bowl of fish soup is enough to remember a city.</p>
+      <aside class="tip"><b>当地贴士：</b>白酒别贪杯；霸王别姬认老店，汤是精华。</aside>
+      <aside class="tip"><b>Local tip:</b>Go easy on the liquor; the Overlord dish from old names, the broth is the point.</aside>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">项王故里是祠堂圣地，进门手机静音，别在殿里大声。酒厂参观跟紧导览，别乱摸窖泥。湖边风大，别下深水。</p>
+      <p>宿迁人好客，问路指得明，可别拿"项羽败了"去戳——这座城市把英雄当祖宗供着，你随和点，他们能把霸王的故事讲出三分酒意。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Overlord's home is hallowed ground — silence phones, no loud talk. Follow the distillery guide, don't touch pit-mould. Lake wind strong, no deep water.</p>
+      <p>Suqian folk are hospitable and point clear; just don't poke with 'Xiang Yu lost' — here the hero is an ancestor, be easy and they'll tell the Overlord's tale with three parts wine in it.</p>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春夏两季骆马湖最美，芦苇绿了，候鸟来去，湖面凉快。秋天酒窖开窖、湖鲜正肥，是宿迁的丰收季节。冬天湖冷，可高地俯瞰另有一番肃穆。</p>
+      <p>若为了湖与酒，夏秋最对；若为了候鸟湿地，春天更生动。</p>
+      <aside class="tip"><b>实用贴士：</b>酿酒开窖多在秋天，赶那时候最热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>Cellar-opening clusters in autumn, liveliest then.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring–autumn are Luo Ma's finest — reeds green, birds coming and going, the lake cool. Autumn opens the wine cellars and fattens lake fresh — Suqian's harvest. Winter chills the lake, high ground austere.</p>
+      <p>For lake and wine, summer–autumn fit; for bird wetlands, spring is livelier.</p>
+      <aside class="tip"><b>实用贴士：</b>酿酒开窖多在秋天，赶那时候最热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>Cellar-opening clusters in autumn, liveliest then.</aside>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">骆马湖湖堤免费，环湖走，芦苇、水鸟都在沿线。项王故里外围的广场也开放，站着看就是参与。城郊的湿地公园不收钱，观鸟、看水都自在。</p>
+      <p>宿迁的好走，在于水把整座城润得松弛，你走着走着就把紧绷的日子放空了。</p>
+      <aside class="tip"><b>实用贴士：</b>湖堤免费；湿地公园观鸟赶早晚。</aside>
+      <aside class="tip"><b>Handy tip:</b>The embankment is free; watch wetland birds at the early and late hours.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Luo Ma's embankment is free, birds and reeds along the way. The Overlord's outer square opens; stand and you're in it. The suburban wetland park charges nothing — birds and water at ease.</p>
+      <p>Suqian's joy is water loosening the whole city; walk and your tight days empty out.</p>
+      <aside class="tip"><b>实用贴士：</b>湖堤免费；湿地公园观鸟赶早晚。</aside>
+      <aside class="tip"><b>Handy tip:</b>The embankment is free; watch wetland birds at the early and late hours.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁最贵的东西，大多不要钱。骆马湖的水声、项王祠在暮色里的檐、湖畔一地的苇，站着看就是参与。酒香顺着风飘过湖，比任何门票都值。</p>
+      <p>湖边大爷们下棋唱戏不收钱，你站着看就是捧场。宿迁教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>湖堤步道免费；博物馆多周一闭馆。</aside>
+      <aside class="tip"><b>Local tip:</b>The embankment path is free; many museums close Mondays.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian's priciest things mostly cost nothing. Luo Ma's water sound, the shrine's dusk eaves, a lakeside fall of reeds — stand and you're in it. Wine scent blowing across the lake is worth any ticket.</p>
+      <p>Old men play chess and sing free by the lake; stand and watch, that's applause. Suqian taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>湖堤步道免费；博物馆多周一闭馆。</aside>
+      <aside class="tip"><b>Local tip:</b>The embankment path is free; many museums close Mondays.</aside>
+    </div>
+  </section>
+  <section id="s14">
+    <span class="secno">14</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">宿迁不会一下子把你看服。它没有名山的名气，也没有大城的排场。它豪，它软，它又楚又酒——一个霸王能让人沉默，一湖秋水能让人回头。</p>
+      <p>你看过骆马湖的一带水、项王祠的一角檐、洋河的一缕酒香，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"把豪气压成绵柔"的深。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Suqian won't win you at once. No famous mountain's fame, no great city's pomp. It's heroic, soft, Chu and wine — one Overlord silences you, one lake of autumn water turns you back.</p>
+      <p>You'll see Luo Ma's band of water, the shrine's corner of eave, a thread of Yanghe scent — and leaving you'll get it: what this land gives most freely was never fame, but the depth of 'pressing heroism into mellowness'. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

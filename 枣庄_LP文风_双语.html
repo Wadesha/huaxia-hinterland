@@ -1,10 +1,99 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>枣庄 · Zaozhuang — 台儿庄的灯，微山湖的浪</title>
-<link rel="stylesheet" href="assets/paper.css">
+<title>枣庄 · Zaozhuang — 运河的灯，铁道的魂</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
 </head>
 <body class="lang-zh">
 
@@ -12,8 +101,8 @@
   <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
   <h1>枣庄</h1>
   <div class="en-title">Zaozhuang</div>
-  <p class="zh">一座因煤而兴、因水而名的城——古城的灯一亮，工业的血肉就软成了江南。</p>
-  <p class="en">A city built on coal, renamed by water — light up the old town and its industrial bones soften into Jiangnan.</p>
+  <p class="zh">淮海西端的城市，因煤矿和铁道游击队闻名，也是台儿庄大捷的发生地——一座运河古城在战火中毁灭又重建，如今青砖黛瓦下藏着最坚韧的抗日记忆。</p>
+  <p class="en">A city on Huaihai's west edge, famous for coal and the Railway Guerrillas, and home of the Taierzhuang victory — a canal old town destroyed then rebuilt in war, its blue tiles hiding the toughest anti-Japanese memory.</p>
 </header>
 
 <div class="toggle">
@@ -26,181 +115,215 @@
   <nav class="toc">
     <div class="toc-in">目录 · CONTENTS</div>
     <ol>
-      <li><a href="#s1">先别奔古城，去湖边听歌 / Arrive by the lake</a></li>
+      <li><a href="#s1">先别奔台儿庄，去运河边上坐 / Arrive by the canal</a></li>
       <li><a href="#s2">枣庄到底是什么 / What Zaozhuang is</a></li>
       <li><a href="#s3">怎么走 / Getting around</a></li>
-      <li><a href="#s4">台儿庄：一座重建的活古城 / Tai'erzhuang: a rebuilt living town</a></li>
-      <li><a href="#s5">微山湖与榴园 / Weishan Lake and the pomegranate garden</a></li>
-      <li><a href="#s6">吃什么 / What to eat</a></li>
-      <li><a href="#s7">懂点规矩 / Know the ropes</a></li>
-      <li><a href="#s8">什么时候去 / When to go</a></li>
-      <li><a href="#s9">去哪悠走 / Where to wander</a></li>
-      <li><a href="#s10">不花钱也值得 / Worth it free</a></li>
-      <li><a href="#s11">收束 / Before you leave</a></li>
+      <li><a href="#s4">台儿庄大捷纪念馆 / Taierzhuang Victory Memorial</a></li>
+      <li><a href="#s5">台儿庄运河古城 / Taierzhuang canal old town</a></li>
+      <li><a href="#s6">铁道游击队纪念园 / Railway Guerrilla memorial</a></li>
+      <li><a href="#s7">抱犊崮与熊耳山 / Baodu Mountain & Xiong'er Mountain</a></li>
+      <li><a href="#s8">吃什么 / What to eat</a></li>
+      <li><a href="#s9">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s10">什么时候去 / When to go</a></li>
+      <li><a href="#s11">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s12">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s13">收束 / Before you leave</a></li>
     </ol>
   </nav>
   <section id="s1">
     <span class="secno">01</span>
-    <h2>先别奔古城，去湖边听歌<span class="en">Arrive by the lake</span></h2>
+    <h2>先别奔台儿庄，去运河边上坐<span class="en">Arrive by the canal</span></h2>
     <div class="zh">
-      <p class="lead">枣庄不声不响。你一下高铁，满眼是灰扑扑的楼，可往南四十公里到台儿庄，画风一拧——运河穿城，灯影在水里碎成金。</p>
-      <p>我第一次懂枣庄，是在微山湖边的傍晚。渔家摇橹，远处的铁道游击队纪念碑立在苇荡里，有人用方言哼"弹起我心爱的土琵琶"。那一刻你明白，这座城把硬和软都长在了一起。</p>
-      <aside class="tip"><b>当地贴士：</b>以台儿庄为圆心，微山湖、冠世榴园都在 1 小时车程内；住古城里，夜游最舒服。</aside>
-      <aside class="tip"><b>Local tip:</b>Use Tai'erzhuang as hub; Weishan Lake and the giant pomegranate garden are within an hour — stay in the old town, night walks best.</aside>
+      <p class="lead">枣庄不声不响。你一下高铁，城破得没脾气——旧矿区的烟囱还在，可已经不冒烟了。先到运河边上坐坐，风里有煤渣和旧木头的味道，得先把这座城的"硬"气咽下去。</p>
+      <p>我第一次懂枣庄，是在台儿庄运河的傍晚。对岸的灯亮了，像一串被擦亮的珍珠，映在水里晃来晃去。那一刻你明白，这座城把最惨的记忆刻在砖上，却把最软的灯挂在了水上。</p>
+      <aside class="tip"><b>当地贴士：</b>以台儿庄城区为基地；铁道游击队纪念园在薛城，约一小时车程。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in Taierzhuang; the Railway Guerrilla memorial is in Xuecheng, about an hour away.</aside>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang keeps quiet. Step off the train and it's all grey blocks, yet forty kilometres south at Tai'erzhuang the mood twists — canal through town, lamp-light shattered to gold on the water.</p>
-      <p>I got Zaozhuang by Weishan Lake at dusk. A fisherman sculls, the Railway Guerrillas monument stands in the reeds, someone hums 'pluck my beloved pipa' in dialect. That moment you see this city wears hard and soft as one.</p>
-      <aside class="tip"><b>当地贴士：</b>以台儿庄为圆心，微山湖、冠世榴园都在 1 小时车程内；住古城里，夜游最舒服。</aside>
-      <aside class="tip"><b>Local tip:</b>Use Tai'erzhuang as hub; Weishan Lake and the giant pomegranate garden are within an hour — stay in the old town, night walks best.</aside>
+      <p class="lead">Zaozhuang keeps quiet. Step off and the city feels broken — old mine chimneys still stand, but no smoke comes out. Sit by the canal first — wind carries coal dust and old wood, swallow this city's hardness first.</p>
+      <p>I got Zaozhuang at dusk on Taierzhuang Canal. Lights came on across the water, a string of polished pearls, shimmering and swaying. That moment you see — the city carved its worst memories into bricks, but hung its softest lights over the water.</p>
+      <aside class="tip"><b>当地贴士：</b>以台儿庄城区为基地；铁道游击队纪念园在薛城，约一小时车程。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in Taierzhuang; the Railway Guerrilla memorial is in Xuecheng, about an hour away.</aside>
     </div>
   </section>
   <section id="s2">
     <span class="secno">02</span>
     <h2>枣庄到底是什么<span class="en">What Zaozhuang is</span></h2>
     <div class="zh">
-      <p class="lead">枣庄是座年轻的城市，因煤而起，却偏偏守着京杭大运河最完整的一段——台儿庄古城。工业的血肉里裹着水的魂，这种拧巴是全山东独一份。</p>
-      <p>它还是铁道游击队的故乡。运河、铁路、微山湖，三样本事凑在一块儿，让这座城既能扛事，也能抒情。</p>
+      <p class="lead">枣庄是淮海西端的煤城，京沪、陇海两条铁路交汇处。它因抗日出名——1938年台儿庄大捷是抗战初期最重大的胜利，铁道游击队在津浦线上的传奇故事传遍全国。</p>
+      <p>今天的枣庄一半废墟一半新城，旧矿区在转型，运河古城在重建。枣庄的好，在于它又惨又韧——这座城曾被战争撕成碎片，又自己把它粘起来。</p>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang is a young city, risen on coal, yet it guards the most intact stretch of the Grand Canal — Tai'erzhuang. Industrial flesh wrapped round a watery soul; that contradiction is unique in Shandong.</p>
-      <p>It's also home of the Railway Guerrillas. Canal, rail, lake — three skills in one place let the city both endure and lyricise.</p>
+      <p class="lead">Zaozhuang is a former coal city on Huaihai's west, at the crossing of Beijing–Shanghai and Lianyungang–Lanzhou railways. It's famous for anti-Japanese resistance — the 1938 Taierzhuang victory was the war's first major win, and the Railway Guerrillas' tales on the Tianjin–Pukau line spread nationwide.</p>
+      <p>Today it's half-ruin, half-new; old mines transform, the canal old town rebuilt. Its grace is tragedy and toughness — torn to bits by war, then glued back together by its own hands.</p>
     </div>
   </section>
   <section id="s3">
     <span class="secno">03</span>
     <h2>怎么走<span class="en">Getting around</span></h2>
     <div class="zh">
-      <p class="lead">枣庄站和滕州东站都在京沪高铁线上，从徐州过来半小时出头，从济南两小时。市内到台儿庄有公交和旅游专线，微山湖得从薛城或滕州转车再换船。</p>
-      <p>古城里全靠腿，青石板路窄，车进不去，正好慢下来。</p>
-      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；古城外停车难，住里面省心。</aside>
-      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; parking by the old town is tight, stay inside for ease.</aside>
+      <p class="lead">枣庄西站在京沪高铁上，从徐州过来约半小时；台儿庄站更近景区。市区打车便宜，铁道游击队纪念园在薛城区，建议包车或打滴滴。</p>
+      <p>台儿庄古城很大，建议夜里坐船游览，比白天更有感觉。</p>
+      <aside class="tip"><b>实用贴士：</b>台儿庄古城门票含游船；记得穿舒服的鞋，古城里都是石板路。</aside>
+      <aside class="tip"><b>Handy tip:</b>Taierzhuang ticket includes boat ride; wear comfortable shoes — cobblestones everywhere.</aside>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang and Tengzhou East sit on the Beijing–Shanghai line, half an hour from Xuzhou, two from Jinan. Buses and tourist shuttles run to Tai'erzhuang; for Weishan Lake transfer at Xuecheng or Tengzhou then a boat.</p>
-      <p>The old town is foot-only; narrow flagstones keep cars out — slow down, as meant.</p>
-      <aside class="tip"><b>实用贴士：</b>买票认准官方「铁路 12306」App；古城外停车难，住里面省心。</aside>
-      <aside class="tip"><b>Handy tip:</b>Use the official 12306 app; parking by the old town is tight, stay inside for ease.</aside>
+      <p class="lead">Zaozhuang West on Beijing–Shanghai HSR is half an hour from Xuzhou; Taierzhuang Station closer to the scenic area. Cabs are cheap; the Railway Guerrilla memorial in Xuecheng is best reached by chartered car or Didi.</p>
+      <p>Taierzhuang old town is huge — take a boat cruise at night, it's better than daytime.</p>
+      <aside class="tip"><b>实用贴士：</b>台儿庄古城门票含游船；记得穿舒服的鞋，古城里都是石板路。</aside>
+      <aside class="tip"><b>Handy tip:</b>Taierzhuang ticket includes boat ride; wear comfortable shoes — cobblestones everywhere.</aside>
     </div>
   </section>
   <section id="s4">
     <span class="secno">04</span>
-    <h2>台儿庄：一座重建的活古城<span class="en">Tai'erzhuang: a rebuilt living town</span></h2>
+    <h2>台儿庄大捷纪念馆<span class="en">Taierzhuang Victory Memorial</span></h2>
     <div class="zh">
-      <p class="lead">台儿庄古城是运河上少有的"水城"，桥多、船多、灯多。它曾在战火里被抹平，又照着老图纸一点点拼回来——拼得认真，连砖缝都对得上史料。</p>
-      <p>白天看的是建筑，夜里看的是倒影。沿河一溜酒吧茶馆，唱戏的、拉琴的、卖糖画的，江湖气和书卷气挨着过。</p>
-      <aside class="tip"><b>当地贴士：</b>古城门票不便宜，住一晚往往含二次入园；想看静的，赶开门那阵人最少。</aside>
-      <aside class="tip"><b>Local tip:</b>The town ticket isn't cheap; an overnight often includes re-entry; for quiet, go at opening when few are about.</aside>
+      <p class="lead">台儿庄大捷纪念馆坐落在古城西北角，是在当年激战的旧址上建的。馆里有一张巨大的油画，描绘1938年春池峰城师长指挥国军与日军在运河上血战的场景，看了让人沉默。</p>
+      <p>纪念馆最让人震撼的是一面"尸骨墙"——是当年阵亡将士遗骨的模型堆叠而成的，你站在墙前，能感到一种沉甸甸的重量，压得你喘不过气。</p>
+      <aside class="tip"><b>当地贴士：</b>纪念馆免费，凭身份证领票；周一闭馆。</aside>
+      <aside class="tip"><b>Local tip:</b>Memorial is free, ID for tickets; closed Mondays.</aside>
     </div>
     <div class="en">
-      <p class="lead">Tai'erzhuang is a rare 'water town' on the canal — many bridges, boats, lamps. Razed in war, it was pieced back from old plans so carefully the brick joints match the records.</p>
-      <p>By day you see architecture, by night reflections. A string of bars and teahouses along the river — opera, strings, sugar painting — river-and-lake and letters side by side.</p>
-      <aside class="tip"><b>当地贴士：</b>古城门票不便宜，住一晚往往含二次入园；想看静的，赶开门那阵人最少。</aside>
-      <aside class="tip"><b>Local tip:</b>The town ticket isn't cheap; an overnight often includes re-entry; for quiet, go at opening when few are about.</aside>
+      <p class="lead">The Taierzhuang Victory Memorial sits in the old town's northwest corner, built on the very site of the 1938 fighting. A giant oil painting depicts General Chi Fengcheng commanding Nationalists against Japanese on the canal; it silences you.</p>
+      <p>Most staggering is a 'wall of bones' — a stacked memorial of model remains of the fallen. Stand before it and you feel a weight you can barely breathe under.</p>
+      <aside class="tip"><b>当地贴士：</b>纪念馆免费，凭身份证领票；周一闭馆。</aside>
+      <aside class="tip"><b>Local tip:</b>Memorial is free, ID for tickets; closed Mondays.</aside>
     </div>
   </section>
   <section id="s5">
     <span class="secno">05</span>
-    <h2>微山湖与榴园<span class="en">Weishan Lake and the pomegranate garden</span></h2>
+    <h2>台儿庄运河古城<span class="en">Taierzhuang canal old town</span></h2>
     <div class="zh">
-      <p class="lead">微山湖在枣庄边上，夏天荷叶铺天，船在叶底下穿。湖心的铁道游击队纪念园，把那股劲留成了实物。冠世榴园在峄城，五月榴花红得像烧起来，秋天石榴咧嘴笑。</p>
-      <p>这两处都不挤，适合不想被人推着走的人。租条船，让渔家摇你去湖心，什么也不想，看水鸟起起落落就够花掉一整个日头。</p>
-      <aside class="tip"><b>实用贴士：</b>看荷花锁定夏天；上岛船有末班，别贪玩误了返程。</aside>
-      <aside class="tip"><b>Handy tip:</b>Lotus means summer; island boats have a last run — don't linger past it.</aside>
+      <p class="lead">台儿庄运河古城是抗战后重建的，青砖黛瓦、小桥流水，全是按照明清运河古城的格局修的。它不是原样复制——因为原样已经毁了——而是"重建一个能让人记得住的样子"。</p>
+      <p>夜里古城最好看。红灯笼一排排挂起来，运河上的画舫亮着灯慢慢滑过，有姑娘撑着伞在青石板上走。你可以找个二楼的茶馆坐下来，看着下面的人群，想着八十年前这里曾是一片废墟。</p>
+      <aside class="tip"><b>实用贴士：</b>古城门票 118 元，含往返高铁票（枣庄西站—台儿庄）；夜游比白天票略贵。</aside>
+      <aside class="tip"><b>Handy tip:</b>Old town ticket 118 yuan, includes round-trip HSR from Zaozhuang West; night ticket slightly pricier.</aside>
     </div>
     <div class="en">
-      <p class="lead">Weishan Lake borders Zaozhuang; in summer lotus pads roof the sky, boats plough beneath. The lake-centre guerrillas park keeps that streak real. The giant pomegranate garden in Yicheng flames red in May, grins in autumn.</p>
-      <p>Neither crowds; rent a skiff, let a fisherman row you out, think of nothing, watch water birds — enough to spend a whole day.</p>
-      <aside class="tip"><b>实用贴士：</b>看荷花锁定夏天；上岛船有末班，别贪玩误了返程。</aside>
-      <aside class="tip"><b>Handy tip:</b>Lotus means summer; island boats have a last run — don't linger past it.</aside>
+      <p class="lead">Taierzhuang Canal Old Town was rebuilt after the war — blue tiles, small bridges, water, built to Ming–Qing canal town scale. It's not a copy — the original is gone — but 'rebuilding a shape worth remembering'.</p>
+      <p>Best at night. Red lanterns hang row by row, painted boats drift with lights, a girl with an umbrella walks over the stones. Sit in a second-floor teahouse, watch the crowd below, and imagine — eighty years ago this was all rubble.</p>
+      <aside class="tip"><b>实用贴士：</b>古城门票 118 元，含往返高铁票（枣庄西站—台儿庄）；夜游比白天票略贵。</aside>
+      <aside class="tip"><b>Handy tip:</b>Old town ticket 118 yuan, includes round-trip HSR from Zaozhuang West; night ticket slightly pricier.</aside>
     </div>
   </section>
   <section id="s6">
     <span class="secno">06</span>
-    <h2>吃什么<span class="en">What to eat</span></h2>
+    <h2>铁道游击队纪念园<span class="en">Railway Guerrilla memorial</span></h2>
     <div class="zh">
-      <p class="lead">枣庄的味道在运河和煤炉之间。辣子鸡是招牌，本地小公鸡配大量干辣椒爆炒，辣得通透，配烙饼是工人的午餐哲学。微山湖的咸鸭蛋、四鼻鲤鱼，都是湖水直接喂出来的鲜。</p>
-      <p>菜煎饼是街头主角，杂粮饼摊上鸡蛋蔬菜，叠起来烙到焦脆，赶路时一卷就走。羊肉汤也实在，奶白一碗配烧饼。</p>
-      <aside class="tip"><b>当地贴士：</b>辣子鸡认老店，辣度可点；菜煎饼现烙最香，凉了皮就硬。</aside>
-      <aside class="tip"><b>Local tip:</b>For chilli chicken trust old names, set your heat; pancakes best hot off the griddle.</aside>
+      <p class="lead">铁道游击队纪念园在薛城区，建在临城火车站旧址上，就是当年游击队爬火车、杀鬼子的地方。馆里有一面"英雄墙"，刻着一百多位当年游击队队员的名字，他们大多没活过三十岁。</p>
+      <p>纪念园旁边还保留着一段当年的津浦铁路，现在只用作参观。你可以站在铁轨上，想象八十年前刘洪和鲁汉是怎么扒上火车的。</p>
+      <aside class="tip"><b>当地贴士：</b>纪念园免费开放；周边有游击队主题餐馆，菜名都是《铁道游击队》里的人名。</aside>
+      <aside class="tip"><b>Local tip:</b>Memorial is free; nearby guerrilla-themed restaurants name dishes after characters from the novel.</aside>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang's flavour sits between canal and coal stove. Chilli chicken is the signboard — local rooster with dry chillies, cleanly hot, with baked cake the workers' lunch philosophy. Weishan's salted duck eggs and four-nose carp are lake-fresh.</p>
-      <p>The vegetable pancake is the street star — grains griddled with egg and veg, folded crisp, a roll to go. Mutton soup is honest too, milky with a biscuit.</p>
-      <aside class="tip"><b>当地贴士：</b>辣子鸡认老店，辣度可点；菜煎饼现烙最香，凉了皮就硬。</aside>
-      <aside class="tip"><b>Local tip:</b>For chilli chicken trust old names, set your heat; pancakes best hot off the griddle.</aside>
+      <p class="lead">The Railway Guerrilla memorial is in Xuecheng, built on the old Lincheng railway station — the very place they climbed trains and killed Japanese soldiers. Inside is a 'hero wall' with more than one hundred guerrilla names, most dead before thirty.</p>
+      <p>A stretch of the old Tianjin–Pukau line sits beside the memorial, now for visitors only. Stand on the rails and imagine how Liu Hong and Lu Han climbed aboard those trains eighty years ago.</p>
+      <aside class="tip"><b>当地贴士：</b>纪念园免费开放；周边有游击队主题餐馆，菜名都是《铁道游击队》里的人名。</aside>
+      <aside class="tip"><b>Local tip:</b>Memorial is free; nearby guerrilla-themed restaurants name dishes after characters from the novel.</aside>
     </div>
   </section>
   <section id="s7">
     <span class="secno">07</span>
-    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <h2>抱犊崮与熊耳山<span class="en">Baodu Mountain & Xiong'er Mountain</span></h2>
     <div class="zh">
-      <p class="lead">台儿庄是重建古城，别把它当真古迹考据——它是纪念，不是考古。微山湖上船穿好救生衣，湖面风大，站船头拍照别探太出去。</p>
-      <p>运河边老人多，问路他们乐意讲，可别拿"这城是不是假的"去戳——枣庄人把重建当还债，你客气点，他们能把每段砖的来由说给你听。</p>
+      <p class="lead">抱犊崮是鲁南第一高峰，八路军115师曾在这里建立抗日根据地。山上有一个"抱犊崮崮"——就是那种四面陡峭、山顶平坦的山，中国独有的地貌，枣庄有好多。</p>
+      <p>熊耳山的"双龙大裂谷"是地震形成的自然奇观，裂谷有一百多米深，两壁几乎垂直，你站在谷底抬头看，天只剩一条缝。谷里还有一线天、飞来石，很值得一看。</p>
+      <aside class="tip"><b>实用贴士：</b>抱犊崮门票 100 元；熊耳山门票 60 元，裂谷有点险，穿防滑鞋。</aside>
+      <aside class="tip"><b>Handy tip:</b>Baodu ticket 100 yuan; Xiong'er 60 yuan — the rift has some peril, wear non-slip shoes.</aside>
     </div>
     <div class="en">
-      <p class="lead">Tai'erzhuang is rebuilt; don't treat it as a real ruin to autopsy — it's tribute, not archaeology. On Weishan wear the life jacket; lake wind is strong, don't lean far out for a shot.</p>
-      <p>Canal-side elders love to talk; just don't poke with 'is this town fake' — Zaozhuang treats the rebuild as repaying a debt; be polite and they'll tell you each brick's story.</p>
+      <p class="lead">Baodu is southern Shandong's highest peak, where the Eighth Route Army's 115th Division set up an anti-Japanese base. It's a 'gu' — the unique Chinese landform of steep-sided, flat-topped hills — Zaozhuang has many.</p>
+      <p>Xiong'er Mountain's 'Two Dragons Great Rift' is an earthquake-made wonder — over a hundred metres deep, walls nearly vertical. Stand at the bottom and look up, the sky is a mere crack. Also has One Line Sky and Flying Stone, worth the climb.</p>
+      <aside class="tip"><b>实用贴士：</b>抱犊崮门票 100 元；熊耳山门票 60 元，裂谷有点险，穿防滑鞋。</aside>
+      <aside class="tip"><b>Handy tip:</b>Baodu ticket 100 yuan; Xiong'er 60 yuan — the rift has some peril, wear non-slip shoes.</aside>
     </div>
   </section>
   <section id="s8">
     <span class="secno">08</span>
-    <h2>什么时候去<span class="en">When to go</span></h2>
+    <h2>吃什么<span class="en">What to eat</span></h2>
     <div class="zh">
-      <p class="lead">春天峄城榴花红，夏天微山湖荷盛，都是好时候。秋天石榴熟、湖水清，人不算多。冬天古城灯会冷清些，可雪后青石板映着红灯，另有一番肃穆的好看。</p>
-      <p>若只为古城，四季都成；若为了湖和花，夏天秋天最对。</p>
-      <aside class="tip"><b>实用贴士：</b>花期和荷期都短，盯天气走；雪后古城美但路滑，慢行。</aside>
-      <aside class="tip"><b>Handy tip:</b>Bloom and lotus are brief — watch weather; after snow the town is pretty but slick, go slow.</aside>
+      <p class="lead">枣庄的味道在"硬"字里——煤矿工人、铁道游击队，都是咬着牙过日子的人。菜煎饼是街头招牌，比山东煎饼厚，夹着土豆丝、胡萝卜丝、豆腐丝，卷起来比胳膊还粗。</p>
+      <p>羊肉汤也是枣庄人的命根子，跟徐州的羊汤同源，但更浓。冬天一大早，街边羊汤馆就支起大锅，白汤翻滚，撒香菜，配锅饼，一碗下去能扛到中午。</p>
+      <aside class="tip"><b>当地贴士：</b>'老郑家菜煎饼"是台儿庄的老招牌；羊汤馆认准门口挂着羊头的。</aside>
+      <aside class="tip"><b>Local tip:</b>Old Zheng's vegetable pancake is Taierzhuang's signboard; mutton soup stalls — look for the sheep head hanging outside.</aside>
     </div>
     <div class="en">
-      <p class="lead">Spring flames the pomegranate flowers, summer swells Weishan's lotus — both good. Autumn ripens the fruit and clears the lake, few crowds. Winter dims the lantern fair, yet snow on red lanterns has its solemn beauty.</p>
-      <p>For the town any season works; for lake and flowers, summer and autumn fit best.</p>
-      <aside class="tip"><b>实用贴士：</b>花期和荷期都短，盯天气走；雪后古城美但路滑，慢行。</aside>
-      <aside class="tip"><b>Handy tip:</b>Bloom and lotus are brief — watch weather; after snow the town is pretty but slick, go slow.</aside>
+      <p class="lead">Zaozhuang's flavour lives in 'hard' — miners and guerrillas alike bit their teeth through life. Vegetable pancakes are the street sign, thicker than Shandong's, stuffed with potato, carrot, tofu threads, rolled thicker than your arm.</p>
+      <p>Mutton soup is Zaozhuang's lifeline, same origin as Xuzhou's but thicker. By early winter mornings, street stalls boil big pots, white broth rolling, sprinkled with coriander, with wheat cakes — one bowl holds you till noon.</p>
+      <aside class="tip"><b>当地贴士：</b>'老郑家菜煎饼"是台儿庄的老招牌；羊汤馆认准门口挂着羊头的。</aside>
+      <aside class="tip"><b>Local tip:</b>Old Zheng's vegetable pancake is Taierzhuang's signboard; mutton soup stalls — look for the sheep head hanging outside.</aside>
     </div>
   </section>
   <section id="s9">
     <span class="secno">09</span>
-    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
     <div class="zh">
-      <p class="lead">台儿庄的运河边是免费的天然步道，沿河走，桥一座接一座，每座栏板上都刻着故事。古城外的万亩榴园，树下散步不收钱，秋天落叶铺金。</p>
-      <p>微山湖大堤也是免费的，夕阳把河滩染成橘色，骑车比走路爽。枣庄的好走，在于你走到哪都有人愿意多讲两句。</p>
-      <aside class="tip"><b>实用贴士：</b>古城外围步道免费；榴园春季花海、秋季采摘都热闹。</aside>
-      <aside class="tip"><b>Handy tip:</b>The town's outer path is free; the orchard blooms in spring, picks in autumn.</aside>
+      <p class="lead">台儿庄大捷纪念馆是红色圣地，进馆请保持肃穆，请勿喧哗。铁道游击队纪念园同理。古城里的老建筑请勿攀爬。矿区旧路别乱闯，有的还在用。</p>
+      <p>枣庄人直来直去，说话硬，可对陌生人很热情。问路他们会给你掰扯得明明白白，还可能邀你去家里喝碗羊汤。别对他们的抗日英雄有任何不敬——这座城把那些名字刻在了砖上、墙上、心里。</p>
     </div>
     <div class="en">
-      <p class="lead">Tai'erzhuang's canal bank is a free path; bridge after bridge, each railing carved with a tale. The thousand-mu pomegranate orchard outside charges nothing to walk, gold with leaves in autumn.</p>
-      <p>Weishan's embankment is free too; at dusk it dyes the shoal orange, better by bike. Zaozhuang's joy is that someone everywhere will tell you more.</p>
-      <aside class="tip"><b>实用贴士：</b>古城外围步道免费；榴园春季花海、秋季采摘都热闹。</aside>
-      <aside class="tip"><b>Handy tip:</b>The town's outer path is free; the orchard blooms in spring, picks in autumn.</aside>
+      <p class="lead">Taierzhuang memorial is sacred heritage — silence inside, no loud talk. Same for the Railway Guerrilla memorial. Don't climb old structures in the town. Stay off old mine roads — some are still in use.</p>
+      <p>Zaozhuang folk are straight, speak hard, but warm to strangers. They'll point you clear directions and might even invite you in for mutton soup. Never show disrespect to their anti-Japanese heroes — those names are carved into bricks, walls, and hearts.</p>
     </div>
   </section>
   <section id="s10">
     <span class="secno">10</span>
-    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <h2>什么时候去<span class="en">When to go</span></h2>
     <div class="zh">
-      <p class="lead">枣庄最贵的东西，大多不要钱。台儿庄运河的水声、微山湖的荷香、古城墙外那堵老砖，站着看就是参与。雪后青石板上红灯的倒影，比收费园里还好看。</p>
-      <p>榴园里老乡摆摊卖自家石榴，你站着尝一块，他还会塞你半個。枣庄教会我：好地方不靠门票证明自己。</p>
-      <aside class="tip"><b>当地贴士：</b>花期街头花坛免费；博物馆多周一闭馆，去前查开放日。</aside>
-      <aside class="tip"><b>Local tip:</b>At bloom roadside beds are free; many museums close Mondays — check first.</aside>
+      <p class="lead">秋天古城的灯会最漂亮，运河上游船穿梭，灯笼倒映在水里像落了一片星。春天山上的杏花梨花开了，抱犊崮的景色最好。夏天热，但可以在运河上坐船消暑。冬天冷，可旧矿区的烟囱配雪，有一种荒凉的美。</p>
+      <p>若为了古城灯会，秋天最对；若为了登山赏花，春天最好。</p>
+      <aside class="tip"><b>实用贴士：</b>抗战胜利纪念日（九月三号）有纪念活动，人多；避开周末更清静。</aside>
+      <aside class="tip"><b>Handy tip:</b>Victory Day (September 3rd) has events — expect crowds; weekends are busier too.</aside>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang's priciest things mostly cost nothing. Tai'erzhuang's water sound, Weishan's lotus scent, the old brick beyond the wall — stand and you're in it. Snow on red lamps beats any paid garden.</p>
-      <p>Orchard folk sell their own pomegranates; taste one and they'll press half more on you. Zaozhuang taught me: good places don't prove themselves with a ticket.</p>
-      <aside class="tip"><b>当地贴士：</b>花期街头花坛免费；博物馆多周一闭馆，去前查开放日。</aside>
-      <aside class="tip"><b>Local tip:</b>At bloom roadside beds are free; many museums close Mondays — check first.</aside>
+      <p class="lead">Autumn brings the town's loveliest lantern festival — boats shuttle on the canal, lanterns reflecting like a sky of stars. Spring blossoms on the mountains, Baodu at its best. Summer's hot, but a canal boat cools you. Winter's cold, but old mine chimneys against snow have a desolate beauty.</p>
+      <p>For the lantern festival, autumn fits; for mountain blossoms, spring is best.</p>
+      <aside class="tip"><b>实用贴士：</b>抗战胜利纪念日（九月三号）有纪念活动，人多；避开周末更清静。</aside>
+      <aside class="tip"><b>Handy tip:</b>Victory Day (September 3rd) has events — expect crowds; weekends are busier too.</aside>
     </div>
   </section>
   <section id="s11">
     <span class="secno">11</span>
-    <h2>收束<span class="en">Before you leave</span></h2>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
     <div class="zh">
-      <p class="lead">枣庄不会一下子把你迷住。它没有名山的压迫，也没有江南的精致。它慢，它土，它又硬又软——一盏灯能让人停下，一首土琵琶能让人回头。</p>
-      <p>你逛过台儿庄的一河灯影、微山湖的一船荷香、榴园里的一地落叶，临走会明白：这片土地最舍得给的，从来不是名气，而是那种"城毁了，咱就再建一座"的骨气。它不急着留你，却总让你惦记。</p>
+      <p class="lead">台儿庄古城的运河步道免费，从古城南门能一直走到西门，沿途有古码头和老桥。铁道游击队纪念园的铁轨也免费开放，可以上去走走。抱犊崮的登山步道免费（需先买门票），山上空气好得能当矿泉水卖。</p>
+      <p>枣庄的好走，在于它"不完美"——旧矿区的废墟、运河边的垃圾堆、古城里还没修完的地方，都有一种真实的味道。</p>
+      <aside class="tip"><b>实用贴士：</b>'22 Day"纪念日前古城会有抗战主题活动；旧矿区不推荐单独前往。</aside>
+      <aside class="tip"><b>Handy tip:</b>Around July 22nd the old town hosts war-themed events; don't go to old mines alone.</aside>
     </div>
     <div class="en">
-      <p class="lead">Zaozhuang won't hypnotise you at once. No famous mountain's weight, no Jiangnan's refinement. It's slow, plain, hard and soft — one lamp stops you, one pipa brings you back.</p>
-      <p>You'll see Tai'erzhuang's lamp-lit river, Weishan's lotus boat, the orchard's fallen leaves, and leaving you'll get it: what this land gives most freely was never fame, but the grit of 'the town fell, so we'll build another'. It won't rush to keep you, yet always leaves you missing it.</p>
+      <p class="lead">The Taierzhuang canal path is free, from south gate to west gate with old quays and bridges. The Railway Guerrilla railway tracks are open free. Baodu's hiking path costs nothing after ticket; mountain air clean enough to sell as water.</p>
+      <p>Zaozhuang is walkable because it's 'not perfect' — old mine ruins, canal-side garbage, parts of the town still being fixed — all have that honest, real feel.</p>
+      <aside class="tip"><b>实用贴士：</b>'22 Day"纪念日前古城会有抗战主题活动；旧矿区不推荐单独前往。</aside>
+      <aside class="tip"><b>Handy tip:</b>Around July 22nd the old town hosts war-themed events; don't go to old mines alone.</aside>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄最贵的东西，大多不要钱。运河的水声、古城的红灯笼、抱犊崮上的风，站着看就是参与。铁道游击队纪念园免费，能让你重新理解那段历史。</p>
+      <p>枣庄教会我：最动人的风景往往不是完美的，而是带着点伤痕的。</p>
+      <aside class="tip"><b>当地贴士：</b>'台儿庄古城外围运河步道免费；铁道游击队纪念园免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Canal path outside Taierzhuang is free; Railway Guerrilla memorial is free.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang's priciest things mostly cost nothing — the canal's sound, the old town's red lanterns, wind on Baodu Mountain; stand and you're in it. The Railway Guerrilla memorial is free, and will make you rethink that period of history.</p>
+      <p>Zaozhuang taught me: the most moving landscapes aren't the perfect ones — they're the ones that still carry scars.</p>
+      <aside class="tip"><b>当地贴士：</b>'台儿庄古城外围运河步道免费；铁道游击队纪念园免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Canal path outside Taierzhuang is free; Railway Guerrilla memorial is free.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">枣庄不会一下子把你看服。它没有名山的名气，也没有水乡的婉约。它硬，它惨，它又韧又燃——一个古城能让人沉默，一段铁轨能让人回头。</p>
+      <p>你看过台儿庄的灯笼、铁道游击队的墙、抱犊崮的风，临走会明白：淮海不只有汉墓运河，还有一座城在废墟上自己把灯点亮。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zaozhuang won't win you at once. No famous mountain's fame, no water town's grace. It's hard, tragic, tough and burning — one old town silences you, one rail turns you back.</p>
+      <p>You've seen Taierzhuang's lanterns, the guerrilla wall, Baodu's wind — and leaving you'll get it: Huaihai isn't only Han tombs and canals; there's a city that lit its own lanterns out of the ruins. It won't rush to keep you, yet always leaves you missing it.</p>
     </div>
   </section>
 

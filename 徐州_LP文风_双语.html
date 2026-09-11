@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>徐州 · Xuzhou — 汉墓的穴，云龙湖的浪</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>徐州</h1>
+  <div class="en-title">Xuzhou</div>
+  <p class="zh">淮海经济区的心脏，也是汉文化的重镇——帝王将相在土里躺了两千年，湖边人家把日子过得火热。</p>
+  <p class="en">The heart of the Huaihai zone and a stronghold of Han culture — emperors and marshals lie two thousand years in the earth, while lakeside folk keep life hot.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔汉墓，去云龙湖边坐坐 / Arrive by Yunlong Lake</a></li>
+      <li><a href="#s2">徐州到底是什么 / What Xuzhou is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">楚王陵与汉画像石 / Prince Chu's tomb & Han stones</a></li>
+      <li><a href="#s5">窑湾古镇与云龙湖 / Yaowan old town & Yunlong Lake</a></li>
+      <li><a href="#s6">汉兵马俑博物馆（水下） / Underwater Han warriors</a></li>
+      <li><a href="#s7">户部山与云龙山 / Hubu Hill & Yunlong Mountain</a></li>
+      <li><a href="#s8">当地人的日常 / Xuzhou everyday</a></li>
+      <li><a href="#s9">这座城的声音 / Sounds of Xuzhou</a></li>
+      <li><a href="#s10">吃什么 / What to eat</a></li>
+      <li><a href="#s11">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s12">什么时候去 / When to go</a></li>
+      <li><a href="#s13">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s14">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s15">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔汉墓，去云龙湖边坐坐<span class="en">Arrive by Yunlong Lake</span></h2>
+    <div class="zh">
+      <p class="lead">徐州不声不响。你一出高铁，城平得没脾气，可往云龙湖一坐，水天一色，山影横着看，心先凉快下来。往汉墓去要沉下心，得先把杂念放这儿。</p>
+      <p>我第一次懂徐州，是在云龙湖的傍晚。风把水面揉成碎金，远处有老人唱柳琴，调的尾音拖得老长。那一刻你明白，这座城把"汉"字写进了骨，可日子却是热腾腾的。</p>
+      <aside class="tip"><b>当地贴士：</b>以徐州城区为基地，楚王陵、汉画像石馆、云龙湖都在市区；住湖边最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; Prince Chu's tomb, the stone-relief hall and Yunlong are all downtown — stay lakeside for ease.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou keeps quiet. Step off and the city is flat without temper, yet sit by Yunlong Lake and water meets sky, hills laid sideways, the mind cools first. The Han tombs ask for composure — leave the noise here.</p>
+      <p>I got Xuzhou at dusk by Yunlong Lake. Wind crumpled the water to splintered gold, an old man sang liuqin far off, the tune's tail drawn long. That moment you see the city wrote 'Han' into its bone, yet its days run hot.</p>
+      <aside class="tip"><b>当地贴士：</b>以徐州城区为基地，楚王陵、汉画像石馆、云龙湖都在市区；住湖边最舒服。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; Prince Chu's tomb, the stone-relief hall and Yunlong are all downtown — stay lakeside for ease.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>徐州到底是什么<span class="en">What Xuzhou is</span></h2>
+    <div class="zh">
+      <p class="lead">徐州是淮海经济区的中心城市，京沪、陇海两条铁路在这儿交叉，"五省通衢"的枢纽。它更是汉文化的发源之地，刘邦起于沛，项羽困于彭城，两千年后土里的汉墓汉俑仍在说话。</p>
+      <p>今天的徐州一半是新楼一半是汉墓，矿区留下的骨架被云龙湖的活水慢慢泡软。徐州的好，在于它又帝王又江湖——历史压得住，日子却轻。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou anchors the Huaihai economic zone; the Beijing–Shanghai and Lianyungang–Lanzhou railways cross here, a 'thoroughfare of five provinces'. It's also Han culture's birth ground — Liu Bang rose in Pei, Xiang Yu fell at Pengcheng, and two thousand years later the Han tombs and figurines still speak from the earth.</p>
+      <p>Today's Xuzhou is half-new towers, half-old tombs; the mining town's skeleton softens slowly under Yunlong's living water. Xuzhou's grace is emperor and street — history weighs heavy, yet the days feel light.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">徐州东站在京沪高铁上，从南京过来一小时出头，从济南过来约一个半小时；徐州站是老站更靠城。市内通地铁，打车便宜，去楚王陵、汉画像石馆有公交，去窑湾得走高速。</p>
+      <p>湖边走最舒服，骑车能串起云龙湖周边几个小景点。</p>
+      <aside class="tip"><b>实用贴士：</b>高铁站到市区地铁直达，别打车；窑湾古镇周末人多，赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>HSR to downtown by metro — skip cabs; Yaowan old town crowds on weekends, go early.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou East on the Beijing–Shanghai HSR is a shade over an hour from Nanjing, about ninety minutes from Jinan. The old Xuzhou Station sits closer to town. Metro runs, cabs are cheap; buses reach the Prince's tomb and stone-relief hall, while Yaowan needs the highway.</p>
+      <p>Lakeshore walks best; a bike strings together Yunlong's small spots.</p>
+      <aside class="tip"><b>实用贴士：</b>高铁站到市区地铁直达，别打车；窑湾古镇周末人多，赶早。</aside>
+      <aside class="tip"><b>Handy tip:</b>HSR to downtown by metro — skip cabs; Yaowan old town crowds on weekends, go early.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>楚王陵与汉画像石<span class="en">Prince Chu's tomb & Han stones</span></h2>
+    <div class="zh">
+      <p class="lead">楚王陵是西汉第三代楚王刘戊的陵墓，凿山而建，墓道深百米，走进去能感到两千年前的寒气。汉兵马俑博物馆就在旁边，比西安的小一号，却自有一股淮海的粗粝。</p>
+      <p>汉画像石馆更有意思，一块块石板从地下挖出来，刻着宴饮、出行、神话，是汉代人的日常切片。你站在石前，能看到一个郡守请朋友喝酒，宾主举杯，画面安静得像刚刻完。</p>
+      <aside class="tip"><b>当地贴士：</b>楚王陵门票含兵马俑馆；汉画像石馆免费，周一闭。</aside>
+      <aside class="tip"><b>Local tip:</b>Prince Chu's ticket covers the warriors; the stone-relief hall is free, closed Mondays.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Prince Chu's tomb holds Liu Wu, third king of Chu in Western Han — carved into a hill, the passage a hundred metres deep; step in and you feel the cold of two thousand years ago. The Han Terracotta Warriors museum sits beside, smaller than Xi'an's, yet with a Huaihai roughness all its own.</p>
+      <p>The Han stone-relief hall is more engaging — slabs dug from the earth show banquets, processions, myths, slices of Han daily life. Stand before one and you watch a prefect host friends, host and guest raising cups, the scene calm as if just carved.</p>
+      <aside class="tip"><b>当地贴士：</b>楚王陵门票含兵马俑馆；汉画像石馆免费，周一闭。</aside>
+      <aside class="tip"><b>Local tip:</b>Prince Chu's ticket covers the warriors; the stone-relief hall is free, closed Mondays.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>窑湾古镇与云龙湖<span class="en">Yaowan old town & Yunlong Lake</span></h2>
+    <div class="zh">
+      <p class="lead">城南的窑湾古镇守着大运河，青石板、老码头还在，一招一式都是"水运兴城"的旧模样。船娘摇橹，岸边茶馆飘着茶香，你走进去能闻到运河的潮气。</p>
+      <p>云龙湖是徐州的水库，也是它最温柔的一张脸。环湖有栈道，也有乡间小路，你可以慢慢走，也可以租船下湖。夕阳把湖面染成金时，整座城的节奏都慢了。</p>
+      <aside class="tip"><b>实用贴士：</b>窑湾走高速约四十分钟；云龙湖环湖路长约十二公里，骑车正好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Yaowan via highway, forty minutes; Yunlong's ring road is about twelve km, perfect for a bike.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">South town Yaowan guards the Grand Canal — stone slabs, old quays intact, every gesture of it a memory of 'water transport makes the city'. A boatwoman sculls, tea-house scent drifts from the shore; walk in and you smell the canal's damp.</p>
+      <p>Yunlong Lake is Xuzhou's reservoir and its gentlest face. A boardwalk rings it, and country lanes too — stroll slow or rent a boat. When sunset gilds the surface, the whole city's pace drops.</p>
+      <aside class="tip"><b>实用贴士：</b>窑湾走高速约四十分钟；云龙湖环湖路长约十二公里，骑车正好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Yaowan via highway, forty minutes; Yunlong's ring road is about twelve km, perfect for a bike.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>汉兵马俑博物馆（水下）<span class="en">Underwater Han warriors</span></h2>
+    <div class="zh">
+      <p class="lead">楚王陵西北方向，独立的汉兵马俑博物馆藏着三个坑，最特别的是水下兵马俑馆——一组骑兵俑和车马坑常年浸在水里，隔着玻璃看，像看一场两千年前还没停的行军。</p>
+      <p>西安的兵马俑是大场面，徐州的是小而精。你可以蹲在玻璃前慢慢看，每一匹马的耳朵都立着，每一个士兵的发髻都不同。那种"我和一个汉代士兵对视"的感觉，在大博物馆里找不到。</p>
+      <aside class="tip"><b>当地贴士：</b>门票含在楚王陵通票里；水下馆灯光暗，别开闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Included with Prince Chu's combo ticket; underwater hall is dim — no flash photography.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Northwest of Prince Chu's tomb stands a separate Han Terracotta Warriors museum with three pits. Its star is the underwater pit — cavalry and chariots permanently submerged. Look through the glass and you watch a march that hasn't stopped in two thousand years.</p>
+      <p>Xi'an's warriors are the grand spectacle; Xuzhou's are small and precise. You can squat by the glass and take your time — every horse's ear is pricked, every soldier's topknot different. That feeling of locking eyes with a Han soldier — you don't get that at a big museum.</p>
+      <aside class="tip"><b>当地贴士：</b>门票含在楚王陵通票里；水下馆灯光暗，别开闪光灯。</aside>
+      <aside class="tip"><b>Local tip:</b>Included with Prince Chu's combo ticket; underwater hall is dim — no flash photography.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>户部山与云龙山<span class="en">Hubu Hill & Yunlong Mountain</span></h2>
+    <div class="zh">
+      <p class="lead">户部山是徐州城内的山地，明清时是官宦人家的聚居地，至今还保留着十多处完整的古宅。爬上山不用费力，从户部山下来走两步就是云龙山——苏轼曾在这儿建放鹤亭，晚年还写了一篇《放鹤亭记》。</p>
+      <p>我在放鹤亭坐了好一阵子，风从山坳里吹过来，带着松针味。山下有茶馆，老板煮茶，声音很轻。你往坡下看，徐州城的青瓦白墙在阳光下摊开，像一幅没折好的画。</p>
+      <aside class="tip"><b>实用贴士：</b>户部山古建筑群免费；云龙山从南门爬最轻松，北门下来是云龙湖。</aside>
+      <aside class="tip"><b>Handy tip:</b>Hubu mansions are free; Yunlong Mountain's south gate is the easy climb, north gate drops at Yunlong Lake.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hubu Hill, a ridge in downtown Xuzhou, was the Ming–Qing home of officials — more than ten intact old mansions still stand. Climb up effortlessly; a short walk down is Yunlong Mountain, where Su Shi built the Crane Release Pavilion and wrote his famous record of it in his later years.</p>
+      <p>I sat there through the warmest hours — wind out of the valley carried pine needles. A teahouse below, its owner pouring tea quiet. Look down and Xuzhou's blue tiles and white walls spread open in the sun like an unfolded painting.</p>
+      <aside class="tip"><b>实用贴士：</b>户部山古建筑群免费；云龙山从南门爬最轻松，北门下来是云龙湖。</aside>
+      <aside class="tip"><b>Handy tip:</b>Hubu mansions are free; Yunlong Mountain's south gate is the easy climb, north gate drops at Yunlong Lake.</aside>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>当地人的日常<span class="en">Xuzhou everyday</span></h2>
+    <div class="zh">
+      <p class="lead">徐州的矿工后代周末最爱往云龙湖跑——不是游客区，是湖北岸那片芦苇荡，男人们扛着钓竿和啤酒，女人们支起折叠桌摊烙馍卷馓子，孩子在水边扔石头。矿上的日子苦，但到了湖边，所有人都软了。</p>
+      <p>早市上你能听见徐州最真实的声音：饣它汤摊主把瓷碗磕得当当响，菜贩子喊"刚割的韭菜"，老人们排队领免费的豆浆。他们说徐州话，硬邦邦的像嚼烙馍，但笑起来眼角有湖风吹出的纹。</p>
+      <aside class="tip"><b>当地贴士：</b>想混入当地人早市，去和平桥市场，五点前后到。</aside>
+      <aside class="tip"><b>Local tip:</b>To join locals at the crack-of-dawn market, head to Heping Bridge market, arrive around five.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou's miner descendants head to Yunlong Lake on their days off — not the tourist shore, but the reed marsh on the north bank. Men carry fishing rods and beer, women spread folding tables piled with sanzi rolls, kids throw stones into the water. Mining days were hard, but by the lake everyone softens.</p>
+      <p>The crack-of-dawn market is where Xuzhou speaks true — the she-tang vendor clacks porcelain bowls, a greengrocer shouts 'just-cut leeks', old folks queue for free soy milk. They speak Xuzhou dialect, hard as chewing steamed bread, but their smiles show lines carved by lake wind.</p>
+      <aside class="tip"><b>当地贴士：</b>想混入当地人早市，去和平桥市场，五点前后到。</aside>
+      <aside class="tip"><b>Local tip:</b>To join locals at the crack-of-dawn market, head to Heping Bridge market, arrive around five.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>这座城的声音<span class="en">Sounds of Xuzhou</span></h2>
+    <div class="zh">
+      <p class="lead">徐州最响的声音不是地铁，是云龙湖边的柳琴戏。调子拖得老长，咿咿呀呀，像湖面上飘着一根细线。唱的人可能是退休矿工，也可能是放学的中学生，没人收钱，就是爱唱。</p>
+      <p>还有汉墓里的安静。当你走进楚王陵的墓道，外面的风声突然没了，只剩下你自己的呼吸和脚步声。那种静比任何声音都响——是两千年的石头在听你。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou's loudest sound isn't the metro — it's liuqin opera by Yunlong Lake. Tunes drawn long, wailing, like a thin thread drifting over the water. The singer could be a retired miner or a middle-schooler out of class. No one collects tickets; they just love to sing.</p>
+      <p>And then the silence of the Han tombs. Step into Prince Chu's passage and the wind outside vanishes; only your breath and footsteps remain. That silence speaks louder than any sound — two thousand years of stone listening to you.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">徐州的味道在汉地的火气里。烙馍卷馓子是街头招牌，薄饼卷上焦酥的馓子，一口下去咔嚓作响，配酱是徐州人沉默的嗜好。饣它汤是本地早点，浓稠一碗，撒胡椒，配馓子和煎包。</p>
+      <p>地锅鸡是硬菜，铁锅贴饼，鸡炖得烂，饼底吸满汤汁。徐州羊肉也是一绝，夏天照样喝羊汤，滚烫一碗，配烧饼，是北方汉子的续命哲学。</p>
+      <aside class="tip"><b>当地贴士：</b>地锅鸡认老品牌；羊汤馆多在城郊，市区也有连锁店。</aside>
+      <aside class="tip"><b>Local tip:</b>Groundpot chicken from old names; lamb soup houses cluster on the edge, chains downtown too.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou's flavour runs on Han fire. Piled steamed bread with crispy sanzi is the street sign — thin roll with crunchy threads, snap each bite, dipping sauce the quiet indulgence of Xuzhou folk. She tang is the local breakfast, thick, peppered, with sanzi and fried buns.</p>
+      <p>Groundpot chicken is the hard one — chicken stewed with unleavened cakes stuck to the pot rim, the cake bottom soaking broth. Xuzhou's lamb is no less a thing; even summer sees hot lamb soup with flatbread, a northern man's philosophy of keeping going.</p>
+      <aside class="tip"><b>当地贴士：</b>地锅鸡认老品牌；羊汤馆多在城郊，市区也有连锁店。</aside>
+      <aside class="tip"><b>Local tip:</b>Groundpot chicken from old names; lamb soup houses cluster on the edge, chains downtown too.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">汉墓群是文物保护区，请勿触摸石壁，请勿拍照（部分区域）。湖边风大，带件薄外套。徐州人爽快，问路指得明，可别拿"汉墓都是假的"去戳——这座城把祖宗供得很认真，你客气点，他们能把每方石的来由讲给你听。</p>
+      <p>矿区已大多关闭，但仍有零星工地，别乱闯。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The Han tombs are heritage sites — no touching walls, no photos in some areas. Lake winds blow hard, bring a light jacket. Xuzhou folk are straight-shooters; they point clear, just don't poke with 'are the tombs fake?' — the city honours its ancestors seriously, be polite and they'll tell you every stone's story.</p>
+      <p>Most mines are closed, but scattered worksites remain — don't wander in.</p>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">春天云龙湖新绿，花都开了，是徐州最温和的脾气。秋天汉文化区配落叶，别有一番肃穆。夏天湖面凉快，是避暑的好去处。冬天干冷，可雪后汉墓更显古意。</p>
+      <p>若为了汉墓，春秋最对；若为了湖边消暑，夏天也值。</p>
+      <aside class="tip"><b>实用贴士：</b>春季柳琴节在云龙湖；秋季汉文化旅游节有灯会。</aside>
+      <aside class="tip"><b>Handy tip:</b>Spring liuqin festival at Yunlong; autumn Han cultural tourism festival has lantern nights.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring brings fresh green to Yunlong, flowers open — Xuzhou at its mildest. Autumn pairs the Han area with falling leaves, a quiet solemnity. Summer's lake is cool, a refuge. Winter is dry-cold, yet snow on the tombs adds an old gravity.</p>
+      <p>For the tombs, spring–autumn fit best; for lakeside escape, summer works too.</p>
+      <aside class="tip"><b>实用贴士：</b>春季柳琴节在云龙湖；秋季汉文化旅游节有灯会。</aside>
+      <aside class="tip"><b>Handy tip:</b>Spring liuqin festival at Yunlong; autumn Han cultural tourism festival has lantern nights.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">云龙湖环湖路免费，沿途有小苏堤、钓鱼岛，走累了坐石凳看水面就是享受。汉画像石馆的后院有草坪，躺一会儿没人管。王陵路老街区还保留着些民国建筑，慢慢走能摸到些旧影子。</p>
+      <p>徐州的好走，在于汉都的底子把整座城撑得板正，你走着走着就走出了一种"厚"的安稳。</p>
+      <aside class="tip"><b>实用贴士：</b>云龙湖环湖公交招手停；王陵路老街区傍晚灯最好看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Yunlong ring bus stops on request; old Wangling Road is best at dusk when lamps come up.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yunlong's ring path is free, with Su Causeway and Fishing Isle along the way; sit on a bench and the water is enough. The stone-relief hall's backyard has grass, lie down and no one minds. Old Wangling Road holds some Republic-era buildings; walk slow and you'll catch an old shadow.</p>
+      <p>Xuzhou is walkable because its Han capital foundation holds the whole city straight; wander and you find a quiet solidness.</p>
+      <aside class="tip"><b>实用贴士：</b>云龙湖环湖公交招手停；王陵路老街区傍晚灯最好看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Yunlong ring bus stops on request; old Wangling Road is best at dusk when lamps come up.</aside>
+    </div>
+  </section>
+  <section id="s14">
+    <span class="secno">14</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">徐州最贵的东西，大多不要钱。云龙湖的风、汉墓在暮色里的轮廓、环湖那一路柳，站着看就是参与。雪后红梅配青砖，比收费园里还好看。</p>
+      <p>湖边大爷们摆棋不收钱，你站着看就是捧场。徐州教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>云龙湖全免费；汉画像石馆凭身份证领票。</aside>
+      <aside class="tip"><b>Local tip:</b>Yunlong is entirely free; the stone-relief hall issues tickets on ID.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou's priciest things mostly cost nothing — Yunlong's wind, the Han tombs' dusk silhouette, the row of willows along the ring path; stand and you're in it. Plum blossoms over blue bricks after snow beat any paid garden.</p>
+      <p>Old men lay chess free by the lake; stand and watch, that's applause. Xuzhou taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>云龙湖全免费；汉画像石馆凭身份证领票。</aside>
+      <aside class="tip"><b>Local tip:</b>Yunlong is entirely free; the stone-relief hall issues tickets on ID.</aside>
+    </div>
+  </section>
+  <section id="s15">
+    <span class="secno">15</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">徐州不会一下子把你看服。它没有名山的名气，也没有江南的精巧。它厚，它热，它又帝王又江湖——一座王陵能让人沉默，一碗羊汤能让人回头。</p>
+      <p>你看过楚王的墓、窑湾的船、云龙湖的一带金，临走会明白：这座城把两千年的汉风压在土里，却把最活的日子摆在湖边。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Xuzhou won't win you at once. No famous mountain's fame, no Jiangnan's finesse. It's heavy, hot, emperor-and-street — one royal tomb silences you, one bowl of lamb soup turns you back.</p>
+      <p>You've seen the Prince's tomb, Yaowan's boats, Yunlong's band of gold — and leaving you'll get it: the city presses two thousand years of Han into the earth, yet lays its liveliest days out by the lake. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

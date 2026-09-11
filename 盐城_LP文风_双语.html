@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>盐城 · Yancheng — 麋鹿的蹄，候鸟的翼</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>盐城</h1>
+  <div class="en-title">Yancheng</div>
+  <p class="zh">淮海东部的湿地之城，黄渤海候鸟栖息地是世界自然遗产，也是中国唯一的野生麋鹿自然保护区——三千只麋鹿在滩涂上跑，三百种候鸟来过冬。</p>
+  <p class="en">A wetland city on Huaihai's east, its Yellow–Bohai migratory bird hub a World Natural Heritage site, and China's only wild Père David's deer reserve — three thousand deer run the flats, three hundred bird species winter here.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔湿地，去串场河边走走 / Arrive by Chuanchang River</a></li>
+      <li><a href="#s2">盐城到底是什么 / What Yancheng is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">黄海湿地（世界遗产） / Yellow Sea wetland (World Heritage)</a></li>
+      <li><a href="#s5">麋鹿国家级自然保护区 / Père David's deer reserve</a></li>
+      <li><a href="#s6">丹顶鹤与盐城珍禽保护区 / Red-crowned cranes reserve</a></li>
+      <li><a href="#s7">西溪湿地与董永文化 / Xixi wetland & Dong Yong</a></li>
+      <li><a href="#s8">吃什么 / What to eat</a></li>
+      <li><a href="#s9">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s10">什么时候去 / When to go</a></li>
+      <li><a href="#s11">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s12">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s13">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔湿地，去串场河边走走<span class="en">Arrive by Chuanchang River</span></h2>
+    <div class="zh">
+      <p class="lead">盐城不声不响。你一下高铁，城平得像一张摊开的湿地地图，串场河把城分成两半。先在河边立住，风里有芦苇和湿地的味道，把大城市的燥气先放一放。</p>
+      <p>我第一次懂盐城，是在串场河的傍晚。水鸟低飞，两岸的芦苇晃来晃去，远处有人在放响鞭——不是别的，是河里的渔民在赶鱼。那一刻你明白，这座城把"湿地"穿在了身上，脱不下来。</p>
+      <aside class="tip"><b>当地贴士：</b>以盐城城区为基地；湿地和麋鹿保护区在郊，约一小时车程。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; wetland and deer reserve are about an hour away.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng keeps quiet. Step off and the city is flat as an unfolded wetland map; the Chuanchang River splits it in two. Stand by the bank first — wind carries reeds and marsh, drop the city's dust here.</p>
+      <p>I got Yancheng at dusk by the Chuanchang. Waterbirds skimmed low, reeds swaying on both banks, someone cracked a whip far off — not angry, a fisherman herding fish. That moment you see the city wears 'wetland' like skin — it can't take it off.</p>
+      <aside class="tip"><b>当地贴士：</b>以盐城城区为基地；湿地和麋鹿保护区在郊，约一小时车程。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; wetland and deer reserve are about an hour away.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>盐城到底是什么<span class="en">What Yancheng is</span></h2>
+    <div class="zh">
+      <p class="lead">盐城是淮海东端的沿海城市，全国唯一同时拥有世界自然遗产和国际湿地城市双头衔的地级市。黄海湿地的滩涂每年吸引几百万只候鸟停歇，麋鹿从英国重归故土后，现在已有三千多只。</p>
+      <p>今天的盐城一半高楼一半芦苇，滩涂上的风声和市中心的车声隔着三十公里，却像两个世界。盐城的好，在于它又现代又原始——城里有万达，城外有麋鹿。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng is the coastal anchor of eastern Huaihai, the only prefecture-level city in China with both a World Natural Heritage site and International Wetland City title. Millions of migratory birds rest on its Yellow Sea flats each year, and Père David's deer, reintroduced from Britain, now number three thousand.</p>
+      <p>Today's Yancheng is half-towers, half-reeds; thirty kilometres between downtown traffic and the wind on the mudflats, like two worlds. Its grace is modern and prim — Wanda in town, Père David's deer out of it.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">盐城北站在徐盐高铁上，从徐州过来约一小时四十分钟。市区打车便宜，去黄海湿地和麋鹿保护区建议包车或报一日游团，公交班次有限。</p>
+      <p>市区不大，骑车能串起串场河两岸。</p>
+      <aside class="tip"><b>实用贴士：</b>湿地观鸟带望远镜；保护区包车比跟团灵活。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bring binoculars for wetland bird-watching; chartering to the reserve is more flexible than group tours.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng North on the Xuzhou–Yancheng HSR is about an hour-forty from Xuzhou. Taxis are cheap in town; for the Yellow Sea wetland and deer reserve, charter a car or join a day tour — public buses are infrequent.</p>
+      <p>Downtown is compact, a bike strings both banks of the Chuanchang.</p>
+      <aside class="tip"><b>实用贴士：</b>湿地观鸟带望远镜；保护区包车比跟团灵活。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bring binoculars for wetland bird-watching; chartering to the reserve is more flexible than group tours.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>黄海湿地（世界遗产）<span class="en">Yellow Sea wetland (World Heritage)</span></h2>
+    <div class="zh">
+      <p class="lead">黄海湿地是江苏沿海的滩涂，总面积五百多万亩，是丹顶鹤、麋鹿、勺嘴鹬等珍稀物种的越冬地。你站在滩涂上，一眼望不到边的泥地，上面有无数小脚印——是弹涂鱼跳的，是鸻鹬啄的，也是麋鹿踩的。</p>
+      <p>最震撼的是"观鸟大潮"——秋天几百只鸻鹬从西伯利亚飞过来，在滩涂上密密麻麻地走，像撒了一层黑点。你蹲下看它们，它们也抬头看你，一两秒后又低头啄食，像什么都没发生过。</p>
+      <aside class="tip"><b>当地贴士：</b>湿地核心区有观鸟台；勿穿红橙色衣服，会惊扰鸟类。</aside>
+      <aside class="tip"><b>Local tip:</b>The wetland's core has bird-watching towers; avoid red or orange clothing — it disturbs the birds.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Yellow Sea wetland is Jiangsu's coastal mudflats, five million mu total, winter home of red-crowned cranes, Père David's deer, spoon-billed sandpipers and other rarities. Stand on the flats — one endless stretch of mud with a thousand tiny footprints — from mudskippers, from plovers, from deer.</p>
+      <p>Most staggering is the 'bird tide' — in autumn, hundreds of shorebirds fly from Siberia, walking shoulder to shoulder on the flats like black dots tossed on a blanket. You squat to watch them; they glance up, then go back to pecking as if nothing happened.</p>
+      <aside class="tip"><b>当地贴士：</b>湿地核心区有观鸟台；勿穿红橙色衣服，会惊扰鸟类。</aside>
+      <aside class="tip"><b>Local tip:</b>The wetland's core has bird-watching towers; avoid red or orange clothing — it disturbs the birds.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>麋鹿国家级自然保护区<span class="en">Père David's deer reserve</span></h2>
+    <div class="zh">
+      <p class="lead">大丰麋鹿保护区是世界上最大的麋鹿基因库，三千多只麋鹿在约七万亩的滩涂上自由生活。你可以坐景区的吉普车进去，路不好走，颠得你腰疼，但当你看见一只公鹿带着后宫走过去时，腰疼就全忘了。</p>
+      <p>麋鹿是"四不像"——角似鹿非鹿，头似马非马，身似驴非驴，蹄似牛非牛。它是中国特有的物种，曾在野外灭绝，英国动物学家贝福德公爵从欧洲动物园引进重归故里，盐城是第一个放养的地方。</p>
+      <aside class="tip"><b>实用贴士：</b>麋鹿发情期在六七月，公鹿会打架，别靠近；十月有"鹿王争霸赛"观演活动。</aside>
+      <aside class="tip"><b>Handy tip:</b>Deer rut June–July, stags fight — stay back. October has a staged 'stag king contest' for visitors.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Dafeng Père David's deer reserve is the world's largest gene bank — three thousand deer live free on forty-five thousand mu of flats. You ride a rickety park jeep in; the road jars your back, but when you see a stag lead his harem past, you forget the pain.</p>
+      <p>'Four-unlike' — antlers like a deer but not a deer, head like a horse but not a horse, body like a donkey but not a donkey, hooves like an ox but not an ox. Endemic to China, extinct in the wild, reintroduced from European zoos by the Duke of Bedford; Yancheng was the first place they came home.</p>
+      <aside class="tip"><b>实用贴士：</b>麋鹿发情期在六七月，公鹿会打架，别靠近；十月有"鹿王争霸赛"观演活动。</aside>
+      <aside class="tip"><b>Handy tip:</b>Deer rut June–July, stags fight — stay back. October has a staged 'stag king contest' for visitors.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>丹顶鹤与盐城珍禽保护区<span class="en">Red-crowned cranes reserve</span></h2>
+    <div class="zh">
+      <p class="lead">盐城珍禽保护区（又称丹顶鹤自然保护区）是全国最大的丹顶鹤越冬地，每年有六七百只丹顶鹤从西伯利亚飞来。它们在滩涂上筑巢、觅食，你站在观鸟台上，能看见优雅的身影在苇荡里踱来踱去。</p>
+      <p>保护区里还有一个"鹤园"，里面养着几十只人工繁育的丹顶鹤，其中有一只叫"立立"，会跟着人走，像一只大猫。你可以喂它鱼干，它会用长喙小心翼翼地接。</p>
+      <aside class="tip"><b>当地贴士：</b>冬季丹顶鹤最集中，十月到三月间来最好；观鸟台开放有时间限制，别晚到。</aside>
+      <aside class="tip"><b>Local tip:</b>Winter months (October–March) see the most cranes; viewing towers have opening hours — don't arrive late.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng's Rare Birds Reserve is China's largest red-crowned crane wintering site — six or seven hundred birds fly from Siberia each year. They nest and forage on the flats; from the viewing tower you watch elegant forms pace through the reeds.</p>
+      <p>Inside the reserve sits a 'crane garden' with dozens of captive-bred cranes. One called Lili follows people like a cat. You can feed it dried fish — it takes each piece delicately with its long bill.</p>
+      <aside class="tip"><b>当地贴士：</b>冬季丹顶鹤最集中，十月到三月间来最好；观鸟台开放有时间限制，别晚到。</aside>
+      <aside class="tip"><b>Local tip:</b>Winter months (October–March) see the most cranes; viewing towers have opening hours — don't arrive late.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>西溪湿地与董永文化<span class="en">Xixi wetland & Dong Yong</span></h2>
+    <div class="zh">
+      <p class="lead">东台的西溪湿地是董永与七仙女传说的发源地，湿地里有一座"董永墓"，还有一棵千年老槐树——传说董永就是在这棵树下遇见了仙女。</p>
+      <p>湿地不大，但很精致，水道纵横，白鹭低飞，像一个缩小版的西溪。你可以摇橹穿过芦苇荡，听船夫讲董永的故事。船娘说，每到七夕，那棵老槐树上会挂满红绳。</p>
+      <aside class="tip"><b>实用贴士：</b>西溪湿地离盐城车程约一小时；七夕前后有"董永文化节"活动。</aside>
+      <aside class="tip"><b>Handy tip:</b>Xixi is about an hour from downtown Yancheng; the Dong Yong cultural festival runs around Double Seventh Festival.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Xixi wetland in Dongtai claims to be where Dong Yong met the Seventh Fairy. Inside sits a 'Dong Yong tomb' and a thousand-year-old locust — legend says that's where he met her.</p>
+      <p>The wetland is small but exquisite, crisscrossed with waterways, egrets low over the reeds — a miniature West Lake wetland. You can scull through the marshes, the boatman telling you Dong Yong's tale. The woman at the dock says red strings hang from the old locust every Double Seventh Festival.</p>
+      <aside class="tip"><b>实用贴士：</b>西溪湿地离盐城车程约一小时；七夕前后有"董永文化节"活动。</aside>
+      <aside class="tip"><b>Handy tip:</b>Xixi is about an hour from downtown Yancheng; the Dong Yong cultural festival runs around Double Seventh Festival.</aside>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">盐城的味道在"鲜"字里，可它不是海的鲜，是滩涂和河流的鲜。东台鱼汤面是招牌，用鳝鱼骨熬的汤，白如牛奶，撒点胡椒粉，配细面，一碗下去浑身暖。</p>
+      <p>大丰的醉泥螺是下酒好菜，泥螺用白酒和酱油腌的，吃起来脆生生的。还有鸡蛋饼——不是山东那种，是加了韭菜和虾皮的薄饼，在铁板上煎，香得整条街都能闻见。</p>
+      <aside class="tip"><b>当地贴士：</b>东台鱼汤面认准"磊达"老店；醉泥螺别贪多，一次吃半碟就行。</aside>
+      <aside class="tip"><b>Local tip:</b>Dongtai fish-soup noodles from the old Leida shop; go easy on drunken snails — half a plate is plenty.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng's flavour lives in 'fresh' — but not the sea's fresh, the flats and rivers'. Dongtai fish-soup noodles are the signboard, eel bones simmered to milk-white, peppered, with thin noodles, one bowl warms you through.</p>
+      <p>Drunken mud snails from Dafeng are the drinker's friend — snails pickled in rice wine and soy, crisp to bite. And egg pancakes — not the Shandong kind, but thin pancakes with chives and tiny shrimp, griddled until fragrant enough for the whole street to smell.</p>
+      <aside class="tip"><b>当地贴士：</b>东台鱼汤面认准"磊达"老店；醉泥螺别贪多，一次吃半碟就行。</aside>
+      <aside class="tip"><b>Local tip:</b>Dongtai fish-soup noodles from the old Leida shop; go easy on drunken snails — half a plate is plenty.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">湿地保护区是世界遗产，请勿乱踩滩涂，请勿投喂野生鸟类。麋鹿保护区里请勿按喇叭，请勿下车。海边风大，带件防风外套。</p>
+      <p>盐城人实在，说话直，可别拿"湿地不就是泥滩"去戳——这座城把湿地当命根子护着，你尊重点，他们能带你去别人去不了的观鸟点。</p>
+    </div>
+    <div class="en">
+      <p class="lead">The wetland is a World Heritage site — don't trample the flats, don't feed wild birds. No honking in the deer reserve, don't step out of the vehicle. Wind blows hard by the coast, bring a windproof jacket.</p>
+      <p>Yancheng folk are straightforward; just don't poke with 'the wetland is just mud' — the city guards it like its livelihood. Be respectful and they'll take you to bird-watching spots tourists never see.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">秋天是盐城最棒的季节，候鸟大批到达，麋鹿发情，芦苇一片金黄。春天候鸟离去，湿地安静，适合慢慢走。夏天热，但滩涂上有弹涂鱼跳来跳去，很有意思。冬天冷，可丹顶鹤集中在一个区域，最容易看见。</p>
+      <p>若为了候鸟和麋鹿，春秋最对；若为了丹顶鹤，冬季最好。</p>
+      <aside class="tip"><b>实用贴士：</b>十月有"盐城湿地国际旅游节"；麋鹿发情期六月到七月，最热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>October hosts the Yancheng wetland international tourism festival; deer rut peaks June–July.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Autumn is Yancheng's peak — birds arrive in mass, deer rut, reeds turn gold. Spring is quiet as birds leave, good for slow wandering. Summer's hot but mudskippers hop across the flats, entertaining. Winter's cold but cranes cluster tight, easiest to see.</p>
+      <p>For birds and deer, spring–autumn fit; for cranes, winter is best.</p>
+      <aside class="tip"><b>实用贴士：</b>十月有"盐城湿地国际旅游节"；麋鹿发情期六月到七月，最热闹。</aside>
+      <aside class="tip"><b>Handy tip:</b>October hosts the Yancheng wetland international tourism festival; deer rut peaks June–July.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">串场河两岸的步道免费，从老城区能一直走到新城区。黄海湿地的观鸟栈道不收钱，走在上面比坐车看更有感觉。麋鹿保护区外围的滩涂也可以走走，运气好能看见野生的弹涂鱼和招潮蟹。</p>
+      <p>盐城的好走，在于到处都是平的——你不用爬山，不用绕弯路，直着走就能走到一片开阔的风景里。</p>
+      <aside class="tip"><b>实用贴士：</b>滩涂观潮赶退潮后两小时；弹涂鱼夏天最活跃。</aside>
+      <aside class="tip"><b>Handy tip:</b>Watch the tide two hours after low tide; mudskippers most active in summer.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Chuanchang's banks are free to walk, from old town to new. The Yellow Sea wetland bird-watching boardwalk costs nothing — walking it beats seeing it from a car. The flats outside the deer reserve are open to walk; with luck you'll spot wild mudskippers and fiddler crabs.</p>
+      <p>Yancheng is walkable because everything's flat — no climbs, no detours, straight steps take you straight to an open view.</p>
+      <aside class="tip"><b>实用贴士：</b>滩涂观潮赶退潮后两小时；弹涂鱼夏天最活跃。</aside>
+      <aside class="tip"><b>Handy tip:</b>Watch the tide two hours after low tide; mudskippers most active in summer.</aside>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">盐城最贵的东西，大多不要钱。滩涂的风、芦苇的摇荡、候鸟飞过头顶时翅膀的声音——站着听就是参与。老城区的新四军纪念馆免费，能让你对这座城的另一面有更深的认识。</p>
+      <p>盐城教会我：好地方不是越难到越贵，而是越靠近大自然越值。</p>
+      <aside class="tip"><b>当地贴士：</b>新四军纪念馆周一闭；滩涂免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>The New Fourth Army memorial closes Mondays; the flats are open free.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng's priciest things mostly cost nothing — the marsh wind, reeds swaying, the sound of a bird's wing overhead; stand and listen and you're in it. The New Fourth Army memorial in old town is free, and gives deeper context to the city's other side.</p>
+      <p>Yancheng taught me: great places aren't made expensive by being hard to reach — they're made valuable by being close to nature.</p>
+      <aside class="tip"><b>当地贴士：</b>新四军纪念馆周一闭；滩涂免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>The New Fourth Army memorial closes Mondays; the flats are open free.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">盐城不会一下子把你看服。它没有名山的名气，也没有古城的韵味。它平，它野，它又现代又原始——一群麋鹿能让人沉默，一片滩涂能让人回头。</p>
+      <p>你看过麋鹿的蹄印、丹顶鹤的红顶、湿地的一带金，临走会明白：淮海不只有帝王将相和汉墓运河，还有一片滩涂在等候鸟，还有一群麋鹿在等家。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Yancheng won't win you at once. No famous mountain's fame, no old town's grace. It's flat, wild, modern and prim — one deer herd silences you, one flat turns you back.</p>
+      <p>You've seen deer hoofprints, crane red crowns, a band of gold across the wetland — and leaving you'll get it: Huaihai isn't only emperors and Han tombs and canals; there's a flat waiting for birds, a herd waiting for home. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

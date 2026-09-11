@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>蚌埠 · Bengbu — 淮河的桥，南北的界</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>蚌埠</h1>
+  <div class="en-title">Bengbu</div>
+  <p class="zh">淮海中心的交通枢纽，京沪铁路与淮河在此交汇——禹会区传说中大禹大会诸侯，今日中国南北地理分界标志立在城中，一座城把"淮"字写成了自己的姓。</p>
+  <p class="en">A transport hub at Huaihai's centre, where the Beijing–Shanghai railway meets the Huai River — legend says Dayu hosted all lords here at Yuhui, and today a China North–South dividing marker stands in town; this city wears the character 'Huai' as its name.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔禹会区，去淮河大桥上站 / Arrive on the Huai River bridge</a></li>
+      <li><a href="#s2">蚌埠到底是什么 / What Bengbu is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">禹会区与涂山 / Yuhui district & Tu Mountain</a></li>
+      <li><a href="#s5">中国南北分界标志 / China North–South marker</a></li>
+      <li><a href="#s6">龙子湖与蚌埠老街 / Longzi Lake & Bengbu old street</a></li>
+      <li><a href="#s7">荆涂山风景区与白乳泉 / Jingtu Mountain & White Milk Spring</a></li>
+      <li><a href="#s8">吃什么 / What to eat</a></li>
+      <li><a href="#s9">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s10">什么时候去 / When to go</a></li>
+      <li><a href="#s11">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s12">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s13">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔禹会区，去淮河大桥上站<span class="en">Arrive on the Huai River bridge</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠不声不响。你一下高铁，淮河就就在眼前，京沪铁路从桥上轰隆隆开过去。先站在淮河大桥上，风从河面吹上来，带着水汽和码头的味道——这座城的一切，都绕不开这条河。</p>
+      <p>我第一次懂蚌埠，是在淮河大桥的傍晚。货船慢慢滑过去，汽笛声嗡嗡响，桥上有人在拍日落。那一刻你明白，这条河不只是淮河，它还是中国的南北分界，也是蚌埠人心里的一条线。</p>
+      <aside class="tip"><b>当地贴士：</b>以蚌埠城区为基地；禹会区和南北分界标志都在市区。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in Bengbu; Yuhui district and the north-south marker are all downtown.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu keeps quiet. Step off and the Huai River is right there; the Beijing–Shanghai HSR rumbles across the bridge. Stand on the river bridge first — wind from the water carries damp and dock smells; everything here circles back to this river.</p>
+      <p>I got Bengbu at dusk on the Huai bridge. Cargo ships slid slow, horns humming, someone up here taking sunset photos. That moment you see — this river isn't just the Huai; it's China's north-south divide, and a line in Bengbu hearts.</p>
+      <aside class="tip"><b>当地贴士：</b>以蚌埠城区为基地；禹会区和南北分界标志都在市区。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in Bengbu; Yuhui district and the north-south marker are all downtown.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>蚌埠到底是什么<span class="en">What Bengbu is</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠是淮海中心的交通枢纽，京沪、淮南两条铁路在这儿交叉，淮河横贯全城。它是中国南北地理分界线的标志地——秦岭淮河线的东端起点，城中立着一座"中国南北分界标志塔"。</p>
+      <p>传说大禹治水后，在这里大会诸侯（禹会区的"禹会"就是这个意思），涂山氏是禹的妻子，现在蚌埠仍有涂山和禹王宫。今天的蚌埠一半现代化一半传奇，淮河把它分成南北。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu is Huaihai's central transport hub; Beijing–Shanghai and Huainan railways cross here, the Huai River runs the city's length. It's where China's north-south divide runs — eastern end of the Qinling–Huaihe line — and a China North–South marker stands in town.</p>
+      <p>Legend says Dayu the Flood-Control king met all lords here (Yuhui district means 'Yu met'). His wife Tu Mountain's clan still gives the area its name — Tu Mountain and Yu Palace still stand. Today's Bengbu is half-modern, half-legend, the Huai splitting it north and south.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠南站在京沪高铁上，从徐州过来约一小时，从南京约一小时四十分钟。市区不大，打车便宜，淮河大桥南北有公交往返。</p>
+      <p>市区骑车舒服，能串起禹会区和南北分界标志。</p>
+      <aside class="tip"><b>实用贴士：</b>高铁蚌埠南站比老站更靠市区；过淮河大桥有公交，别开车，经常堵。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bengbu South HSR station is closer to downtown than the old one; take the bus over the Huai bridge — don't drive, it jams constantly.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu South on Beijing–Shanghai HSR is about an hour from Xuzhou, hour-forty from Nanjing. The city's compact, cabs cheap; buses cross the Huai bridge both ways.</p>
+      <p>Biking downtown is great, strings Yuhui district and the marker together.</p>
+      <aside class="tip"><b>实用贴士：</b>高铁蚌埠南站比老站更靠市区；过淮河大桥有公交，别开车，经常堵。</aside>
+      <aside class="tip"><b>Handy tip:</b>Bengbu South HSR station is closer to downtown than the old one; take the bus over the Huai bridge — don't drive, it jams constantly.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>禹会区与涂山<span class="en">Yuhui district & Tu Mountain</span></h2>
+    <div class="zh">
+      <p class="lead">禹会区是蚌埠最传奇的地方——传说大禹治水后在这里大会天下诸侯，"禹会"二字就因此而来。现在禹会村遗址还在，挖出了距今四千年的大型祭祀坑，证明这里曾是华夏联盟的重要会议地。</p>
+      <p>涂山是禹妻子涂山氏的家，山上有禹王宫，历代重修，香火不断。站在山顶，能看到淮河蜿蜒向南，像一条银色的丝带——据说大禹就是在这里望着淮河的水，立志治水的。</p>
+      <aside class="tip"><b>当地贴士：</b>'禹会村遗址考古公园"免费；涂山门票 20 元，禹王宫在山顶。</aside>
+      <aside class="tip"><b>Local tip:</b>Yuhui village archaeological park is free; Tu Mountain ticket 20 yuan, Yu Palace at the peak.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Yuhui district is Bengbu's most legendary spot — where Dayu hosted all lords after conquering the flood. The Yuhui village site still stands, with 4,000-year-old sacrificial pits, proof this was a key meeting place of the early Chinese confederation.</p>
+      <p>Tu Mountain was home to Dayu's wife, Tu Mountain. Yu Palace stands on it, restored across dynasties, incense continuous. From the peak you watch the Huai River wind south like a silver ribbon — legend says Dayu looked at its waters here and vowed to tame them.</p>
+      <aside class="tip"><b>当地贴士：</b>'禹会村遗址考古公园"免费；涂山门票 20 元，禹王宫在山顶。</aside>
+      <aside class="tip"><b>Local tip:</b>Yuhui village archaeological park is free; Tu Mountain ticket 20 yuan, Yu Palace at the peak.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>中国南北分界标志<span class="en">China North–South marker</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠的"中国南北分界标志塔"是全国唯一一个横跨秦岭淮河线的大型标志——塔高 39.9 米，北半部分是冷色调（蓝），南半部分是暖色调（红），刚好站在分界线上。</p>
+      <p>标志塔下面还有一个微型的"中国南北分界广场"，地上画着南北分界的虚线，游客可以一只脚站在北方，一只脚站在南方。旁边还有一块石碑，刻着"蚌埠——中国南北分界之城"。</p>
+      <aside class="tip"><b>当地贴士：</b>标志塔开放时间 9:00–17:30；可以登塔俯瞰淮河，20 元/人。</aside>
+      <aside class="tip"><b>Local tip:</b>Tower open 9:00–17:30; climb up for Huai River view, 20 yuan per person.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu's marker tower is China's only large structure spanning the Qinling–Huaihe divide — 39.9 metres tall, north half in cool blue, south half in warm red, exactly on the line.</p>
+      <p>Below sits a mini 'China North–South square' with a dashed dividing line painted on the ground; visitors can stand one foot in each hemisphere. A stele beside reads 'Bengbu — the city of China's north-south divide'.</p>
+      <aside class="tip"><b>当地贴士：</b>标志塔开放时间 9:00–17:30；可以登塔俯瞰淮河，20 元/人。</aside>
+      <aside class="tip"><b>Local tip:</b>Tower open 9:00–17:30; climb up for Huai River view, 20 yuan per person.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>龙子湖与蚌埠老街<span class="en">Longzi Lake & Bengbu old street</span></h2>
+    <div class="zh">
+      <p class="lead">龙子湖是蚌埠的城中湖，由淮河的一个旧河道形成，湖边有大片的湿地公园和娱乐设施。你可以租船下湖，也可以在湖边散步，看对岸的高楼和芦苇配在一起，有一种奇妙的现代感和野趣。</p>
+      <p>蚌埠老街在淮河南岸，还保留着一些民国时期的建筑和老字号。老街上的"雪园"小吃店已经开了几十年，招牌是蛋花汤和小笼包，味道跟当年一样。</p>
+      <aside class="tip"><b>实用贴士：</b>龙子湖免费开放；老街傍晚人气最旺，有街头艺人表演。</aside>
+      <aside class="tip"><b>Handy tip:</b>Longzi Lake is free; old street liveliest at dusk with street performers.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Longzi Lake is Bengbu's downtown lake, formed from an old Huai River channel. Wetland parks and amusement facilities line its banks. Rent a boat or stroll shore, watch distant towers meet reeds — a curious mix of modern and wild.</p>
+      <p>Bengbu's old street sits south of the Huai, still holding some Republic-era buildings and old signs. The Xueyuan snack shop there has run for decades — its egg-drop soup and soup dumplings taste like the old days.</p>
+      <aside class="tip"><b>实用贴士：</b>龙子湖免费开放；老街傍晚人气最旺，有街头艺人表演。</aside>
+      <aside class="tip"><b>Handy tip:</b>Longzi Lake is free; old street liveliest at dusk with street performers.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>荆涂山风景区与白乳泉<span class="en">Jingtu Mountain & White Milk Spring</span></h2>
+    <div class="zh">
+      <p class="lead">荆涂山是蚌埠的后花园，荆山和涂山相对而立，淮河从两山之间流过。山上有一个白乳泉，传说是大禹治水时，他的妻子涂山氏为他熬药的地方——泉水呈乳白色，故名。</p>
+      <p>白乳泉在宋朝时就被列为"天下第七泉"，现在泉水仍能喝。我尝过，有点甜，带着点矿物质的味道，比超市的矿泉水好喝。泉旁有个古亭，亭柱上写着"此地此泉此亭好，如诗如画如仙真"。</p>
+      <aside class="tip"><b>当地贴士：</b>荆涂山风景区门票 25 元；白乳泉在涂山脚下，从禹王宫下来能看见。</aside>
+      <aside class="tip"><b>Local tip:</b>Jingtu scenic area ticket 25 yuan; White Milk Spring at Tu Mountain's foot, visible coming down from Yu Palace.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Jingtu Mountains are Bengbu's backyard — Jing and Tu stand facing each other, the Huai between. On Tu Mountain sits White Milk Spring; legend says Tu Mountain's wife brewed medicine for Dayu here. Its water is milky white, hence the name.</p>
+      <p>In Song dynasty it was listed as China's Seventh Famous Spring; the water is still drinkable. I tasted it — slightly sweet, mineral-rich, better than supermarket stuff. An ancient pavilion stands beside, its pillars inscribed 'This place, this spring, this pavilion good; like a poem, like a painting, like immortals'.</p>
+      <aside class="tip"><b>当地贴士：</b>荆涂山风景区门票 25 元；白乳泉在涂山脚下，从禹王宫下来能看见。</aside>
+      <aside class="tip"><b>Local tip:</b>Jingtu scenic area ticket 25 yuan; White Milk Spring at Tu Mountain's foot, visible coming down from Yu Palace.</aside>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠的味道是南北混合的——北边像徐州的硬，南边像扬州的精。烧饼夹里脊是街头招牌，现烤的烧饼夹着炸得酥脆的里脊肉和生菜，刷上甜面酱，一口下去层次分明。</p>
+      <p>雪园的小笼包皮薄汤多，跟淮扬菜同源，但汤汁更浓。蛋花汤是特色，鸡蛋打散后在沸水里浇下去，飘成丝，撒点榨菜和葱花，清爽。</p>
+      <aside class="tip"><b>当地贴士：</b>'烧饼夹里脊"认准"张公山"牌；雪园小笼包早八点前去排队。</aside>
+      <aside class="tip"><b>Local tip:</b>Sesame bread with tenderloin — look for Zhanggongshan brand; Xueyuan dumplings, queue before eight crack-of-dawn.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu's flavour is north-south mixed — north like Xuzhou's hard, south like Yangzhou's precise. Sesame bread with tenderloin is the street sign; fresh-baked flatbread with crispy fried tenderloin and lettuce, sweet bean sauce, one bite layer by layer.</p>
+      <p>Xueyuan's soup dumplings have thin skin, much broth — Huai-Yang lineage but richer soup. Egg-drop soup is the specialty — egg poured into boiling water in threads, sprinkled with pickled mustard and scallions, refreshing.</p>
+      <aside class="tip"><b>当地贴士：</b>'烧饼夹里脊"认准"张公山"牌；雪园小笼包早八点前去排队。</aside>
+      <aside class="tip"><b>Local tip:</b>Sesame bread with tenderloin — look for Zhanggongshan brand; Xueyuan dumplings, queue before eight crack-of-dawn.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">禹会村遗址是考古重地，请勿触摸文物。涂山上的禹王宫是宗教场所，请保持肃静。淮河大桥上请勿停留拍照，桥上不能停车。</p>
+      <p>蚌埠人实在，问路直给。可别拿"南北分界不就是个线"去戳——这座城把这条线当成了自己的身份证，你尊重它，它就能把涂山的传说、淮河的故事讲得像自己家的事。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Yuhui village is an archaeological site — don't touch artifacts. Yu Palace on Tu Mountain is a religious space — keep quiet. Don't loiter on the Huai bridge for photos; no parking allowed.</p>
+      <p>Bengbu folk are straightforward. Just don't poke with 'the divide is just a line' — the city treats it as its identity card. Respect it and they'll tell Tu Mountain tales and Huai River stories like family matters.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">淮河春夏水大，龙子湖游船最舒服。涂山秋天红叶，登高望远好时节。冬天河冷，但标志塔的南北灯都亮着，红蓝对照，别有一番意味。</p>
+      <p>若为了涂山禹王宫，春秋最对；若为了南北分界标志，冬天也值得。</p>
+      <aside class="tip"><b>实用贴士：</b>六月有涂山禹会诸侯文化节；南北分界标志塔元旦有亮灯仪式。</aside>
+      <aside class="tip"><b>Handy tip:</b>June hosts Tu Mountain Dayu lord-gathering festival; the marker tower lights up on New Year's Day.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Spring–summer the Huai flows full, Longzi Lake boat rides most comfortable. Tu Mountain autumn red leaves, great for climbing. Winter's river is cold, but the marker tower glows red and blue on both halves, striking to see.</p>
+      <p>For Yu Palace on Tu Mountain, spring–autumn fit; for the divide marker, winter has its own appeal.</p>
+      <aside class="tip"><b>实用贴士：</b>六月有涂山禹会诸侯文化节；南北分界标志塔元旦有亮灯仪式。</aside>
+      <aside class="tip"><b>Handy tip:</b>June hosts Tu Mountain Dayu lord-gathering festival; the marker tower lights up on New Year's Day.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">淮河两岸的步道免费，从龙子湖能一直走到涂山脚下。南北分界标志塔下面的广场免费开放，随时可以踩那条虚线。禹会村遗址的考古公园也免费，能看到四千年的祭祀坑。</p>
+      <p>蚌埠的好走，在于一条淮河把整座城串了起来——你沿着河走，从南到北，不知不觉就过了中国的南北分界。</p>
+      <aside class="tip"><b>实用贴士：</b>淮河两岸傍晚有广场舞；涂山登山赶早，山顶风大。</aside>
+      <aside class="tip"><b>Handy tip:</b>Huai banks have dusk square dancing; climb Tu Mountain early, wind is strong on top.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Huai River's bank paths are free, from Longzi Lake all the way to Tu Mountain's foot. The marker tower's plaza opens free, step on that dividing line anytime. Yuhui village archaeological park is free — you can see the 4,000-year-old sacrificial pits.</p>
+      <p>Bengbu is walkable because the Huai River strings the whole city together — walk along it from south to north and you've crossed China's north-south divide without noticing.</p>
+      <aside class="tip"><b>实用贴士：</b>淮河两岸傍晚有广场舞；涂山登山赶早，山顶风大。</aside>
+      <aside class="tip"><b>Handy tip:</b>Huai banks have dusk square dancing; climb Tu Mountain early, wind is strong on top.</aside>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠最贵的东西，大多不要钱。淮河的水声、涂山的雾、南北分界线上的那根柱子，站着看就是参与。禹会村遗址考古公园免费，让你触摸四千年的华夏史。</p>
+      <p>蚌埠教会我：一条河可以是一个城，一条线可以是一种身份。</p>
+      <aside class="tip"><b>当地贴士：</b>淮河两岸步道全免费；禹会村遗址考古公园免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Huai banks are entirely free; Yuhui village archaeological park free.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu's priciest things mostly cost nothing — the Huai's sound, Tu Mountain's mist, that pillar on the north-south line; stand and you're in it. Yuhui village park is free, letting you touch four thousand years of Chinese history.</p>
+      <p>Bengbu taught me: one river can be a whole city, one line can be an identity.</p>
+      <aside class="tip"><b>当地贴士：</b>淮河两岸步道全免费；禹会村遗址考古公园免费。</aside>
+      <aside class="tip"><b>Local tip:</b>Huai banks are entirely free; Yuhui village archaeological park free.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">蚌埠不会一下子把你看服。它没有名山的名气，也没有水乡的温婉。它直，它正，它又南又北——一条淮河能让人沉默，一根柱子能让人回头。</p>
+      <p>你看过涂山的雾、禹会的砖、淮河的一带银，临走会明白：淮海不只有帝王将相，还有一条河把中国劈成两半，还有一座城站在中间，不偏不倚。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Bengbu won't win you at once. No famous mountain's fame, no water town's grace. It's straight, upright, south-and-north — one Huai River silences you, one pillar turns you back.</p>
+      <p>You've seen Tu Mountain's mist, Yuhui's bricks, the Huai's band of silver — and leaving you'll get it: Huaihai isn't only emperors and grand houses; there's a river splitting China in two, a city standing neither left nor right. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>

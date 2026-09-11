@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>淮安 · Huai'an — 淮扬菜的源，运河的弯</title>
+<style>
+/* Dense Dark Theme — injected by publish.ps1 into each content page */
+  :root{
+    --bg:#1c1a17; --surface:#2a2723; --card:#332f29; --ink:#f5f0e6;
+    --muted:#a39a8a; --dim:#736b5d; --lp:#f2b01e; --lp-dk:#c98a07;
+    --line:#3d3831; --line2:#4a443b; --tipbg:#2d2820;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-padding-top:44px}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans SC","PingFang SC",system-ui,sans-serif;
+    line-height:1.55;font-size:14px}
+  body.lang-en{font-family:Georgia,"Times New Roman",serif;font-size:14px}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px 40px}
+
+  /* Hero */
+  header.hero{background:var(--lp);color:var(--bg);padding:32px 16px 24px;text-align:center}
+  header.hero .kicker{display:inline-block;background:var(--bg);color:var(--lp);
+    font-size:10px;letter-spacing:2px;padding:2px 10px;border-radius:12px;margin-bottom:6px}
+  header.hero h1{font-family:"Noto Serif SC",Georgia,serif;font-size:clamp(20px,4vw,32px);
+    margin:0 0 3px;letter-spacing:1px}
+  header.hero .en-title{font-style:italic;font-weight:400;opacity:.85;font-size:clamp(11px,1.8vw,14px)}
+  header.hero p{margin:8px auto 0;max-width:480px;font-size:13px;line-height:1.5}
+
+  /* Lang toggle */
+  .toggle{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;gap:0;justify-content:center}
+  .toggle button{border:0;background:transparent;color:#fff;padding:6px 14px;cursor:pointer;
+    font-size:12px;letter-spacing:1px;opacity:.5}
+  .toggle button.on{opacity:1;color:var(--lp);box-shadow:inset 0 -2px 0 var(--lp)}
+
+  /* TOC */
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:10px 14px;margin:12px 0 4px}
+  .toc .toc-in{font-size:10px;letter-spacing:2px;color:var(--dim);margin-bottom:5px;text-transform:uppercase}
+  .toc ol{margin:0;padding-left:16px;columns:2;column-gap:20px}
+  .toc li{margin:1px 0;font-size:12px;break-inside:avoid;color:var(--muted)}
+  .toc a{color:var(--lp-dk);text-decoration:none}
+  .toc a:hover{color:var(--lp)}
+
+  /* Sections */
+  section{padding:14px 0;border-bottom:1px solid var(--line)}
+  .secno{display:inline-block;font-size:10px;letter-spacing:1px;color:var(--dim);
+    border:1px solid var(--line2);border-radius:10px;padding:1px 6px;margin-bottom:5px}
+  h2{font-family:"Noto Serif SC",Georgia,serif;font-size:17px;margin:0 0 3px;color:var(--lp)}
+  h2 .en{display:block;font-size:11px;color:var(--dim);font-weight:400;font-style:italic;margin-top:1px}
+  p{margin:0 0 8px}
+  .lead{font-size:13px;line-height:1.55;color:var(--ink)}
+  .lead::first-letter{font-size:2.4em;float:left;line-height:.8;padding:3px 7px 0 0;
+    color:var(--lp);font-family:"Noto Serif SC",Georgia,serif;font-weight:700}
+
+  /* Tip */
+  .tip{background:var(--tipbg);border-left:3px solid var(--lp);border-radius:0 5px 5px 0;
+    padding:8px 11px;margin:8px 0;font-size:12px;color:var(--muted);line-height:1.45}
+  .tip b{color:var(--lp)}
+
+  /* Bilingual */
+  .en{display:none}
+  body.lang-en .zh{display:none}
+  body.lang-en .en{display:block}
+
+  /* Nav block (county pages) — compact */
+  .navblock{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+    padding:8px 11px;margin:9px 0 3px}
+  .navblock h2{font-size:12px;color:var(--lp);margin:0 0 2px;letter-spacing:1px}
+  .navnote{font-size:10px;color:var(--dim);margin:0 0 4px;line-height:1.4}
+  .navgrp{margin:1px 0}
+  .navgrp h3{display:inline;font-size:10px;letter-spacing:.5px;color:var(--muted);
+    font-weight:700;margin:0;padding:0 2px 0 0;line-height:1.8}
+  .navlinks{display:inline;margin:0}
+  .navlinks a{display:inline-block;background:transparent;border:0;border-bottom:1px dotted var(--line2);
+    color:var(--lp-dk);text-decoration:none;padding:0 4px 1px;border-radius:0;
+    font-size:11px;line-height:1.9;margin:0 1px;transition:color .1s}
+  .navlinks a:hover{color:var(--lp);border-bottom-color:var(--lp);background:transparent}
+  .navhome a{color:var(--dim);font-size:10px;text-decoration:none;margin-top:5px;display:inline-block}
+  .navhome a:hover{color:var(--lp)}
+
+  /* Footer */
+  footer{padding:12px 14px;text-align:center;color:var(--dim);font-size:10px;
+    border-top:1px solid var(--line);margin-top:16px}
+
+  /* Responsive */
+  @media(max-width:600px){
+    body{font-size:13px}
+    .wrap{padding:0 10px 25px}
+    header.hero{padding:20px 12px 16px}
+    section{padding:10px 0}
+    .toc ol{columns:1}
+    h2{font-size:15px}
+  }
+</style>
+</head>
+<body class="lang-zh">
+
+<header class="hero">
+  <div class="kicker">仿 Lonely Planet 文风 · STYLE STUDY</div>
+  <h1>淮安</h1>
+  <div class="en-title">Huai'an</div>
+  <p class="zh">淮扬菜的发源地之一，运河在这里拐了个弯，把漕运的烟火和文人的雅致缠在一起——河下古镇出过吴承恩，府署大堂还坐着旧时光。</p>
+  <p class="en">One birthplace of Huai-Yang cuisine, where the Grand Canal bends and wraps canal-fire and scholar's grace together — Hexia old town gave us Wu Cheng'en, the prefect's hall still holds old times.</p>
+</header>
+
+<div class="toggle">
+  <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+  <button id="ben" onclick="setLang('en')">English</button>
+</div>
+
+<div class="wrap">
+
+  <nav class="toc">
+    <div class="toc-in">目录 · CONTENTS</div>
+    <ol>
+      <li><a href="#s1">先别奔府署，去里运河边走 / Arrive by the Inner Canal</a></li>
+      <li><a href="#s2">淮安到底是什么 / What Huai'an is</a></li>
+      <li><a href="#s3">怎么走 / Getting around</a></li>
+      <li><a href="#s4">河下古镇与吴承恩 / Hexia old town & Wu Cheng'en</a></li>
+      <li><a href="#s5">淮安府署与里运河 / Huai'an prefect's office & Inner Canal</a></li>
+      <li><a href="#s6">周恩来纪念馆 / Zhou Enlai Memorial Hall</a></li>
+      <li><a href="#s7">洪泽湖古堰 / Hongze Lake Great Dyke</a></li>
+      <li><a href="#s8">里运河夜市 / Inner Canal after dark</a></li>
+      <li><a href="#s9">当地人的日常 / Huai'an everyday</a></li>
+      <li><a href="#s10">吃什么 / What to eat</a></li>
+      <li><a href="#s11">懂点规矩 / Know the ropes</a></li>
+      <li><a href="#s12">什么时候去 / When to go</a></li>
+      <li><a href="#s13">去哪悠走 / Where to wander</a></li>
+      <li><a href="#s14">不花钱也值得 / Worth it free</a></li>
+      <li><a href="#s15">收束 / Before you leave</a></li>
+    </ol>
+  </nav>
+  <section id="s1">
+    <span class="secno">01</span>
+    <h2>先别奔府署，去里运河边走<span class="en">Arrive by the Inner Canal</span></h2>
+    <div class="zh">
+      <p class="lead">淮安不声不响。你一下高铁，城新得没脾气，可往里运河一拐，青砖码头、小桥流水，画风猛地一拧。往河下古镇和府署去前，先在河边立住，听水声把时间调慢。</p>
+      <p>我第一次懂淮安，是在里运河的傍晚。有船划过去，水纹一圈圈散，岸上有人蒸包子，热汽顶着旧招牌。那一刻你明白，这座城最挂得住人的，是那股烟火味里藏着的讲究。</p>
+      <aside class="tip"><b>当地贴士：</b>以淮安城区为基地，里运河、河下古镇、府署都在市区；洪泽湖在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; the canal, Hexia old town and prefect's office are downtown, Hongze Lake on the edge.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an keeps quiet. Step off and the city is new without temper, yet turn onto the Inner Canal and blue-brick quays, small bridges, flowing water — the mood twists sharp. Before Hexia old town and the prefect's office, stand by the canal and let its sound slow time.</p>
+      <p>I got Huai'an at dusk by the Inner Canal. A boat glided past, ripples spread ring by ring; someone steamed buns on the bank, hot steam pushing up against an old sign. That moment you see what holds you here is the care hidden inside everyday warmth.</p>
+      <aside class="tip"><b>当地贴士：</b>以淮安城区为基地，里运河、河下古镇、府署都在市区；洪泽湖在郊。</aside>
+      <aside class="tip"><b>Local tip:</b>Base in the city; the canal, Hexia old town and prefect's office are downtown, Hongze Lake on the edge.</aside>
+    </div>
+  </section>
+  <section id="s2">
+    <span class="secno">02</span>
+    <h2>淮安到底是什么<span class="en">What Huai'an is</span></h2>
+    <div class="zh">
+      <p class="lead">淮安是淮扬菜的发源地之一，淮水和运河在这儿交汇，几百年的漕运让食材和手艺都往这儿聚。它也是周恩来总理的故乡，河下古镇还出过《西游记》作者吴承恩。</p>
+      <p>今天的淮安一半都市一半水乡，里运河边的老码头还认得昔日的船帮。淮安的好，在于它又王朝又家常——大人物从这里走出，小日子却做得极精。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an is one birthplace of Huai-Yang cuisine; the Huai River and Grand Canal meet here, centuries of water transport pulling ingredients and craft together. It's also Zhou Enlai's hometown, and Hexia old town gave us Wu Cheng'en, author of Journey to the West.</p>
+      <p>Today's Huai'an is half-city, half-water town; old quays along the Inner Canal still know the boat gangs of yore. Huai'an's grace is royal and home-made — great figures walked out of here, while small lives get cooked to exquisite precision.</p>
+    </div>
+  </section>
+  <section id="s3">
+    <span class="secno">03</span>
+    <h2>怎么走<span class="en">Getting around</span></h2>
+    <div class="zh">
+      <p class="lead">淮安东站在连淮扬镇高铁上，从南京过来一个多小时，从扬州半小时出头。市区不大，打车便宜；去河下古镇、府署有公交，去洪泽湖得走一段。</p>
+      <p>运河边走路舒服，市区骑车能串起河下古镇和周恩来故居。</p>
+      <aside class="tip"><b>实用贴士：</b>市区到洪泽湖走高速约一小时；周恩来故居需凭身份证。</aside>
+      <aside class="tip"><b>Handy tip:</b>Downtown to Hongze Lake via highway, about an hour; Zhou Enlai's old residence requires ID.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an East on the Lianyungang–Nanjing HSR is a shade over an hour from Nanjing, half an hour from Yangzhou. The city's compact, cabs cheap; buses reach Hexia and the prefect's office, Hongze Lake needs a further stretch.</p>
+      <p>Walk the canal best; a bike strings Hexia and Zhou Enlai's old residence downtown.</p>
+      <aside class="tip"><b>实用贴士：</b>市区到洪泽湖走高速约一小时；周恩来故居需凭身份证。</aside>
+      <aside class="tip"><b>Handy tip:</b>Downtown to Hongze Lake via highway, about an hour; Zhou Enlai's old residence requires ID.</aside>
+    </div>
+  </section>
+  <section id="s4">
+    <span class="secno">04</span>
+    <h2>河下古镇与吴承恩<span class="en">Hexia old town & Wu Cheng'en</span></h2>
+    <div class="zh">
+      <p class="lead">河下古镇是淮安的老根，青石板、深宅旧坊，吴承恩故居就在其中。故居不大，后院有假山和书房，《西游记》就是在这间屋里写出来的。你走进去，能闻到墨香混着老木头的味道。</p>
+      <p>古镇里还留着些茶馆和布庄，"河下随笔"的文人气，配上一街的烟火，让你读得出一座古镇的呼吸。</p>
+      <aside class="tip"><b>当地贴士：</b>吴承恩故居门票含周边小景点；河下古镇本身免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>Wu Cheng'en's ticket covers nearby spots; Hexia old town itself is free to wander.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Hexia old town is Huai'an's root — blue stone slabs, deep old lanes, Wu Cheng'en's old residence tucked within. It's small, with a rock garden and study in the back; Journey to the West was written in that room. Step in and you smell ink mixed with old wood.</p>
+      <p>The town still holds teahouses and cloth shops; the scholar's air of 'Hexia jottings', paired with street food, lets you read the breath of an old town.</p>
+      <aside class="tip"><b>当地贴士：</b>吴承恩故居门票含周边小景点；河下古镇本身免费开放。</aside>
+      <aside class="tip"><b>Local tip:</b>Wu Cheng'en's ticket covers nearby spots; Hexia old town itself is free to wander.</aside>
+    </div>
+  </section>
+  <section id="s5">
+    <span class="secno">05</span>
+    <h2>淮安府署与里运河<span class="en">Huai'an prefect's office & Inner Canal</span></h2>
+    <div class="zh">
+      <p class="lead">淮安府署是全国现存保存完整的府衙之一，大堂森然，刑具陈列，你走进去能感到古代官登堂的威严。一处是文，一处是法，凑成淮安的文化两半。</p>
+      <p>里运河的夜景好看，灯光把水面染成暖黄，有画舫划过，岸上的茶馆飘出丝竹声。你坐在河边石阶上，能把一座城的温柔收进眼里。</p>
+      <aside class="tip"><b>实用贴士：</b>府署门票含讲解；里运河夜游有固定开船时间，提前查。</aside>
+      <aside class="tip"><b>Handy tip:</b>Prefect's office ticket includes guided tour; canal night cruises sail at set times — check ahead.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an's prefect's office is one of China's best-preserved prefectural yamen — the main hall is solemn, punishment tools displayed; walk in and feel the gravity of official life. Scholar on one side, law on the other — Huai'an's two cultural halves.</p>
+      <p>The Inner Canal's night view is lovely — lights paint the water warm yellow, painted boats drift by, teahouses on the bank send out the sound of silk and bamboo. Sit on the stone steps and you take in the city's gentleness at once.</p>
+      <aside class="tip"><b>实用贴士：</b>府署门票含讲解；里运河夜游有固定开船时间，提前查。</aside>
+      <aside class="tip"><b>Handy tip:</b>Prefect's office ticket includes guided tour; canal night cruises sail at set times — check ahead.</aside>
+    </div>
+  </section>
+  <section id="s6">
+    <span class="secno">06</span>
+    <h2>周恩来纪念馆<span class="en">Zhou Enlai Memorial Hall</span></h2>
+    <div class="zh">
+      <p class="lead">周恩来纪念馆在城中心，仿北京西花厅的格局，连院里的海棠树都是从西花厅移过来的。主馆陈列着他的一生，从南开中学到黄埔军校，从长征到建国，最后那个灰扑扑的瓷碗让很多人停下。</p>
+      <p>纪念馆的氛围是安静的，没有激昂的口号，只有实物和照片。你站在那只瓷碗前，能感到一个大人物身后的朴素。</p>
+      <aside class="tip"><b>当地贴士：</b>免费开放，周一闭；需凭身份证领票。</aside>
+      <aside class="tip"><b>Local tip:</b>Free, closed Mondays; tickets on ID.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Zhou Enlai Memorial Hall downtown mimics Beijing's Xihua Hall — even the crab-apple trees in the courtyard were transplanted from there. The main hall walks his life: Nankai middle school, Huangpu academy, Long March, founding of the PRC. That plain grey porcelain bowl stops many visitors.</p>
+      <p>The hall's tone is quiet — no rousing slogans, just objects and photos. Stand before that bowl and you feel the plainness behind a great figure.</p>
+      <aside class="tip"><b>当地贴士：</b>免费开放，周一闭；需凭身份证领票。</aside>
+      <aside class="tip"><b>Local tip:</b>Free, closed Mondays; tickets on ID.</aside>
+    </div>
+  </section>
+  <section id="s7">
+    <span class="secno">07</span>
+    <h2>洪泽湖古堰<span class="en">Hongze Lake Great Dyke</span></h2>
+    <div class="zh">
+      <p class="lead">洪泽湖古堰是世界文化遗产，全长七十多公里，从盱眙一直延伸到淮安。这条"水上长城"始建于东汉，用条石砌成，至今还在守着洪泽湖的水。你站在堰上，一边是湖水茫茫，一边是千年的石头，风把芦苇吹得哗啦啦响。</p>
+      <p>古堰上有个蒋坝镇，小得可爱，只有一条街，家家卖小鱼锅贴。你可以在镇上住一晚，看湖里的日出和晚霞。</p>
+      <aside class="tip"><b>实用贴士：</b>古堰沿线有观光车；蒋坝镇住一晚，早晚光最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Sightseeing carts along the dyke; stay a night in Jiangba for best light.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Hongze Great Dyke, a World Heritage site, runs over seventy kilometres from Xuyi to Huai'an. Built in Eastern Han with dressed stone, it still holds the lake's waters back. Stand on it — lake on one side, millennium stone on the other, wind rattling the reeds.</p>
+      <p>At the dyke's end sits Jiangba, a lovely town of one street, every shop selling small-fish pancake. Stay a night there; sunrise and sunset over the lake are worth it.</p>
+      <aside class="tip"><b>实用贴士：</b>古堰沿线有观光车；蒋坝镇住一晚，早晚光最好。</aside>
+      <aside class="tip"><b>Handy tip:</b>Sightseeing carts along the dyke; stay a night in Jiangba for best light.</aside>
+    </div>
+  </section>
+  <section id="s8">
+    <span class="secno">08</span>
+    <h2>里运河夜市<span class="en">Inner Canal after dark</span></h2>
+    <div class="zh">
+      <p class="lead">天一黑，里运河的码头就活了。画舫亮着红灯笼慢慢滑过，两岸的大排档支起蓝塑料棚，文楼汤包店的招牌亮得晃眼。你可以找个河边的位置坐下，一碟茶馓、一碗平桥豆腐，就着运河的水声吃晚饭。</p>
+      <p>最有意思的是那些拉二胡的街头艺人，你给五块钱，他能拉一段《二泉映月》，拉到你和他都安静了。还有卖花的小姑娘，抱着一捆白兰花，在红灯笼底下走，像从旧照片里走出来的。</p>
+      <aside class="tip"><b>当地贴士：</b>夜市集中在府署到河下的运河段；别在路边摊买包装好的淮扬菜礼盒。</aside>
+      <aside class="tip"><b>Local tip:</b>Night markets cluster along the canal between the prefect's hall and Hexia; skip pre-packaged Huai-Yang food boxes at roadside stalls.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Once dark falls, the Inner Canal's quays come alive. Painted boats with red lanterns slide past, blue plastic shelters pop up at shoreline stalls, the Wenlou dumpling sign glows bright. Grab a seat by the water — a plate of tea sanzi, a bowl of Pingqiao tofu, dinner with the canal's sound as company.</p>
+      <p>Most delightful are the erhu players — hand them five yuan and they'll play 'Moon Reflected in Second Spring' until both of you go quiet. Flower girls carry bouquets of white magnolia under red lanterns, stepping out of an old photo.</p>
+      <aside class="tip"><b>当地贴士：</b>夜市集中在府署到河下的运河段；别在路边摊买包装好的淮扬菜礼盒。</aside>
+      <aside class="tip"><b>Local tip:</b>Night markets cluster along the canal between the prefect's hall and Hexia; skip pre-packaged Huai-Yang food boxes at roadside stalls.</aside>
+    </div>
+  </section>
+  <section id="s9">
+    <span class="secno">09</span>
+    <h2>当地人的日常<span class="en">Huai'an everyday</span></h2>
+    <div class="zh">
+      <p class="lead">淮安人的一天从早上的早茶开始。不是广州那种喧闹的茶馆，是安静的、只有老头儿的早茶店——一碟干丝、一碗烫干丝、二两蟹黄汤包，老哥们坐那儿能坐两小时，谁说话慢谁输。</p>
+      <p>运河边的退休女工每天都来洗东西。不是衣服，是蔬菜——青菜、莴笋头、藕，用运河的活水冲干净，再带回家。她们边洗边聊，谁家孙子考了第一，谁家媳妇刚生了二胎，水声里掺着这些细碎的热闹。</p>
+    </div>
+    <div class="en">
+      <p class="lead">A Huai'an day starts with early-day tea. Not the noisy Cantonese kind, but quiet teahouses for old men — a plate of dried tofu threads, a bowl of blanched threads, two taels of crab-roe soup dumplings. The guys sit for two hours; whoever talks slower wins.</p>
+      <p>Retired women come every day to the canal bank — not to wash clothes, but vegetables: greens, lettuce stems, lotus root, rinsed clean with the canal's living water. They chat while they wash — whose grandson topped the class, whose daughter-in-law just had a second baby — small warm stories in the water sound.</p>
+    </div>
+  </section>
+  <section id="s10">
+    <span class="secno">10</span>
+    <h2>吃什么<span class="en">What to eat</span></h2>
+    <div class="zh">
+      <p class="lead">淮安的味道在淮扬菜的"精"字里。软兜长鱼是招牌中的招牌，鳝鱼去骨软兜，炒得嫩滑，一筷子下去是刀工与火候的功夫。平桥豆腐细得像豆花，入口即化。</p>
+      <p>文楼汤包薄皮灌汤，先咬皮再吸汤，是淮安人从小练到大的享受。洪泽湖的大闸蟹膏满黄肥，配黄酒，秋夜一桌就是奢侈。茶馓细如金线，配茶酥脆。</p>
+      <aside class="tip"><b>当地贴士：</b>软兜长鱼去晚了可能没货；茶馓在河下古镇老铺最正。</aside>
+      <aside class="tip"><b>Local tip:</b>Soft-pouch eel may sell out late; tea sanzi best at old shops in Hexia.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an's flavour lives in Huai-Yang's 'precision'. Soft-pouch long fish is the signboard of signboards — eel deboned, folded soft, stir-fried tender; one chopstickful shows craft of knife and fire. Pingqiao tofu is fine as bean curd jelly, melts on the tongue.</p>
+      <p>Wenlou soup dumplings have thin skin bursting with broth — bite the skin first, suck the soup — Huai'an folk train this from childhood. Hongze Lake's hairy crabs are roe-full, with rice wine, autumn nights a table is pure luxury. Tea sanzi thin as gold threads, crisp with tea.</p>
+      <aside class="tip"><b>当地贴士：</b>软兜长鱼去晚了可能没货；茶馓在河下古镇老铺最正。</aside>
+      <aside class="tip"><b>Local tip:</b>Soft-pouch eel may sell out late; tea sanzi best at old shops in Hexia.</aside>
+    </div>
+  </section>
+  <section id="s11">
+    <span class="secno">11</span>
+    <h2>懂点规矩<span class="en">Know the ropes</span></h2>
+    <div class="zh">
+      <p class="lead">周恩来故居是红色景点，进门请保持肃穆，请勿喧哗。府署大堂请勿触摸展陈。里运河上船多，拍照注意脚下。</p>
+      <p>淮安人温和守礼，问路客气答得细，可别拿"河下是不是仿古"去戳——这座城把根护得很实在，你随和点，他们能把每块砖的旧事讲给你听。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Zhou Enlai's old residence is a red heritage site — keep quiet inside, no loud talk. Don't touch displays in the prefect's main hall. Many boats ply the Inner Canal — watch your step when taking photos.</p>
+      <p>Huai'an folk are gentle and polite, answer directions carefully; just don't poke with 'is Hexia fake?' — the city guards its roots earnestly, be easy and they'll tell you every brick's old tale.</p>
+    </div>
+  </section>
+  <section id="s12">
+    <span class="secno">12</span>
+    <h2>什么时候去<span class="en">When to go</span></h2>
+    <div class="zh">
+      <p class="lead">秋天洪泽湖蟹肥，是淮安最丰盛的季节。春天运河新绿，河下一街花开。夏天湖面凉快，可避暑。冬天老城清冷，雪后青砖配红灯别有古意。</p>
+      <p>若为了蟹与菜，秋天最对；若为了运河与花，春天更生动。</p>
+      <aside class="tip"><b>实用贴士：</b>秋季洪泽湖螃蟹节有优惠；里运河龙舟赛在端午前后。</aside>
+      <aside class="tip"><b>Handy tip:</b>Autumn Hongze crab festival has deals; canal dragon-boat races around Dragon Boat Festival.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Autumn fattens Hongze's crabs — Huai'an's richest season. Spring brings fresh green to the canal, flowers line Hexia's streets. Summer's lake is cool, a refuge. Winter is cold and quiet, blue bricks over red lanterns after snow, a different old charm.</p>
+      <p>For crabs and Huai-Yang food, autumn fits best; for canal and blossoms, spring is livelier.</p>
+      <aside class="tip"><b>实用贴士：</b>秋季洪泽湖螃蟹节有优惠；里运河龙舟赛在端午前后。</aside>
+      <aside class="tip"><b>Handy tip:</b>Autumn Hongze crab festival has deals; canal dragon-boat races around Dragon Boat Festival.</aside>
+    </div>
+  </section>
+  <section id="s13">
+    <span class="secno">13</span>
+    <h2>去哪悠走<span class="en">Where to wander</span></h2>
+    <div class="zh">
+      <p class="lead">里运河岸边步道免费，从府署能一直走到河下古镇，沿途有老码头和新栈道。周恩来故居外围的西花厅广场开放，站着看就是参与。城郊的洪泽湖大堤不收钱，看水看鸟都自在。</p>
+      <p>淮安的好走，在于水把每一条街都浸得温润，你走着走着就走进了一篇散文。</p>
+      <aside class="tip"><b>实用贴士：</b>洪泽湖大堤观鸟赶早晚；里运河步道傍晚灯最好看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Hongze Lake embankment bird-watch at early and late hours; canal path lamps glow best at dusk.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">The Inner Canal's bank path is free, from the prefect's office all the way to Hexia — old quays and new boardwalks along the way. The West Flower Hall square outside Zhou Enlai's residence is open; stand and you're in it. Hongze Lake's long embankment in the suburbs costs nothing — water and birds at ease.</p>
+      <p>Huai'an is walkable because water soaks every street soft; wander and you step into an essay.</p>
+      <aside class="tip"><b>实用贴士：</b>洪泽湖大堤观鸟赶早晚；里运河步道傍晚灯最好看。</aside>
+      <aside class="tip"><b>Handy tip:</b>Hongze Lake embankment bird-watch at early and late hours; canal path lamps glow best at dusk.</aside>
+    </div>
+  </section>
+  <section id="s14">
+    <span class="secno">14</span>
+    <h2>不花钱也值得<span class="en">Worth it free</span></h2>
+    <div class="zh">
+      <p class="lead">淮安最贵的东西，大多不要钱。里运河的水声、河下一街的老门、洪泽湖在暮色里的苇荡，站着看就是参与。夜灯亮起碎金，比收费园里还好看。</p>
+      <p>河边大爷们下棋唱戏不收钱，你站着看就是捧场。淮安教会我：好地方不靠门票证明自己。</p>
+      <aside class="tip"><b>当地贴士：</b>河下古镇全免费；里运河夜景随时可看。</aside>
+      <aside class="tip"><b>Local tip:</b>Hexia is entirely free; canal night view any time.</aside>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an's priciest things mostly cost nothing — the Inner Canal's water sound, the old doors lining Hexia, Hongze's reed marshes at dusk; stand and you're in it. Night lamps shatter gold across the water, lovelier than any paid garden.</p>
+      <p>Old men play chess and sing free by the canal; stand and watch, that's applause. Huai'an taught me: good places don't prove themselves with a ticket.</p>
+      <aside class="tip"><b>当地贴士：</b>河下古镇全免费；里运河夜景随时可看。</aside>
+      <aside class="tip"><b>Local tip:</b>Hexia is entirely free; canal night view any time.</aside>
+    </div>
+  </section>
+  <section id="s15">
+    <span class="secno">15</span>
+    <h2>收束<span class="en">Before you leave</span></h2>
+    <div class="zh">
+      <p class="lead">淮安不会一下子把你看服。它没有名山的名气，也没有大城的排场。它温，它精，它又王朝又家常——一只汤包能让人沉默，一湖秋水能让人回头。</p>
+      <p>你看过河下的门、府署的堂、里运河的一带金，临走会明白：这座城把淮扬的细腻藏在烟火里，把运河的弯留给了远方。它不急着留你，却总让你惦记。</p>
+    </div>
+    <div class="en">
+      <p class="lead">Huai'an won't win you at once. No famous mountain's fame, no great city's pomp. It's warm, precise, royal and home-made — one soup dumpling silences you, one lake of autumn water turns you back.</p>
+      <p>You've seen Hexia's doors, the prefect's hall, the Inner Canal's band of gold — and leaving you'll get it: the city hides Huai-Yang's finesse inside everyday warmth, and leaves the canal's bend for those moving on. It won't rush to keep you, yet always leaves you missing it.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p class="zh">本文为 Lonely Planet 文风仿写练习，内容原创，仅借其笔法，不复制任何 LP 原文。地名与史实为公开常识，欢迎实地核对。</p>
+  <p class="en">A Lonely Planet–style writing exercise. Original content; only the voice is borrowed, no LP text reproduced. Place names and facts are public knowledge — verify on the ground.</p>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.className = 'lang-'+l;
+    document.getElementById('bzh').classList.toggle('on', l==='zh');
+    document.getElementById('ben').classList.toggle('on', l==='en');
+  }
+</script>
+</body>
+</html>
